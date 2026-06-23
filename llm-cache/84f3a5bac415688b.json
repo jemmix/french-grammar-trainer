@@ -1,0 +1,33 @@
+{
+  "cacheKey": "84f3a5bac415688b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-08 - Temporalpräpositionen: am (Wochentag), um (Uhrzeit), im (Monat/Jahreszeit), seit (Dauer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz beschreibt ein einmaliges Ereignis an einem Wochentag? (keine andauernde Zeitspanne)\nChoices:\nA. [CORRECT] Wir haben am Montag eine Prüfung.\nB. Wir haben im Montag eine Prüfung.\nC. Wir haben um Montag eine Prüfung.\nD. Wir haben seit Montag eine Prüfung.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782161706873-cyr6cx3n"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate a single German grammar question to determine if it properly tests the stated rule about temporal prepositions (am, um, im, seit).\n\n## Analysis Completed\n\nThe question asks \"Welcher Satz beschreibt ein einmaliges Ereignis an einem Wochentag?\" with four choices testing different temporal prepositions with \"Montag\":\n- A (correct): \"am Montag\" - proper weekday usage\n- B: \"im Montag\" - incorrect (im is for months/seasons)\n- C: \"um Montag\" - incorrect (um is for clock times)\n- D: \"seit Montag\" - grammatically valid but implies ongoing duration, not a one-time event\n\n## Verdict\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"am\" is the correct temporal preposition for weekdays and understanding that \"seit\" indicates duration rather than a one-time event, directly testing the am/um/im/seit distinctions in the stated rule.\n\n## Remaining Tasks\n\nNone — this was a single-question validation task that has been completed.\n\n## Recommendations\n\nNo further action needed for this particular question. It properly tests the temporal preposition rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782161903179-q35xjwmn",
+      "timestamp": "2026-06-22T21:09:16.404Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the correct use of \"am\" with weekdays by contrasting it with \"im,\" \"um,\" and \"seit\"—all prepositions covered in the stated rule—making knowledge of this specific temporal preposition rule essential to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782162675024-9knbulsr",
+      "timestamp": "2026-06-22T21:11:56.550Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests which temporal preposition (\"am\", \"im\", \"um\", \"seit\") correctly pairs with a weekday, which is the central distinction of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782162793971-kqe0alw2",
+      "timestamp": "2026-06-22T21:13:50.165Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0b5e90066b4175a3",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "08-10-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Präpositionen in festen Wendungen (auf Deutsch, in Ordnung, zu Fuß, umsonst)\nPROMPT: Ergänzen Sie die Präposition für die feste Wendung (gehen ohne Fahrzeug).\nPHRASE: „Wir gehen ___ Fuß.\nCORRECT ANSWER: zu\n\nWRONG ANSWERS to evaluate:\n1. mit\n2. auf\n3. in\n4. durch\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782168472138-gazjs4ou"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers are common German prepositions that a learner encountering the fixed expression \"zu Fuß\" for the first time might reasonably try — \"mit\" as a false analogy to \"by foot\" in English, \"auf\" and \"in\" as frequently overused prepositions, and \"durch\" as a less likely but still real preposition a confused learner could guess.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169010139-8gkikjoc",
+      "timestamp": "2026-06-22T22:57:23.223Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While \"mit\" and \"auf\" are plausible mistakes (direct translation \"with foot\" or confusion with other transport prepositions like \"auf dem Fahrrad\"), \"durch Fuß\" (\"through foot\") makes no sense as a learner error, and \"in Fuß\" is also unlikely since \"in\" doesn't naturally connect to body parts in this way for German learners.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169203128-8ikpo3p7",
+      "timestamp": "2026-06-22T23:00:27.450Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers are common German prepositions that a learner might reasonably guess when trying to complete a fixed expression they haven't memorized—\"mit\" as a direct translation of \"with,\" \"auf\" as a literal translation of \"on\" (as in \"on foot\"), \"in\" as another common preposition, and \"durch\" as a preposition learners might cycle through when uncertain.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169362145-81vyiv4u",
+      "timestamp": "2026-06-22T23:03:31.046Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the plausibility of wrong answers for a German input question about the fixed expression \"zu Fuß\" (on foot).\n\nVERDICT: IMPLAUSIBLE\nREASON: While \"mit\" (translating \"with foot\"), \"auf\" (translating \"on foot\" directly), and \"in\" (common preposition confusion) are plausible learner errors, \"durch Fuß\" is not a believable mistake—no learner would reasonably think \"through foot\" fits the context of walking without a vehicle.\n\nRemaining tasks: None for this specific evaluation, as the verdict has been determined.\n\nRecommendations: Replace \"durch\" with a more plausible alternative such as \"per\" (learners might try to use Latin-derived prepositions) or \"von\" (confusion with \"von Fuß\" as a dative construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169411047-l0h1ynw5",
+      "timestamp": "2026-06-22T23:03:53.548Z"
+    }
+  ]
+}

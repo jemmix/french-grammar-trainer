@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8f420f29ee1a9b85",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-07-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Plusquamperfekt?\n\nChoices:\nA. [CORRECT] Er war schnell eingeschlafen.\nB. [WRONG] Er hatte schnell eingeschlafen.\nC. [WRONG] Er ist schnell eingeschlafen.\nD. [WRONG] Er hat schnell eingeschlafen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782172866565-3najeyz4"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a German grammar question about the Plusquamperfekt (pluperfect tense).\n\n**Work accomplished:**\nI analyzed the question \"Welcher Satz steht im Plusquamperfekt?\" and its wrong answers:\n\n- B. \"Er hatte schnell eingeschlafen.\" - Incorrect because \"einschlafen\" requires \"sein\" not \"haben\" as its auxiliary verb\n- C. \"Er ist schnell eingeschlafen.\" - Incorrect because this is Perfekt (present perfect), not Plusquamperfekt\n- D. \"Er hat schnell eingeschlafen.\" - Incorrect because it uses \"haben\" instead of \"sein\" AND is Perfekt not Plusquamperfekt\n\n**Remaining tasks:**\n- Provide the final formatted verdict\n\n**Recommendation:**\nThe verdict is TRUE||All wrong answers contain clear grammar errors (B uses wrong auxiliary \"haben\" instead of \"sein\"; C and D are Perfekt not Plusquamperfekt, and D also uses wrong auxiliary).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173294102-rqkpenth",
+      "timestamp": "2026-06-23T00:08:40.189Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses \"hatte\" instead of \"war\" as the auxiliary for \"einschlafen\"; C is in Perfekt not Plusquamperfekt; D incorrectly uses \"hat\" instead of \"ist\" and is also not Plusquamperfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173802944-fam3xqud",
+      "timestamp": "2026-06-23T00:21:36.484Z"
+    }
+  ]
+}

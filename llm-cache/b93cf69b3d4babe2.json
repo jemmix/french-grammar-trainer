@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b93cf69b3d4babe2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-03-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz beschreibt eine Bewegung (Wohin?) und steht deshalb im Akkusativ?\n\nChoices:\nA. [CORRECT] Die Katze klettert unter das Bett.\nB. [WRONG] Die Katze klettert unter dem Bett.\nC. [WRONG] Die Katze klettert unter den Bett.\nD. [WRONG] Die Katze klettert unter der Bett.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782158110331-nmqrowvu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating wrong answers for a German grammar question about accusative vs. dative prepositions with movement (Wohin?).\n\nAnalysis completed:\n- The question asks which sentence describes movement (Wohin?) and uses accusative\n- B: \"unter dem Bett\" uses dative, which is for static position (Wo?), not movement - INCORRECT for the stated constraint\n- C: \"unter den Bett\" is grammatically wrong (wrong article for neuter \"Bett\") - INCORRECT\n- D: \"unter der Bett\" is grammatically wrong (wrong article for neuter \"Bett\") - INCORRECT\n\nResult: TRUE||All wrong answers are incorrect—B uses dative (for static position, not movement), while C and D contain gender-agreement errors with the neuter noun \"Bett.\"\n\nNo remaining tasks; the validation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158112411-vxs3arp4",
+      "timestamp": "2026-06-22T19:55:36.815Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers for a German grammar question about accusative case after prepositions showing movement (Wohin?).\n\nAnalysis completed:\n- B (\"unter dem Bett\") uses dative \"dem\" but the verb \"klettert\" indicates movement requiring accusative - INCORRECT ✓\n- C (\"unter den Bett\") uses \"den\" (accusative masculine) but \"Bett\" is neuter, so accusative should be \"das\" - INCORRECT ✓\n- D (\"unter der Bett\") uses \"der\" which is not correct for neuter \"Bett\" in any case - INCORRECT ✓\n\nAll three wrong answers are indeed grammatically incorrect within the stated constraints.\n\nTRUE||All wrong answers contain clear grammar errors: B uses dative instead of required accusative for movement, C uses wrong accusative form (masculine \"den\" instead of neuter \"das\"), and D uses an article form (\"der\") that doesn't match neuter \"Bett\" in any case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158386712-1mdioo7f",
+      "timestamp": "2026-06-22T20:00:28.995Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I analyzed the German grammar question about accusative case for direction (Wohin?) and evaluated the three wrong answers (B, C, D).\n\nThe verdict is: TRUE||All wrong answers are incorrect: B uses dative (dem) instead of required accusative (das) for a Wohin-direction; C has incorrect gender agreement (den instead of das for neuter Bett); D has incorrect gender agreement (der instead of dem/das for neuter Bett).\n\nNo remaining tasks - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158621933-ncjs0tkc",
+      "timestamp": "2026-06-22T20:04:26.128Z"
+    }
+  ]
+}

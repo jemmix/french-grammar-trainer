@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f855a9ec64c07e10",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-01-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Präteritum? — regelmäßiges Verb (lernen)\n\nChoices:\nA. [CORRECT] Er lernte für die Prüfung.\nB. [WRONG] Er lernten für die Prüfung.\nC. [WRONG] Er lernt für die Prüfung.\nD. [WRONG] Er gelernt für die Prüfung.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782172866504-pnm081qv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B has subject-verb agreement error (singular \"Er\" with plural \"lernten\"); C is present tense not Präteritum; D uses past participle \"gelernt\" instead of conjugated Präteritum form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782172869622-c7n8bb6r",
+      "timestamp": "2026-06-23T00:01:44.951Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B has a subject-verb agreement error (plural verb with singular subject), C is in present tense not Präteritum, and D uses the past participle instead of the conjugated Präteritum form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173547968-jlvotyep",
+      "timestamp": "2026-06-23T00:12:50.113Z"
+    },
+    {
+      "raw": "TRUE||B has subject-verb agreement error (plural form with singular subject), C is in Präsens not Präteritum, D uses past participle without auxiliary verb making it ungrammatical.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782174120911-xjxz5axo",
+      "timestamp": "2026-06-23T00:22:24.875Z"
+    }
+  ]
+}

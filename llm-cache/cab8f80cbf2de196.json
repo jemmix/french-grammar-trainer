@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cab8f80cbf2de196",
+  "predicateId": "german-language",
+  "questionId": "08-08-007",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Temporalpräpositionen: am (Wochentag), um (Uhrzeit), im (Monat/Jahreszeit), seit (Dauer)\n\nQUESTION CONTENT:\nPrompt: Welcher Satz ist grammatikalisch richtig? — Temporalpräposition\nChoices:\nA. [correct] Das Meeting beginnt um 14 Uhr.\n   Explanation: Bei Uhrzeiten steht die Präposition „um\" mit dem Akkusativ: „um 14 Uhr\".\nB. Das Meeting beginnt am 14 Uhr.\n   Explanation: „am\" steht bei Wochentagen, nicht bei Uhrzeiten. Bei Uhrzeiten heißt es „um\".\nC. Das Meeting beginnt im 14 Uhr.\n   Explanation: „im\" steht bei Monaten und Jahreszeiten, nicht bei Uhrzeiten. Bei Uhrzeiten heißt es „um\".\nD. Das Meeting beginnt seit 14 Uhr.\n   Explanation: „seit\" bezeichnet eine Zeitspanne, die bis heute andauert. Für eine konkrete Uhrzeit heißt es „um\".\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1782149479012-qx8tsnag"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782151623287-3x4xcqe2",
+      "timestamp": "2026-06-22T18:07:37.788Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected. \"Meeting\" is a commonly used loanword in German business contexts and does not constitute an English instruction or explanation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782154250228-8371bebi",
+      "timestamp": "2026-06-22T18:51:24.787Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected. \"Meeting\" is a commonly used loanword in German business contexts and is acceptable.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782156460119-780zmptv",
+      "timestamp": "2026-06-22T19:30:31.074Z"
+    }
+  ]
+}

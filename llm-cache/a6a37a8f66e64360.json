@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a6a37a8f66e64360",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-09-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-09 - Nachdem und die Zeitfolge: Plusquamperfekt → Präteritum → Präsens\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz verwendet die korrekte Zeitfolge mit „nachdem\" bei Präsens im Hauptsatz?\nChoices:\nA. [CORRECT] Nachdem ich das Buch gelesen habe, verstehe ich die Geschichte.\nB. Nachdem ich das Buch las, verstehe ich die Geschichte.\nC. Nachdem ich das Buch lese, verstehe ich die Geschichte.\nD. Nachdem ich das Buch gelesen hatte, verstehe ich die Geschichte.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782172866584-mfua5y02"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the tense sequence rule for \"nachdem\" by requiring the student to identify that Perfekt (gelesen habe) must be used in the \"nachdem\" clause when the main clause is in Präsens (verstehe), distinguishing it from Plusquamperfekt (hatte gelesen) which would be correct only with a Präteritum main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173428996-84qxf1n5",
+      "timestamp": "2026-06-23T00:10:51.906Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the temporal sequence rule that when \"nachdem\" is used with a Präsens main clause, the subordinate clause must be in Perfekt (not Plusquamperfekt, Präteritum, or Präsens), which is exactly the concept the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173998451-bpp9wf0f",
+      "timestamp": "2026-06-23T00:20:27.207Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"nachdem\" tense sequence rule by requiring students to know that when the main clause is in Präsens, the \"nachdem\" clause must use Perfekt (gelesen habe), not Präteritum, Präsens, or Plusquamperfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782174451913-bd8r4qpf",
+      "timestamp": "2026-06-23T00:28:04.093Z"
+    }
+  ]
+}

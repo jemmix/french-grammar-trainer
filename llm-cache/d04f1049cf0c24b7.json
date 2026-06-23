@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d04f1049cf0c24b7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-05-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Die Dativpräposition verlangt den Dativ. Welcher Satz steht im korrekten Kasus?\n\nChoices:\nA. [CORRECT] Ich gehe zu dem Arzt.\nB. [WRONG] Ich gehe zu den Arzt.\nC. [WRONG] Ich gehe zu des Arzt.\nD. [WRONG] Ich gehe zu der Arzt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782158110350-2mhfql5g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (accusative, genitive, and nominative) instead of the required dative case after the dative preposition \"zu.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158161636-i18wgvd3",
+      "timestamp": "2026-06-22T19:56:25.629Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (B uses Akkusativ, C uses Genitiv with wrong form, D uses Nominativ) instead of the required Dativ after the preposition \"zu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158462832-3ulxgmng",
+      "timestamp": "2026-06-22T20:01:34.535Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"den\" is dative plural not singular, \"des\" is genitive not dative, and \"der\" is feminine dative not masculine dative for the masculine noun \"Arzt\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158691980-ia6wwu65",
+      "timestamp": "2026-06-22T20:05:16.941Z"
+    }
+  ]
+}

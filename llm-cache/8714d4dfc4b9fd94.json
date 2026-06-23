@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8714d4dfc4b9fd94",
+  "predicateId": "german-language",
+  "questionId": "09-07-009",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Bildung des Plusquamperfekts (hatte/war + Partizip II)\n\nQUESTION CONTENT:\nPrompt: Setzen Sie das Hilfsverb im Plusquamperfekt ein.\nPhrase: „Ich ___ das Buch schon zu Ende gelesen.\nAnswer: hatte\nHint: haben\nExplanation: „lesen\" bildet das Plusquamperfekt mit „haben\" im Präteritum. Für die 1. Person Singular: ich hatte.\nWrong answers:\n  - war („lesen\" verlangt das Hilfsverb „haben\", nicht „sein\". Korrekt: „hatte gelesen\".)\n  - habe („habe\" bildet das Perfekt (Präsens des Hilfsverbs). Für das Plusquamperfekt braucht man das Präteritum: „hatte\".)\n  - bin („lesen\" verlangt weder „sein\" noch das Präsens. Korrekt im Plusquamperfekt: „hatte\".)\n  - werde („werde\" ist die Zukunft. Für das Plusquamperfekt braucht man „haben\" im Präteritum: „hatte\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1782161719924-7rxiz3kj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782167623167-swzmibcw",
+      "timestamp": "2026-06-22T22:33:52.495Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169237166-tt9pkvc6",
+      "timestamp": "2026-06-22T23:00:59.920Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nHowever, this task is a simple language validation that requires no tools - just text analysis of the provided German question content.\n\n**Validation Result:**\n\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170044623-ojh64yzw",
+      "timestamp": "2026-06-22T23:14:28.702Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6311e8677e59e64e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet das Plusquamperfekt korrekt für die Vorvergangenheit?\n\nChoices:\nA. [CORRECT] Wir verpassten den Zug, weil wir zu spät gekommen waren.\nB. [WRONG] Wir hatten den Zug verpasst, weil wir zu spät gekommen waren.\nC. [WRONG] Wir verpassten den Zug, weil wir zu spät gekommen sind.\nD. [WRONG] Wir verpassten den Zug, weil wir zu spät kommen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782172866573-kh93p5ao"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect - B uses Plusquamperfekt for both clauses which fails to distinguish the Vorvergangenheit relationship, C uses Perfekt instead of Plusquamperfekt, and D uses present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173411883-g77e27a0",
+      "timestamp": "2026-06-23T00:10:55.511Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782174003770-70z2ks7f",
+      "timestamp": "2026-06-23T00:20:39.373Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly places Plusquamperfekt in the main clause without a subsequent past action to justify it; C uses Perfekt instead of Plusquamperfekt; D uses Präsens instead of Plusquamperfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782174462151-iaur8rij",
+      "timestamp": "2026-06-23T00:28:09.754Z"
+    }
+  ]
+}

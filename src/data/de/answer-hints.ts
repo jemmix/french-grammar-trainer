@@ -209,6 +209,9 @@ export const answerHints: Record<string, string> = {
   "weil er noch arbeiten muss": "müssen",
   "weil sie krank ist": "sein",
   "obwohl das Wetter schlecht ist": "sein",
+
+  // Section 08 multi-word answers
+  "auf den": "Präposition + Artikel",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

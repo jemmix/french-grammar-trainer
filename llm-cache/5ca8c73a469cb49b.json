@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5ca8c73a469cb49b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-05-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-05 - Trennbare und untrennbare Verben im Präteritum\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Verb in Klammern ins Präteritum.\nPhrase: „Ich ___ gestern um 8 Uhr auf (aufstehen).\nCorrect Answer: stand\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782172866551-5owq9pdu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about \"aufstehen\" in Präteritum actually tests the stated rule about separable and inseparable verbs.\n\nVerdict for this question:\nVERDICT: MISALIGNED\nREASON: The question only requires knowing the Präteritum stem of \"aufstehen\" (\"stand\"), while the separable prefix \"auf\" is already correctly positioned at the end of the sentence, so the separable/inseparable distinction is demonstrated but not actually tested—students could answer correctly knowing only the irregular Präteritum conjugation without understanding separability.\n\nRemaining tasks: None - this was a single validation task.\n\nRecommendations: To properly test rule 09-05 (separable vs inseparable verbs in Präteritum), questions should require students to actively apply the separability rule—for example, by having them choose between \"stand auf\" vs \"standauf\", or by mixing separable and inseparable verbs so students must distinguish between them.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173123705-eokrghgw",
+      "timestamp": "2026-06-23T00:06:19.353Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests the irregular Präteritum conjugation of \"aufstehen\" (stand), while the separable/inseparable distinction is already built into the question structure—the \"auf\" is already placed at the end, so the student doesn't need to decide whether to separate the prefix or demonstrate knowledge of separable vs. inseparable verb behavior.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173670241-6h7wksid",
+      "timestamp": "2026-06-23T00:15:08.452Z"
+    }
+  ]
+}

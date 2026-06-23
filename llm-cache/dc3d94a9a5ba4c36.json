@@ -1,0 +1,40 @@
+{
+  "cacheKey": "dc3d94a9a5ba4c36",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "09-09-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Nachdem und die Zeitfolge: Plusquamperfekt → Präteritum → Präsens\nPROMPT: Setzen Sie das Hilfsverb im Nebensatz ein — Plusquamperfekt nach „nachdem\".\nPHRASE: „Nachdem ich das Buch gelesen ___, ging ich ins Bett.\nCORRECT ANSWER: hatte\n\nWRONG ANSWERS to evaluate:\n1. habe\n2. war\n3. bin\n4. werde\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782161719935-h06rxm2d"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"habe\" uses present instead of Plusquamperfekt, \"war\" and \"bin\" confuse \"sein\" with \"haben\" as the auxiliary verb (and use wrong tense), and \"werde\" reflects overgeneralization of auxiliary verbs or confusion with passive voice construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782167924139-skpse8vl",
+      "timestamp": "2026-06-22T22:40:26.783Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Habe\", \"war\", and \"bin\" are all excellent plausible errors (wrong tense, wrong auxiliary verb), but \"werde\" is not a realistic mistake for this context—no learner would plausibly insert a future/passive auxiliary into a past perfect construction after \"nachdem\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169614806-z2573bg9",
+      "timestamp": "2026-06-22T23:07:16.385Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"habe\" is the present tense mistake (failing to use Plusquamperfekt), \"war\" and \"bin\" confuse the auxiliary verb \"sein\" with \"haben\" (and mix up tenses), and \"werde\" reflects confusion with the future/passive auxiliary—a mistake learners make when they haven't internalized which auxiliary belongs with which verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170319892-oxg63ang",
+      "timestamp": "2026-06-22T23:19:14.216Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was in the process of evaluating whether the wrong answers for a German grammar question about \"nachdem\" and Plusquamperfekt are plausible learner mistakes.\n\nMy analysis:\n- \"habe\" - PLAUSIBLE: Common mistake using Perfekt auxiliary instead of Plusquamperfekt\n- \"war\" - PLAUSIBLE: Learner might confuse which auxiliary \"lesen\" takes\n- \"bin\" - BORDERLINE: Less natural, but some learners might incorrectly try \"sein\" as auxiliary\n- \"werde\" - IMPLAUSIBLE: \"Werden\" doesn't combine with \"gelesen\" in any way a learner would naturally produce\n\nVERDICT: IMPLAUSIBLE\nREASON: \"werde\" is not a plausible learner mistake — \"werden\" cannot function as an auxiliary with the past participle \"gelesen\" in any construction a learner would naturally produce, making it nonsensical in this context.\n\nRemaining tasks: None — this evaluation is complete.\n\nRecommendations: Replace \"werde\" with a more plausible error such as \"hatte gelesen\" (overcorrection adding the participle redundantly) or \"hätte\" (Konjunktiv II confusion).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170638318-yrascy6r",
+      "timestamp": "2026-06-22T23:24:42.398Z"
+    }
+  ]
+}

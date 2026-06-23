@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c1f6ba20b0555245",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-08-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-08 - Temporalpräpositionen: am (Wochentag), um (Uhrzeit), im (Monat/Jahreszeit), seit (Dauer)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie die verschmolzene Form. (Temporalpräposition für Wochentage)\nPhrase: „Ich habe ___ Freitag eine Verabredung.\nCorrect Answer: am\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782170257101-s2oavy8t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the specific sub-rule that \"am\" is the correct temporal preposition for weekdays (Wochentage), as the blank must be filled with \"am\" before \"Freitag\" to be grammatically correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170315637-u265qtta",
+      "timestamp": "2026-06-22T23:18:58.242Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the specific part of the rule that \"am\" is the temporal preposition used with weekdays (Wochentage), and the correct answer cannot be determined without knowing this correspondence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170441029-mnqm669a",
+      "timestamp": "2026-06-22T23:21:08.041Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question to determine if it properly tests the stated rule about temporal prepositions (am for weekdays, um for time, im for months/seasons, seit for duration).\n\nThe analysis is straightforward:\n- Rule: \"am\" is used with Wochentage (days of the week)\n- Question: \"Ich habe ___ Freitag eine Verabredung.\" with answer \"am\"\n- \"Freitag\" is a weekday, and \"am\" is the correct preposition\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge that \"am\" is the temporal preposition used with Wochentage (days of the week like \"Freitag\"), which is the exact grammar point stated in the rule.\n\nNo remaining tasks — this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170568903-h1egftm2",
+      "timestamp": "2026-06-22T23:23:17.923Z"
+    }
+  ]
+}

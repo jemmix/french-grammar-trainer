@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bb5710faf5bfa27c",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "09-08-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Plusquamperfekt für die Vorvergangenheit\nPROMPT: Setzen Sie das Hilfsverb im Plusquamperfekt ein, um die Vorvergangenheit auszudrücken.\nPHRASE: „Nachdem ich die Hausaufgaben gemacht ___, ging ich spielen.\nCORRECT ANSWER: hatte\n\nWRONG ANSWERS to evaluate:\n1. habe\n2. war\n3. bin\n4. werde\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782161719929-0dq35fan"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to evaluate four wrong answers for a German Plusquamperfekt grammar question to determine if they are plausible learner mistakes.\n\nAnalysis completed:\n1. \"habe\" - PLAUSIBLE (confusing Perfekt with Plusquamperfekt is very common)\n2. \"war\" - PLAUSIBLE (using wrong auxiliary verb \"sein\" instead of \"haben\")\n3. \"bin\" - PLAUSIBLE (double error: wrong auxiliary + wrong tense)\n4. \"werde\" - IMPLAUSIBLE (present tense of \"werden\" has no logical connection to forming past tenses)\n\nVERDICT: IMPLAUSIBLE\nREASON: \"werde\" is not a plausible mistake—it's the present tense of \"werden\" and no learner would reasonably insert it when trying to form a past tense with an auxiliary verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782167792130-tl68tzru",
+      "timestamp": "2026-06-22T22:37:08.504Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"werde\" is not a plausible mistake for Plusquamperfekt since \"werden\" is never used as an auxiliary in this tense—it's used for Passiv and Futur, so a learner studying Plusquamperfekt would not reasonably produce this answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782169502098-nnvq0k77",
+      "timestamp": "2026-06-22T23:05:26.277Z"
+    }
+  ]
+}

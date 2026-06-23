@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b56fcff76f9e63d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-03-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-03 - Wechselpräpositionen mit Akkusativ: Richtung (Wohin?)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie einen bestimmten Artikel. (Bewegung: Wohin?)\nPhrase: „Ich stelle das Glas auf ___ Kommode.\nCorrect Answer: die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782161706833-3vj4qimn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"auf\" as a Wechselpräposition takes the accusative case when indicating direction (Wohin?), which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782161708914-swnshzwj",
+      "timestamp": "2026-06-22T20:57:36.974Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a single-step validation task, so the work is complete.\n\nVERDICT: MISALIGNED\nREASON: The correct answer \"die\" is identical for both Nominativ and Akkusativ with the feminine noun \"Kommode,\" so a student could answer correctly by simply knowing the gender of the noun without understanding that Wechselpräpositionen take Akkusativ for directional \"Wohin?\" contexts—a masculine noun like \"Tisch\" (der → den) would actually test the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782162497163-6ueu19z2",
+      "timestamp": "2026-06-22T21:09:14.272Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question to determine if it properly tests the stated rule (Wechselpräpositionen mit Akkusativ: Richtung/Wohin).\n\n**My analysis:**\nThe question asks for the definite article in \"Ich stelle das Glas auf ___ Kommode\" with the correct answer being \"die.\" However, since \"Kommode\" is feminine and the definite article \"die\" is identical in both accusative and dative cases, the question does not actually test whether the student knows to use accusative (for directional \"wohin?\") vs. dative (for static \"wo?\"). The answer can be determined purely by knowing the gender of \"Kommode.\"\n\n**Verdict I would have given:**\nVERDICT: MISALIGNED\nREASON: The correct answer \"die\" can be determined solely by knowing that \"Kommode\" is feminine, without any knowledge of the Wechselpräposition + Akkusativ rule, since the feminine definite article doesn't change between dative and accusative.\n\n**Remaining tasks:** None - this was a single validation task.\n\n**Recommendation:** To properly test this rule, use a masculine noun (e.g., \"Ich stelle das Glas auf ___ Tisch\" → answer \"den\"), where the article actually changes between dative (dem) and accusative (den), forcing students to apply the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782162671561-5zf6lp7z",
+      "timestamp": "2026-06-22T21:12:09.319Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6191d28583221ec4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: In einer Geschichte (Schriftsprache): Setzen Sie das Verb in Klammern in der passenden Form ein.\nPhrase: „Der Junge ___ den Berg hinauf (steigen).\nCorrect Answer: stieg\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782172866559-lxhot7sq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly sets the context as written language (\"Schriftsprache\") and requires the student to use the Präteritum form \"stieg\" instead of the Perfekt \"ist gestiegen,\" directly testing the written-vs-spoken distinction central to this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173281553-t0zjmisv",
+      "timestamp": "2026-06-23T00:08:22.429Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question explicitly labels the context as \"Schriftsprache,\" so it only tests knowledge of the Präteritum conjugation of \"steigen\" rather than the student's ability to choose between Präteritum and Perfekt based on register.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782173800425-1qq2ur9c",
+      "timestamp": "2026-06-23T00:18:15.038Z"
+    }
+  ]
+}

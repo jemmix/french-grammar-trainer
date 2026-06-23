@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3336bc4cb208e94a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-03-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-03 - Wechselpräpositionen mit Akkusativ: Richtung (Wohin?)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie einen bestimmten Artikel. (Bewegung: Wohin?)\nPhrase: „Ich stelle die Vase auf ___ Schrank.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782168472092-vl3vc3n8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"auf\" as a Wechselpräposition, recognizing the directional context (Wohin?) from the verb \"stellen,\" and applying the accusative case to the masculine noun \"Schrank\" — all central to the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782168474163-regb9jhu",
+      "timestamp": "2026-06-22T22:48:27.288Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to validate whether a German grammar question properly tests the stated rule about Wechselpräpositionen (two-way prepositions) with Akkusativ for direction (Wohin?).\n\n**Analysis completed:**\n- The question asks for the correct definite article in \"Ich stelle die Vase auf ___ Schrank.\"\n- The verb \"stellen\" indicates directional movement (Wohin?)\n- \"auf\" is a Wechselpräposition that takes Akkusativ with directional questions\n- \"Schrank\" is masculine, so Akkusativ requires \"den\"\n\n**Verdict would be:**\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"auf\" is a Wechselpräposition and that directional movement (Wohin?) with \"stellen\" triggers the Akkusativ case, making \"den\" the correct definite article for the masculine \"Schrank\".\n\nNo remaining tasks - this was a single validation request that has been analyzed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782168597432-yaxjau5a",
+      "timestamp": "2026-06-22T22:50:30.531Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question properly tests the stated rule about Wechselpräpositionen mit Akkusativ (two-way prepositions with accusative for direction).\n\nThe question \"Ich stelle die Vase auf ___ Schrank\" with correct answer \"den\" requires the student to recognize that \"auf\" is a Wechselpräposition, that \"stellen\" indicates directional movement (Wohin?), and therefore the accusative case is needed (\"den\" for masculine \"Schrank\").\n\nMy verdict: ALIGNED - The question properly tests the stated rule because answering correctly requires knowing that Wechselpräpositionen take the accusative case when indicating direction (Wohin?), and this cannot be determined without that specific knowledge (someone using the dative rule would incorrectly answer \"dem\").\n\nNo remaining tasks - this was a single validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782168745220-t0484dkp",
+      "timestamp": "2026-06-22T22:53:09.864Z"
+    }
+  ]
+}

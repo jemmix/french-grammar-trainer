@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4455ab2206119484",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-09-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet die richtige Präposition zu „sich freuen\"? — Reaktion auf etwas bereits Vorhandenes\n\nChoices:\nA. [CORRECT] Ich freue mich über das Geschenk.\nB. [WRONG] Ich freue mich über dem Geschenk.\nC. [WRONG] Ich freue mich auf das Geschenk.\nD. [WRONG] Ich freue mich von das Geschenk.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782158110384-l6qamdqn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses the wrong case (dative instead of accusative with \"über\"), C uses \"auf\" which expresses anticipation rather than reaction to something present as specified, and D uses \"von\" which is never used with \"sich freuen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158226379-rw6jvvrj",
+      "timestamp": "2026-06-22T19:57:31.539Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to verify that wrong answers B, C, and D in a German grammar question about \"sich freuen\" are indeed incorrect.\n\n**Analysis completed:**\n- B: \"über dem Geschenk\" uses dative instead of required accusative (\"über das\") — INCORRECT\n- C: \"auf das Geschenk\" uses \"auf\" which expresses anticipation, not reaction to something present as specified — INCORRECT  \n- D: \"von das Geschenk\" uses \"von\" which is never used with \"sich freuen\" — INCORRECT\n\n**Verdict:** TRUE||All wrong answers contain clear grammar errors or use incorrect prepositions that don't match the specified context of reacting to something already present.\n\n**Remaining tasks:** None — the verification is complete.\n\n**Recommendation:** The question is valid and all wrong answers are correctly marked as incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158521148-v722oa28",
+      "timestamp": "2026-06-22T20:02:33.178Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar validation question about the correct preposition for \"sich freuen\" in the context of reacting to something already present. I had analyzed all three wrong answers (B, C, D) and determined the verdict, but was unable to provide the final formatted response.\n\nThe analysis was complete:\n- B is incorrect because \"über dem\" uses dative case, but \"sich freuen über\" requires accusative\n- C is incorrect because \"sich freuen auf\" expresses anticipation of future events, not reaction to something already present as specified in the question\n- D is incorrect because \"von\" is not a valid preposition for \"sich freuen\"\n\nThe final verdict that would have been returned:\nTRUE||All wrong answers contain clear grammar errors: B uses wrong case (dative instead of accusative), C uses the future-oriented preposition \"auf\" instead of the present-oriented \"über\", and D uses an invalid preposition \"von\" entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158727729-qyvdnzbv",
+      "timestamp": "2026-06-22T20:06:00.651Z"
+    }
+  ]
+}

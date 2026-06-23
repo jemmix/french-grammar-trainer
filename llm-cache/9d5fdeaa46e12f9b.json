@@ -1,0 +1,40 @@
+{
+  "cacheKey": "9d5fdeaa46e12f9b",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "08-10-008",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz verwendet die feste Wendung für „an dem eigenen Wohnort\"?\nChoices:\nA. Ich bin zu Hause.\nB. Ich bin in Hause.\nC. Ich bin an Hause.\nD. Ich bin auf Hause.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1782170257169-t5tqxz4v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly defines what is being asked (the fixed expression for \"at one's own residence\") and the choices make it unambiguous which grammatical structure is being tested, even for a learner who hasn't seen the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170353292-074pavhn",
+      "timestamp": "2026-06-22T23:19:51.670Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The phrase \"an dem eigenen Wohnort\" is an abstract paraphrase that doesn't clearly cue the learner to think about \"zu Hause\" as a fixed expression, making it unclear what specific grammar point is being tested without prior knowledge of the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170499562-5rpcq646",
+      "timestamp": "2026-06-22T23:22:36.250Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks which sentence uses the fixed expression meaning \"at one's own place of residence,\" and only option A (\"zu Hause\") is both grammatically correct and conveys that meaning, making the correct answer evident even without knowing the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170633096-cc03pzcr",
+      "timestamp": "2026-06-22T23:24:15.379Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was evaluating a German language learning question for clarity and ambiguity. The question asks \"Welcher Satz verwendet die feste Wendung für „an dem eigenen Wohnort\"?\" with four choices about \"zu Hause\" vs. incorrect preposition usages.\n\n**Verdict that was being formed:**\nVERDICT: AMBIGUOUS\nREASON: The explanatory phrase \"an dem eigenen Wohnort\" uses the preposition \"an,\" which could mislead learners into thinking the correct answer should also use \"an\" rather than recognizing that \"zu Hause\" is the unrelated fixed expression meaning \"at home.\"\n\n**Remaining tasks:**\n- None; this was a single evaluation task\n\n**Recommendations:**\nReword the prompt to avoid the misleading preposition \"an\" in the definition, for example: \"Welcher Satz bedeutet 'ich bin daheim'?\" or \"Welcher Satz verwendet die korrekte Form für 'zu Hause'?\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782170756400-3ca3zqd0",
+      "timestamp": "2026-06-22T23:26:30.425Z"
+    }
+  ]
+}

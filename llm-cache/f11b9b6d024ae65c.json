@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f11b9b6d024ae65c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-05-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Die Präposition „bei\" gehört zu den Dativpräpositionen. Welcher Satz zeigt den korrekten Kasus?\n\nChoices:\nA. [CORRECT] Er ist bei dem Arzt.\nB. [WRONG] Er ist bei den Arzt.\nC. [WRONG] Er ist bei des Arzt.\nD. [WRONG] Er ist bei der Arzt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782161706845-xscl65k4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: B uses Akkusativ \"den\", C uses Genitiv \"des\", and D uses feminine Dativ \"der\" instead of the required masculine Dativ \"dem\" for the noun \"Arzt\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782161801047-imiemz6u",
+      "timestamp": "2026-06-22T20:57:51.499Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases: B uses accusative plural \"den\" instead of dative masculine \"dem\", C uses genitive \"des\" instead of dative \"dem\", and D uses dative feminine \"der\" instead of dative masculine \"dem\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782162531686-bibd0e0h",
+      "timestamp": "2026-06-22T21:09:20.298Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear case errors: B uses accusative plural instead of dative singular, C uses genitive instead of dative, and D uses feminine dative article instead of masculine dative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782162675935-4bqeizyy",
+      "timestamp": "2026-06-22T21:12:08.310Z"
+    }
+  ]
+}

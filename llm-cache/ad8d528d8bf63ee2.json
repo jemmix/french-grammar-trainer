@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ad8d528d8bf63ee2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-01 - Wechselpräpositionen: an, auf, in, über, unter, vor, hinter, neben, zwischen (Akkusativ vs. Dativ)\n\nQUESTION:\nType: Input\nPrompt: Welcher bestimmte Artikel steht im Akkusativ? (Wohin?)\nPhrase: „Ich lege das Buch auf ___ Tisch.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782158110312-33ceq2hs"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate a single German grammar question for alignment with its stated rule. The question asks for the Akkusativ form of the definite article in \"Ich lege das Buch auf ___ Tisch\" but explicitly prompts the student with \"Welcher bestimmte Artikel steht im Akkusativ? (Wohin?)\".\n\n**Verdict I would have returned:**\n\nVERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use Akkusativ (\"Welcher bestimmte Artikel steht im Akkusativ?\"), so it only tests knowing the Akkusativ form of \"der\" → \"den\", not the core Wechselpräposition rule of determining when to use Akkusativ vs. Dativ based on the \"Wohin\" vs. \"Wo\" distinction.\n\n**Remaining tasks:**\nNone — this was a single-question validation task.\n\n**Recommendations:**\nTo properly test this Wechselpräposition rule, the question should not reveal whether Akkusativ or Dativ is needed. Instead, it should provide a \"Wohin\" context (direction) and let the student determine that Akkusativ is required. For example, the prompt could simply be \"Ergänzen Sie den Artikel\" without mentioning Akkusativ, relying on the \"Wohin\" context (lege...auf) to test whether the student knows to use Akkusativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158110410-mbrj9l9t",
+      "timestamp": "2026-06-22T19:55:58.868Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question to determine if it properly tests the stated rule about Wechselpräpositionen (two-way prepositions: an, auf, in, etc.) and when to use Akkusativ vs. Dativ.\n\nMy analysis:\n\nVERDICT: MISALIGNED\nREASON: The question only tests the Akkusativ form of the definite article for masculine nouns, not the Wechselpräposition rule, because the prompt already specifies \"Akkusativ\" and \"wohin?\" thereby eliminating the core decision between Akkusativ and Dativ that the rule is about.\n\nRemaining tasks: None — this was a single-question validation that I have completed.\n\nRecommendation: To properly test the Wechselpräposition rule, the question should not reveal whether Akkusativ or Dativ is needed. Instead, it should present a context where the student must determine from the sentence structure (movement vs. static location) which case to use, and then supply the correct article form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782158428996-o968tsn0",
+      "timestamp": "2026-06-22T20:01:04.517Z"
+    }
+  ]
+}
