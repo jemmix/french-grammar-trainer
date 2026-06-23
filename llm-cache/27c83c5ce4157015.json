@@ -1,0 +1,33 @@
+{
+  "cacheKey": "27c83c5ce4157015",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-03-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Dativ (Plural)\n\nChoices:\nA. [CORRECT] Die Gäste, denen wir danken, sind gekommen.\nB. [WRONG] Die Gäste, den wir danken, sind gekommen.\nC. [WRONG] Die Gäste, die wir danken, sind gekommen.\nD. [WRONG] Die Gäste, der wir danken, sind gekommen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247366-7nlv1q8c"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms (den = accusative masculine, die = nominative/accusative plural, der = nominative masculine) instead of the required dative plural \"denen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180631988-jh208geu",
+      "timestamp": "2026-06-23T02:10:52.830Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying wrong answers for a German grammar question about relative pronouns in the dative plural.\n\nThe question asked which sentence is grammatically correct regarding \"Relativpronomen im Dativ (Plural)\" with the verb \"danken\" (which takes the dative case).\n\nMy analysis determined that all wrong answers (B, C, D) are indeed incorrect:\n- B uses \"den\" (accusative masculine singular) instead of \"denem\" (dative plural)\n- C uses \"die\" (nominative/accusative plural) instead of \"denem\" (dative plural)\n- D uses \"der\" (dative feminine singular/genitive) instead of \"denem\" (dative plural)\n\nTRUE||All wrong answers use relative pronouns that do not match the required dative plural form \"denem\" for the verb \"danken.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183169772-qrx0es4x",
+      "timestamp": "2026-06-23T02:53:23.816Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms for a dative plural relative pronoun referring to \"Die Gäste\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186216975-oj68kodw",
+      "timestamp": "2026-06-23T03:43:59.816Z"
+    }
+  ]
+}

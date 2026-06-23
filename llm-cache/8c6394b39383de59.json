@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c6394b39383de59",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-06-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Indirekte Rede mit Konjunktiv I (sein, Plural)\n\nChoices:\nA. [CORRECT] Die Studenten sagen, sie seien fertig.\nB. [WRONG] Die Studenten sagen, sie sei fertig.\nC. [WRONG] Die Studenten sagen, sie seist fertig.\nD. [WRONG] Die Studenten sagen, sie seiet fertig.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247369-6d3tod9t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect Konjunktiv I forms: B uses singular \"sei\" instead of plural \"seien\", C uses a non-existent form \"seist\", and D uses 2nd person plural \"seiet\" instead of 3rd person plural \"seien\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181366837-946nacp0",
+      "timestamp": "2026-06-23T02:23:15.949Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the singular \"sei\" instead of plural \"seien\", C uses the non-existent form \"seist\" (Konjunktiv II 2nd person singular), and D uses Konjunktiv II \"seiet\" when the question explicitly requires Konjunktiv I.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184186047-w3ey4bi8",
+      "timestamp": "2026-06-23T03:10:13.139Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of verifying a German grammar question about indirect speech with Konjunktiv I (sein, plural). The question asked which sentence is grammatically correct, with four choices testing the conjugation of \"sein\" in indirect speech.\n\n**Analysis completed:**\n- A. \"sie seien fertig\" is correctly marked as the right answer (Konjunktiv I, 3rd person plural)\n- B. \"sie sei fertig\" is correctly wrong (this is singular, not plural)\n- C. \"sie seist fertig\" is correctly wrong (this is Konjunktiv II, 2nd person singular - not a valid 3rd person plural form)\n- D. \"sie seiet fertig\" is correctly wrong (this is Konjunktiv II, 2nd person plural - not a valid 3rd person plural form)\n\n**Remaining tasks:**\n- None - the analysis is complete\n\n**Recommendation for next step:**\nThe verdict should be: TRUE||All wrong answers contain clear grammar errors—B uses singular instead of plural, C uses an invalid Konjunktiv II 2nd person singular form, and D uses an invalid Konjunktiv II 2nd person plural form for 3rd person plural indirect speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187066249-uwrnaah4",
+      "timestamp": "2026-06-23T03:58:25.403Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "61bb4b41f56b3c35",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-03-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Dativ (maskulin)\n\nChoices:\nA. [CORRECT] Der Student, dem ich das Buch gebe, ist freundlich.\nB. [WRONG] Der Student, den ich das Buch gebe, ist freundlich.\nC. [WRONG] Der Student, der ich das Buch gebe, ist freundlich.\nD. [WRONG] Der Student, des ich das Buch gebe, ist freundlich.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247365-tprxgyc1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question about relative pronouns in the dative case (masculine) are indeed incorrect.\n\nThe analysis is complete:\n- B uses \"den\" (accusative) instead of required \"dem\" (dative)\n- C uses \"der\" (nominative) instead of required \"dem\" (dative)\n- D uses \"des\" (genitive) instead of required \"dem\" (dative)\n\nAll three wrong answers are correctly identified as incorrect because they use the wrong case for the relative pronoun when the verb \"geben\" requires a dative object.\n\nThe verdict would be: TRUE||All wrong answers use the wrong case (accusative, nominative, genitive) instead of the required dative for the masculine relative pronoun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180600599-f2elx7nx",
+      "timestamp": "2026-06-23T02:10:22.563Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms (accusative \"den\", nominative \"der\", genitive \"des\") instead of the required dative \"dem\" for the relative pronoun with the verb \"geben\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183132644-zry4xh1b",
+      "timestamp": "2026-06-23T02:52:49.770Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms for the relative pronoun: B uses accusative \"den\", C uses nominative \"der\", and D uses genitive \"des\" instead of the required dative \"dem\" for the masculine recipient of \"geben\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186193314-rvfjhsah",
+      "timestamp": "2026-06-23T03:43:36.973Z"
+    }
+  ]
+}

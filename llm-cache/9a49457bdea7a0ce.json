@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a49457bdea7a0ce",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-05-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie: „Das Kind weint, als ob es Schmerzen ___ .\"\n\nChoices:\nA. [CORRECT] hätte\nB. [WRONG] haben wird\nC. [WRONG] hatte\nD. [WRONG] hat\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782182802618-gdsswbi5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the required Konjunktiv II form (hätte) for the \"als ob\" subjunctive clause: B uses future tense, C uses indicative Präteritum, and D uses present indicative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183298350-dzbtpddn",
+      "timestamp": "2026-06-23T02:55:17.787Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses future tense instead of required Konjunktiv II after \"als ob\", C uses Präteritum Indikativ \"hatte\" rather than Konjunktiv II \"hätte\", and D uses present indicative \"hat\" instead of the subjunctive form required by this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183797703-19mwe9hp",
+      "timestamp": "2026-06-23T03:03:43.538Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar question about completing an \"als ob\" clause are indeed incorrect.\n\nRemaining tasks: None - I can provide the verdict directly.\n\nRecommendations: The verdict is TRUE - all wrong answers are incorrect because \"als ob\" requires Konjunktiv II (hätte), not future tense (haben wird), indicative past (hatte), or present indicative (hat).\n\nTRUE||All wrong answers fail to use the required Konjunktiv II form after \"als ob\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184612187-m9j95vo4",
+      "timestamp": "2026-06-23T03:17:27.214Z"
+    }
+  ]
+}

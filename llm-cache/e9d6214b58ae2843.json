@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e9d6214b58ae2843",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Wunschsatz: „Wenn ich doch ein Auto ___ !\"\n\nChoices:\nA. [CORRECT] hätte\nB. [WRONG] habe\nC. [WRONG] hatte\nD. [WRONG] gehabt hätte\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782183391936-ljex7nxf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses present indicative instead of Konjunktiv II, C uses Präteritum indicative instead of Konjunktiv II, and D's \"gehabt hätte\" creates an invalid double-perfect construction that doesn't fit the clause structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184029126-o85fuupb",
+      "timestamp": "2026-06-23T03:07:45.394Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for a present-tense Wunschsatz: B uses indicative present, C uses Präteritum indicative instead of Konjunktiv II, and D uses Plusquamperfekt Konjunktiv II which expresses a past wish rather than the present wish context established by the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184846841-fgho8nh1",
+      "timestamp": "2026-06-23T03:21:19.451Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of evaluating a German grammar verification task for a Wunschsatz (wish sentence) question. The question asked to complete \"Wenn ich doch ein Auto ___ !\" with the correct Konjunktiv II form.\n\nMy analysis:\n- B (habe) is incorrect - uses indicative present, not Konjunktiv II\n- C (hatte) is incorrect - uses Präteritum Indikativ instead of Konjunktiv II \"hätte\"\n- D (gehabt hätte) is incorrect - uses Perfekt Konjunktiv II (Plusquamperfekt Konjunktiv II), which would express a past wish rather than a present wish\n\nThe verdict would be:\nTRUE||B uses indicative present instead of Konjunktiv II; C uses Präteritum Indikativ instead of Konjunktiv II; D uses Perfekt Konjunktiv II which expresses a past wish rather than a present wish.\n\nNo remaining tasks - the verification was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186119134-xrcfd7yc",
+      "timestamp": "2026-06-23T03:42:36.624Z"
+    }
+  ]
+}

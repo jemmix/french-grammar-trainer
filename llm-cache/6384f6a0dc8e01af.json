@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6384f6a0dc8e01af",
+  "predicateId": "question-rule-alignment",
+  "questionId": "10-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Konjunktiv II\n\nRULE BEING TESTED: 10-10 - Gemischte Übungen: reale und unrealische Sätze unterscheiden\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die fehlende Verbform: „Wenn ich reich ___ , würde ich spenden.\"\nChoices:\nA. [CORRECT] wäre\nB. bin\nC. war\nD. wäre gewesen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782186455425-fgfvn0ji"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of analyzing a German grammar question validation task. The question asks students to complete \"Wenn ich reich ___ , würde ich spenden.\" with options being \"wäre\" (correct), \"bin\", \"war\", and \"wäre gewesen\". The stated rule is about distinguishing real and unreal sentences.\n\nMy analysis was leaning toward MISALIGNED because:\n- The question primarily tests Konjunktiv II formation (knowing \"wäre\" is the Konjunktiv II of \"sein\")\n- It does not actually ask students to distinguish between real and unreal sentences\n- The unreal nature of the sentence is already signaled by \"würde ich spenden\" in the main clause, so the distinction is not being tested\n- A better test of this rule would present sentences and ask students to identify which are real vs. unreal\n\nRemaining tasks:\n- Provide the final verdict in the requested format\n\nRecommendations for next steps:\nThe verdict should be:\nVERDICT: MISALIGNED\nREASON: The question tests Konjunktiv II formation, not the ability to distinguish real from unreal sentences—the unreal nature is already indicated by \"würde\" in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186814112-iy8mk3ut",
+      "timestamp": "2026-06-23T03:54:16.791Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"würde ich spenden\" signals an unreal condition, making Konjunktiv II \"wäre\" necessary rather than the indicative forms \"bin\" or \"war\", which directly tests distinguishing real from unreal sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187534092-ffee01bo",
+      "timestamp": "2026-06-23T04:06:04.454Z"
+    }
+  ]
+}

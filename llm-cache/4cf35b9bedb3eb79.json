@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4cf35b9bedb3eb79",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-06-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Passiv mit Modalverb (wollen)\n\nChoices:\nA. [CORRECT] Das Haus will verkauft werden.\nB. [WRONG] Das Haus will verkauft.\nC. [WRONG] Das Haus will verkaufen werden.\nD. [WRONG] Das Haus will verkauft worden.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247383-8jmsn9lo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B omits the required \"werden\" infinitive in passive construction, C uses the infinitive \"verkaufen\" instead of the required past participle \"verkauft\", and D incorrectly uses \"worden\" (past participle) instead of the required infinitive \"werden\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181814607-zb9yfw42",
+      "timestamp": "2026-06-23T02:30:35.844Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the structure of Passiv mit Modalverb: B lacks \"werden,\" C uses infinitive \"verkaufen\" instead of Partizip II \"verkauft,\" and D incorrectly uses \"worden\" (which belongs to Perfekt Passiv) instead of \"werden.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184400270-vxve41ww",
+      "timestamp": "2026-06-23T03:13:42.658Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the required \"werden\", C uses the active infinitive \"verkaufen\" instead of the past participle \"verkauft\", and D incorrectly uses the past participle \"worden\" instead of the infinitive \"werden\" needed with a modal verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187231425-w2oyunaw",
+      "timestamp": "2026-06-23T04:01:16.691Z"
+    }
+  ]
+}

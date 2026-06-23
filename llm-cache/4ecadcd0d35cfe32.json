@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4ecadcd0d35cfe32",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-05-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet den korrekten Konjunktiv II nach „als wenn\"?\n\nChoices:\nA. [CORRECT] Es sieht aus, als wenn es regnen würde.\nB. [WRONG] Es sieht aus, als wenn es regnen wird.\nC. [WRONG] Es sieht aus, als wenn es regnet.\nD. [WRONG] Es sieht aus, als wenn es geregnet würde.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782182802618-uoofib0h"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses Futur I instead of Konjunktiv II, C uses Präsens Indikativ instead of Konjunktiv II, and D uses Plusquamperfekt-Konjunktiv II (past hypothetical) which doesn't fit the present-tense context established by \"Es sieht aus.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183236298-yzsvhefu",
+      "timestamp": "2026-06-23T02:54:29.313Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses Indikativ Präsens \"wird\" instead of Konjunktiv II, C uses Indikativ Präsens \"regnet\" instead of Konjunktiv II, and D uses the non-standard construction \"geregnet würde\" which is not a valid Konjunktiv II form (the correct past Konjunktiv II would be \"hätte geregnet\" or \"wäre geregnet\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183762415-nxazlvag",
+      "timestamp": "2026-06-23T03:03:21.248Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was analyzing a German grammar verification question about Konjunktiv II after \"als wenn\" but was interrupted before providing the final response.\n\n**Summary of analysis completed:**\n- Question asks which sentence correctly uses Konjunktiv II after \"als wenn\"\n- A (correct): \"Es sieht aus, als wenn es regnen würde.\" - uses \"würde\" (Konjunktiv II)\n- B: \"regnen wird\" - uses future tense, not Konjunktiv II → incorrect ✓\n- C: \"regnet\" - uses present indicative, not Konjunktiv II → incorrect ✓  \n- D: \"geregnet würde\" - incorrect word order (past participle before auxiliary) → incorrect ✓\n\n**Remaining tasks:** None - analysis was complete, just needed to format the response.\n\n**Recommendation:** The answer should be:\nTRUE||All wrong answers fail to use Konjunktiv II: B uses future tense, C uses present indicative, and D has incorrect word order with the past participle before the auxiliary verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184596897-rtxoa1cv",
+      "timestamp": "2026-06-23T03:17:24.804Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ee84dbd6038c06c6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-03-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Dativ (maskulin)\n\nChoices:\nA. [CORRECT] Der Mann, dem ich helfe, ist krank.\nB. [WRONG] Der Mann, den ich helfe, ist krank.\nC. [WRONG] Der Mann, der ich helfe, ist krank.\nD. [WRONG] Der Mann, des ich helfe, ist krank.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247365-9jr6q98v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong case for the relative pronoun—\"helfen\" requires dative (dem), but B uses accusative (den), C uses nominative (der), and D uses genitive (des).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180535844-5e0fwii1",
+      "timestamp": "2026-06-23T02:09:12.234Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that wrong answers B, C, and D in a German grammar question about relative pronouns in the dative case (masculine) are indeed incorrect.\n\nAnalysis completed:\n- B uses \"den\" (accusative) - incorrect because \"helfen\" requires dative\n- C uses \"der\" (nominative) - incorrect because \"helfen\" requires dative  \n- D uses \"des\" (genitive) - incorrect because \"helfen\" requires dative\n\nAll wrong answers are grammatically incorrect as requested.\n\nTRUE||All wrong answers use the wrong case (accusative, nominative, genitive) instead of the required dative for the verb \"helfen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183033442-6zaqi3w1",
+      "timestamp": "2026-06-23T02:51:06.889Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms (accusative \"den\", nominative \"der\", genitive \"des\") instead of the required dative \"dem\" for the verb \"helfen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186078837-vmibt3kh",
+      "timestamp": "2026-06-23T03:41:45.181Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e641204f95154a58",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-09-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — nicht nur...sondern auch\n\nChoices:\nA. [CORRECT] Sie spricht nicht nur Deutsch, sondern auch Französisch.\nB. [WRONG] Sie spricht nicht nur Deutsch, oder auch Französisch.\nC. [WRONG] Sie spricht nicht nur Deutsch, und auch Französisch.\nD. [WRONG] Sie spricht nicht nur Deutsch, aber auch Französisch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247371-s31ws7as"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly substitute \"sondern\" with \"oder\", \"und\", or \"aber\", which cannot complete the fixed correlative conjunction \"nicht nur...sondern auch\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182172251-d77yzeew",
+      "timestamp": "2026-06-23T02:36:45.349Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly replace \"sondern\" with \"oder\", \"und\", or \"aber\", which cannot substitute for \"sondern\" in the fixed correlative conjunction pair \"nicht nur...sondern auch\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184999614-vgjiwrnx",
+      "timestamp": "2026-06-23T03:23:41.482Z"
+    }
+  ]
+}

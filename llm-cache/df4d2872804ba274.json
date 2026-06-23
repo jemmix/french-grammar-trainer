@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df4d2872804ba274",
+  "predicateId": "question-rule-alignment",
+  "questionId": "10-06-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Konjunktiv II\n\nRULE BEING TESTED: 10-06 - Der Konjunktiv II der Vergangenheit: hätte/wäre + Partizip II\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz bildet den Konjunktiv II der Vergangenheit korrekt?\nChoices:\nA. [CORRECT] Wenn ich nach Berlin gereist wäre, hätte ich das Brandenburger Tor gesehen.\nB. Wenn ich nach Berlin gereist hätte, hätte ich das Brandenburger Tor gesehen.\nC. Wenn ich nach Berlin reisen würde, würde ich das Brandenburger Tor sehen.\nD. Wenn ich nach Berlin reiste, sah ich das Brandenburger Tor.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782183391927-5q44nce8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the hätte/wäre + Partizip II structure by requiring students to distinguish it from the Konjunktiv II der Gegenwart (würde-form in choice C), Präteritum (choice D), and an incorrect auxiliary verb selection (choice B uses \"hätte\" with the intransitive verb \"reisen\" which requires \"sein\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183912823-j3drd5pb",
+      "timestamp": "2026-06-23T03:06:33.433Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the Konjunktiv II der Vergangenheit structure (hätte/wäre + Partizip II) by requiring students to identify the correct form and distinguish it from the würde-substitute form (C) and Präteritum (D), as well as recognizing that \"reisen\" takes \"sein\" not \"haben\" (B).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184753976-xma76g37",
+      "timestamp": "2026-06-23T03:19:38.781Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know that Konjunktiv II der Vergangenheit is formed with hätte/wäre + Partizip II, and the distractors specifically test common errors: using the wrong auxiliary (hätte instead of wäre with a verb of motion), confusing it with Konjunktiv II der Gegenwart (würde + infinitive), and confusing it with Präteritum.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186033748-ccbrso5y",
+      "timestamp": "2026-06-23T03:41:15.827Z"
+    }
+  ]
+}

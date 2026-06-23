@@ -1,0 +1,26 @@
+{
+  "cacheKey": "41d872b41a7ff0c8",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "11-04-007",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz ist grammatikalisch richtig? — Täter (Person, feminin)\nChoices:\nA. Das Auto wird von der Mechanikerin repariert.\nB. Das Auto wird durch der Mechanikerin repariert.\nC. Das Auto wird von die Mechanikerin repariert.\nD. Das Auto wird durch die Mechanikerin repariert.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1782180247380-4tdz55n3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: A learner could interpret \"grammatikalisch richtig\" as testing only case agreement, in which case both A (von + dative) and D (durch + accusative) appear grammatically correct, making the intended von/durch distinction for personal agents unclear without additional context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181241487-3syjytzv",
+      "timestamp": "2026-06-23T02:21:10.321Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks \"Welcher Satz ist grammatikalisch richtig?\" but both A and D have correct case morphology (von+dative, durch+accusative), making the actual distinction one of usage (von for human agents vs. durch for instruments) rather than grammar per se—a learner without the rule title context wouldn't know this semantic distinction is what's being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183803728-nvejakzg",
+      "timestamp": "2026-06-23T03:05:13.513Z"
+    }
+  ]
+}

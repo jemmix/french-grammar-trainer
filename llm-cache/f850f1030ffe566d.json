@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f850f1030ffe566d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-02-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Konjunktiv-II-Form von „sein\": „Wenn du hier ___ , könntest du mir helfen.\"\n\nChoices:\nA. [CORRECT] wärst\nB. [WRONG] warst\nC. [WRONG] wären\nD. [WRONG] wäret\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782182802606-sikidchb"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German Konjunktiv-II question are indeed incorrect. The analysis was completed in my reasoning:\n\n- B. \"warst\" is Präteritum Indikativ, not Konjunktiv-II — correctly wrong\n- C. \"wären\" is Konjunktiv-II but for 3rd person plural, not \"du\" — correctly wrong  \n- D. \"wäret\" is an archaic 2nd person plural form, not matching \"du\" — correctly wrong\n\nThe verdict is TRUE — all wrong answers are incorrect.\n\nTRUE||All wrong answers are incorrect: B is Präteritum Indikativ not Konjunktiv-II, C is Konjunktiv-II but for 3rd person plural not \"du\", and D is an archaic plural form not matching the subject \"du\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183006755-tgxjcpjx",
+      "timestamp": "2026-06-23T02:50:37.929Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number forms or the wrong mood (Präteritum instead of Konjunktiv-II) for the subject \"du\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183508394-0vnlfxxn",
+      "timestamp": "2026-06-23T02:58:49.236Z"
+    },
+    {
+      "raw": "TRUE||B is Präteritum indicative not Konjunktiv II, C is 3rd person plural Konjunktiv II but the subject is \"du\" (2nd singular), and D is either archaic/non-standard or doesn't match the 2nd singular subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184488512-11wudxax",
+      "timestamp": "2026-06-23T03:15:28.056Z"
+    }
+  ]
+}

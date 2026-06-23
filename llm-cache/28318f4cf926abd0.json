@@ -1,0 +1,33 @@
+{
+  "cacheKey": "28318f4cf926abd0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-07-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Infinitivsatz mit zu (trennbares Verb)\n\nChoices:\nA. [CORRECT] Es ist wichtig, frühzeitig einzukaufen.\nB. [WRONG] Es ist wichtig, frühzeitig zu einkaufen.\nC. [WRONG] Es ist wichtig, frühzeitig einkaufen.\nD. [WRONG] Es ist wichtig, frühzeitig eingekauft.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247370-wrm1lce8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the rule for separable verbs with zu: B places zu before the full verb instead of between prefix and stem, C omits the required zu entirely, and D uses a past participle instead of the required infinitive construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181609688-q2k1d8sg",
+      "timestamp": "2026-06-23T02:27:14.198Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly places \"zu\" before the separable verb (it should be inserted between prefix and stem), C omits the required \"zu\" particle, and D uses the past participle \"eingekauft\" instead of the infinitive form requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184427551-nsxs2auh",
+      "timestamp": "2026-06-23T03:14:12.219Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the rule for infinitive clauses with separable verbs: B incorrectly places \"zu\" before the full verb instead of between prefix and stem, C omits the required \"zu\", and D uses a past participle instead of the infinitive construction specified.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187411823-lansark8",
+      "timestamp": "2026-06-23T04:03:53.644Z"
+    }
+  ]
+}

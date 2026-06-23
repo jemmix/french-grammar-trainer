@@ -1,0 +1,33 @@
+{
+  "cacheKey": "043e758d04827c30",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-06-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Passiv mit Modalverb\n\nChoices:\nA. [CORRECT] Die Rechnung muss bezahlt werden.\nB. [WRONG] Die Rechnung muss bezahlt.\nC. [WRONG] Die Rechnung muss bezahlen werden.\nD. [WRONG] Die Rechnung muss bezahlt worden.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247382-4u8hybaa"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the required \"werden\" for passive construction, C incorrectly uses the infinitive \"bezahlen\" instead of the past participle \"bezahlt\", and D incorrectly uses the past participle \"worden\" instead of the infinitive \"werden\" needed with modal verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181643331-11e0rp7h",
+      "timestamp": "2026-06-23T02:30:25.007Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a German grammar multiple choice question about passive voice with modal verbs (\"Passiv mit Modalverb\").\n\nResult: TRUE||All wrong answers violate the passive with modal verb construction: B lacks \"werden,\" C uses active infinitive instead of past participle, and D incorrectly uses \"worden\" which belongs to perfect passive, not present passive with modal verb.\n\nNo remaining tasks - the validation was completed in the analysis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184382755-a7v7dqzb",
+      "timestamp": "2026-06-23T03:13:25.320Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks the required \"werden\" for passive with modal verb, C uses the infinitive \"bezahlen\" instead of the past participle \"bezahlt\", and D incorrectly uses the past participle \"worden\" instead of the infinitive \"werden\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187205053-9n4tin0m",
+      "timestamp": "2026-06-23T04:04:48.141Z"
+    }
+  ]
+}

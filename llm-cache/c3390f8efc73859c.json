@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c3390f8efc73859c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Zustandspassiv\n\nChoices:\nA. [CORRECT] Die Rechnung ist bezahlt.\nB. [WRONG] Die Rechnung ist bezahlen.\nC. [WRONG] Die Rechnung haben bezahlt.\nD. [WRONG] Die Rechnung werden bezahlt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247385-wmmh1ajp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly pairs \"ist\" with an infinitive instead of a past participle, and C and D both lack a required subject while also not forming the Zustandspassiv construction specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182284035-rm249a43",
+      "timestamp": "2026-06-23T02:38:48.832Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses an infinitive instead of a past participle, C uses active perfect which doesn't work with \"Rechnung\" as subject, and D uses the wrong conjugation \"werden\" instead of \"wird\" for Vorgangspassiv.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185168748-3fkimk3r",
+      "timestamp": "2026-06-23T03:26:31.383Z"
+    },
+    {
+      "raw": "TRUE||B uses infinitive instead of past participle required for Zustandspassiv; C lacks a subject for the active Perfekt construction; D uses plural \"werden\" with singular \"die Rechnung\" and would be Vorgangspassiv, not Zustandspassiv.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187509472-0y7wsch7",
+      "timestamp": "2026-06-23T04:05:31.988Z"
+    }
+  ]
+}

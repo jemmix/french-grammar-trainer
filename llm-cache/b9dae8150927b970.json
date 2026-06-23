@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b9dae8150927b970",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die fehlende Verbform: „Wenn ich reich ___ , würde ich spenden.\"\n\nChoices:\nA. [CORRECT] wäre\nB. [WRONG] bin\nC. [WRONG] war\nD. [WRONG] wäre gewesen\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782186455424-xcj4m5bq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating the German grammar question to verify that wrong answers B, C, and D are indeed incorrect for the sentence \"Wenn ich reich ___ , würde ich spenden.\"\n\n**Analysis completed:**\n- B (\"bin\") is incorrect: uses indicative present, which is incompatible with the unreal conditional established by \"würde ich spenden\"\n- C (\"war\") is incorrect: uses indicative past, creating an inconsistent construction (neither proper real past condition nor proper unreal past condition)\n- D (\"wäre gewesen\") is incorrect: uses Konjunktiv II Plusquamperfekt, creating a temporal mismatch with the present unreal result clause\n\n**Result:**\nTRUE||All wrong answers fail to satisfy the Konjunktiv II present tense requirement established by \"würde ich spenden\" - B uses indicative present, C uses indicative past, and D uses past subjunctive creating a temporal mismatch.\n\n**Remaining tasks:** None - the evaluation was complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186807102-kscp8uyu",
+      "timestamp": "2026-06-23T03:54:14.082Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the Konjunktiv II conditional structure: B uses indicative present, C uses indicative past, and D uses Konjunktiv II past which mismatches the present conditional main clause \"würde ich spenden.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187529443-3ucq2ey8",
+      "timestamp": "2026-06-23T04:05:53.523Z"
+    }
+  ]
+}

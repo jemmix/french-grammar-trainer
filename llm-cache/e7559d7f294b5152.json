@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7559d7f294b5152",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-07-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Infinitivsatz mit zu\n\nChoices:\nA. [CORRECT] Ich habe vor, nach Deutschland zu fliegen.\nB. [WRONG] Ich habe vor, nach Deutschland fliegen.\nC. [WRONG] Ich habe vor, nach Deutschland zu fliege.\nD. [WRONG] Ich habe vor, nach Deutschland zu fliegst.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247369-c21l645b"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B is missing the required \"zu\" before the infinitive, C uses the first-person present form \"fliege\" instead of the infinitive \"fliegen\", and D uses the second-person present form \"fliegst\" instead of the infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181591219-l7hgkpo8",
+      "timestamp": "2026-06-23T02:26:49.687Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is missing the required \"zu\" before the infinitive, C uses first-person singular \"fliege\" instead of infinitive \"fliegen\" after \"zu\", and D uses second-person singular \"fliegst\" instead of infinitive \"fliegen\" after \"zu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184390679-stqyexk5",
+      "timestamp": "2026-06-23T03:13:31.737Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187391073-rvej5v5o",
+      "timestamp": "2026-06-23T04:03:27.669Z"
+    }
+  ]
+}

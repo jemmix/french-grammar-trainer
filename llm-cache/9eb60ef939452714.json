@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9eb60ef939452714",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-09-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-09 - Mehrteilige Konnektoren: entweder...oder, weder...noch, je...desto\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — nicht nur...sondern auch\nChoices:\nA. [CORRECT] Sie spricht nicht nur Deutsch, sondern auch Französisch.\nB. Sie spricht nicht nur Deutsch, oder auch Französisch.\nC. Sie spricht nicht nur Deutsch, und auch Französisch.\nD. Sie spricht nicht nur Deutsch, aber auch Französisch.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247371-x2ww3nse"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"nicht nur...sondern auch\", which is a different multi-part connector than the three specified in the rule (entweder...oder, weder...noch, je...desto).\n\nMaximum steps for this agent have been reached. The validation task has been completed for this single question. No remaining tasks were in progress.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182176462-2mosextp",
+      "timestamp": "2026-06-23T02:36:34.109Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a German grammar question about \"nicht nur...sondern auch\" is properly aligned with rule 12-09, which covers \"entweder...oder, weder...noch, je...desto\".\n\n**Verdict for the pending question:**\nVERDICT: MISALIGNED\nREASON: The question tests \"nicht nur...sondern auch\", which is a different multi-part connector than the three specific pairs listed in rule 12-09 (entweder...oder, weder...noch, je...desto).\n\n**Remaining tasks:**\n- None — this was a single-question validation task that I completed in my analysis before the step limit was reached.\n\n**Recommendations:**\nThe question should either be reassigned to a rule that covers \"nicht nur...sondern auch\" (if one exists), or rule 12-09 should be expanded to include this connector pair in its scope.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184991578-cz336u8i",
+      "timestamp": "2026-06-23T03:23:38.943Z"
+    }
+  ]
+}

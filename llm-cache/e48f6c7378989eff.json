@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e48f6c7378989eff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-05-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-05 - Der Genitiv als Attribut: des/eines und der/einer\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den Artikel im Genitiv ein.\nPhrase: „Die Bücher ___ Kinder sind neu.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247368-8ekahucn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying and producing the genitive article \"der\" in an attributive genitive construction (\"der Kinder\"), which is exactly what the rule covers—knowing when and how to use genitive articles as attributes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181150863-70834x2m",
+      "timestamp": "2026-06-23T02:19:51.831Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Kinder\" is plural and supplying the correct genitive plural definite article \"der\" for the attributive possessive construction \"der Kinder,\" which directly tests the genitive article forms covered by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183950245-hmr7c0nq",
+      "timestamp": "2026-06-23T03:06:32.089Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule \"der/einer\" targets feminine genitive singular, but the question tests plural genitive (\"der Kinder\"), which is a distinct paradigm where \"der\" applies to all genders in plural—a student who mastered only feminine genitive singular from this rule could not reliably answer this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186947293-wzek19te",
+      "timestamp": "2026-06-23T03:57:03.694Z"
+    }
+  ]
+}

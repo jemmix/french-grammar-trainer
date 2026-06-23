@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4385f76be021fd6a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — ohne...zu (Fehlen)\n\nChoices:\nA. [CORRECT] Er ging, ohne zu sprechen.\nB. [WRONG] Er ging, ohne sprechen.\nC. [WRONG] Er ging, ohne zu spreche.\nD. [WRONG] Er ging, ohne zu sprichst.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247370-3y5l09gd"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar question about the \"ohne...zu\" construction are indeed incorrect.\n\nAnalysis completed:\n- B (\"Er ging, ohne sprechen.\") is incorrect because it's missing the required \"zu\" particle in the \"ohne...zu\" construction\n- C (\"Er ging, ohne zu spreche.\") is incorrect because it uses the 1st person singular form instead of the required infinitive \"sprechen\"\n- D (\"Er ging, ohne zu sprichst.\") is incorrect because it uses the 2nd person singular form instead of the required infinitive \"sprechen\"\n\nResult: TRUE||All wrong answers contain clear grammar errors within the ohne...zu construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181745503-l80g9dlg",
+      "timestamp": "2026-06-23T02:29:23.942Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B lacks the required \"zu\" particle, C uses the first-person conjugated form \"spreche\" instead of the infinitive, and D uses the second-person conjugated form \"sprichst\" instead of the infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184547116-pkhxowsf",
+      "timestamp": "2026-06-23T03:16:04.146Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the \"ohne...zu\" construction: B lacks the required \"zu,\" C uses first-person present \"spreche\" instead of infinitive, and D uses second-person present \"sprichst\" instead of infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187568230-nskgyuae",
+      "timestamp": "2026-06-23T04:06:33.371Z"
+    }
+  ]
+}

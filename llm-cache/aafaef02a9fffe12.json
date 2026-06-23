@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aafaef02a9fffe12",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-07-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Infinitivsatz mit zu\n\nChoices:\nA. [CORRECT] Es ist wichtig, Deutsch zu lernen.\nB. [WRONG] Es ist wichtig, Deutsch lernen.\nC. [WRONG] Es ist wichtig, Deutsch zu lerne.\nD. [WRONG] Es ist wichtig, Deutsch zu lernt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247369-sijal64z"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was tasked with verifying that the wrong answers (B, C, D) in a German multiple choice question about infinitive clauses with \"zu\" are indeed incorrect. The analysis was completed:\n\n- B (\"Es ist wichtig, Deutsch lernen.\") is incorrect because infinitive clauses in this position require \"zu\" before the infinitive\n- C (\"Es ist wichtig, Deutsch zu lerne.\") is incorrect because \"lerne\" is a conjugated form (1st person singular), not the infinitive needed after \"zu\"\n- D (\"Es ist wichtig, Deutsch zu lernt.\") is incorrect because \"lernt\" is a conjugated form (3rd person singular), not the infinitive needed after \"zu\"\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors.\n\nNo remaining tasks - the verification was completed successfully.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181458058-ifd12gzo",
+      "timestamp": "2026-06-23T02:24:59.831Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the required \"zu\" before the infinitive, C uses \"lerne\" which is not the infinitive form, and D uses \"lernt\" which is the 3rd person singular conjugated form rather than the infinitive \"lernen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184247558-y1af4wfz",
+      "timestamp": "2026-06-23T03:11:10.833Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the required \"zu\" in the infinitive clause, C uses the first-person singular conjugated form \"lerne\" instead of the infinitive \"lernen\" after \"zu\", and D uses the third-person singular conjugated form \"lernt\" instead of the infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187121942-c26hui8p",
+      "timestamp": "2026-06-23T03:59:18.188Z"
+    }
+  ]
+}

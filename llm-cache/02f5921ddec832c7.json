@@ -1,0 +1,26 @@
+{
+  "cacheKey": "02f5921ddec832c7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-09-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — man-Konstruktion (Präteritum)\n\nChoices:\nA. [CORRECT] Damals baute man viele Häuser.\nB. [WRONG] Damals bauten man viele Häuser.\nC. [WRONG] Damals baute Mann viele Häuser.\nD. [WRONG] Damals bautet man viele Häuser.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247385-5a71x0gc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B incorrectly uses plural \"bauten\" instead of singular for \"man\"; C capitalizes \"Mann\" turning it into a noun requiring an article; D uses 2nd person plural \"bautet\" instead of 3rd person singular for \"man\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182472209-jhek5ri5",
+      "timestamp": "2026-06-23T02:41:39.602Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses plural \"bauten\" instead of singular \"baute\" for \"man\", C uses the noun \"Mann\" instead of the impersonal pronoun \"man\", and D uses the 2nd person plural form \"bautet\" instead of 3rd person singular \"baute\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185435327-q6fptwin",
+      "timestamp": "2026-06-23T03:32:59.257Z"
+    }
+  ]
+}

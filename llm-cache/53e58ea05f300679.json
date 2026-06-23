@@ -1,0 +1,33 @@
+{
+  "cacheKey": "53e58ea05f300679",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz bildet die irreale Bedingung korrekt? (Wenn-Satz mit Konjunktiv II)\n\nChoices:\nA. [CORRECT] Wenn das Wetter schön wäre, würden wir spazieren gehen.\nB. [WRONG] Wenn das Wetter schön ist, werden wir spazieren gehen.\nC. [WRONG] Wenn das Wetter schön war, sind wir spazieren gegangen.\nD. [WRONG] Wenn das Wetter schön ist, würden wir spazieren gehen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782182802614-0nb9nef3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use Konjunktiv II in the wenn-clause as required for an irreal Bedingung.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183075056-7osipz2y",
+      "timestamp": "2026-06-23T02:51:39.150Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use Konjunktiv II in the wenn-clause as required: B uses present indicative (reale Bedingung), C uses Präteritum (past real condition), and D incorrectly mixes present indicative with Konjunktiv II.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183567881-6tu7gyna",
+      "timestamp": "2026-06-23T02:59:58.252Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use Konjunktiv II in the Wenn-clause as required: B uses realis Indikativ (ist/werden), C uses past Indikativ (war/sind), and D mixes Indikativ in the Wenn-clause (ist) with Konjunktiv II in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184530429-yy2tchrs",
+      "timestamp": "2026-06-23T03:15:57.406Z"
+    }
+  ]
+}

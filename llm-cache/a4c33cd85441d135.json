@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a4c33cd85441d135",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-01-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Nominativ (neutral)\n\nChoices:\nA. [CORRECT] Das Kind, das dort spielt, ist mein Bruder.\nB. [WRONG] Das Kind, der dort spielt, ist mein Bruder.\nC. [WRONG] Das Kind, dem dort spielt, ist mein Bruder.\nD. [WRONG] Das Kind, des dort spielt, ist mein Bruder.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247361-bjq4y8vs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect relative pronoun forms: \"der\" is masculine nominative instead of neuter, \"dem\" is dative instead of nominative, and \"des\" is genitive instead of nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180277730-ni624w8o",
+      "timestamp": "2026-06-23T02:05:02.290Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect relative pronoun forms: \"der\" is masculine nominative, \"dem\" is dative, and \"des\" is genitive, but the neuter nominative \"das\" is required for \"Das Kind\" as the subject of \"spielt.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182621214-37t3cks2",
+      "timestamp": "2026-06-23T02:44:07.379Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case or gender forms of the relative pronoun for a neuter nominative antecedent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185326674-8w5lhaov",
+      "timestamp": "2026-06-23T03:29:08.447Z"
+    }
+  ]
+}

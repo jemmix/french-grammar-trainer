@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3bd595f7ec2ba70d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-03-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Dativ (neutral)\n\nChoices:\nA. [CORRECT] Das Mädchen, dem wir helfen, ist neu.\nB. [WRONG] Das Mädchen, der wir helfen, ist neu.\nC. [WRONG] Das Mädchen, den wir helfen, ist neu.\nD. [WRONG] Das Mädchen, die wir helfen, ist neu.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247366-sigjw41e"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use relative pronouns that do not match the required dative case for the neuter noun \"Das Mädchen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180652831-0j31bwxc",
+      "timestamp": "2026-06-23T02:11:10.706Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use relative pronouns that don't match the required dative case for the neuter noun \"Das Mädchen\" (der=masc.nom/gen, den=masc.acc, die=fem.nom/acc).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183203823-yv8t0fzg",
+      "timestamp": "2026-06-23T02:53:51.712Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use relative pronouns that don't match the required neuter dative case (B: \"der\" is masculine nominative/feminine genitive, C: \"den\" is masculine accusative, D: \"die\" is feminine/plural nominative or accusative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186277384-tf1uol7x",
+      "timestamp": "2026-06-23T03:47:15.379Z"
+    }
+  ]
+}

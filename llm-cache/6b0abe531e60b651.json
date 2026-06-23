@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6b0abe531e60b651",
+  "predicateId": "question-rule-alignment",
+  "questionId": "10-02-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Konjunktiv II\n\nRULE BEING TESTED: 10-02 - Häufige unregelmäßige Formen: hätte, wäre, könnte, wüsste, fände\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz verwendet die natürliche Form des Konjunktivs II (ohne würde)?\nChoices:\nA. [CORRECT] Wir fänden den Schlüssel bestimmt, wenn wir suchten.\nB. Wir würden den Schlüssel bestimmt finden, wenn wir suchten.\nC. Wir fanden den Schlüssel bestimmt, wenn wir suchten.\nD. Wir fände den Schlüssel bestimmt, wenn wir suchten.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782182802606-qebk9mao"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests recognition of the irregular Konjunktiv II form \"fänden\" (derived from \"fände\" listed in the rule) as opposed to the periphrastic \"würde\" construction, which is the central distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182924577-fnm7er1i",
+      "timestamp": "2026-06-23T02:49:26.986Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognition of \"fänden,\" which is explicitly listed in the rule as one of the common irregular Konjunktiv II forms to be learned, and requires distinguishing it from the würde-construction and the Präteritum.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183460102-qn7qtisl",
+      "timestamp": "2026-06-23T02:58:03.601Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests recognition of \"fände\" as the natural (synthetic) Konjunktiv II form of \"finden,\" which is explicitly listed in the rule's set of common irregular forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184445308-9td29wk2",
+      "timestamp": "2026-06-23T03:14:28.220Z"
+    }
+  ]
+}

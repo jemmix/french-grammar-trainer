@@ -212,6 +212,10 @@ export const answerHints: Record<string, string> = {
 
   // Section 08 multi-word answers
   "auf den": "Präposition + Artikel",
+
+  // Section 10 Konjunktiv II answers
+  "käme": "kommen",
+  "hat": "haben",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

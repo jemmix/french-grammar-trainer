@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3c525d9a9a48a593",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Wunschsatz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Wenn wir nur mehr Zeit hätten!\nB. [WRONG] Wenn wir nur mehr Zeit haben!\nC. [WRONG] Wenn wir nur mehr Zeit hatten!\nD. [WRONG] Wenn wir nur mehr Zeit gehabt hätten!\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782183391938-7nh4efcf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use Konjunktiv II Präsens (hätten), which is the required form for expressing a present unreal wish in a Wunschsatz.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184071486-03cjz5bv",
+      "timestamp": "2026-06-23T03:08:17.473Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was in the process of evaluating a German grammar verification task for a multiple choice question about Wunschsatz (wish clause) grammar.\n\nAnalysis completed:\n- Question asks for the grammatically correct Wunschsatz\n- B \"Wenn wir nur mehr Zeit haben!\" - incorrect (uses present indicative instead of Konjunktiv II)\n- C \"Wenn wir nur mehr Zeit hatten!\" - incorrect (uses Präteritum indicative, not Konjunktiv II)\n- D \"Wenn wir nur mehr Zeit gehabt hätten!\" - this is actually grammatically CORRECT as a past wish using Plusquamperfekt Konjunktiv II\n\nThe verdict would be:\nFALSE|D|D uses Plusquamperfekt Konjunktiv II (\"gehabt hätten\") which is a valid Wunschsatz construction for expressing wishes about the past, making it grammatically correct in German.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendation: The question should be revised to either remove option D or rephrase the question to specify present-tense wishes only (e.g., \"Welcher Wunschsatz über die Gegenwart ist grammatikalisch richtig?\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184884273-qz0nmi52",
+      "timestamp": "2026-06-23T03:24:23.654Z"
+    }
+  ]
+}

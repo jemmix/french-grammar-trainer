@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6aff4dfd820a4416",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-03-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-03 - Relativpronomen im Dativ: dem, der, dem, den\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Relativpronomen im Dativ ein.\nPhrase: „Der Mann, ___ ich helfe, ist krank.\nCorrect Answer: dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247366-3kua0nlo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"helfen\" takes the dative case and selecting the correct masculine dative relative pronoun \"dem\" to refer to \"der Mann,\" which directly tests the stated rule on dative relative pronouns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180670707-ovz9uyv2",
+      "timestamp": "2026-06-23T02:11:30.944Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"helfen\" governs the dative case and selecting the correct dative relative pronoun \"dem\" for the masculine singular antecedent \"der Mann\", which is precisely what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183231715-p6d70thg",
+      "timestamp": "2026-06-23T02:54:10.757Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires identifying the correct dative relative pronoun (\"dem\") for a masculine antecedent (\"Der Mann\") with a dative-governing verb (\"helfen\"), which directly tests the stated rule about Relativpronomen im Dativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186331667-iu183q8z",
+      "timestamp": "2026-06-23T03:46:12.566Z"
+    }
+  ]
+}

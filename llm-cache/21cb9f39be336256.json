@@ -1,0 +1,26 @@
+{
+  "cacheKey": "21cb9f39be336256",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Verschachtelter Nebensatz (dass + wenn)\nChoices:\nA. [CORRECT] Ich glaube, dass er kommt, wenn er Zeit hat.\nB. Ich glaube, dass er kommt, wenn er Zeit haben.\nC. Ich glaube, dass er kommen, wenn er Zeit hat.\nD. Ich glaube, dass er kommt, wenn er Zeit hatte.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247372-d4xdxgu2"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests basic verb conjugation (haben→hat, kommen→kommt, tense agreement) rather than the skill of properly nesting multiple subordinate clauses, since the clause structure is identical across all options and only verb forms differ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182275461-v95npgrs",
+      "timestamp": "2026-06-23T02:38:23.413Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic verb conjugation (kommt vs. kommen, hat vs. haben vs. hatte) rather than the mechanics of nesting multiple subordinate clauses, since all four options already use the correct dass + wenn nested structure and only differ in verb forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185080525-leg3enpn",
+      "timestamp": "2026-06-23T03:25:01.279Z"
+    }
+  ]
+}

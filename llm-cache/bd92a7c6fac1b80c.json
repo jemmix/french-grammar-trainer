@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bd92a7c6fac1b80c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-05-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-05 - Der Genitiv als Attribut: des/eines und der/einer\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Genitiv mit Possessivartikel (feminin)\nChoices:\nA. [CORRECT] Der Computer meiner Schwester ist neu.\nB. Der Computer meines Schwester ist neu.\nC. Der Computer meinem Schwester ist neu.\nD. Der Computer meinen Schwester ist neu.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247368-p15ehzqu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the genitive feminine form of the possessive article (meiner), which directly corresponds to the \"der/einer\" pattern specified in the rule for genitive attributes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181128098-zluvrevz",
+      "timestamp": "2026-06-23T02:19:10.860Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule specifically covers definite and indefinite articles in the genitive (des/eines, der/einer), but this question tests possessive article forms (meiner/meines/meinem/meinen), which is a different word class with its own declension pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183861744-gmk3xlq2",
+      "timestamp": "2026-06-23T03:04:58.397Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the genitive case of possessive articles with a feminine noun (\"meiner Schwester\"), which follows the same declension pattern as \"der/einer\" specified in the rule for feminine genitive attributes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186897307-0rcutnso",
+      "timestamp": "2026-06-23T03:55:12.383Z"
+    }
+  ]
+}

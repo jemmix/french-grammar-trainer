@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0de608d23f115686",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Verschachtelter Nebensatz (wenn + dass)\n\nChoices:\nA. [CORRECT] Wenn er kommt, sage ich dir, dass er da ist.\nB. [WRONG] Wenn er kommt, sage ich dir, dass er da sein.\nC. [WRONG] Wenn er kommt, sage ich dir, dass er da war.\nD. [WRONG] Wenn er kommt, sage ich dir, dass er da sind.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247372-dt9eejys"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses infinitive \"sein\" instead of conjugated form; C uses past tense \"war\" which contradicts the present context \"Wenn er kommt\"; D uses plural \"sind\" with singular subject \"er\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182485130-04q01osr",
+      "timestamp": "2026-06-23T02:42:00.898Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the infinitive \"sein\" instead of the required finite verb form, C incorrectly uses past tense \"war\" in a present/future context, and D has a subject-verb agreement error with singular \"er\" paired with plural \"sind.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185204048-aqnbpm7f",
+      "timestamp": "2026-06-23T03:27:05.835Z"
+    }
+  ]
+}

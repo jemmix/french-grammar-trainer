@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6c723a4fb9bc521a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-04-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativsatz mit Dativpräposition (mit)\n\nChoices:\nA. [CORRECT] Der Mann, mit dem ich spreche, ist mein Freund.\nB. [WRONG] Der Mann, mit den ich spreche, ist mein Freund.\nC. [WRONG] Der Mann, mit des ich spreche, ist mein Freund.\nD. [WRONG] Der Mann, mit der ich spreche, ist mein Freund.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247366-08542ngu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms for the dative preposition \"mit\" with the masculine singular antecedent \"Der Mann\" (B uses accusative/plural \"den\", C uses genitive \"des\", D uses feminine dative \"der\" instead of the required masculine dative \"dem\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180776673-syp2isiq",
+      "timestamp": "2026-06-23T02:13:18.146Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use incorrect case forms with the dative preposition \"mit\": B uses accusative \"den\" instead of dative \"dem\", C uses genitive \"des\" instead of dative \"dem\", and D uses feminine dative \"der\" for the masculine noun \"Der Mann\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183319912-u4a10eai",
+      "timestamp": "2026-06-23T02:55:45.822Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect relative pronoun forms for a masculine singular antecedent with the dative preposition \"mit\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186490935-k6399mlo",
+      "timestamp": "2026-06-23T03:48:40.075Z"
+    }
+  ]
+}

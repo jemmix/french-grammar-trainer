@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1f2c08af2ff78d93",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-06-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz bildet den Konjunktiv II der Vergangenheit korrekt? Achten Sie auf das Hilfsverb.\n\nChoices:\nA. [CORRECT] Wenn ich nach Berlin gereist wäre, hätte ich das Brandenburger Tor gesehen.\nB. [WRONG] Wenn ich nach Berlin gereist hätte, hätte ich das Brandenburger Tor gesehen.\nC. [WRONG] Wenn ich nach Berlin reisen würde, würde ich das Brandenburger Tor sehen.\nD. [WRONG] Wenn ich nach Berlin reiste, sah ich das Brandenburger Tor.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782186455069-9ok3irq5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of analyzing a German grammar verification question about Konjunktiv II der Vergangenheit (past subjunctive). The question asks which sentence correctly forms this construction, with specific attention to the auxiliary verb.\n\nAnalysis completed:\n- Answer A (correct): Uses \"wäre\" + past participle in the wenn-clause and \"hätte\" + past participle in the main clause — proper Konjunktiv II der Vergangenheit\n- Answer B (wrong): Uses \"hätte\" instead of \"wäre\" as the auxiliary for \"reisen\" with a destination — \"sein\" is the correct auxiliary here, and the question explicitly draws attention to this (\"Achten Sie auf das Hilfsverb\")\n- Answer C (wrong): Uses \"würde\" + infinitive, which is Konjunktiv II der Gegenwart (present), not der Vergangenheit (past)\n- Answer D (wrong): Uses Präteritum forms (\"reiste\", \"sah\") rather than Konjunktiv II der Vergangenheit construction\n\nThe verification response would be:\nTRUE||All wrong answers fail to correctly form the Konjunktiv II der Vergangenheit: B uses the wrong auxiliary (haben instead of sein for reisen with a destination, which the question explicitly tests), C uses present Konjunktiv II instead of past, and D uses Präteritum instead of the required hätte/wäre + past participle construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186458589-kr39yxwm",
+      "timestamp": "2026-06-23T03:48:41.243Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187160323-tvfvpefa",
+      "timestamp": "2026-06-23T04:08:20.033Z"
+    }
+  ]
+}

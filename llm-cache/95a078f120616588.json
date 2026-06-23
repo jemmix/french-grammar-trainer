@@ -1,0 +1,33 @@
+{
+  "cacheKey": "95a078f120616588",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-06-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Indirekte Rede mit Konjunktiv I (können)\n\nChoices:\nA. [CORRECT] Er sagt, er könne schwimmen.\nB. [WRONG] Er sagt, er können schwimmen.\nC. [WRONG] Er sagt, er könnest schwimmen.\nD. [WRONG] Er sagt, er könntet schwimmen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247368-8l49p8qr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the infinitive/plural form instead of 3rd person singular Konjunktiv I, C uses 2nd person singular Konjunktiv II, and D uses 2nd person plural Konjunktiv II.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181203232-rxs5mwj1",
+      "timestamp": "2026-06-23T02:20:33.785Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the infinitive instead of a conjugated form, C uses Konjunktiv II 2nd person singular instead of Konjunktiv I 3rd person singular, and D uses Konjunktiv II 2nd person plural instead of Konjunktiv I 3rd person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183996011-exotxedb",
+      "timestamp": "2026-06-23T03:06:58.934Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was tasked with verifying that the wrong answers (B, C, D) in a German grammar multiple choice question about indirect speech with Konjunktiv I (können) are indeed incorrect.\n\n**Analysis completed:**\n- B. \"Er sagt, er können schwimmen.\" — Incorrect: \"können\" is the infinitive, not a valid 3rd person singular Konjunktiv I form.\n- C. \"Er sagt, er könnest schwimmen.\" — Incorrect: \"könnest\" is 2nd person singular Konjunktiv I, not 3rd person singular.\n- D. \"Er sagt, er könntet schwimmen.\" — Incorrect: \"könntet\" is 2nd person plural Konjunktiv II, not 3rd person singular Konjunktiv I.\n\n**Verdict:** TRUE||All wrong answers contain clear grammar errors for 3rd person singular Konjunktiv I of \"können\".\n\n**Remaining tasks:** None — the verification is complete.\n\n**Recommendations:** The question is valid and all wrong answers are correctly marked as incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186972237-gamzgzao",
+      "timestamp": "2026-06-23T03:56:34.009Z"
+    }
+  ]
+}

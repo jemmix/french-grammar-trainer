@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4efce3ba6841c8aa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Ratschlag: „Du ___ mehr Wasser trinken, das ist gesünder.\"\n\nChoices:\nA. [CORRECT] solltest\nB. [WRONG] willst\nC. [WRONG] solltet\nD. [WRONG] sollten\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782183391932-1i5a8s3m"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, D in a German grammar MCQ are incorrect. The question asks to complete advice (\"Ratschlag\") with \"Du ___ mehr Wasser trinken\" where the correct answer is \"solltest\" (should, 2nd person singular).\n\nAnalysis completed:\n- B \"willst\" (want to) - semantically incorrect: changes advice to expressing desire\n- C \"solltet\" - grammatically incorrect: plural form doesn't match singular \"Du\"\n- D \"sollten\" - grammatically incorrect: 3rd person plural/formal form doesn't match informal singular \"Du\"\n\nTRUE||B changes the meaning from advice to desire; C uses plural form instead of singular; D uses third-person/formal form instead of second-person singular informal.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183981122-10jwm0w9",
+      "timestamp": "2026-06-23T03:06:52.075Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat was accomplished: I was in the process of analyzing a German grammar verification task for a multiple choice question about the correct form of \"sollen\" in an advice context with \"Du\" as the subject.\n\nSummary of analysis completed:\n- The question asks to complete advice: \"Du ___ mehr Wasser trinken\" with the correct modal verb form\n- Answer B \"willst\" changes meaning from advice to desire (not grammatically wrong but semantically incorrect for \"Ratschlag\")\n- Answer C \"solltet\" is 2nd person plural, incorrect with singular \"Du\"\n- Answer D \"sollten\" is 1st/3rd person plural or formal, incorrect with singular \"Du\"\n\nRemaining tasks: None - the analysis was complete and ready to be formatted as a response.\n\nRecommendation for next step: The verdict should be:\nTRUE||All wrong answers are incorrect: B changes the meaning from advice to desire, while C and D have person/number agreement errors with the singular \"Du.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184778783-aj4ge0g4",
+      "timestamp": "2026-06-23T03:20:15.698Z"
+    },
+    {
+      "raw": "TRUE||B changes the meaning from advice to desire (\"you want to\") which doesn't fit the advice context established by \"das ist gesünder\"; C and D are subject-verb agreement errors (plural forms \"solltet\"/\"sollten\" with singular subject \"Du\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186081648-4xnftvg8",
+      "timestamp": "2026-06-23T03:41:51.265Z"
+    }
+  ]
+}

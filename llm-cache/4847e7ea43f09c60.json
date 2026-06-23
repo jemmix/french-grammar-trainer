@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4847e7ea43f09c60",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — weder...noch\n\nChoices:\nA. [CORRECT] Weder spricht er Deutsch, noch spricht er Französisch.\nB. [WRONG] Weder spricht er Deutsch, oder spricht er Französisch.\nC. [WRONG] Weder spricht er Deutsch, und spricht er Französisch.\nD. [WRONG] Weder spricht er Deutsch, aber spricht er Französisch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247371-c075l5nc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German multiple-choice question about \"weder...noch\" (neither...nor) are indeed incorrect.\n\nAnalysis completed:\n- Answer B uses \"Weder...oder\" - not a valid German correlative conjunction pair\n- Answer C uses \"Weder...und\" - not a valid German correlative conjunction pair  \n- Answer D uses \"Weder...aber\" - not a valid German correlative conjunction pair\n\nAll three wrong answers are grammatically incorrect because \"weder\" must be paired with \"noch\" to form the correlative conjunction \"neither...nor\" in German.\n\nTRUE||All wrong answers use invalid conjunction pairings with \"weder\" - the only correct correlative conjunction is \"weder...noch\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181984041-t71ufoxs",
+      "timestamp": "2026-06-23T02:33:57.545Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly pair \"weder\" with \"oder,\" \"und,\" and \"aber\" instead of the required \"noch\" in the neither...nor construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184780886-msrovseh",
+      "timestamp": "2026-06-23T03:20:31.650Z"
+    }
+  ]
+}

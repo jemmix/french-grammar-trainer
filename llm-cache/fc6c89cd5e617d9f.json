@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fc6c89cd5e617d9f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das finite Verb am Ende des Nebensatzes ein.\nPhrase: „Ich weiß, dass er krank ___.\nCorrect Answer: ist\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247373-jksdlz4m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic subordinate clause word order (verb-final position in a single Nebensatz), not the nesting of multiple subordinate clauses as the rule requires.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182539511-w0330dun",
+      "timestamp": "2026-06-23T02:42:47.591Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic verb-final position in a single dass-clause, not the nesting of multiple subordinate clauses as the rule \"mehrere Nebensätze verschachteln\" requires.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185249695-f9df95q8",
+      "timestamp": "2026-06-23T03:28:13.721Z"
+    }
+  ]
+}

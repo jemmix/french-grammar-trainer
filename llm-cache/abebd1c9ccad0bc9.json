@@ -1,0 +1,33 @@
+{
+  "cacheKey": "abebd1c9ccad0bc9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-08 - Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Zustandspassiv (das Ergebnis)\nChoices:\nA. [CORRECT] Die Tür ist geschlossen.\nB. Die Tür ist schließen.\nC. Die Tür hat geschlossen.\nD. Die Tür sein geschlossen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247384-1j8j5rkk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct Zustandspassiv form (sein + Partizip II: \"ist geschlossen\"), which is a core component of the stated rule distinguishing it from Vorgangspassiv.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182155474-maiaxawk",
+      "timestamp": "2026-06-23T02:36:28.629Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of the Zustandspassiv construction (sein + Partizip II), which is a core component of the stated rule about distinguishing Vorgangspassiv from Zustandspassiv.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184802652-qx1s1wzt",
+      "timestamp": "2026-06-23T03:20:29.186Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was asked to validate whether a German grammar question about Vorgangspassiv vs. Zustandspassiv properly tests the stated rule.\n\n**Analysis completed:**\nThe question asks \"Which sentence is grammatically correct? — Zustandspassiv (das Ergebnis)\" with the correct answer being \"Die Tür ist geschlossen.\" However, the distractors (\"ist schließen\", \"hat geschlossen\", \"sein geschlossen\") are all blatantly ungrammatical forms that don't represent the Vorgangspassiv (\"wird geschlossen\"). A properly aligned question would include \"Die Tür wird geschlossen\" as a distractor to actually test whether the learner can distinguish between the two passive forms.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The wrong answers are all blatantly ungrammatical rather than representing the Vorgangspassiv (\"wird geschlossen\"), so the question tests basic grammaticality rather than the distinction between Vorgangs- and Zustandspassiv.\n\n**Remaining tasks:** None — this was a single validation task.\n\n**Recommendations:** To properly test this rule, replace one of the distractors with \"Die Tür wird geschlossen\" to force learners to distinguish between the two passive constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187471926-oyddnik4",
+      "timestamp": "2026-06-23T04:05:14.587Z"
+    }
+  ]
+}

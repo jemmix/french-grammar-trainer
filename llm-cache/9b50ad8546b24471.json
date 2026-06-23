@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9b50ad8546b24471",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-09-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-09 - man als Alternative zum Passiv (Man spricht Deutsch hier. = Deutsch wird hier gesprochen.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — man-Konstruktion (Präteritum)\nChoices:\nA. [CORRECT] Damals baute man viele Häuser.\nB. Damals bauten man viele Häuser.\nC. Damals baute Mann viele Häuser.\nD. Damals bautet man viele Häuser.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247385-g7pczmye"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests verb conjugation with \"man\" (3rd person singular) and the spelling distinction between \"man\" and \"Mann,\" but does not test the core concept of the rule—that \"man\" can be used as an alternative to passive voice to express the same meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182474234-zytrlanv",
+      "timestamp": "2026-06-23T02:41:59.257Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate a single German grammar question to determine if it properly tests the stated rule \"11-09 - man als Alternative zum Passiv.\"\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The question tests verb conjugation in Präteritum (baute vs. bauten vs. bautet) and the spelling of \"man\" (lowercase pronoun vs. uppercase noun \"Mann\"), but does not test the concept of \"man\" as an alternative to passive voice construction.\n\n**Remaining tasks:** None - this was a single validation task.\n\n**Recommendations for next steps:** To properly test \"man als Alternative zum Passiv,\" questions should require learners to convert between passive and \"man\" constructions (e.g., \"Deutsch wird hier gesprochen\" → \"Man spricht Deutsch hier\"), or choose which \"man\" construction correctly corresponds to a given passive sentence. The current question format only tests surface-level mechanics (conjugation, capitalization) rather than the semantic/pragmatic equivalence between \"man\" and passive constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185437201-6uxlf5xe",
+      "timestamp": "2026-06-23T03:33:34.935Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bf57571e20a82c2e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-08 - Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Zustandspassiv\nChoices:\nA. [CORRECT] Die Rechnung ist bezahlt.\nB. Die Rechnung ist bezahlen.\nC. Die Rechnung haben bezahlt.\nD. Die Rechnung werden bezahlt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247385-l9im0kfo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct Zustandspassiv form (\"ist bezahlt\") and distinguishing it from the Vorgangspassiv form (\"werden bezahlt\" in choice D), directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182305066-pl4zo4ul",
+      "timestamp": "2026-06-23T02:39:14.083Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for the rule \"Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen).\"\n\nVERDICT: ALIGNED\nREASON: The question correctly tests Zustandspassiv by requiring the learner to identify the \"sein + Partizip II\" construction (\"ist bezahlt\") as the correct form, while the distractors include a Vorgangspassiv form (D: \"werden bezahlt\"), an incorrect infinitive form (B), and an active voice option (C).\n\nNo remaining tasks — this single validation was in progress when the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185197393-fnas5217",
+      "timestamp": "2026-06-23T03:27:09.451Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct Zustandspassiv form (sein + Partizip II) and distinguishing it from an incorrect Vorgangspassiv-like form (\"werden bezahlt\"), which is exactly the distinction the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187524075-odjfriau",
+      "timestamp": "2026-06-23T04:05:51.533Z"
+    }
+  ]
+}

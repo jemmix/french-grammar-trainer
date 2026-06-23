@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f15b69a7efe26610",
+  "predicateId": "question-rule-alignment",
+  "questionId": "10-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Konjunktiv II\n\nRULE BEING TESTED: 10-07 - Ratschläge und Empfehlungen (An deiner Stelle würde ich...)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Ratschlag: „Du ___ mehr Wasser trinken, das ist gesünder.\"\nChoices:\nA. [CORRECT] solltest\nB. willst\nC. solltet\nD. sollten\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782183391932-jg8k9dxg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using \"sollen\" in Konjunktiv II (\"solltest\") to give advice, which falls under the broader category of Ratschläge und Empfehlungen; the \"An deiner Stelle würde ich...\" pattern in the rule title is an example formulation, not the only valid way to express advice with Konjunktiv II.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782183993435-kmopkqrq",
+      "timestamp": "2026-06-23T03:07:05.381Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a German grammar question about advice/recommendations is aligned with the stated rule \"10-07 - Ratschläge und Empfehlungen (An deiner Stelle würde ich...)\". The question asks to fill in \"Du ___ mehr Wasser trinken\" with the correct answer being \"solltest.\"\n\nVerdict for the validation task:\n\nVERDICT: MISALIGNED\nREASON: The rule specifically targets the \"An deiner Stelle würde ich...\" construction for giving advice, but the question tests the modal verb \"sollen\" in Konjunktiv II (\"solltest\"), which is a different grammatical construction for expressing advice.\n\nRemaining tasks: None — this was a single-question validation.\n\nRecommendations: The question would be properly aligned with a rule about using modal verbs (sollen, müssen, können) in Konjunktiv II for advice, but not with a rule specifically about the \"würde + infinitive\" construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184795024-3qy48hvo",
+      "timestamp": "2026-06-23T03:20:37.226Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the use of \"sollen\" in Konjunktiv II (\"solltest\") for giving advice, which is a core pattern within the broader rule topic of Ratschläge und Empfehlungen, and the distractor \"willst\" requires distinguishing advice from desire.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782186099864-sax14pxf",
+      "timestamp": "2026-06-23T03:42:16.793Z"
+    }
+  ]
+}

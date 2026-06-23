@@ -1,0 +1,33 @@
+{
+  "cacheKey": "69ca82ba7f6026ff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-06-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Indirekte Rede mit Konjunktiv I (wollen)\n\nChoices:\nA. [CORRECT] Sie sagt, sie wolle lernen.\nB. [WRONG] Sie sagt, sie wollen lernen.\nC. [WRONG] Sie sagt, sie wollest lernen.\nD. [WRONG] Sie sagt, sie wollet lernen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247368-qyhwcky6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors (B uses indicative present instead of Konjunktiv I; C and D use incorrect person/number forms of Konjunktiv I for the 3rd person singular subject \"sie\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181285038-ltmxbl4y",
+      "timestamp": "2026-06-23T02:21:40.839Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect Konjunktiv I forms (B uses plural indicative, C uses 2nd person singular, D uses 2nd person plural) instead of the required 3rd person singular \"wolle\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184092820-dptr3u7w",
+      "timestamp": "2026-06-23T03:08:27.337Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the plural indicative form \"wollen\" with a singular subject, C uses a non-existent form \"wollest\" mixing 2nd person singular ending with Konjunktiv I stem, and D uses a non-existent form \"wollet\" with an invalid ending.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187017509-pg31vrb8",
+      "timestamp": "2026-06-23T03:57:23.530Z"
+    }
+  ]
+}

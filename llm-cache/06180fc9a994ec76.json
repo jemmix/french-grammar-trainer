@@ -1,0 +1,33 @@
+{
+  "cacheKey": "06180fc9a994ec76",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-10-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Passivsatz ist grammatikalisch richtig? — Aktiv: Der Lehrer erklärt die Grammatik.\n\nChoices:\nA. [CORRECT] Die Grammatik wird von dem Lehrer erklärt.\nB. [WRONG] Der Lehrer wird die Grammatik erklärt.\nC. [WRONG] Die Grammatik wird von den Lehrer erklärt.\nD. [WRONG] Die Grammatik werden von dem Lehrer erklärt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247386-2sbsmggu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate that the wrong answers (B, C, D) in a German grammar MCQ about passive voice transformation are indeed incorrect.\n\nAnalysis completed:\n- B: \"Der Lehrer wird die Grammatik erklärt.\" - Incorrect because it keeps the original subject as the passive subject, creating a nonsensical meaning (\"The teacher is explained as the grammar\")\n- C: \"Die Grammatik wird von den Lehrer erklärt.\" - Incorrect because \"von\" requires dative case, and singular dative of \"der Lehrer\" is \"dem Lehrer\", not \"den Lehrer\"\n- D: \"Die Grammatik werden von dem Lehrer erklärt.\" - Incorrect because \"Die Grammatik\" is singular, requiring \"wird\" not \"werden\"\n\nTRUE||All wrong answers contain clear grammar errors: B has wrong subject assignment, C uses wrong case after \"von\", and D has subject-verb agreement error.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182661528-enxy2jpm",
+      "timestamp": "2026-06-23T02:45:18.481Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has wrong subject in passive construction, C uses incorrect dative case \"den\" instead of \"dem\", and D has subject-verb agreement error with \"werden\" instead of \"wird\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185827391-k0l81xd5",
+      "timestamp": "2026-06-23T03:37:37.219Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly keeps the active subject, C uses wrong case (\"den\" instead of \"dem\"), and D has subject-verb agreement error (\"werden\" instead of \"wird\" for singular \"Grammatik\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187615372-87upm4gb",
+      "timestamp": "2026-06-23T04:07:17.090Z"
+    }
+  ]
+}

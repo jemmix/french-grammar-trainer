@@ -1,0 +1,33 @@
+{
+  "cacheKey": "399192e72338448b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — um...zu (Zweck)\n\nChoices:\nA. [CORRECT] Ich komme, um dir zu helfen.\nB. [WRONG] Ich komme, um dir helfen.\nC. [WRONG] Ich komme, um dir zu helfe.\nD. [WRONG] Ich komme, für dir zu helfen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247370-lw8zsg0d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing \"zu\" before the infinitive, C incorrectly uses the conjugated form \"helfe\" instead of the infinitive \"helfen\", and D incorrectly uses \"für\" instead of \"um\" in the um...zu construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181720730-amyfgmzm",
+      "timestamp": "2026-06-23T02:28:55.088Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the required \"zu\" before the infinitive, C incorrectly uses the conjugated form \"helfe\" instead of the infinitive \"helfen\", and D wrongly substitutes \"für\" for \"um\" in the um...zu construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184515486-vklf2gur",
+      "timestamp": "2026-06-23T03:15:36.789Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar question about \"um...zu\" (purpose) constructions are indeed incorrect.\n\nAnalysis completed:\n- B \"Ich komme, um dir helfen.\" - Incorrect: \"um...zu\" requires \"zu\" before the infinitive\n- C \"Ich komme, um dir zu helfe.\" - Incorrect: \"helfe\" is 1st person singular present, not infinitive \"helfen\"\n- D \"Ich komme, für dir zu helfen.\" - Incorrect: \"für\" is wrong preposition (should be \"um\"), and \"für dir\" is grammatically wrong\n\nThe verdict is: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782187520402-cufy92do",
+      "timestamp": "2026-06-23T04:05:45.194Z"
+    }
+  ]
+}

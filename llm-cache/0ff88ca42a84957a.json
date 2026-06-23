@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0ff88ca42a84957a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-01-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Nominativ (maskulin)\n\nChoices:\nA. [CORRECT] Der Mann, der dort steht, ist mein Lehrer.\nB. [WRONG] Der Mann, den dort steht, ist mein Lehrer.\nC. [WRONG] Der Mann, dem dort steht, ist mein Lehrer.\nD. [WRONG] Der Mann, das dort steht, ist mein Lehrer.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247360-0rsjbaqp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify whether the wrong answers (B, C, D) in a German grammar question about relative pronouns in the nominative (masculine) are indeed incorrect.\n\nSummary: I analyzed the question and determined the verdict:\n\nTRUE||All wrong answers use incorrect relative pronoun forms: \"den\" (B) is accusative, \"dem\" (C) is dative, and \"das\" (D) is neuter, but the subject position requires the masculine nominative \"der\".\n\nNo remaining tasks — the verification was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180247375-p30d8p4z",
+      "timestamp": "2026-06-23T02:04:29.887Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms (den=accusative, dem=dative) or wrong gender (das=neuter) for a masculine nominative relative pronoun serving as the subject of the relative clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182570497-8r4u2e37",
+      "timestamp": "2026-06-23T02:43:26.565Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that wrong answers B, C, and D in a German grammar question about relative pronouns in the nominative (masculine) are indeed incorrect.\n\n**Analysis completed:**\n- B uses \"den\" (accusative) instead of \"der\" (nominative) - incorrect\n- C uses \"dem\" (dative) instead of \"der\" (nominative) - incorrect  \n- D uses \"das\" (neuter) instead of \"der\" (masculine) - incorrect\n\n**Result:** TRUE||All wrong answers use incorrect relative pronoun cases or genders for a masculine nominative reference.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185293722-1q294d58",
+      "timestamp": "2026-06-23T03:28:46.672Z"
+    }
+  ]
+}

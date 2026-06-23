@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bf88ac5607727958",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-01-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Nominativ (maskulin)\n\nChoices:\nA. [CORRECT] Der Hund, der bellt, gehört meinem Nachbarn.\nB. [WRONG] Der Hund, den bellt, gehört meinem Nachbarn.\nC. [WRONG] Der Hund, dem bellt, gehört meinem Nachbarn.\nD. [WRONG] Der Hund, das bellt, gehört meinem Nachbarn.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247361-nb6rdiwg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use relative pronouns in the wrong case (accusative \"den\", dative \"dem\") or wrong gender (neuter \"das\") for a masculine nominative subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180317878-owdpiytg",
+      "timestamp": "2026-06-23T02:05:51.895Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of verifying a German grammar question about relative pronouns in the nominative (masculine). The analysis was complete:\n\n- B uses \"den\" (accusative) instead of \"der\" (nominative) - incorrect case\n- C uses \"dem\" (dative) instead of \"der\" (nominative) - incorrect case  \n- D uses \"das\" (neuter) instead of \"der\" (masculine) - incorrect gender\n\nAll three wrong answers are genuinely incorrect.\n\nThe verdict would be: TRUE||All wrong answers use incorrect case or gender for a nominative masculine relative pronoun referring to \"Der Hund\".\n\nNo remaining tasks - the verification was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182712259-yzm0537j",
+      "timestamp": "2026-06-23T02:45:33.373Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use incorrect relative pronoun cases (den=accusative, dem=dative, das=neuter) instead of the required nominative masculine \"der.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185624945-mjwp0p8m",
+      "timestamp": "2026-06-23T03:34:13.131Z"
+    }
+  ]
+}

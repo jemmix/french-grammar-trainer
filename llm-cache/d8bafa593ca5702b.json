@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d8bafa593ca5702b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-09-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-09 - man als Alternative zum Passiv (Man spricht Deutsch hier. = Deutsch wird hier gesprochen.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — man-Konstruktion mit Modalverb\nChoices:\nA. [CORRECT] Man muss hier vorsichtig sein.\nB. Man müssen hier vorsichtig sein.\nC. Man müsst hier vorsichtig sein.\nD. Man musst hier vorsichtig sein.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247385-pzw4fahp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests modal verb conjugation with \"man\" (knowing that \"man\" takes 3rd person singular verb forms), not the concept of \"man\" as an alternative to passive voice constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182551025-ctc9473d",
+      "timestamp": "2026-06-23T02:43:16.093Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests subject-verb agreement with \"man\" (3rd person singular conjugation of \"müssen\"), not the concept of \"man\" as an alternative to passive voice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185668711-ltc5tkhs",
+      "timestamp": "2026-06-23T03:34:52.188Z"
+    }
+  ]
+}

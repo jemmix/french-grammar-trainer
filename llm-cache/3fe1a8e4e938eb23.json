@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3fe1a8e4e938eb23",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-08-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-08 - Infinitivkonstruktionen: um...zu, ohne...zu, statt...zu\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie „zu\" + Infinitiv ein.\nPhrase: „Er ging, ohne ___.\nCorrect Answer: zu sprechen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247371-z45fic6z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"ohne...zu\" infinitive construction, which is one of the three specific constructions listed in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782181933541-murjyw5x",
+      "timestamp": "2026-06-23T02:32:42.722Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The \"ohne\" is already provided in the phrase, so the question only tests adding \"zu + Infinitiv\" after a given preposition, not the choice between um...zu, ohne...zu, and statt...zu which is the core of the stated rule.\n\nA properly aligned question would require the student to select which infinitive construction (um...zu, ohne...zu, or statt...zu) is appropriate for a given context, such as providing a sentence with a blank where all three words need to be supplied, or an MCQ offering different constructions as options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184744746-19mure4g",
+      "timestamp": "2026-06-23T03:19:26.502Z"
+    }
+  ]
+}

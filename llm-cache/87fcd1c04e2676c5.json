@@ -1,0 +1,26 @@
+{
+  "cacheKey": "87fcd1c04e2676c5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-08-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Zustandspassiv (Plural)\n\nChoices:\nA. [CORRECT] Die Geschäfte sind geschlossen.\nB. [WRONG] Die Geschäfte ist geschlossen.\nC. [WRONG] Die Geschäfte sind schließen.\nD. [WRONG] Die Geschäfte werden geschlossen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247384-rmxu9o76"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses singular \"ist\" with plural subject \"Die Geschäfte\", C uses the infinitive \"schließen\" instead of the past participle \"geschlossen\" required for Zustandspassiv, and D is Vorgangspassiv (process passive with \"werden\") rather than the Zustandspassiv (state passive with \"sein\") explicitly requested in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182193615-f0k5y9br",
+      "timestamp": "2026-06-23T02:36:59.477Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nNo work was accomplished on this task as it required a single-step response.\n\nRemaining tasks: Provide the verdict for the German grammar question verification.\n\nRecommendation: The verdict should be TRUE||All wrong answers are incorrect: B has wrong subject-verb agreement (singular \"ist\" with plural subject), C uses infinitive \"schließen\" instead of past participle \"geschlossen\" required for Zustandspassiv, and D uses Vorgangspassiv (\"werden\" + participle) instead of the required Zustandspassiv (\"sein\" + participle).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782184887388-s01r50it",
+      "timestamp": "2026-06-23T03:36:39.395Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "905c5f170a24f157",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-02-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Akkusativ (feminin)\n\nChoices:\nA. [CORRECT] Die Frau, die ich sehe, ist groß.\nB. [WRONG] Die Frau, der ich sehe, ist groß.\nC. [WRONG] Die Frau, den ich sehe, ist groß.\nD. [WRONG] Die Frau, das ich sehe, ist groß.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782180247364-eah78b0t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect relative pronoun genders (masculine \"der\"/\"den\" or neuter \"das\") instead of the required feminine accusative \"die\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782180397882-v0sy5py1",
+      "timestamp": "2026-06-23T02:06:56.704Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong relative pronoun for a feminine noun in the accusative case (der=dative/masculine nom., den=masculine acc., das=neuter), when only \"die\" is correct for feminine accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182792861-m1e2v28g",
+      "timestamp": "2026-06-23T02:46:55.369Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect relative pronoun forms: \"der\" is dative feminine, \"den\" is accusative masculine, and \"das\" is accusative/neuter nominative—none match the required accusative feminine form \"die.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185751938-df16hki6",
+      "timestamp": "2026-06-23T03:39:40.320Z"
+    }
+  ]
+}

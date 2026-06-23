@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a5e1e103eca00c4c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Verschachtelter Nebensatz (dass + weil, Plural)\nChoices:\nA. [CORRECT] Ich weiß, dass die Studenten kommen, weil sie Zeit haben.\nB. Ich weiß, dass die Studenten kommt, weil sie Zeit haben.\nC. Ich weiß, dass die Studenten kommen, weil sie Zeit hat.\nD. Ich weiß, dass die Studenten kommen, weil sie Zeit hatten.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782180247372-fd2y448s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests subject-verb agreement (plural vs. singular verb forms like \"kommen/kommt\" and \"haben/hat\") rather than the structural concept of nesting multiple subordinate clauses, which is identical across all four choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782182416763-wfxyzlww",
+      "timestamp": "2026-06-23T02:40:53.306Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to validate whether a German grammar question about nested subordinate clauses (dass + weil) actually tests the stated rule. I analyzed the question and determined the verdict.\n\nVERDICT: MISALIGNED\nREASON: The wrong answers are distinguished by verb conjugation errors (kommt instead of kommen, hat instead of haben, hatten instead of haben), making this a subject-verb agreement test rather than a test of nesting multiple subordinate clauses.\n\nNo remaining tasks - the validation verdict was provided.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782185158299-d8utmv9o",
+      "timestamp": "2026-06-23T03:26:21.296Z"
+    }
+  ]
+}
