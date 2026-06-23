@@ -1,0 +1,26 @@
+{
+  "cacheKey": "af392cea46b84190",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: In einem normalen Gespräch: Ergänzen Sie das Verb im Perfekt.\nPhrase: „Ich ___ gestern meine Oma besucht.\nCorrect Answer: habe\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782176044602-9yhkbmja"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests which auxiliary verb (haben vs. sein) to use with \"besuchen\" in the Perfekt, not the choice between Präteritum and Perfekt based on register since the prompt already specifies to use the Perfekt tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176148047-qf6nvnzy",
+      "timestamp": "2026-06-23T00:56:16.111Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly instructs the student to use the Perfekt tense and specifies it's a spoken context, so it only tests auxiliary verb selection (\"haben\" for \"besuchen\") rather than requiring the student to choose between Präteritum and Perfekt based on register.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176388668-diofos91",
+      "timestamp": "2026-06-23T01:00:12.914Z"
+    }
+  ]
+}

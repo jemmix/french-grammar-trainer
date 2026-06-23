@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4ef6a24dfa83e028",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-10 - Unregelmäßige Verben: Besonderheiten und Mischverben (bringen→brachte, denken→dachte, wissen→wusste)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz steht im Präteritum? — Mischverb „nennen\"\nChoices:\nA. [CORRECT] Sie nannte das Buch ihren Favoriten.\nB. Sie nennete das Buch ihren Favoriten.\nC. Sie nennt das Buch ihren Favoriten.\nD. Sie genannt das Buch ihren Favoriten.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782176044615-zy2my39l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that \"nennen\" is a Mischverb that forms its Präteritum as \"nannte\" (irregular stem change with regular ending) rather than the regular \"nennete\", which is precisely the grammar pattern the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176232598-lxyhtvke",
+      "timestamp": "2026-06-23T00:57:38.959Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"nennen\" is a Mischverb whose Präteritum stem changes to \"nannte\" rather than following the regular pattern \"nennete,\" which is exactly the type of irregular stem change the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176504905-ia1z9jw9",
+      "timestamp": "2026-06-23T01:02:03.730Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that the Mischverb \"nennen\" takes the irregular stem \"nann-\" in Präteritum (nannte, not *nennete), which is precisely the type of irregular stem change covered by the stated rule on Mischverben.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176716608-3zw7upcr",
+      "timestamp": "2026-06-23T01:05:40.312Z"
+    }
+  ]
+}

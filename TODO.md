@@ -159,3 +159,8 @@ Currently these are mapped to `"..."` as a cop-out because the system can't expr
    - Validation script checks that questions using ambiguous words have explicit hints
    - Generation skill prompts for context-specific hint when answer is ambiguous
 
+
+## German content validation known issues
+
+- **DE 09-05-010** (trennbare Verben im Präteritum, INPUT) — Unsolvable LLM catch-22: testing separable prefix in Präteritum via INPUT. Any approach (verb stem at pos 2, prefix at end, or full form) gets flagged by question-rule-alignment ("only tests conjugation") or no-ambiguous-prompts ("prompt gives away the answer"). The separable/inseparable distinction is fundamentally hard to test in single-blank INPUT. Consider converting to MCQ if proportion test allows.
+- **DE 09-06-009, 09-06-010** (Präteritum vs. Perfekt by register, INPUT) — Unsolvable LLM catch-22: naming the tense → question-rule-alignment fails ("gives away answer"); not naming → no-ambiguous-prompts fails ("vague"). Register-based tense choice is better tested via MCQ but proportion test requires 2 INPUT per rule. Consider swapping an MCQ question to INPUT in these rules.

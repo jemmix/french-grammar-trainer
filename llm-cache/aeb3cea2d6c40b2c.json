@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aeb3cea2d6c40b2c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Präteritum? — Mischverb „nennen\"\n\nChoices:\nA. [CORRECT] Sie nannte das Buch ihren Favoriten.\nB. [WRONG] Sie nennete das Buch ihren Favoriten.\nC. [WRONG] Sie nennt das Buch ihren Favoriten.\nD. [WRONG] Sie genannt das Buch ihren Favoriten.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782176044615-v0d6jbz2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the non-existent form \"nennete\" (mixed verb \"nennen\" has \"nannte\" in Präteritum), C is in present tense not Präteritum, and D uses the past participle \"genannt\" without an auxiliary verb making it an incomplete sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176221940-ujcna79y",
+      "timestamp": "2026-06-23T00:57:23.756Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the non-existent form \"nennete\" (the correct Präteritum of \"nennen\" is \"nannte\"), C is in Präsens not Präteritum, and D uses the past participle \"genannt\" without an auxiliary verb making it ungrammatical as a finite clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176487735-gc2u1245",
+      "timestamp": "2026-06-23T01:01:52.205Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses a non-existent form (mixed verbs require vowel change, not just -te suffix), C is present tense not Präteritum, and D is a past participle that cannot stand alone as a finite verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176703031-i221bqnw",
+      "timestamp": "2026-06-23T01:05:27.670Z"
+    }
+  ]
+}

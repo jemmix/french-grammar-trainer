@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ec8803770ccd92cd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-05-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-05 - Trennbare und untrennbare Verben im Präteritum\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das trennbare Präfix am Satzende. Das Verb steht bereits im Präteritum.\nPhrase: „Ich kaufte gestern im Supermarkt ___.\nCorrect Answer: ein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782179111160-qkttpyav"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student it's a \"trennbare Präfix\" (separable prefix) and the verb is already conjugated in Präteritum (\"kaufte\"), so the question only tests placing a prefix at the end rather than requiring students to distinguish between separable and inseparable verbs in the Präteritum.\n\nMaximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\n- Analyzed the German grammar question for alignment with the stated rule\n- Determined the question is misaligned because it doesn't test the core distinction between separable and inseparable verbs\n\nRemaining tasks:\n- None for this specific validation task - the verdict has been provided\n\nRecommendations for what should be done next:\n- To properly test rule 09-05, questions should require students to identify whether verbs are separable or inseparable AND apply the correct Präteritum pattern, without being explicitly told which type of verb they're dealing with",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782179111164-0yo6nxzb",
+      "timestamp": "2026-06-23T01:45:38.380Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states it's a separable prefix and tells the student to place it at the end, so answering correctly only requires vocabulary knowledge of \"einkaufen,\" not understanding of the separable vs. inseparable verb distinction in Präteritum.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782179138380-us7ovibc",
+      "timestamp": "2026-06-23T01:46:03.009Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2980e6039098d666",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-07-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Plusquamperfekt? (2. Person Singular)\n\nChoices:\nA. [CORRECT] Du warst gestern mit dem Zug gefahren.\nB. [WRONG] Du fuhrst gestern mit dem Zug.\nC. [WRONG] Du bist gestern mit dem Zug gefahren.\nD. [WRONG] Du hast gestern mit dem Zug gefahren.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782176044605-1e7om559"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use Präteritum (B) or Perfekt (C, D) instead of the required Plusquamperfekt tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176183954-zzyve2vj",
+      "timestamp": "2026-06-23T00:56:42.305Z"
+    },
+    {
+      "raw": "TRUE||B is Präteritum (fuhrst), C is Perfekt (bist...gefahren), and D is Perfekt (hast...gefahren) — none are in Plusquamperfekt which requires warst/hattest + past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176428676-48qwzv7v",
+      "timestamp": "2026-06-23T01:00:51.621Z"
+    },
+    {
+      "raw": "TRUE||B is Präteritum, C is Perfekt, and D is Perfekt with the wrong auxiliary—all fail to meet the Plusquamperfekt requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782176656051-nhcmfsx3",
+      "timestamp": "2026-06-23T01:04:38.991Z"
+    }
+  ]
+}
