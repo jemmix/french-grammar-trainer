@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8418196aadaf8334",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "12-06-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Indirekte Rede mit Konjunktiv I (Er sagt, er sei krank.)\nPROMPT: Setzen Sie das Verb in der indirekten Rede ein (Konjunktiv I).\nPHRASE: „Sie meint, sie ___ Zeit.\nCORRECT ANSWER: habe\n\nWRONG ANSWERS to evaluate:\n1. haben\n2. habest\n3. hat\n4. habt\n5. hatte\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782563670387-rcel91cp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are conjugated forms of \"haben\" representing common learner errors: using the infinitive (haben), wrong person in Konjunktiv I (habest), failing to switch to Konjunktiv I and using indicative present (hat, habt), or confusing with Präteritum (hatte).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782571423982-n3rsnzbc",
+      "timestamp": "2026-06-27T14:54:31.615Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"habt\" (2nd person plural indicative) is not a plausible mistake here because the sentence clearly uses \"sie\" (3rd person singular), making a person/number error to 2nd person plural highly unlikely in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782575670674-dbxdytn7",
+      "timestamp": "2026-06-27T15:55:29.595Z"
+    }
+  ]
+}

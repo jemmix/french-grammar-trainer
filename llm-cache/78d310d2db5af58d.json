@@ -1,0 +1,33 @@
+{
+  "cacheKey": "78d310d2db5af58d",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "10-06-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Der Konjunktiv II der Vergangenheit: hätte/wäre + Partizip II\nPROMPT: Setzen Sie das Hilfsverb im Konjunktiv II der Vergangenheit ein.\nPHRASE: „Wenn ich das Buch zu Ende gelesen ___ , wäre die Prüfung kein Problem.\nCORRECT ANSWER: hätte\n\nWRONG ANSWERS to evaluate:\n1. wäre\n2. hatte\n3. habe\n4. hätten\n5. haben würde\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782559995476-aa2xt4k6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing hätte/wäre auxiliary verbs, mixing Indikativ Präteritum (hatte) with Konjunktiv II, using present tense (habe) instead of past subjunctive, incorrect pluralization (hätten), and misapplying the würde-construction (haben würde) where the synthetic form is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782561649774-3qth2ht6",
+      "timestamp": "2026-06-27T12:01:48.673Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"wäre\" confuses haben/sein auxiliaries, \"hatte\" uses indicative instead of subjunctive, \"habe\" confuses Konjunktiv I with Konjunktiv II, \"hätten\" is the wrong number agreement, and \"haben würde\" misapplies thewürde-periphrastic form to a past context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782562238407-4p80ud0j",
+      "timestamp": "2026-06-27T12:12:04.083Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: confusing sein/haben auxiliaries (wäre), using indicative instead of subjunctive (hatte), using present Konjunktiv I instead of past Konjunktiv II (habe), wrong conjugation for number (hätten), and overgeneralizing the würde-construction (haben würde).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782562559067-p11f7lx1",
+      "timestamp": "2026-06-27T12:16:48.847Z"
+    }
+  ]
+}

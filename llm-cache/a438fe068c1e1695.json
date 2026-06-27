@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a438fe068c1e1695",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Hilfsverb.\nPhrase: „Hey, ___ du das schon gehört?\nCorrect Answer: hast\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782566674103-gadzzpek"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question only tests the selection of the correct auxiliary verb (\"hast\") for forming the Perfekt tense with \"hören,\" but does not present any choice between Präteritum and Perfekt or address the written vs. spoken language distinction that is central to the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782566675229-hohajlp8",
+      "timestamp": "2026-06-27T13:28:51.435Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a German grammar question about filling in the auxiliary verb \"hast\" for the sentence \"Hey, ___ du das schon gehört?\" properly tests the rule \"Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache.\"\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The question only tests which auxiliary verb (\"haben\" vs. \"sein\") and its conjugation for \"du\" with the verb \"hören\", but does not require choosing between Präteritum and Perfekt based on register—a proper test of this rule would require selecting between forms like \"hörtest du\" (Präteritum) and \"hast du gehört\" (Perfekt) based on spoken vs. written context.\n\n**Remaining tasks:** None beyond this single validation.\n\n**Recommendations:** If this question is to test the stated rule, it should be restructured to present both Präteritum and Perfekt options and require the learner to choose based on the register (spoken/written) of the context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782567038643-the15a8m",
+      "timestamp": "2026-06-27T13:33:35.413Z"
+    }
+  ]
+}

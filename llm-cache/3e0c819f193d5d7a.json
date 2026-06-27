@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3e0c819f193d5d7a",
+  "predicateId": "german-language",
+  "questionId": "12-04-005",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Relativsätze mit Präpositionen (Das Haus, in dem ich wohne...)\n\nQUESTION CONTENT:\nPrompt: Welcher Satz ist grammatikalisch richtig? — Relativsatz mit Dativpräposition (von)\nChoices:\nA. [correct] Die Frau, von der ich erzähle, ist meine Tante.\n   Explanation: „die Frau\" ist feminin Singular. „von\" ist eine Dativpräposition. Dativ feminin Singular: „von der\". Korrekt.\nB. Die Frau, von die ich erzähle, ist meine Tante.\n   Explanation: „die\" ist Akkusativ. „von\" verlangt den Dativ: „von der\".\nC. Die Frau, von dem ich erzähle, ist meine Tante.\n   Explanation: „dem\" ist der Dativ maskulin/neutral. „Die Frau\" ist feminin, also heißt der Dativ nach „von\": „von der\".\nD. Die Frau, von den ich erzähle, ist meine Tante.\n   Explanation: „den\" ist der Akkusativ maskulin/Dativ Plural. Für ein feminines Singularbezugswort heißt es „von der\".\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1782563670370-vxzt5ero"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782569549748-vnxsenej",
+      "timestamp": "2026-06-27T14:13:56.837Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782574989490-jczsiu2j",
+      "timestamp": "2026-06-27T15:44:29.519Z"
+    }
+  ]
+}

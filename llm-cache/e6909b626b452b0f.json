@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6909b626b452b0f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-06-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie: „Wir ___ fast den Zug verpasst, wenn der Wecker nicht geklingelt hätte.\"\n\nChoices:\nA. [CORRECT] hätten\nB. [WRONG] wären\nC. [WRONG] hatten\nD. [WRONG] hätte\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782565230403-nnvp127t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the wrong auxiliary \"sein\" instead of \"haben\" for \"verpassen\", C uses indicative \"hatten\" instead of the required Konjunktiv II \"hätten\" for this conditional, and D uses the singular \"hätte\" instead of the plural \"hätten\" needed for subject \"Wir\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782565230620-j1gbqkf5",
+      "timestamp": "2026-06-27T13:05:56.592Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"sein\" instead of \"haben\" as the auxiliary for \"verpassen\", C uses Präteritum instead of required Konjunktiv II, and D uses 3rd person singular instead of 1st person plural to match \"Wir\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782566674245-497zprtn",
+      "timestamp": "2026-06-27T13:29:01.745Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Work Accomplished\nI was tasked with verifying whether wrong answers B, C, and D in a German grammar multiple-choice question are indeed incorrect. I analyzed the question:\n\n**Question:** \"Ergänzen Sie: „Wir ___ fast den Zug verpasst, wenn der Wecker nicht geklingelt hätte.\"\"\n\nThis is a third conditional (irreale Bedingung) requiring Plusquamperfekt Konjunktiv II in the main clause for subject \"wir\" (1st person plural).\n\n- **B. \"wären\"** — Incorrect: \"verpassen\" takes \"haben\" as auxiliary, not \"sein\"\n- **C. \"hatten\"** — Incorrect: This is Indikativ Präteritum, not Konjunktiv II required for hypothetical conditionals\n- **D. \"hätte\"** — Incorrect: Singular form, but subject \"wir\" requires plural \"hätten\"\n\n## Verdict\nTRUE||All wrong answers contain clear grammar errors: B uses wrong auxiliary \"sein\" instead of \"haben\", C uses indicative instead of Konjunktiv II, and D uses singular instead of plural agreement.\n\n## Remaining Tasks\nNone — the verification was complete at the point of step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782567923848-ty092pvr",
+      "timestamp": "2026-06-27T13:47:37.168Z"
+    }
+  ]
+}

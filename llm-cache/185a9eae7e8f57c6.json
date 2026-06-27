@@ -1,0 +1,33 @@
+{
+  "cacheKey": "185a9eae7e8f57c6",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "11-08-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\nPROMPT: Setzen Sie das richtige Hilfsverb ein. Beschreiben Sie einen Zustand.\nPHRASE: „Die Tür ___ geschlossen.\nCORRECT ANSWER: ist\n\nWRONG ANSWERS to evaluate:\n1. wird\n2. hat\n3. war\n4. sind\n5. bin\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782563670415-vh8hyc4z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner confusions: \"wird\" is the classic Vorgangspassiv vs. Zustandspassiv mix-up the rule targets, \"hat\" reflects confusion with Perfekt, \"war\" is a tense error with the correct auxiliary, and \"sind\"/\"bin\" are plausible person/number agreement mistakes with forms of \"sein.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782568189409-2x4j4z02",
+      "timestamp": "2026-06-27T13:51:20.909Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was evaluating the plausibility of wrong answers for a German grammar question about Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen).\n\n## Analysis Completed\nThe question asks learners to fill in the blank for \"Die Tür ___ geschlossen\" when describing a state (Zustandspassiv). The correct answer is \"ist\".\n\nEvaluation of wrong answers:\n1. **wird** - PLAUSIBLE: Classic confusion between Vorgangspassiv and Zustandspassiv\n2. **hat** - PLAUSIBLE: Could confuse with perfect passive construction\n3. **war** - PLAUSIBLE: Might use past tense form of \"sein\" instead of present\n4. **sind** - MARGINALLY PLAUSIBLE: Subject-verb agreement error, though \"Tür\" is clearly singular\n5. **bin** - IMPLAUSIBLE: First-person singular form with third-person subject \"Die Tür\" makes no sense\n\n## Verdict\nVERDICT: IMPLAUSIBLE\nREASON: \"bin\" is not a plausible learner mistake because no reasonable student would use first-person singular with the third-person subject \"Die Tür\".\n\n## Remaining Tasks\nNone - this was a single evaluation task.\n\n## Recommendations\nReplace \"bin\" with a more plausible wrong answer such as \"bleibt\" (could confuse with a state that continues) or \"kann\" (modal confusion with passive).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782571875838-9sjvey6g",
+      "timestamp": "2026-06-27T14:52:20.882Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"bin\" is implausible because no learner would pair the first-person singular auxiliary with the third-person singular subject \"Die Tür\" — this is too obviously wrong to be a realistic mistake, whereas \"wird,\" \"hat,\" \"war,\" and \"sind\" are all reasonable errors (confusing Vorgangspassiv with Zustandspassiv, trying perfect tense, using past tense, or making a number agreement error).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782573370615-vkr46phc",
+      "timestamp": "2026-06-27T15:17:47.273Z"
+    }
+  ]
+}

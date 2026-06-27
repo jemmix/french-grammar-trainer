@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fad75bd1405ea83e",
+  "predicateId": "german-language",
+  "questionId": "12-02-005",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Relativpronomen im Akkusativ: den, die, das, die\n\nQUESTION CONTENT:\nPrompt: Welcher Satz ist grammatikalisch richtig? — Relativpronomen im Akkusativ (maskulin)\nChoices:\nA. [correct] Der Film, den wir gestern gesehen haben, war spannend.\n   Explanation: „der Film\" ist maskulin Singular. Im Relativsatz ist das Pronomen das Akkusativobjekt von „gesehen haben\" („was haben wir gesehen?\"). Akkusativ maskulin Singular: „den\". Korrekt.\nB. Der Film, der wir gestern gesehen haben, war spannend.\n   Explanation: „der\" ist der Nominativ. Als Objekt von „gesehen haben\" steht das Pronomen im Akkusativ: „den\".\nC. Der Film, dem wir gestern gesehen haben, war spannend.\n   Explanation: „dem\" ist der Dativ. Das Akkusativobjekt von „gesehen haben\" heißt „den\".\nD. Der Film, das wir gestern gesehen haben, war spannend.\n   Explanation: „das\" ist neutral. „Der Film\" ist maskulin, also heißt der Akkusativ „den\".\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1782563670360-rypjkmev"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782566675930-erbumzw8",
+      "timestamp": "2026-06-27T13:28:38.012Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: GERMAN\nREASON: All content is in German with no English detected. The prompt, all four choices, and all explanations are entirely in German. The grammatical explanations correctly reference German cases (Nominativ, Akkusativ, Dativ) and use proper German terminology.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782574159065-eoif01x2",
+      "timestamp": "2026-06-27T15:30:53.552Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f3d132a4e7e12933",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Verb in diesem literarischen Satz.\nPhrase: „Es war einmal ein Junge, der ___ den Berg hinauf.\nCorrect Answer: stieg\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782565230485-kpuwbecw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to validate whether a German grammar question properly tests the stated rule about Präteritum vs. Perfekt (written vs. spoken language). I completed the analysis of the question.\n\nHere is my verdict:\n\nVERDICT: MISALIGNED\nREASON: The question tests conjugation of \"steigen\" in Präteritum, not the distinction between when to use Präteritum vs. Perfekt based on register (written vs. spoken language).\n\nRemaining tasks: None - this was a single validation task.\n\nRecommendations: To properly test rule 09-06, questions should present contexts where students must choose between Präteritum and Perfekt forms based on whether the register is written/formal or spoken/informal, rather than simply conjugating a verb in Präteritum within an already-identified literary context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782565364669-409meug2",
+      "timestamp": "2026-06-27T13:04:46.851Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests conjugating \"steigen\" in Präteritum form for a third-person singular subject, not the distinction between Präteritum and Perfekt based on register—the prompt explicitly states \"literarischer Satz,\" removing any need for the student to decide which tense is appropriate for written vs. spoken language.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782565605392-klyvdwhp",
+      "timestamp": "2026-06-27T13:11:52.339Z"
+    }
+  ]
+}
