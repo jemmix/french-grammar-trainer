@@ -216,6 +216,9 @@ export const answerHints: Record<string, string> = {
   // Section 10 Konjunktiv II answers
   "käme": "kommen",
   "hat": "haben",
+  "hast": "haben",
+  "verstand": "verstehen",
+  "schrieb": "schreiben",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
