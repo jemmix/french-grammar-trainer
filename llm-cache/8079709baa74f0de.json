@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8079709baa74f0de",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: „Ich ging nach Hause.\" — So steht es im Roman. Schreiben Sie die gesprochene Form (Perfekt) in die Lücke.\nPhrase: „Ich ___ nach Hause gegangen.\nCorrect Answer: bin\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782648813121-4hmltnrf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the Präteritum-to-Perfekt conversion between written and spoken registers, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782648813193-qclh4dnz",
+      "timestamp": "2026-06-28T12:17:38.687Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conversion from written Präteritum (\"ging\") to spoken Perfekt (\"bin...gegangen\"), which is exactly what the rule about Schriftsprache vs. gesprochene Sprache covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782649058691-dnfsxfea",
+      "timestamp": "2026-06-28T12:18:19.744Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests converting a Präteritum form (\"ging\") from a written context (Roman) to its spoken Perfekt equivalent (\"bin...gegangen\"), which is precisely the stated rule about Schriftsprache vs. gesprochene Sprache.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782649099745-88qdrk6f",
+      "timestamp": "2026-06-28T12:18:42.393Z"
+    }
+  ]
+}
