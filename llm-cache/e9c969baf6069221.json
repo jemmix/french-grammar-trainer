@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e9c969baf6069221",
+  "predicateId": "question-rule-alignment",
+  "questionId": "10-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Konjunktiv II\n\nRULE BEING TESTED: 10-10 - Gemischte Übungen: reale und unrealische Sätze unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Der Hauptsatz steht im Indikativ (real). Im Wenn-Satz stand fälschlicherweise „hätte\" (Konjunktiv II). Setzen Sie die korrekte Indikativ-Form ein.\nPhrase: „Wenn er Zeit ___ , geht er ins Fitnessstudio.\nCorrect Answer: hat\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782578252676-quuaf6gf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests distinguishing real from unreal conditional sentences by requiring the student to recognize that a real \"wenn\" clause must use indicative (\"hat\") rather than Konjunktiv II (\"hätte\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782578364880-hv5o654w",
+      "timestamp": "2026-06-27T16:40:58.491Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells the student the sentence is real and identifies the incorrect form, reducing it to a simple indicative conjugation exercise rather than testing whether the student can independently distinguish real from unreal conditional sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782578596563-rxejw83u",
+      "timestamp": "2026-06-27T16:44:23.796Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have analyzed the validation request for the German grammar question.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student that the main clause is in indicative (real) and that the \"wenn\"-clause incorrectly used Konjunktiv II, so the student only needs to provide the indicative conjugation of \"haben\" (\"hat\") rather than demonstrate the ability to independently distinguish real from unreal conditional sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782578832240-1lmy6cp0",
+      "timestamp": "2026-06-27T16:47:50.168Z"
+    }
+  ]
+}

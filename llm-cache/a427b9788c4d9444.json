@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a427b9788c4d9444",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "10-09-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Der Hauptsatz steht im Indikativ (real). Im Wenn-Satz stand fälschlicherweise „regnen würde\" (Konjunktiv II). Setzen Sie die korrekte Indikativ-Form ein.\n\nPHRASE: „Wenn es morgen ___ , bleiben wir zu Hause.\n\nHINT: regnen\n\nEXPECTED ANSWER: regnet\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1782578252644-46eg8ogl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs the learner to replace the incorrect Konjunktiv II form with the correct Indikativ form, the hint provides the infinitive \"regnen\", and the blank in the phrase shows exactly where to insert the conjugated verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782578910380-dj7fuctu",
+      "timestamp": "2026-06-27T16:49:28.171Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to convert from Konjunktiv II to Indikativ, the hint provides the infinitive \"regnen\", and the phrase context \"Wenn es morgen ___\" with third-person singular \"es\" makes it unambiguous that the learner should conjugate to \"regnet\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782645438844-3t277yg8",
+      "timestamp": "2026-06-28T11:17:47.756Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly specifies to use the indicative form of the verb, the hint provides the infinitive \"regnen\", and the context (wenn-clause + \"morgen\") makes it unambiguous that the present tense 3rd person singular \"regnet\" is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782646683301-i9f62rbv",
+      "timestamp": "2026-06-28T11:38:38.858Z"
+    }
+  ]
+}

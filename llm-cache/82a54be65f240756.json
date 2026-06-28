@@ -1,0 +1,33 @@
+{
+  "cacheKey": "82a54be65f240756",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: „Er hat den Schlüssel gefunden.\" — So sagt man es mündlich. Wie steht es im Roman (Präteritum)?\nPhrase: „Er ___ den Schlüssel.\nCorrect Answer: fand\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782577738376-bjnwlrbw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between Perfekt (spoken) and Präteritum (written) by requiring the student to convert \"hat gefunden\" to its Präteritum form \"fand\" for a literary context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782577740505-ipto9qxi",
+      "timestamp": "2026-06-27T16:31:06.674Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a German grammar question about converting \"hat gefunden\" (Perfekt) to \"fand\" (Präteritum) properly tests the rule \"Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache.\"\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question directly tests the distinction between Perfekt (spoken language, as explicitly stated in the prompt) and Präteritum (written language, as indicated by \"im Roman\"), which is exactly the core of the stated rule.\n\n**Remaining tasks:** None — this was a single-question validation task that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782577866675-euh39t5j",
+      "timestamp": "2026-06-27T16:31:55.006Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the spoken (Perfekt \"hat gefunden\") vs. written (Präteritum \"fand\") distinction by explicitly asking the learner to convert a spoken sentence into its novel-appropriate Präteritum form, which is the core of this rule.\n\nMaximum steps for this agent have been reached. The validation task has been completed - the single question was evaluated and found to be properly aligned with the stated grammar rule about Präteritum vs. Perfekt in written vs. spoken German. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782577985034-ndsyy15k",
+      "timestamp": "2026-06-27T16:33:41.841Z"
+    }
+  ]
+}

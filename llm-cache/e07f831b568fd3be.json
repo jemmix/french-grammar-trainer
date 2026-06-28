@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e07f831b568fd3be",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-06-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache\n\nQUESTION:\nType: Input\nPrompt: Gesprochene Sprache verwendet das Perfekt. Setzen Sie das Hilfsverb ein.\nPhrase: „Hey, ___ du das schon gehört?\nCorrect Answer: hast\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782576481906-l0a8op5y"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing a German grammar question to determine if it aligns with the stated rule \"09-06 - Präteritum vs. Perfekt: Schriftsprache vs. gesprochene Sprache.\"\n\n**Analysis completed (verdict ready but not yet output):**\n\nVERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use the Perfekt (\"Gesprochene Sprache verwendet das Perfekt\") and only tests conjugation of \"haben\" as an auxiliary verb, not the choice between Präteritum and Perfekt based on register.\n\n**Remaining tasks:**\n- None beyond outputting the verdict (which is provided above)\n\n**Recommendations:**\n- To properly test this rule, the question should present a sentence where the student must choose between Präteritum and Perfekt forms based on whether the context is written or spoken language, without being told which tense to use.\n- Example of a properly aligned question: Present a formal written context and ask the student to conjugate a verb, where choosing Perfekt over Präteritum (or vice versa) would be incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782576482442-t60hqr5b",
+      "timestamp": "2026-06-27T16:11:33.274Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests conjugation of the auxiliary verb \"haben\" in the present tense, not the distinction between Präteritum and Perfekt or their usage in written versus spoken language — the prompt already tells the student to use Perfekt, eliminating any choice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782576693284-ufutl8s5",
+      "timestamp": "2026-06-27T16:13:49.474Z"
+    }
+  ]
+}
