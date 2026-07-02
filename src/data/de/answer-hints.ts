@@ -169,6 +169,8 @@ export const answerHints: Record<string, string> = {
   "zu sprechen": "sprechen",
   "oder": "Konjunktion",
   "desto": "Konjunktion",
+  "ohne": "Präposition",
+  "anruft": "anrufen",
 
   // Section 10 additions (Konjunktiv II)
   "würde": "werden",

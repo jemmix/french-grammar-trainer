@@ -44,6 +44,16 @@ for (const lang of ["fr", "en", "de"] as const) {
       expect(missing, `Missing answers in dictionary: ${[...new Set(missing)].join(", ")}`).toHaveLength(0);
     });
 
+    // German relative pronouns are formally identical to definite articles.
+    // Either label is valid; the no-ambiguous-prompts validator catches misuse.
+    const HINT_ALIASES: Record<string, Set<string>> = {
+      der: new Set(["bestimmter Artikel", "Relativpronomen"]),
+      die: new Set(["bestimmter Artikel", "Relativpronomen"]),
+      das: new Set(["bestimmter Artikel", "Relativpronomen"]),
+      den: new Set(["bestimmter Artikel", "Relativpronomen"]),
+      dem: new Set(["bestimmter Artikel", "Relativpronomen"]),
+    };
+
     it(`all input question hints match the dictionary`, () => {
       const mismatches: string[] = [];
       for (const q of inputQuestions) {
@@ -54,7 +64,11 @@ for (const lang of ["fr", "en", "de"] as const) {
         if (expectedHint === undefined) {
           continue;
         }
-        if (expectedHint !== q.hint) {
+        const aliases = HINT_ALIASES[q.answer];
+        const isValid = aliases
+          ? aliases.has(q.hint) && aliases.has(expectedHint)
+          : expectedHint === q.hint;
+        if (!isValid) {
           mismatches.push(`"${q.answer}" in ${q.id}: expected "${expectedHint}", got "${q.hint}"`);
         }
       }

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b352ea70afb9d574",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz mit verschachteltem Nebensatz ist grammatikalisch korrekt? (dass-Satz mit eingeschobenem ob-Satz)\nChoices:\nA. [CORRECT] Ich frage mich, ob er, weil er krank ist, morgen kommt.\nB. Ich frage mich, ob er weil er krank ist morgen kommt.\nC. Ich frage mich, ob er, weil ist er krank, morgen kommt.\nD. Ich frage mich, ob er, weil er krank ist, morgen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783019356317-b9cwpjs5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests correct nesting of subordinate clauses (an ob-clause containing a weil-clause) with proper comma placement, word order within the embedded clause, and sentence completeness—all directly testing the stated rule of nesting multiple Nebensätze, despite the prompt incorrectly labeling it as a \"dass-Satz.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019482910-g46ucnuz",
+      "timestamp": "2026-07-02T19:13:26.640Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The prompt claims to test \"dass-Satz mit eingeschobenem ob-Satz\" but none of the choices contain a dass-clause; instead they test comma placement and verb-final word order in a weil-clause inserted into an ob-clause, making the question test punctuation and basic subordinate clause word order rather than the nesting of multiple clause types.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019855918-spl3ppkh",
+      "timestamp": "2026-07-02T19:17:55.475Z"
+    }
+  ]
+}

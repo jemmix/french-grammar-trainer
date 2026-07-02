@@ -1,0 +1,26 @@
+{
+  "cacheKey": "96bb44c0d6eaf6b8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (dass + obwohl)?\nChoices:\nA. [CORRECT] Ich denke, dass er kommt, obwohl er krank ist.\nB. Ich denke, dass er kommt, obwohl ist er krank.\nC. Ich denke, dass er kommt obwohl er krank ist.\nD. Ich denke, dass er kommt, obwohl er krank.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783016724177-ufaiectw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests correct word order, comma placement, and clause completeness when nesting an obwohl-clause inside a dass-clause, which directly tests the mechanics of nesting multiple subordinate clauses as specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017085287-13lwyrgy",
+      "timestamp": "2026-07-02T18:31:50.109Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar question for alignment with its stated rule. Here is my analysis:\n\nVERDICT: MISALIGNED\nREASON: The question tests basic subordinate clause word order (verb-final position) and comma rules, not the specific skill of nesting multiple subordinate clauses within each other—the structure presented is sequential rather than truly nested.\n\nRemaining tasks: None—this was a single-question validation that has been completed.\n\nRecommendation: To properly test rule 12-10 (verschachteln multiple Nebensätze), the question should present a truly nested structure like \"Ich denke, dass er kommt, obwohl er sagt, dass er krank ist\" and test whether learners can maintain correct word order at multiple nesting levels.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017611259-uyzzjhh8",
+      "timestamp": "2026-07-02T18:40:34.688Z"
+    }
+  ]
+}

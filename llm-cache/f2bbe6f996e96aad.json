@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f2bbe6f996e96aad",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-09-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-09 - Mehrteilige Konnektoren: entweder...oder, weder...noch, je...desto, nicht nur...sondern auch\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie die Konjunktion ein, die mit „entweder\" ein Paar bildet.\nPhrase: „Entweder kommst du, ___ du bleibst zu Hause.\nCorrect Answer: oder\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783019356315-c216v5qn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the entweder...oder conjunction pair, which is explicitly one of the multi-part connectors listed in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019381394-u6p3ylc2",
+      "timestamp": "2026-07-02T19:09:51.791Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of the \"entweder...oder\" paired connector, which is explicitly one of the multi-part connectors listed in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019749231-kujnpub6",
+      "timestamp": "2026-07-02T19:16:04.162Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of the \"entweder...oder\" correlative conjunction pair, which is explicitly listed in the rule's scope.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019945982-b7urpsml",
+      "timestamp": "2026-07-02T19:19:58.492Z"
+    }
+  ]
+}

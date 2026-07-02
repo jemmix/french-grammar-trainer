@@ -1,0 +1,33 @@
+{
+  "cacheKey": "60f7ef8fabc44351",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (Plural: dass + weil)?\n\nChoices:\nA. [CORRECT] Ich weiß, dass die Studenten kommen, weil sie Zeit haben.\nB. [WRONG] Ich weiß, dass die Studenten kommen, weil sie Zeit.\nC. [WRONG] Ich weiß, dass die Studenten kommen weil sie Zeit haben.\nD. [WRONG] Ich weiß, dass die Studenten kommen, weil haben sie Zeit.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783016724178-7nbbmkxd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017135125-xufx6uom",
+      "timestamp": "2026-07-02T18:32:37.062Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers for a German grammar question about word order in nested subordinate clauses (dass + weil).\n\nAnalysis completed:\n- B is clearly incorrect (missing verb \"haben\" at end of weil-clause)\n- D is clearly incorrect (verb \"haben\" in wrong position, not clause-final)\n- C has correct word order but is missing a comma before \"weil\" - this creates ambiguity because the question specifically asks about \"Wortfolge\" (word order), not punctuation\n\nThe verdict would likely be UNCLEAR because option C's only error is punctuation (missing comma), not word order, and the question specifically targets \"Wortfolge.\"\n\nRecommendation: Submit the response as \"UNCLEAR||The question asks specifically about Wortfolge (word order), but option C has correct word order and only lacks a comma, making it ambiguous whether this counts as a word order error.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017654453-ro9r03q8",
+      "timestamp": "2026-07-02T18:41:22.680Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the conjugated verb \"haben\" at the end of the weil-clause, C lacks the mandatory comma before \"weil\", and D incorrectly places the verb in second position rather than at the end of the subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017931534-v2us8fuq",
+      "timestamp": "2026-07-02T18:45:53.421Z"
+    }
+  ]
+}

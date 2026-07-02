@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5d4b793a9437f11f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-04-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz enthält das korrekte Relativpronomen nach der Präposition „für\"?\n\nChoices:\nA. [CORRECT] Das Geschenk, für das ich mich bedanke, ist teuer.\nB. [WRONG] Das Geschenk, für der ich mich bedanke, ist teuer.\nC. [WRONG] Das Geschenk, für dem ich mich bedanke, ist teuer.\nD. [WRONG] Das Geschenk, für den ich mich bedanke, ist teuer.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783016724122-9exhnzzf"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was evaluating a German grammar question about relative pronouns after the preposition \"für\". The question asks which sentence contains the correct relative pronoun, with \"Das Geschenk\" (neuter) as the antecedent. Since \"für\" requires the accusative case, the correct answer is \"das\" (neuter accusative). The wrong answers are: B uses \"der\" (wrong gender), C uses \"dem\" (dative case, but \"für\" requires accusative), and D uses \"den\" (masculine accusative, but \"Geschenk\" is neuter).\n\nThe verdict is: TRUE||All wrong answers contain clear case or gender errors relative to the neuter noun \"Geschenk\" and the accusative requirement of \"für\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783016865745-mx89vawo",
+      "timestamp": "2026-07-02T18:28:09.469Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect relative pronouns: \"der\" has wrong gender/case, \"dem\" uses dative instead of accusative required by \"für\", and \"den\" is masculine instead of neuter for \"Geschenk\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017351016-38jx4k08",
+      "timestamp": "2026-07-02T18:36:21.186Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017766336-pfjuplhk",
+      "timestamp": "2026-07-02T18:43:03.812Z"
+    }
+  ]
+}

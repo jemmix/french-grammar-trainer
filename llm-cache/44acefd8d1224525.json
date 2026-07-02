@@ -1,0 +1,33 @@
+{
+  "cacheKey": "44acefd8d1224525",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (dass + wenn)?\n\nChoices:\nA. [CORRECT] Ich glaube, dass sie bleibt, wenn es regnet.\nB. [WRONG] Ich glaube, dass sie bleibt, wenn es.\nC. [WRONG] Ich glaube, dass sie bleibt wenn es regnet.\nD. [WRONG] Ich glaube, dass sie bleibt, wenn regnet es.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783016724178-8gdy3k5y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is grammatically incomplete (missing the verb), C is missing the required comma before the subordinate clause \"wenn\", and D has incorrect word order with the verb \"regnet\" not in the final position required for a German subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017151087-aa8l77ry",
+      "timestamp": "2026-07-02T18:32:53.665Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is an incomplete clause missing the verb, C lacks the required comma before \"wenn\", and D has incorrect verb-subject order in the \"wenn\" clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017671092-jpcaexce",
+      "timestamp": "2026-07-02T18:41:26.518Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear errors: B is incomplete (missing the verb \"regnet\"), C is missing the required comma before \"wenn\", and D has incorrect word order with the verb \"regnet\" before the subject \"es\" in the subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017946789-g0q3hmdf",
+      "timestamp": "2026-07-02T18:46:04.437Z"
+    }
+  ]
+}

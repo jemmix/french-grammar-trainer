@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ddbd6df8bd948683",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz mit verschachteltem Nebensatz ist grammatikalisch korrekt? (dass-Satz mit eingeschobenem wenn-Satz)\n\nChoices:\nA. [CORRECT] Sie glaubt, dass er, wenn er Zeit hat, kommt.\nB. [WRONG] Sie glaubt, dass er wenn er Zeit hat kommt.\nC. [WRONG] Sie glaubt, dass er, wenn hat er Zeit, kommt.\nD. [WRONG] Sie glaubt, dass er kommt, wenn er Zeit hat.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783019356317-jjscns3o"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B lacks required commas around the inserted clause, C has wrong verb position in the wenn-clause (should be final, not inverted), and D does not meet the question's requirement for a nested/inserted structure as the clauses are sequential rather than embedded.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019410697-dl8qal9a",
+      "timestamp": "2026-07-02T19:10:30.263Z"
+    },
+    {
+      "raw": "TRUE||B lacks the required commas around the embedded wenn-clause, C has incorrect verb-final word order in the wenn-clause (should be \"wenn er Zeit hat\" not \"wenn hat er Zeit\"), and D does not meet the structural requirement of an inserted/nested wenn-clause within the dass-clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019799412-adwwpa7p",
+      "timestamp": "2026-07-02T19:17:01.172Z"
+    }
+  ]
+}

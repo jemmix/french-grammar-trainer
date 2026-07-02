@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f7af7117666f01bc",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "12-08-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Infinitivkonstruktionen: um...zu, ohne...zu, statt...zu\nPROMPT: Setzen Sie die fehlende Präposition ein.\nPHRASE: „Sie ging aus dem Haus, ___ die Tür abzuschließen.\nCORRECT ANSWER: ohne\n\nWRONG ANSWERS to evaluate:\n1. um\n2. statt\n3. für\n4. weil\n5. dass\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1783023213983-lbuqwu6e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: \"Um\" and \"statt\" are highly plausible as learners frequently confuse the three infinitive constructions (um...zu, ohne...zu, statt...zu), while \"weil\" and \"dass\" represent a common conceptual error of confusing subordinate clauses with infinitive constructions, and \"für\" is a reasonable guess from a confused learner attempting to fill in a preposition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783023258341-7f9rb3lh",
+      "timestamp": "2026-07-02T20:14:51.952Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was in the process of evaluating whether the wrong answers for a German grammar input question about Infinitivkonstruktionen (um...zu, ohne...zu, statt...zu) are plausible learner mistakes.\n\n## Evaluation Completed\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"um\" and \"statt\" are from the same grammar family being tested and easily confused with \"ohne\"; \"für\" is a common preposition a learner might guess; and \"weil\" and \"dass\" are conjunctions learners frequently confuse with infinitive constructions when connecting clauses.\n\n## Remaining Tasks\nNone - the evaluation was complete at the point the step limit was reached.\n\n## Recommendations\nNo further action needed for this item. The wrong answers are all plausible and should pass validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783023297908-rnwx8gn9",
+      "timestamp": "2026-07-02T20:15:16.599Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: \"Um\" and \"statt\" are directly from the same grammar family being tested, making them excellent distractors; \"für\" is a common preposition learners might reach for when unsure; \"weil\" and \"dass\" are high-frequency connectors that learners often confuse with prepositions when dealing with subordinate clause structures, even though the prompt specifies a preposition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783023323562-o26dkedq",
+      "timestamp": "2026-07-02T20:15:42.034Z"
+    }
+  ]
+}

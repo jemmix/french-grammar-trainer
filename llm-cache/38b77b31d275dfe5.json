@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38b77b31d275dfe5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-05-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet den korrekten bestimmten Artikel im Genitiv (maskulin)?\n\nChoices:\nA. [CORRECT] Das Auto des Mannes ist schnell.\nB. [WRONG] Das Auto dem Mann ist schnell.\nC. [WRONG] Das Auto den Mann ist schnell.\nD. [WRONG] Das Auto der Mann ist schnell.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783016724131-a0xuphkk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-genitive case forms (dative \"dem\", accusative \"den\", nominative \"der\") which are incorrect for the genitive construction specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783016891013-k2j79kda",
+      "timestamp": "2026-07-02T18:28:23.891Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"dem\" is dative, \"den\" is accusative, and \"der\" is nominative/feminine, none of which are the genitive masculine \"des\" required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017381262-tzwj65lh",
+      "timestamp": "2026-07-02T18:36:48.536Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"dem\" is dative, \"den\" is accusative, and \"der\" is feminine/plural — none are the genitive masculine article \"des\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017783813-s8jvxo9k",
+      "timestamp": "2026-07-02T18:43:20.132Z"
+    }
+  ]
+}

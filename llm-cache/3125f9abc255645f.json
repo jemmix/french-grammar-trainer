@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3125f9abc255645f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (dass + weil)?\nChoices:\nA. [CORRECT] Ich weiß, dass er kommt, weil er Zeit hat.\nB. Ich weiß, dass er kommt, weil er hat Zeit.\nC. Ich weiß, dass er kommt weil er Zeit hat.\nD. Ich weiß, dass er kommt, weil er Zeit.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783016724177-3f8xwcmz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic subordinate clause word order (verb-final position with \"weil\"), punctuation rules, and sentence completeness — none of these are specific to nesting multiple subordinate clauses, as the same errors would apply to a single \"weil\" clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017043295-i62oo0r0",
+      "timestamp": "2026-07-02T18:30:59.427Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests basic subordinate clause word order (verb-final position in weil-clauses) and comma placement, not the specific skill of correctly nesting multiple subordinate clauses together.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017582337-eo89x47b",
+      "timestamp": "2026-07-02T18:40:05.622Z"
+    }
+  ]
+}

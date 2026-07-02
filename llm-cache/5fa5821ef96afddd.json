@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5fa5821ef96afddd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz mit verschachteltem Nebensatz ist grammatikalisch korrekt? (dass-Satz mit eingeschobenem weil-Satz)\n\nChoices:\nA. [CORRECT] Maria denkt, dass Hans, weil er verspätet ist, den Zug verpasst.\nB. [WRONG] Maria denkt, dass Hans weil er verspätet ist den Zug verpasst.\nC. [WRONG] Maria denkt, dass Hans, weil ist er verspätet, den Zug verpasst.\nD. [WRONG] Maria denkt, dass Hans, weil er verspätet ist, den Zug.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783019356317-w3ze0d0d"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B is missing the required commas around the inserted weil-clause; C has incorrect verb position in the weil-clause (verb must be final, not second); D is an incomplete sentence missing the verb \"verpasst.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019639810-x8bvpnpm",
+      "timestamp": "2026-07-02T19:14:35.571Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was asked to verify that wrong answers B, C, and D in a German grammar question about nested subordinate clauses are indeed incorrect.\n\nAnalysis completed:\n- B is incorrect because it lacks the required commas around the \"weil\" subordinate clause\n- C is incorrect because it has wrong word order (verb \"ist\" should be at the end of the weil clause, not after \"weil\")\n- D is incorrect because it's an incomplete sentence missing the verb \"verpasst\"\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors: B lacks required commas around the weil clause, C has incorrect verb position, and D is an incomplete sentence missing the main verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019892895-70z9ldur",
+      "timestamp": "2026-07-02T19:18:33.773Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing required commas around the weil-clause, C has incorrect word order in the weil-clause (verb must be at the end, not \"ist er verspätet\"), and D is an incomplete sentence missing the verb \"verpasst.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783020131471-i0nq3w81",
+      "timestamp": "2026-07-02T19:22:33.344Z"
+    }
+  ]
+}

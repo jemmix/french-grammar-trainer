@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9b4353fc0a56ce6b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-04-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-04 - Relativsätze mit Präpositionen (Das Haus, in dem ich wohne...)\n\nQUESTION:\nType: Input\nPrompt: Welches Relativpronomen folgt nach „mit\"?\nPhrase: „Die Frau, mit ___ ich spreche, ist meine Lehrerin.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783019356250-fc1tr5p2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"mit\" governs dative case and that the relative pronoun must agree with the feminine antecedent \"die Frau\" in dative (\"der\"), which is the core of the Relativsätze mit Präpositionen rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019358325-6xsa9k65",
+      "timestamp": "2026-07-02T19:09:35.099Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to select the correct relative pronoun after the preposition \"mit,\" which directly tests the rule about relative clauses with prepositions where the preposition determines the case of the relative pronoun (dative \"der\" for feminine \"Frau\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019720928-udzfug04",
+      "timestamp": "2026-07-02T19:15:49.230Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI analyzed the German grammar question to determine if it properly tests the stated rule \"12-04 - Relativsätze mit Präpositionen.\"\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question requires knowing that the preposition \"mit\" governs the dative case and that the dative feminine relative pronoun is \"der\" — the exact mechanics taught in the rule about relative clauses with prepositions.\n\n**Remaining tasks:**\nNone — the validation was completed.\n\n**Recommendations:**\nNo further action needed for this question; it is properly aligned with its stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019942323-cx2v0ian",
+      "timestamp": "2026-07-02T19:19:53.202Z"
+    }
+  ]
+}

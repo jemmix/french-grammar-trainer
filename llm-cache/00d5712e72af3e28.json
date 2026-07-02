@@ -1,0 +1,26 @@
+{
+  "cacheKey": "00d5712e72af3e28",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (weil + dass)?\nChoices:\nA. [CORRECT] Er bleibt zu Hause, weil er weiß, dass es regnet.\nB. Er bleibt zu Hause, weil er weiß, dass regnet es.\nC. Er bleibt zu Hause, weil er weiß dass es regnet.\nD. Er bleibt zu Hause, weil er weiß, dass es.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783016724177-p9gm62sy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct structure of nested subordinate clauses (weil + dass), where learners must recognize that both the outer \"weil\" clause and the inner \"dass\" clause each require verb-final word order and proper comma separation between them.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017054911-28w379c5",
+      "timestamp": "2026-07-02T18:31:28.451Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests proper nesting of two subordinate clauses (weil + dass), requiring knowledge of verb-final word order in nested Nebensätze, which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017602955-5qdv4tfi",
+      "timestamp": "2026-07-02T18:40:21.489Z"
+    }
+  ]
+}

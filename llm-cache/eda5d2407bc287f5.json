@@ -1,0 +1,26 @@
+{
+  "cacheKey": "eda5d2407bc287f5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (wenn + dass)?\n\nChoices:\nA. [CORRECT] Wenn er kommt, sage ich dir, dass er da ist.\nB. [WRONG] Wenn er kommt, sage ich dir, dass ist er da.\nC. [WRONG] Wenn kommt er, sage ich dir, dass er da ist.\nD. [WRONG] Wenn er kommt sage ich dir, dass er da ist.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783016724177-sa5oqx6b"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly places the verb in second position in the dass-clause instead of final position, C incorrectly places the verb before the subject in the wenn-clause, and D is missing the required comma after the subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017088452-88vbvcob",
+      "timestamp": "2026-07-02T18:31:55.808Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly places the verb after \"dass\" instead of at the end, C incorrectly places the verb after \"wenn\" instead of at the end, and D is missing the required comma after the subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017617758-wojxv6tz",
+      "timestamp": "2026-07-02T18:40:32.748Z"
+    }
+  ]
+}

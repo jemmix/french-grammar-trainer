@@ -1,0 +1,26 @@
+{
+  "cacheKey": "31f81fbf6b4196f6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz mit verschachteltem Nebensatz ist grammatikalisch korrekt? (dass-Satz mit eingeschobenem ob-Satz)\n\nChoices:\nA. [CORRECT] Ich frage mich, ob er, weil er krank ist, morgen kommt.\nB. [WRONG] Ich frage mich, ob er weil er krank ist morgen kommt.\nC. [WRONG] Ich frage mich, ob er, weil ist er krank, morgen kommt.\nD. [WRONG] Ich frage mich, ob er, weil er krank ist, morgen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783019356317-jdex5zmo"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks which sentence with a nested subordinate clause is grammatically correct.\n\nAnalysis completed:\n- B is incorrect because it lacks the required commas around the inserted \"weil er krank ist\" clause\n- C is incorrect because it has wrong word order in the weil-clause (\"weil ist er krank\" instead of \"weil er krank ist\")\n- D is incorrect because it's an incomplete sentence—the ob-clause is missing its finite verb\n\nAll wrong answers are genuinely incorrect.\n\nTRUE||B lacks required commas around the inserted clause, C has incorrect verb position in the weil-clause, and D is an incomplete sentence missing the finite verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019480528-gtknjub8",
+      "timestamp": "2026-07-02T19:13:12.722Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was analyzing a German grammar multiple-choice question to verify that the wrong answers (B, C, D) are indeed incorrect. The question asks which sentence with a nested subordinate clause is grammatically correct.\n\nMy analysis found:\n- B is missing required commas around the inserted \"weil\" clause\n- C has incorrect word order in the \"weil\" clause (verb should be at the end, not in V2 position)\n- D is an incomplete sentence (missing the verb \"kommt\" at the end of the \"ob\" clause)\n\nThe verdict would have been: TRUE||All wrong answers contain clear grammar errors (missing commas, wrong word order, and incomplete sentence respectively).\n\nNo remaining tasks - this was a single verification task that was nearly complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783019836332-s2brnj1o",
+      "timestamp": "2026-07-02T19:17:48.000Z"
+    }
+  ]
+}

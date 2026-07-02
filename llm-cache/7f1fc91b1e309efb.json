@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7f1fc91b1e309efb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "12-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (weil + ob)?\n\nChoices:\nA. [CORRECT] Er fragt, weil er wissen will, ob sie kommt.\nB. [WRONG] Er fragt, weil er wissen will, ob kommt sie.\nC. [WRONG] Er fragt, weil er wissen will ob sie kommt.\nD. [WRONG] Er fragt, weil er wissen will, ob sie.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1783016724178-gdb37yrd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B has incorrect word order (verb must be at the end of the ob-clause, not after \"ob\"); C is missing the required comma before the subordinate clause \"ob sie kommt\"; D is an incomplete clause missing the verb \"kommt\" entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017170286-iv1a6g2f",
+      "timestamp": "2026-07-02T18:33:24.321Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear errors: B has incorrect V2 word order after \"ob\" instead of verb-final, C is missing the required comma before \"ob\", and D is an incomplete clause missing the verb \"kommt\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017682681-zm22tny6",
+      "timestamp": "2026-07-02T18:41:37.900Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task. The analysis was nearly complete:\n\n**Verdict for the question:**\nTRUE||All wrong answers contain clear grammar errors: B incorrectly uses V2 word order in the \"ob\" subordinate clause (should be verb-final), C is missing the required comma before \"ob\", and D is an incomplete sentence missing the verb \"kommt\".\n\n**Remaining tasks:** None — the single verification task was analyzed and the verdict determined.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017961028-bsa2faqo",
+      "timestamp": "2026-07-02T18:46:21.820Z"
+    }
+  ]
+}

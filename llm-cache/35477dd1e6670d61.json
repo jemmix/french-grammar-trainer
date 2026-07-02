@@ -1,0 +1,33 @@
+{
+  "cacheKey": "35477dd1e6670d61",
+  "predicateId": "question-rule-alignment",
+  "questionId": "12-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Relativsätze und komplexe Strukturen\n\nRULE BEING TESTED: 12-10 - Komplexe Satzgefüge: mehrere Nebensätze verschachteln\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz hat die korrekte Wortfolge im verschachtelten Nebensatz (Plural: dass + weil)?\nChoices:\nA. [CORRECT] Ich weiß, dass die Studenten kommen, weil sie Zeit haben.\nB. Ich weiß, dass die Studenten kommen, weil sie Zeit.\nC. Ich weiß, dass die Studenten kommen weil sie Zeit haben.\nD. Ich weiß, dass die Studenten kommen, weil haben sie Zeit.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783016724178-vqlttsap"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that nested subordinate clauses (dass + weil) both require verb-final word order and proper comma placement, which is central to the rule about nesting multiple Nebensätze.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017137826-66yxeky2",
+      "timestamp": "2026-07-02T18:32:50.286Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the word order rules that apply when nesting multiple subordinate clauses (dass + weil), specifically requiring knowledge that each subordinate clause independently follows verb-final word order—the central concept of \"mehrere Nebensätze verschachteln.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017659789-5zd1phoj",
+      "timestamp": "2026-07-02T18:41:14.595Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic subordinate clause word order (verb-final position) and comma placement, which apply equally to single subordinate clauses, rather than the specific challenge of correctly nesting multiple subordinate clauses together.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783017930815-y4j7ooia",
+      "timestamp": "2026-07-02T18:45:52.276Z"
+    }
+  ]
+}
