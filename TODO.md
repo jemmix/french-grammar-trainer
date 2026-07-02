@@ -21,6 +21,8 @@
 
 ## Infrastructure
 
+- **LLM cache re-population for FR and EN** — after the 2026-07 cache reorganization (flat → two-tier hot/cold with re-keying), coverage is uneven: DE is 100% cached (8,880 hits, 0 misses), but FR is only 52% (23,409 hits / 21,546 misses) and EN is worse (2,516 hits / 4,364 misses). The gaps are entries that were either orphaned (question content drifted) or pre-reformat (system prompts changed 2026-05-21) and couldn't be re-keyed. To close: run `npx tsx scripts/validate.ts --lang <lang> --llm --update-cache --concurrency 10` per language, then `npx tsx scripts/promote-cache.ts` before committing. This is a large LLM spend — batch by section (`--section XX`) to make it tractable and reviewable.
+
 - **S3 → DynamoDB migration** — user progress is currently stored as LZ4-compressed binary blobs in S3 (via `src/lib/s3-store.ts`). Each read/write takes hundreds of ms due to S3 latency. Migrate to Amazon DynamoDB for single-digit-ms P99 latency. Key points:
   1. Replace `s3-store.ts` with `dynamo-store.ts` implementing the same `UserStore` interface
   2. Store the 1131-byte user record as a DynamoDB attribute (well within 400KB item limit)
