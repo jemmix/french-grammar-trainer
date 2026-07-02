@@ -1,0 +1,40 @@
+{
+  "cacheKey": "b7c4cadb3b1b676c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "11-08-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: „Die Tür wird geschlossen.\" — Diese Beschreibung passt nicht. Die Tür bleibt zu. Setzen Sie das richtige Hilfsverb ein.\nPhrase: „Die Tür ___ geschlossen.\nHint: sein\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1783008138304-0mq14en1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to evaluate whether a German grammar question prompt is clear or ambiguous. The question tests the Zustandspassiv (state passive with \"sein\") vs. Vorgangspassiv (process passive with \"werden\"). The prompt provides contrast between \"wird geschlossen\" (marked as not fitting) and \"bleibt zu\" (the intended meaning), and includes a hint pointing to \"sein.\"\n\nRemaining tasks: None - this was a single evaluation task.\n\nRecommendation: Based on my analysis, the verdict is:\n\nVERDICT: CLEAR\nREASON: The contrast between \"wird geschlossen\" (rejected) and \"bleibt zu\" (accepted meaning) provides sufficient context to understand we need a state description, and the hint \"sein\" directly guides the learner to the correct auxiliary verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008323876-6wz6yy12",
+      "timestamp": "2026-07-02T16:06:07.326Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly explains why \"wird geschlossen\" doesn't fit (the door \"bleibt zu\" indicating a state rather than an action) and explicitly asks to insert the correct auxiliary verb with the hint \"sein\", making it unambiguous that the learner needs to conjugate \"sein\" to \"ist\" for the Zustandspassiv.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008600125-zeg30m9e",
+      "timestamp": "2026-07-02T16:11:04.749Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Diese Beschreibung passt nicht\" without clarifying what \"Beschreibung\" refers to, and the logical connection between \"Die Tür bleibt zu\" (the door stays closed) and needing the auxiliary \"sein\" is not explicitly explained, leaving learners without the rule title unable to understand why \"sein\" is correct over \"wird\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008871151-m1o9cli7",
+      "timestamp": "2026-07-02T16:15:05.285Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Diese Beschreibung passt nicht\" has an unclear antecedent—it's not obvious that \"Die Tür wird geschlossen\" is being presented as an incorrect description to critique, making the logical flow confusing for a learner who hasn't seen the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008998020-1rqpz8sd",
+      "timestamp": "2026-07-02T16:18:29.129Z"
+    }
+  ]
+}

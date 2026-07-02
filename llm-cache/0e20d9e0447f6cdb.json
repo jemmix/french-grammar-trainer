@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0e20d9e0447f6cdb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-04-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-04 - Der Täteragent: von (Person) vs. durch (Mittel/Ursache)\n\nQUESTION:\nType: Input\nPrompt: Ein Sturm war die Ursache. Setzen Sie die richtige Präposition ein.\nPhrase: „Das Fenster wurde ___ den Sturm zerbrochen.\nCorrect Answer: durch\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783008138253-uydycliu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between \"von\" (for personal agents) and \"durch\" (for causes/means), as \"Sturm\" is explicitly framed as a cause (\"die Ursache\"), directly testing the core distinction of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008203408-oczb3a2l",
+      "timestamp": "2026-07-02T16:03:45.690Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question against its stated rule. The validation analysis is complete in my reasoning.\n\n**Validation result:**\nVERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"von\" (for personal agents) and \"durch\" (for means/causes like a storm), which is exactly what rule 11-04 covers — the student must know that \"durch\" is used with non-personal causes (Ursache/Mittel) like \"Sturm\".\n\n**Remaining tasks:**\nNone — this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008435407-ozz5yxcu",
+      "timestamp": "2026-07-02T16:07:49.878Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"von\" (for persons) and \"durch\" (for causes/means), as the student must recognize that \"Sturm\" is a cause (Ursache), not a person, and therefore select \"durch.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008722980-vabm3pwe",
+      "timestamp": "2026-07-02T16:12:35.974Z"
+    }
+  ]
+}

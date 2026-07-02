@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df1387ed24ed20bb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-08-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-08 - Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz beschreibt den Bauvorgang (nicht den fertigen Zustand)?\nChoices:\nA. [CORRECT] Das Haus wurde gebaut.\nB. Das Haus war gebaut.\nC. Das Haus hat gebaut.\nD. Das Haus wurden gebaut.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783008138304-jiik211r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between Vorgangspassiv (\"wurde gebaut\" describing the process) and Zustandspassiv (\"war gebaut\" describing the resulting state), which is exactly the grammar concept the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008286369-70rc9ghe",
+      "timestamp": "2026-07-02T16:05:34.677Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core distinction between Vorgangspassiv (\"wurde gebaut\" describing the building process) and Zustandspassiv (\"war gebaut\" describing the finished state), which is exactly the grammar concept the rule covers, even though it uses Präteritum rather than the Präsens examples in the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008550463-t0zr94q8",
+      "timestamp": "2026-07-02T16:11:11.348Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between Vorgangspassiv (werden + Partizip II, expressing an action/process) and Zustandspassiv (sein + Partizip II, expressing a resulting state) by asking the learner to identify which sentence describes the construction process rather than the finished state.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783008883265-bj8pwiv2",
+      "timestamp": "2026-07-02T16:15:16.862Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2e73e9ba239aec30",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-08-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-08 - Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\n\nQUESTION:\nType: Input\nPrompt: „Die Tür wird geschlossen.\" — Die Tür bleibt zu. Setzen Sie das passende Hilfsverb ein.\nPhrase: „Die Tür ___ geschlossen.\nCorrect Answer: ist\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783010172670-dq898hah"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between Vorgangspassiv (wird geschlossen) and Zustandspassiv (ist geschlossen) by presenting the process form in the prompt and requiring the student to produce the state form based on contextual clues (\"bleibt zu\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783010214433-1f83klce",
+      "timestamp": "2026-07-02T16:37:17.141Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate a single German grammar question for alignment with its stated rule.\n\nMy assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires understanding that a resulting state (\"bleibt zu\") requires Zustandspassiv with \"ist\" rather than Vorgangspassiv with \"wird\", directly testing the stated rule distinction.\n\nNo remaining tasks — this was a single-question validation that I have completed in my analysis above.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783010272913-01hdg7ry",
+      "timestamp": "2026-07-02T16:38:15.995Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"ist geschlossen\" expresses the resulting state (Zustandspassiv) as opposed to the process \"wird geschlossen\" (Vorgangspassiv), which is exactly the rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783010322145-lifellyz",
+      "timestamp": "2026-07-02T16:39:00.943Z"
+    }
+  ]
+}
