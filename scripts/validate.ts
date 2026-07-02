@@ -5,7 +5,7 @@
  *   npx tsx scripts/validate.ts [options]
  *
  * Options:
- *   --lang <fr|en|de>      Language to validate (default: en)
+ *   --lang <fr|en|de>      Language to validate (default: fr)
  *   --section <id>         Section ID filter (e.g., "01")
  *   --rule <id>            Rule ID filter (e.g., "01-01")
  *   --question <id>        Question ID filter (e.g., "01-01-001")

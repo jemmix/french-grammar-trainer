@@ -17,6 +17,7 @@ import {
   saveCacheEntry,
   createCacheEntry,
   pruneCache,
+  setCacheContext,
 } from "./cache";
 import { createOpencodeHarness, InvalidResponseError, isRetryableError } from "./harness";
 
@@ -485,7 +486,8 @@ function tallyResults(results: CheckResult[]): { passed: number; failed: number;
 export async function runValidation(opts: ValidationOptions): Promise<ValidationReport> {
   const startTime = Date.now();
 
-  const lang = opts.lang || "en";
+  const lang = opts.lang || "fr";
+  setCacheContext(lang);
   const model = opts.model || "glm-5-turbo";
   const harness = createOpencodeHarness(model);
   const sections = await loadSections(lang);
@@ -528,7 +530,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
           const cacheKey = computeCacheKey(predicate.id, question.id, spec);
           cacheKeysUsed.add(cacheKey);
 
-          let entry = loadCacheEntry(cacheKey);
+          let entry = loadCacheEntry(cacheKey, question.id);
           const fromCache = entry !== null;
 
           if (!entry) {

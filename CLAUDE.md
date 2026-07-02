@@ -36,7 +36,27 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 6. **Commit** — `git add questions/ src/data/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
 
 ## LLM Validation Cache
-- The `llm-cache/` directory is **content-addressable**: cache keys are computed from question content, so editing questions automatically invalidates old entries and generates new ones on the next run. There is no need to manually clear or prune cache entries after fixing questions.
+
+The `llm-cache/` directory is **content-addressable**: cache keys are computed from question content (`predicateId:questionId:systemPrompt:userPrompt`), so editing questions automatically invalidates old entries and generates new ones on the next run.
+
+### Two-tier layout
+
+- **`llm-cache/hot/{lang}/{section-rule}/{key}.json`** — writable generation. `validate --update-cache` writes one JSON file per fetched response here.
+- **`llm-cache/cold/{lang}/{section-rule}.gz`** — read-only, gzipped JSONL (one compact `CacheEntry` per line). Looked up via an in-memory `Map` per cold file, LRU-cached at ~50MB steady-state.
+
+`loadCacheEntry` checks hot first, then cold. There is no need to manually clear or prune cache entries after fixing questions.
+
+### Promoting hot → cold
+
+After `validate --update-cache` runs, freshly fetched responses sit in `hot/`. Compact them into `cold/`:
+
+```bash
+npx tsx scripts/promote-cache.ts            # all languages
+npx tsx scripts/promote-cache.ts --lang fr  # one language
+npx tsx scripts/promote-cache.ts --dry-run  # preview only
+```
+
+This merges each hot bucket into its cold `.gz` file (hot wins on conflict, responses deduped by nonce), then clears `hot/`. Run this before committing cache changes.
 
 ## Validation Gotchas
 - **Validation reads DSL directly** — `scripts/validate.ts` and `scripts/validate-content.ts` load questions via `loadSectionsFromDsl()` from `questions/{lang}/*.txt`. Edits to DSL files are visible immediately; no compile step.

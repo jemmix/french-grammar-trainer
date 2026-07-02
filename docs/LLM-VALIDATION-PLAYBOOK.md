@@ -23,7 +23,7 @@ Always use `--timeout 3600000` (1 hour) for full rule validation. API timeouts h
 2. Fix answer-hints if needed (validation errors will tell you)
 3. Structural validation first — fix elision, count, format issues
 4. LLM validation — fix failures with targeted edits
-5. `git add questions/ src/data/ llm-cache/ && git commit && git push`
+5. Run `npx tsx scripts/promote-cache.ts` to fold fresh `hot/` responses into the gzipped `cold/` store, then `git add questions/ src/data/ llm-cache/ && git commit && git push`
 
 **Golden rule**: Write the file ONCE, then only edit failing questions. Never rewrite the entire file when doing targeted fixes.
 
@@ -169,9 +169,10 @@ Avoid "nous/vous" subjects in MCQ questions — the reflexive pronoun is identic
 After each rule passes 285/285:
 
 ```bash
+npx tsx scripts/promote-cache.ts --lang fr && \
 git add questions/fr/XX-YY.txt src/data/fr/answer-hints.ts llm-cache/ && \
 git commit -m "Rewrite XX-YY (rule title) — 285/285 validated" && \
 git push
 ```
 
-Always include `llm-cache/` — it's content-addressable and must be committed with each rule.
+Always include `llm-cache/` — it's content-addressable and must be committed with each rule. Run `promote-cache` first so the committed cache lives in `cold/` (compact gzipped JSONL), not `hot/` (loose JSON files).
