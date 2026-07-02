@@ -61,7 +61,7 @@
 
   4. **Recommended**: combine (1) + (3) — ESLint for immediate dev feedback, bundle check as CI safety net
 
-- **Per-language hint exceptions** — `src/data/answer-hints.test.ts` has a single `HINT_EXCEPTIONS` set applied to both `fr` and `en`. Should be split into per-language sets since English and French have different common verb answers that don't need dictionary hints (e.g. English: `write`, `walk`, `run`; French: different verbs).
+- **Per-language hint exceptions** — `src/data/answer-hints.test.ts` has a single `HINT_EXCEPTIONS` set applied to all languages. Should be split into per-language sets since English and French have different common verb answers that don't need dictionary hints (e.g. English: `write`, `walk`, `run`; French: different verbs). Per-language hint *aliases* are already supported via `hintAliases` exports in each language's `answer-hints.ts`.
 
 - **Validation against DSL files** — `scripts/validate.ts` currently reads from compiled TypeScript (`src/data/{lang}/*.ts`), requiring `npm run compile-all` after every DSL edit before validation. Fix: have validation read directly from `questions/{lang}/*.txt` DSL files so no recompilation is needed during iterative content fixes.
 
@@ -160,8 +160,3 @@ Currently these are mapped to `"..."` as a cop-out because the system can't expr
    - Generation skill prompts for context-specific hint when answer is ambiguous
 
 
-## German content validation known issues
-
-- **DE 09-06-009, 09-06-010** (Präteritum vs. Perfekt by register, INPUT) — Unsolvable LLM catch-22: naming the tense → question-rule-alignment fails ("gives away answer"); not naming → no-ambiguous-prompts fails ("vague"). Register-based tense choice is better tested via MCQ but proportion test requires 2 INPUT per rule. Consider swapping an MCQ question to INPUT in these rules.
-- **DE 10-09-009, 10-09-010** (Konjunktiv II vs. Indikativ, INPUT) — Unsolvable LLM catch-22: the sentence context (e.g. "würde" in main clause) already determines the mood, so the student fills in the form without making a real/unreal distinction. The LLM flags this as question-rule-alignment failure ("only tests formation, not distinction"). The distinction skill requires a CHOICE that single-blank INPUT can't provide.
-- **DE 10-10-002, 10-10-009, 10-10-010** (Gemischte Übungen: reale und irreale Sätze, INPUT) — Same catch-22 as 10-09: INPUT questions can only test verb FORMATION within conditional sentences, not the skill of DISTINGUISHING real from unreal conditions.

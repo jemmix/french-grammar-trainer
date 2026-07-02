@@ -22,10 +22,20 @@ async function loadAnswerHints(lang: string): Promise<Record<string, string>> {
   return answerHints;
 }
 
+async function loadHintAliases(lang: string): Promise<Record<string, Set<string>>> {
+  try {
+    const mod = await import(`../../src/data/${lang}/answer-hints.ts`);
+    return mod.hintAliases ?? {};
+  } catch {
+    return {};
+  }
+}
+
 for (const lang of ["fr", "en", "de"] as const) {
   describe(`Answer hints: ${lang}`, async () => {
     const sections = await loadSections(lang);
     const answerHints = await loadAnswerHints(lang);
+    const hintAliases = await loadHintAliases(lang);
 
     const inputQuestions: InputQuestion[] = sections.flatMap((s) =>
       s.questions.filter((q): q is InputQuestion => q.type === "input")
@@ -44,16 +54,6 @@ for (const lang of ["fr", "en", "de"] as const) {
       expect(missing, `Missing answers in dictionary: ${[...new Set(missing)].join(", ")}`).toHaveLength(0);
     });
 
-    // German relative pronouns are formally identical to definite articles.
-    // Either label is valid; the no-ambiguous-prompts validator catches misuse.
-    const HINT_ALIASES: Record<string, Set<string>> = {
-      der: new Set(["bestimmter Artikel", "Relativpronomen"]),
-      die: new Set(["bestimmter Artikel", "Relativpronomen"]),
-      das: new Set(["bestimmter Artikel", "Relativpronomen"]),
-      den: new Set(["bestimmter Artikel", "Relativpronomen"]),
-      dem: new Set(["bestimmter Artikel", "Relativpronomen"]),
-    };
-
     it(`all input question hints match the dictionary`, () => {
       const mismatches: string[] = [];
       for (const q of inputQuestions) {
@@ -64,7 +64,7 @@ for (const lang of ["fr", "en", "de"] as const) {
         if (expectedHint === undefined) {
           continue;
         }
-        const aliases = HINT_ALIASES[q.answer];
+        const aliases = hintAliases[q.answer];
         const isValid = aliases
           ? aliases.has(q.hint) && aliases.has(expectedHint)
           : expectedHint === q.hint;

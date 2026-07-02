@@ -229,3 +229,13 @@ export const answerHints: Record<string, string> = {
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
+
+// German relative pronouns are formally identical to definite articles.
+// Either label is valid; the no-ambiguous-prompts validator catches misuse.
+export const hintAliases: Record<string, Set<string>> = {
+  der: new Set(["bestimmter Artikel", "Relativpronomen"]),
+  die: new Set(["bestimmter Artikel", "Relativpronomen"]),
+  das: new Set(["bestimmter Artikel", "Relativpronomen"]),
+  den: new Set(["bestimmter Artikel", "Relativpronomen"]),
+  dem: new Set(["bestimmter Artikel", "Relativpronomen"]),
+};
