@@ -12,7 +12,7 @@
  */
 
 import { readFileSync } from "fs";
-import { parseTxtFile, type ParsedMcqQuestion, type ParsedInputQuestion } from "./lib/parse-txt.js";
+import { parseTxtFile, type ParsedMcqQuestion, type ParsedInputQuestion } from "../src/lib/parse-txt";
 
 // ============================================================
 // Determiner family checking (mirrors validate-content.ts)

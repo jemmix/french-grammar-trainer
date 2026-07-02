@@ -11,7 +11,7 @@
 
 import { readFileSync, writeFileSync } from "fs";
 import { basename, extname, dirname, join } from "path";
-import { parseTxtFile, type ParsedQuestion, type ParsedMcqQuestion, type ParsedInputQuestion } from "./lib/parse-txt.js";
+import { parseTxtFile, type ParsedQuestion, type ParsedMcqQuestion, type ParsedInputQuestion } from "../src/lib/parse-txt";
 
 // ============================================================
 // Per-question validation — returns list of error strings

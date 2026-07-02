@@ -215,7 +215,7 @@ export function parseTxtFile(content: string): ParsedFile {
   // Common mistake: writing "RULE: 02-01" (colon before the ID) makes the
   // parser skip that line entirely, then "RULE TITLE: ..." gets parsed as
   // ruleId="TITLE". Catch both the empty and the wrong-format cases here so
-  // that convert-txt and split-txt fail loudly instead of silently.
+  // that split-txt and the runtime loader fail loudly instead of silently.
   if (!ruleId) {
     parseErrors.push(
       `Missing RULE header — expected "RULE XX-YY: <title>" (e.g. "RULE 02-01: Past simple...")`,

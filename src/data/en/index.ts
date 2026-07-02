@@ -1,17 +1,7 @@
 import type { Section, SectionMeta } from "../types";
-import section01 from "./01-present-simple-continuous";
-import section02 from "./02-past-simple";
-import section03 from "./03-past-continuous";
+import { loadSectionsFromDsl } from "../loader";
 import explanations01 from "./explanations/01-explanations";
 import explanations02 from "./explanations/02-explanations";
-
-// Attach explanations to sections here (not in generated section files, which
-// get overwritten by codegen). Explanations are hand-authored and live in
-// src/data/en/explanations/.
-section01.explanations = explanations01;
-section02.explanations = explanations02;
-
-export const loadedSections: Section[] = [section01, section02, section03];
 
 export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "01-present-simple-continuous", title: "Present Simple & Present Continuous", description: "Affirmative, negative, and question forms; spelling rules; habits vs. temporary actions" },
@@ -43,3 +33,11 @@ export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "27-word-order-sentence-structure", title: "Word Order & Sentence Structure", description: "SVO, adverb placement, inversion, cleft sentences, parallel structure" },
   { id: "28-common-confusions", title: "Common Confusions", description: "Make/do, say/tell, borrow/lend, used to/be used to, affect/effect" },
 ];
+
+// Attach explanations to sections after loading (explanations are hand-authored
+// in src/data/en/explanations/).
+export const loadedSections: Section[] = loadSectionsFromDsl("en", meta);
+const _enSection01 = loadedSections.find((s) => s.id === "01-present-simple-continuous");
+const _enSection02 = loadedSections.find((s) => s.id === "02-past-simple");
+if (_enSection01) _enSection01.explanations = explanations01;
+if (_enSection02) _enSection02.explanations = explanations02;

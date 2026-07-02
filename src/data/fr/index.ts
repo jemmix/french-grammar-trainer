@@ -1,24 +1,6 @@
 import type { Section, SectionMeta } from "../types";
-import section01 from "./01-present-indicatif";
-import section02 from "./02-passe-compose";
-import section03 from "./03-imparfait";
-import section04 from "./04-plus-que-parfait";
-import section05 from "./05-futur-simple-et-anterieur";
-import section06 from "./06-conditionnel";
-import section07 from "./07-subjonctif-present";
-import section08 from "./08-subjonctif-passe";
-import section09 from "./09-imperatif";
-import section10 from "./10-articles";
-import section11 from "./11-pronoms-cod-coi";
-import section12 from "./12-pronoms-relatifs";
+import { loadSectionsFromDsl } from "../loader";
 import explanations01 from "./explanations/01-explanations";
-
-// Attach explanations to sections here (not in generated section files, which
-// get overwritten by codegen). Explanations are hand-authored and live in
-// src/data/fr/explanations/.
-section01.explanations = explanations01;
-
-export const loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section07, section08, section09, section10, section11, section12];
 
 export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "01-present-indicatif", title: "Le présent de l'indicatif", description: "Conjugaison régulière et irrégulière, verbes pronominaux, emplois du présent" },
@@ -50,3 +32,9 @@ export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "27-gallicismes", title: "Les gallicismes", description: "Futur proche, passé récent, présent continu" },
   { id: "28-accord-participe-avance", title: "L'accord du participe passé (cas avancés)", description: "COD antéposé, verbes pronominaux, participe + infinitif" },
 ];
+
+// Attach explanations to sections after loading (explanations are hand-authored
+// in src/data/fr/explanations/).
+export const loadedSections: Section[] = loadSectionsFromDsl("fr", meta);
+const _frSection01 = loadedSections.find((s) => s.id === "01-present-indicatif");
+if (_frSection01) _frSection01.explanations = explanations01;

@@ -18,7 +18,7 @@ import {
   type ParsedMcqQuestion,
   type ParsedInputQuestion,
   type ParsedQuestion,
-} from "./lib/parse-txt.js";
+} from "../src/lib/parse-txt";
 
 // ---------------------------------------------------------------------------
 // CLI

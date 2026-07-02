@@ -13,9 +13,6 @@ npx tsx scripts/validate.ts --lang fr --rule XX-YY --question XX-YY-XXX --llm --
 
 # Structural-only validation (fast, no LLM)
 npx tsx scripts/validate.ts --lang fr --rule XX-YY
-
-# Compile DSL → TypeScript
-npm run compile-all -- --lang fr
 ```
 
 Always use `--timeout 3600000` (1 hour) for full rule validation. API timeouts happen — just retry the same command; the cache persists.
@@ -23,11 +20,10 @@ Always use `--timeout 3600000` (1 hour) for full rule validation. API timeouts h
 ## Workflow
 
 1. Write/edit the `.txt` DSL file
-2. `npm run compile-all -- --lang fr`
-3. Fix answer-hints if needed (compile errors will tell you)
-4. Structural validation first — fix elision, count, format issues
-5. LLM validation — fix failures with targeted edits
-6. `git add questions/ src/data/ llm-cache/ && git commit && git push`
+2. Fix answer-hints if needed (validation errors will tell you)
+3. Structural validation first — fix elision, count, format issues
+4. LLM validation — fix failures with targeted edits
+5. `git add questions/ src/data/ llm-cache/ && git commit && git push`
 
 **Golden rule**: Write the file ONCE, then only edit failing questions. Never rewrite the entire file when doing targeted fixes.
 
@@ -167,7 +163,6 @@ Avoid "nous/vous" subjects in MCQ questions — the reflexive pronoun is identic
 | `elision-correct` | Change subject to match answer vowel pattern, or rewrite answers |
 | `INPUT must have at least 4 wrong answers` | Add more wrong answers |
 | Missing answer-hint | Add entry to `src/data/fr/answer-hints.ts` |
-| Compile error after edit | Re-run `npm run compile-all -- --lang fr` |
 
 ## Commit Pattern
 

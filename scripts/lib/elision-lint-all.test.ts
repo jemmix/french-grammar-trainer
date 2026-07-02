@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
-import { parseTxtFile } from "./parse-txt.js";
+import { parseTxtFile } from "../../src/lib/parse-txt";
 import { checkQuestionElision, type QuestionElisionIssue } from "./elision-check.js";
 
 const QUESTIONS_DIR = join(import.meta.dirname, "../../questions/fr");

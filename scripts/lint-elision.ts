@@ -20,7 +20,7 @@
 
 import { readFileSync } from "fs";
 import { basename } from "path";
-import { parseTxtFile, type ParsedQuestion } from "./lib/parse-txt.js";
+import { parseTxtFile, type ParsedQuestion } from "../src/lib/parse-txt";
 import { checkQuestionElision, type QuestionElisionIssue } from "./lib/elision-check.js";
 
 type Issue = QuestionElisionIssue;

@@ -16,8 +16,8 @@
 
 ### Directory layout
 - `gen/` — **gitignored** scratch directory for all temp files during generation
-- `questions/{lang}/<rule-id>.txt` — canonical merged source files, one per rule (committed)
-- `src/data/{lang}/<section-id>.ts` — compiled TypeScript, generated from `questions/{lang}/` (committed)
+- `questions/{lang}/<rule-id>.txt` — canonical question source files, one per rule (committed); read at runtime by `src/data/loader.ts`
+- `src/data/{lang}/index.ts` — section metadata + barrel that calls `loadSectionsFromDsl()` to build `Section[]` from the DSL files
 - `content/{lang}/TABLE_OF_CONTENTS.md` — course outline, one per language (committed)
 
 ### Subagent type for generation
@@ -32,15 +32,14 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 2. **Split** — `npm run split-txt -- gen/<rule-id>.txt ...` → produces `gen/<rule-id>-passed.txt` + `gen/<rule-id>-failed.txt`
 3. **Fix** — manually correct failed questions, save as `gen/<rule-id>-fixed.txt` (remove `VALIDATION ERROR:` lines)
 4. **Merge** — `npm run merge-txt -- --output questions/{lang}/<rule-id>.txt gen/<rule-id>-passed.txt [gen/<rule-id>-fixed.txt]` (later files override earlier for duplicate IDs)
-5. **Compile** — `npm run compile-all -- --lang {lang}` (compiles all DSL files to TypeScript using TOC metadata)
-6. **Register** — add the new section to `src/data/sections-index.ts`: import the compiled file (from `./fr/` or `./en/`), add a metadata entry to `_meta`, and add the section to `_loadedSections`
-7. **Commit** — `git add questions/ src/data/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
+5. **Register** — add a metadata entry to `meta` in `src/data/{lang}/index.ts` (id, title, description). The runtime loader picks up all `.txt` files in `questions/{lang}/` automatically — no compile step.
+6. **Commit** — `git add questions/ src/data/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
 
 ## LLM Validation Cache
 - The `llm-cache/` directory is **content-addressable**: cache keys are computed from question content, so editing questions automatically invalidates old entries and generates new ones on the next run. There is no need to manually clear or prune cache entries after fixing questions.
 
 ## Validation Gotchas
-- **Validation reads compiled TS, not DSL** — `scripts/validate.ts` loads questions from `src/data/{lang}/*.ts` (via `loadedSections`). You must run `npm run compile-all -- --lang {lang}` after editing `.txt` DSL files before validation sees your changes.
+- **Validation reads DSL directly** — `scripts/validate.ts` and `scripts/validate-content.ts` load questions via `loadSectionsFromDsl()` from `questions/{lang}/*.txt`. Edits to DSL files are visible immediately; no compile step.
 - **Validation exit code** — the script exits 1 on any failure, including borderline "No clear majority" results. This is intentional. "No clear majority" is a real failure, not a warning — fix it by redoing the content until all checks pass cleanly. Don't stop at "I improved things a lot."
 
 ## Content Quality Rules

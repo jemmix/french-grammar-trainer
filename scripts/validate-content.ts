@@ -19,9 +19,6 @@
  * Or:  npm run validate-content
  */
 
-import { readdirSync } from "fs";
-import { join } from "path";
-
 // Determiner families — choices from the same family are near-duplicates
 // unless the question specifically tests within-family distinctions
 const DETERMINER_FAMILIES: Record<string, string[]> = {
@@ -202,12 +199,7 @@ function validateInput(q: InputQuestion) {
   }
 }
 
-async function validateSection(section: Section, filename: string) {
-  const expectedId = filename.replace(/\.ts$/, "");
-  if (section.id !== expectedId) {
-    error(section.id || "(missing id)", `Section id "${section.id}" does not match filename "${filename}" (expected id: "${expectedId}")`);
-  }
-
+async function validateSection(section: Section, label: string) {
   const mcqCount = section.questions.filter((q) => q.type === "mcq").length;
   const inputCount = section.questions.filter((q) => q.type === "input").length;
   console.log(`\nSection: ${section.title} (${section.questions.length} questions — ${mcqCount} MCQ, ${inputCount} input)`);
@@ -224,15 +216,15 @@ async function validateSection(section: Section, filename: string) {
 }
 
 async function validateLang(lang: string): Promise<number> {
-  const sectionsDir = join(import.meta.dirname ?? ".", "..", "src", "data", lang);
-  const files = readdirSync(sectionsDir).filter((f) => /^\d\d-/.test(f) && f.endsWith(".ts"));
+  const { loadedSections } = (await import(`../src/data/${lang}/index.ts`)) as {
+    loadedSections: Section[];
+  };
 
-  console.log(`\n[${lang}] Found ${files.length} section file(s) to validate`);
+  console.log(`\n[${lang}] Found ${loadedSections.length} section(s) to validate`);
 
   const before = errorCount;
-  for (const file of files) {
-    const mod = (await import(join(sectionsDir, file))) as { default: Section };
-    await validateSection(mod.default, file);
+  for (const section of loadedSections) {
+    await validateSection(section, `${lang}/${section.id}`);
   }
   return errorCount - before;
 }

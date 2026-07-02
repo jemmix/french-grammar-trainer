@@ -63,22 +63,13 @@
 
 - **Per-language hint exceptions** — `src/data/answer-hints.test.ts` has a single `HINT_EXCEPTIONS` set applied to all languages. Should be split into per-language sets since English and French have different common verb answers that don't need dictionary hints (e.g. English: `write`, `walk`, `run`; French: different verbs). Per-language hint *aliases* are already supported via `hintAliases` exports in each language's `answer-hints.ts`.
 
-- **Validation against DSL files** — `scripts/validate.ts` currently reads from compiled TypeScript (`src/data/{lang}/*.ts`), requiring `npm run compile-all` after every DSL edit before validation. Fix: have validation read directly from `questions/{lang}/*.txt` DSL files so no recompilation is needed during iterative content fixes.
-
 - **Optimize LLM validation runner** — **DONE**: early termination on failCount >= 2, cache summary one-liner, per-attempt breakdown for no-majority cases, failures grouped by rule/question in report.
 
-- **compile-all default language** — currently requires `--lang fr` or `--lang en` flag; default should compile all available languages to avoid accidentally validating one language's DSL while the compiled TS is stale for another. Default to `--lang all` or or make this the default.
-
-- **DSL with LSP for question validation** — transition `questions/*.txt` and `src/data/*/*.ts` to a format with LSP support to catch structural/type inconsistencies in-editor. Options:
+- **DSL with LSP for question validation** — transition `questions/*.txt` to a format with LSP support to catch structural/type inconsistencies in-editor. Options:
   - **YAML + JSON Schema** (recommended): mature ecosystem, `yaml-language-server` built into VS Code/Neovim, schema validation + autocomplete. Low effort, high ROI.
   - **Keep .txt + tree-sitter + custom LSP**: preserves current format but ~2-3 days upfront work to write grammar and LSP.
   - **TypeScript source files**: write `.ts` directly (not generated), get instant TS LSP feedback. Zero new tooling but more verbose.
   - **Zod schemas + runtime validation**: keep `.txt` format, validate at build-time. No IDE support.
-
-- **Automate TS codegen** — `src/data/fr/*.ts` files are currently compiled manually via `npm run convert-txt` and it's easy to forget after editing question source files. Options:
-  - Pre-build script: add a `prebuild` (and `predev`) npm script that runs `convert-txt` for all sections, regenerating any `.ts` whose source `.txt` files are newer (check mtimes). Fast, no watcher needed.
-  - Watch mode: add a `--watch` flag to `convert-txt` that re-emits a section's `.ts` whenever any of its source `.txt` files change. Run alongside `next dev`.
-  - Git pre-commit hook: run codegen + `tsc --noEmit` in the existing pre-commit hook so a commit with stale `.ts` files fails loudly. Lightest-weight option but only catches it at commit time, not during dev.
 
 ### 01-18 INPUT questions — error-correction format for GLM-4.7
 
