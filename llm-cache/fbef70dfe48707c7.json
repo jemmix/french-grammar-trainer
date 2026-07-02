@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fbef70dfe48707c7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-08-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz beschreibt einen Vorgang?\n\nChoices:\nA. [CORRECT] Die Briefe werden geschrieben.\nB. [WRONG] Die Briefe sind geschrieben.\nC. [WRONG] Die Briefe hat geschrieben.\nD. [WRONG] Die Briefe werden schreiben.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773974-8ky0ugr7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses state passive (describes a result, not a process), C has wrong auxiliary and is semantically nonsensical, and D uses future tense and is semantically nonsensical.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655111085-xlvu1euh",
+      "timestamp": "2026-06-28T13:59:05.527Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task. The question asked to verify that wrong answers B, C, and D are indeed incorrect for the question \"Welcher Satz beschreibt einen Vorgang?\" (Which sentence describes a process?).\n\nThe correct answer A \"Die Briefe werden geschrieben\" uses the Vorgangspassiv (process passive) with werden + Partizip II, which correctly describes an ongoing process. The wrong answers are all incorrect:\n- B \"Die Briefe sind geschrieben\" describes a state (Zustandspassiv), not a process\n- C \"Die Briefe hat geschrieben\" is grammatically incoherent (wrong case relationship, wrong number)\n- D \"Die Briefe werden schreiben\" is future tense and semantically nonsensical (letters don't write)\n\nThe verdict would be: TRUE||All wrong answers are either grammatically incorrect or describe a state/future action rather than a process.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660609145-t3e6krx1",
+      "timestamp": "2026-06-28T15:31:35.868Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, D in a German grammar multiple choice question are indeed incorrect. The question asks \"Welcher Satz beschreibt einen Vorgang?\" (Which sentence describes a process?). \n\nMy analysis completed before the step limit:\n- B: \"Die Briefe sind geschrieben.\" uses Zustandspassiv (state passive), not Vorgangspassiv (process passive) — correctly marked wrong\n- C: \"Die Briefe hat geschrieben.\" has subject-verb agreement error (plural subject with singular \"hat\") and semantic nonsense (letters don't write) — correctly marked wrong  \n- D: \"Die Briefe werden schreiben.\" is future tense and semantically nonsensical (letters can't write) — correctly marked wrong\n\nThe verdict would have been: TRUE||All wrong answers are incorrect — B describes a state not a process, C has subject-verb disagreement and semantic error, D is future tense and semantically impossible.\n\nNo remaining tasks — the analysis was complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662252111-7f44ryqx",
+      "timestamp": "2026-06-28T15:58:22.877Z"
+    }
+  ]
+}

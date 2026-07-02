@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f498a30b77a392fd",
+  "predicateId": "german-language",
+  "questionId": "11-08-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\n\nQUESTION CONTENT:\nPrompt: „Die Tür ist geöffnet.\" — Diese Beschreibung ist falsch. Jemand öffnet gerade die Tür. Setzen Sie das richtige Hilfsverb ein.\nPhrase: „Die Tür ___ geöffnet.\nAnswer: wird\nHint: werden\nExplanation: Für einen Vorgang verwendet man das Vorgangspassiv mit „werden\" → „wird\". Korrekt: „Die Tür wird geöffnet.\"\nWrong answers:\n  - ist („ist\" ist das Hilfsverb für das Zustandspassiv (einen Zustand). Für einen Vorgang verwendet man „werden\" → „wird\".)\n  - hat („hat\" ist das Aktiv-Hilfsverb. Das Vorgangspassiv verwendet „werden\" → „wird\".)\n  - sind („sind\" ist die Pluralform von „sein\". Für einen Vorgang in der 3. Person Singular verwendet man „werden\" → „wird\".)\n  - war („war\" ist das Präteritum von „sein\". Das Vorgangspassiv Präsens verwendet „werden\" → „wird\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1783004977411-r42wls3k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783005479248-7u4rdkz0",
+      "timestamp": "2026-07-02T15:18:11.955Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783006028761-zyrxmzlo",
+      "timestamp": "2026-07-02T15:27:37.971Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783006193916-g6uyj4jf",
+      "timestamp": "2026-07-02T15:30:03.581Z"
+    }
+  ]
+}

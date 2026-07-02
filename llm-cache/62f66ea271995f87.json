@@ -1,0 +1,33 @@
+{
+  "cacheKey": "62f66ea271995f87",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-07-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-07 - Das Zustandspassiv: sein + Partizip II (Die Tür ist geschlossen.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz hat dieselbe Bedeutung wie: Das Buch wurde in eine andere Sprache übersetzt und ist jetzt fertig?\nChoices:\nA. [CORRECT] Das Buch ist übersetzt.\nB. Das Buch wird übersetzt.\nC. Das Buch hat übersetzt.\nD. Das Buch ist übersetzen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1783004977399-4te7igb0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between Zustandspassiv (\"ist übersetzt\" = completed state) and Vorgangspassiv (\"wird übersetzt\" = ongoing process), which is the core distinction of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783004996469-mpc218q4",
+      "timestamp": "2026-07-02T15:10:17.017Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a German grammar question about \"Das Zustandspassiv: sein + Partizip II\" properly tests that rule. I analyzed the question which asks students to identify which sentence (Das Buch ist übersetzt) has the same meaning as a sentence describing a completed translation (\"wurde übersetzt und ist jetzt fertig\").\n\n**Conclusion:**\nVERDICT: ALIGNED\nREASON: The question requires distinguishing between Zustandspassiv (\"ist übersetzt\" = completed state) and Vorgangspassiv (\"wird übersetzt\" = ongoing process), which is the core distinction the stated rule teaches.\n\nThe distractors directly test this rule: option B uses Vorgangspassiv (werden + Partizip II) instead of Zustandspassiv, options C and D are grammatically incorrect forms that a student might produce if they don't understand the sein + Partizip II structure.\n\n**No remaining tasks** - this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783005069104-14np8dla",
+      "timestamp": "2026-07-02T15:11:47.665Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:**\nI analyzed the German grammar question to determine if it properly tests the stated rule (Zustandspassiv: sein + Partizip II).\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question requires distinguishing Zustandspassiv (\"ist übersetzt\" = state of being translated/finished) from Vorgangspassiv (\"wird übersetzt\" = process of being translated), which is the core skill of this rule, and the prompt's \"und ist jetzt fertig\" explicitly sets up the state-result context that defines Zustandspassiv.\n\n**Remaining tasks:**\nNone — this was a single-question validation task that has been completed.\n\n**Recommendations:**\nNo further action needed for this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783005163027-dbwp6nke",
+      "timestamp": "2026-07-02T15:13:26.166Z"
+    }
+  ]
+}

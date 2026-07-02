@@ -1,0 +1,33 @@
+{
+  "cacheKey": "01658abee9d08c5b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz bedeutet: Die Tür ist zu und bleibt zu?\n\nChoices:\nA. [CORRECT] Die Tür ist geschlossen.\nB. [WRONG] Die Tür wird geschlossen.\nC. [WRONG] Die Tür hat geschlossen.\nD. [WRONG] Die Tür schließt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773974-nphqf3zj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B describes a process (\"is being closed\"), not a state; C is ungrammatical without the reflexive pronoun (\"hat sich geschlossen\" would work); D describes an action (\"closes\"), not a state.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655009864-w2rjvwll",
+      "timestamp": "2026-06-28T13:58:31.084Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either describe the action of closing (B, D) rather than the state, or use an ungrammatical construction for expressing a stative meaning (C).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660543912-rdd15zc5",
+      "timestamp": "2026-06-28T15:30:07.327Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat was accomplished: I was in the process of evaluating a German grammar verification question about whether wrong answers B, C, and D are truly incorrect for the question \"Welcher Satz bedeutet: Die Tür ist zu und bleibt zu?\"\n\nMy analysis determined:\n- B (\"Die Tür wird geschlossen\") is a passive process construction meaning \"is being closed,\" not a stative meaning\n- C (\"Die Tür hat geschlossen\") uses the wrong auxiliary (haben instead of sein for intransitive schließen) and describes an action, not a state\n- D (\"Die Tür schließt\") is simple present describing an action or habit, not a continuing state\n\nThe verdict would have been: TRUE||All wrong answers are incorrect—B describes a process not a state, C uses the wrong auxiliary verb for intransitive perfect, and D describes an action rather than a continuing state.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662208412-1tq1t5ci",
+      "timestamp": "2026-06-28T15:57:39.059Z"
+    }
+  ]
+}

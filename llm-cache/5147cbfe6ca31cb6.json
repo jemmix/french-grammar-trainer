@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5147cbfe6ca31cb6",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "11-07-007",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz hat dieselbe Bedeutung wie: Das Buch liegt in einer anderen Sprache vor?\nChoices:\nA. Das Buch ist übersetzt.\nB. Das Buch wird übersetzt.\nC. Das Buch hat übersetzt.\nD. Das Buch ist übersetzen.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1783003195953-d96cp18j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks which sentence has the same meaning as the given sentence, and the task of finding a synonymous expression is unambiguous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783003327852-ap8t6i45",
+      "timestamp": "2026-07-02T14:42:42.878Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The source sentence uses the idiomatic expression \"liegt … vor\" (to be available/exist) which is essential for distinguishing between the completed state \"ist übersetzt\" and the ongoing process \"wird übersetzt,\" but this idiom is not clarified, leaving learners who don't know it unable to determine the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783003698565-bh3jr880",
+      "timestamp": "2026-07-02T14:50:18.554Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The source sentence uses the idiomatic expression \"liegt vor\" (to be available), which learners unfamiliar with this idiom cannot parse, making it impossible to determine semantic equivalence without prior knowledge of this specific phrase.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783004054475-fde5ipqc",
+      "timestamp": "2026-07-02T14:54:59.027Z"
+    }
+  ]
+}

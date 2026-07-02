@@ -1,0 +1,33 @@
+{
+  "cacheKey": "56caf96dc527eded",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "11-09-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: man als Alternative zum Passiv (Man spricht Deutsch hier. = Deutsch wird hier gesprochen.)\nPROMPT: „Das Buch wird gelesen.\" — Schreiben Sie diesen Satz als Aktivsatz mit „man\".\nPHRASE: „Man ___ das Buch.\nCORRECT ANSWER: liest\n\nWRONG ANSWERS to evaluate:\n1. lesen\n2. lest\n3. gelesen\n4. liest man\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782998352324-qpnjgs4l"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating the plausibility of wrong answers for a German grammar question about transforming passive voice to active voice with \"man\".\n\nVERDICT: IMPLAUSIBLE\nREASON: \"liest man\" would result in the nonsensical sentence \"Man liest man das Buch\" with \"man\" duplicated, which no learner would realistically type since \"man\" is already present in the sentence prompt.\n\nThe other three wrong answers (\"lesen\" as infinitive confusion, \"lest\" as wrong person/number, \"gelesen\" as past participle carried over from the original passive) are all plausible learner errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783001400659-lplpt8wp",
+      "timestamp": "2026-07-02T14:10:34.588Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner mistakes: \"lesen\" is the infinitive instead of conjugated form, \"lest\" is the wrong person conjugation (2nd plural instead of 3rd singular), \"gelesen\" retains the past participle from the passive construction, and \"liest man\" shows word order confusion with the subject placement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783001895566-a64yyl34",
+      "timestamp": "2026-07-02T14:18:49.820Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was in the process of evaluating whether the wrong answers for a German grammar question about converting passive to active voice with \"man\" are plausible learner mistakes.\n\nAnalysis completed:\n- \"lesen\" (infinitive) - PLAUSIBLE: Common mistake of using infinitive instead of conjugated form\n- \"lest\" (2nd person plural) - PLAUSIBLE: Wrong person/number conjugation error\n- \"gelesen\" (past participle) - PLAUSIBLE: Learner carries over participle from passive construction\n- \"liest man\" - IMPLAUSIBLE: Would result in \"Man liest man das Buch\" - redundant \"man\" is not a realistic learner error\n\nVERDICT: IMPLAUSIBLE\nREASON: While \"lesen\", \"lest\", and \"gelesen\" are all plausible mistakes, \"liest man\" is implausible because no learner would insert a redundant \"man\" into the blank when \"man\" already begins the sentence.\n\nRemaining tasks: None - the evaluation is complete.\n\nRecommendations: Remove \"liest man\" and replace with another plausible wrong answer such as \"las\" (simple past form, which learners might confuse with present) or \"lese\" (1st person singular subjunctive/indicative, a common conjugation error).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783002341970-g7n50mfj",
+      "timestamp": "2026-07-02T14:26:22.148Z"
+    }
+  ]
+}

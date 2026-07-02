@@ -1,0 +1,33 @@
+{
+  "cacheKey": "860a9845b7bb2c36",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-08 - Vorgangspassiv vs. Zustandspassiv (wird geschlossen vs. ist geschlossen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist die Passivform von: „Jemand schließt gerade die Tür.\"?\nChoices:\nA. [CORRECT] Die Tür wird geschlossen.\nB. Die Tür ist geschlossen.\nC. Die Tür hat geschlossen.\nD. Die Tür schließt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782998352307-p3m2nxly"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between Vorgangspassiv (\"wird geschlossen\") and Zustandspassiv (\"ist geschlossen\"), with the \"gerade\" in the source sentence cueing the student to select the process passive over the state passive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999340971-v6yebrre",
+      "timestamp": "2026-07-02T13:36:02.839Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between Vorgangspassiv (\"wird geschlossen\" for an ongoing action marked by \"gerade\") and Zustandspassiv (\"ist geschlossen\" for a resulting state), which is exactly the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999996701-5lald74q",
+      "timestamp": "2026-07-02T13:47:01.194Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between Vorgangspassiv (\"wird geschlossen\" for an ongoing action) and Zustandspassiv (\"ist geschlossen\" for a resulting state), with the key distractor being the Zustandspassiv option and the \"gerade\" cue requiring knowledge of when to use Vorgangspassiv.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783000731279-taligzoe",
+      "timestamp": "2026-07-02T14:00:35.851Z"
+    }
+  ]
+}

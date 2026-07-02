@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8f60db7089f52115",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-02-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Vorgangspassiv im Präteritum?\n\nChoices:\nA. [CORRECT] Die Häuser wurden gebaut.\nB. [WRONG] Die Häuser wurde gebaut.\nC. [WRONG] Die Häuser waren gebaut.\nD. [WRONG] Die Häuser wurden bauten.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782998352256-vn09388s"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was tasked with verifying that the wrong answers (B, C, D) in a German grammar multiple choice question about Vorgangspassiv im Präteritum are indeed incorrect.\n\n**Analysis completed:**\n- B: \"Die Häuser wurde gebaut.\" - Incorrect because \"wurde\" is singular but \"Die Häuser\" is plural (should be \"wurden\")\n- C: \"Die Häuser waren gebaut.\" - Incorrect because this is Zustandspassiv (state passive), not Vorgangspassiv (process passive)\n- D: \"Die Häuser wurden bauten.\" - Incorrect because \"bauten\" is a conjugated Präteritum form, not the required Partizip II (\"gebaut\")\n\n**Verdict:** TRUE||All wrong answers contain clear grammar errors.\n\n**Remaining tasks:** None - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782998352346-znh2hz2u",
+      "timestamp": "2026-07-02T13:19:58.151Z"
+    },
+    {
+      "raw": "TRUE||B has incorrect subject-verb agreement (singular \"wurde\" with plural \"Häuser\"), C uses Zustandspassiv (sein + Partizip) instead of Vorgangspassiv (werden + Partizip), and D incorrectly uses the conjugated form \"bauten\" instead of the past participle \"gebaut\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999426361-xy7ouvti",
+      "timestamp": "2026-07-02T13:38:24.744Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has subject-verb agreement error (wurde instead of wurden for plural), C uses Zustandspassiv (waren) instead of Vorgangspassiv (wurden), and D incorrectly uses conjugated verb form (bauten) instead of Partizip II (gebaut).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783000157662-qsf72ge2",
+      "timestamp": "2026-07-02T13:49:56.899Z"
+    }
+  ]
+}

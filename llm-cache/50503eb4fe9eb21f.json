@@ -1,0 +1,33 @@
+{
+  "cacheKey": "50503eb4fe9eb21f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-03-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Vorgangspassiv im Perfekt?\n\nChoices:\nA. [CORRECT] Die Briefe sind geschrieben worden.\nB. [WRONG] Die Briefe sind geschrieben geworden.\nC. [WRONG] Die Briefe haben geschrieben worden.\nD. [WRONG] Die Briefe ist geschrieben worden.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773964-b2hlzslz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses \"geworden\" instead of \"worden\" (the correct passive auxiliary form), C incorrectly uses \"haben\" instead of \"sein\" which is required for Vorgangspassiv, and D incorrectly uses singular \"ist\" instead of plural \"sind\" to agree with \"Die Briefe\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654127757-l1z7ebmr",
+      "timestamp": "2026-06-28T13:47:13.732Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"geworden\" instead of the required \"worden\" for Vorgangspassiv, C uses \"haben\" instead of the required \"sein\" auxiliary, and D has incorrect subject-verb agreement (\"ist\" with plural \"Die Briefe\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656607050-bxfje9bv",
+      "timestamp": "2026-06-28T14:25:41.663Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"geworden\" instead of \"worden\" for Vorgangspassiv, C incorrectly uses \"haben\" instead of \"sein\" as the auxiliary, and D incorrectly uses singular \"ist\" with plural subject \"Die Briefe\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661421040-c202sufy",
+      "timestamp": "2026-06-28T15:44:30.963Z"
+    }
+  ]
+}

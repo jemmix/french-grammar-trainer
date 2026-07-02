@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c51a15e4fc03015e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "10-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Konjunktiv II\n\nRULE BEING TESTED: 10-10 - Gemischte Übungen: reale und unrealische Sätze unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Entscheiden Sie, ob der Satz real oder irreal ist, und setzen Sie die passende Verbform ein.\nPhrase: „Wenn er Zeit ___ , geht er ins Fitnessstudio.\nCorrect Answer: hat\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782650152961-ta1ue8fr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing a real conditional sentence (which uses indicative \"hat\") from an unreal one (which would use Konjunktiv II \"hätte\"), directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782650155017-kwg55384",
+      "timestamp": "2026-06-28T12:36:56.419Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was in the process of validating a German grammar question to determine if it properly tests the stated rule \"10-10 - Gemischte Übungen: reale und unrealische Sätze unterscheiden\" (Mixed exercises: distinguishing real and unreal sentences).\n\n**Analysis completed:**\nThe question \"Wenn er Zeit ___ , geht er ins Fitnessstudio\" with correct answer \"hat\" does test the stated rule because:\n- The indicative main clause \"geht er\" signals a real (not unreal) condition\n- Students must recognize this and supply \"hat\" (indicative) rather than \"hätte\" (Konjunktiv II)\n- This directly tests distinguishing real from unreal conditional sentences\n\n**Verdict that would have been output:**\nVERDICT: ALIGNED\nREASON: The question requires students to recognize that the indicative main clause \"geht er\" signals a real condition, so the \"wenn\" clause must use the indicative \"hat\" rather than the Konjunktiv II \"hätte\", directly testing the distinction between real and unreal sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782650216425-tg44q7rh",
+      "timestamp": "2026-06-28T12:37:35.152Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that the indicative \"geht\" in the main clause signals a real condition, so they must use the indicative \"hat\" rather than Konjunktiv II \"hätte\", directly testing the distinction between real and unreal sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782650255153-eiklcxpw",
+      "timestamp": "2026-06-28T12:38:04.658Z"
+    }
+  ]
+}

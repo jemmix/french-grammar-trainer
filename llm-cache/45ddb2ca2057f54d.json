@@ -1,0 +1,33 @@
+{
+  "cacheKey": "45ddb2ca2057f54d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz mit „man\" bedeutet dasselbe wie: „Briefe werden heute selten geschrieben.\"?\n\nChoices:\nA. [CORRECT] Heute schreibt man selten Briefe.\nB. [WRONG] Heute wird man selten Briefe geschrieben.\nC. [WRONG] Heute schreiben man selten Briefe.\nD. [WRONG] Heute schreibt man oft Briefe.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782656103930-d0a7gfld"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is grammatically incorrect because \"man\" cannot be combined with the passive construction \"wird...geschrieben\"; C has a subject-verb agreement error (\"man\" requires 3rd person singular \"schreibt\" not plural \"schreiben\"); D changes the meaning from \"selten\" (rarely) to \"oft\" (often).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660920616-722tcgn5",
+      "timestamp": "2026-06-28T15:36:18.537Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly combines passive voice with \"man\" as subject, C has wrong verb conjugation (plural instead of singular for \"man\"), and D changes the meaning by substituting \"oft\" for \"selten.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662513475-49l45eh4",
+      "timestamp": "2026-06-28T16:02:26.496Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly combines passive \"wird\" with active subject \"man,\" C uses plural verb \"schreiben\" with singular \"man,\" and D changes the meaning by substituting \"oft\" for \"selten.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782990831687-g58q525r",
+      "timestamp": "2026-07-02T11:14:23.608Z"
+    }
+  ]
+}

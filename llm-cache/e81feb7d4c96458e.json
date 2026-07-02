@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e81feb7d4c96458e",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "11-07-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Das Zustandspassiv: sein + Partizip II (Die Tür ist geschlossen.)\nPROMPT: Die Tür wurde vor einer Stunde geschlossen und bleibt zu. Setzen Sie das Hilfsverb ein, das den Zustand beschreibt.\nPHRASE: „Die Tür ___ geschlossen.\nCORRECT ANSWER: ist\n\nWRONG ANSWERS to evaluate:\n1. wird\n2. war\n3. hat\n4. bin\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1783006565291-pe7cl2bn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"wird\" confuses state passive with process passive, \"war\" uses the wrong tense, \"hat\" confuses the auxiliary verb, and \"bin\" is a person/number agreement mistake.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783006672795-ru4zx6tk",
+      "timestamp": "2026-07-02T15:38:30.836Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"wird\" confuses Zustandspassiv with Vorgangspassiv, \"war\" uses past tense instead of present, \"hat\" confuses the auxiliary verb (sein vs. haben), and \"bin\" uses the wrong person form of \"sein\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783006775899-ndrdvdu7",
+      "timestamp": "2026-07-02T15:40:10.801Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"wird\" confuses Vorgangspassiv with Zustandspassiv, \"war\" is a tense error triggered by \"vor einer Stunde,\" \"hat\" confuses Perfekt formation with passive construction, and \"bin\" is a subject-verb agreement mistake (1st person instead of 3rd person singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783006878187-4q3f1koo",
+      "timestamp": "2026-07-02T15:42:02.893Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fd9ad6fac19eb22d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-06-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht korrekt im Passiv mit Modalverb (müssen, Plural)?\n\nChoices:\nA. [CORRECT] Die Aufgaben müssen gemacht werden.\nB. [WRONG] Die Aufgaben muss gemacht werden.\nC. [WRONG] Die Aufgaben müssen gemacht.\nD. [WRONG] Die Aufgaben müssen machen werden.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773970-z5lvswg8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that wrong answers B, C, and D in a German grammar multiple choice question about passive voice with modal verbs are indeed incorrect.\n\n**Analysis completed:**\n- B (\"Die Aufgaben muss gemacht werden\") is incorrect because it uses singular \"muss\" with plural subject \"Die Aufgaben\" — should be \"müssen\"\n- C (\"Die Aufgaben müssen gemacht\") is incorrect because it lacks the passive auxiliary \"werden\" — without it, the sentence is not in passive voice\n- D (\"Die Aufgaben müssen machen werden\") is incorrect because it uses the bare infinitive \"machen\" instead of the required past participle \"gemacht\" in the passive construction\n\n**Result:** TRUE||All wrong answers contain clear grammar errors (wrong subject-verb agreement in B, missing passive auxiliary in C, infinitive used instead of past participle in D).\n\nNo remaining tasks — the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654684757-px43vhxj",
+      "timestamp": "2026-06-28T13:53:55.058Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses singular \"muss\" with plural subject \"Die Aufgaben\", C is missing the passive auxiliary \"werden\" required for passive voice, and D incorrectly uses infinitive \"machen\" instead of past participle \"gemacht\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660233335-de1evkms",
+      "timestamp": "2026-06-28T15:24:45.490Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661988374-x30c4o8f",
+      "timestamp": "2026-06-28T15:53:58.550Z"
+    }
+  ]
+}

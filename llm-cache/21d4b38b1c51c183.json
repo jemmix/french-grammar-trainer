@@ -1,0 +1,33 @@
+{
+  "cacheKey": "21d4b38b1c51c183",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "11-03-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Das Vorgangspassiv im Perfekt: ist...worden (nicht: geworden)\nPROMPT: Vervollständigen Sie das Vorgangspassiv im Perfekt. Setzen Sie das Passiv-Partizip von „werden\" am Satzende ein.\nPHRASE: „Der Brief ist geschrieben ___.\nCORRECT ANSWER: worden\n\nWRONG ANSWERS to evaluate:\n1. geworden\n2. werden\n3. wurde\n4. wurdet\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1783003195912-mqno0nj7"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Assessment completed:**\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common and well-documented errors that German learners make with the Vorgangspassiv: \"geworden\" is the classic confusion between sein+werden (Zustandspassiv) vs. sein+Partizip+werden (Vorgangspassiv); \"werden\" shows confusion between infinitive and past participle; \"wurde\" incorrectly uses Präteritum instead of Perfekt; \"wurdet\" adds a plural/conjugation error on top of the tense mistake.\n\n**Remaining tasks:** None — the evaluation was completed.\n\n**Recommendation:** The wrong answers are all plausible and well-calibrated for this grammar point. No changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783003362829-ri6eou8j",
+      "timestamp": "2026-07-02T14:43:33.136Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Wurdet\" (2nd person plural Präteritum) is not a plausible error for a 3rd person singular subject in a Perfekt Passiv construction — a learner would not naturally insert this form when the sentence clearly calls for a past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783003704805-tte731k5",
+      "timestamp": "2026-07-02T14:49:39.438Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work accomplished\nI was evaluating whether the wrong answers for a German Vorgangspassiv question are plausible learner mistakes.\n\n## Remaining tasks\nThe evaluation was not completed before the step limit was reached.\n\n## Recommendation for what should be done next\nComplete the evaluation:\n\nVERDICT: IMPLAUSIBLE\nREASON: While \"geworden\" (the most classic confusion with passive voice), \"werden\" (infinitive instead of participle), and \"wurde\" (confusing Präteritum with Perfekt passive) are all highly plausible mistakes, \"wurdet\" is implausible because it's 2nd person plural Präteritum and doesn't agree with \"ist\" (3rd person singular) — no learner would pair \"ist\" with \"wurdet\" as they'd recognize the person/number mismatch immediately.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783004011812-szctj5ze",
+      "timestamp": "2026-07-02T14:54:17.307Z"
+    }
+  ]
+}

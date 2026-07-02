@@ -1,0 +1,33 @@
+{
+  "cacheKey": "85013448c35e3a28",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Zustandspassiv?\n\nChoices:\nA. [CORRECT] Ist die Tür geschlossen?\nB. [WRONG] Wird die Tür geschlossen?\nC. [WRONG] Hat die Tür geschlossen?\nD. [WRONG] Sind die Tür geschlossen?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773971-1ovtdivq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses Vorgangspassiv (werden + Partizip) instead of Zustandspassiv; C incorrectly uses \"hat\" which doesn't form any passive construction; D has a subject-verb agreement error (\"Sind\" is plural but \"die Tür\" is singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654914090-5hwbmgia",
+      "timestamp": "2026-06-28T13:55:54.761Z"
+    },
+    {
+      "raw": "TRUE||B is Vorgangspassiv (werden + Partizip) not Zustandspassiv; C uses \"hat\" which doesn't form any passive; D has a subject-verb agreement error (\"Sind\" is plural but \"die Tür\" is singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660427059-it4bk64u",
+      "timestamp": "2026-06-28T15:27:42.623Z"
+    },
+    {
+      "raw": "TRUE||B uses Vorgangspassiv (process passive) instead of Zustandspassiv; C is grammatically incoherent with \"hat\" + \"geschlossen\"; D has a subject-verb agreement error (\"Sind\" with singular \"die Tür\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662106107-emig1blm",
+      "timestamp": "2026-06-28T15:55:41.442Z"
+    }
+  ]
+}

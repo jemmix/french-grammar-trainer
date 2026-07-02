@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a507f19d357bf1fd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-04-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz drückt die Personen als Täter korrekt aus?\n\nChoices:\nA. [CORRECT] Das Haus wird von den Arbeitern gebaut.\nB. [WRONG] Das Haus wird durch die Arbeiter gebaut.\nC. [WRONG] Das Haus wird durch den Arbeitern gebaut.\nD. [WRONG] Das Haus wird von der Arbeitern gebaut.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773965-86zf0tr2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B misuses \"durch\" (used for instruments, not personal agents as \"Täter\"), C uses dative \"den Arbeitern\" after \"durch\" which requires accusative, and D uses \"der\" instead of \"den\" for the dative plural of the masculine noun \"Arbeiter\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654392296-0l3oj1d6",
+      "timestamp": "2026-06-28T13:47:35.403Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was analyzing a German grammar verification task for a passive voice question about agent expression. The question asks which sentence correctly expresses people as agents (Täter) in a passive construction.\n\n**Analysis completed but not submitted:**\n- Choice B uses \"durch\" instead of \"von\" - \"durch\" is typically for instruments/means, not people as agents in standard German\n- Choice C uses \"durch den Arbeitern\" which has a case error (durch takes accusative \"die\", not dative \"den\")\n- Choice D uses \"von der Arbeitern\" which has a case error (von takes dative \"den\", not \"der\")\n\n**Intended verdict:** TRUE||All wrong answers are incorrect: B uses \"durch\" which is non-standard for personal agents, C has wrong case after \"durch\", and D has wrong case after \"von\".\n\n**Remaining tasks:**\n- None - the analysis was complete but could not be formatted and submitted due to step limit\n\n**Recommendations:**\nThe verdict for this question should be TRUE - all three wrong answers (B, C, D) contain grammatical errors that make them incorrect in standard German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656888075-6cbgl87w",
+      "timestamp": "2026-06-28T14:30:53.851Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate German grammar wrong answers for a multiple choice question about passive voice agents (von vs durch).\n\nAnalysis completed:\n- B uses \"durch\" instead of \"von\" for personal agents - incorrect\n- C uses \"durch\" (wrong preposition) with dative case (wrong case for \"durch\") - incorrect  \n- D uses \"der\" instead of \"den\" for dative plural - incorrect\n\nTRUE||All wrong answers contain clear grammar errors: B misuses \"durch\" for personal agents, C compounds this with a dative/accusative case mismatch, and D uses the wrong dative plural article \"der\" instead of \"den.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661706758-aly9masa",
+      "timestamp": "2026-06-28T15:49:26.017Z"
+    }
+  ]
+}

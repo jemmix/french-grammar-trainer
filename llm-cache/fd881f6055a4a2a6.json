@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fd881f6055a4a2a6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-03-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Vorgangspassiv im Perfekt?\n\nChoices:\nA. [CORRECT] Das Haus ist gebaut worden.\nB. [WRONG] Das Haus ist gebaut geworden.\nC. [WRONG] Das Haus hat gebaut worden.\nD. [WRONG] Das Haus ist gebaut.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773964-ve46ebr9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that wrong answers B, C, and D in a German grammar question about Vorgangspassiv im Perfekt are indeed incorrect.\n\nSummary of analysis completed:\n- B (\"Das Haus ist gebaut geworden\") is incorrect because Vorgangspassiv requires \"worden\" not \"geworden\" - \"geworden\" is only for the active perfect of \"werden\"\n- C (\"Das Haus hat gebaut worden\") is incorrect because Vorgangspassiv requires \"sein\" (ist) as the auxiliary, not \"haben\" (hat)\n- D (\"Das Haus ist gebaut\") is incorrect because it lacks \"worden\" entirely - this is Zustandspassiv Präsens (state passive present), not Vorgangspassiv im Perfekt\n\nAll wrong answers fail to meet the specific grammatical requirements stated in the question.\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors that violate the Vorgangspassiv im Perfekt construction (sein + Partizip II + worden).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654115560-s16fvpoz",
+      "timestamp": "2026-06-28T13:42:44.143Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either use the wrong auxiliary verb (C: \"hat\" instead of \"ist\"), the wrong participle form (B: \"geworden\" instead of \"worden\"), or represent Zustandspassiv rather than Vorgangspassiv (D: missing \"worden\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656582850-z2rkwqox",
+      "timestamp": "2026-06-28T14:25:46.485Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses \"geworden\" instead of \"worden\" for Vorgangspassiv im Perfekt; C wrongly uses \"hat\" (haben) instead of \"ist\" (sein) as the auxiliary; D is Vorgangspassiv im Präsens, not Perfekt, as it lacks the \"worden\" component.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661437940-a80q21hc",
+      "timestamp": "2026-06-28T15:44:35.743Z"
+    }
+  ]
+}

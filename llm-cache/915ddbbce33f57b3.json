@@ -1,0 +1,40 @@
+{
+  "cacheKey": "915ddbbce33f57b3",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "11-04-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Setzen Sie die richtige Präposition ein.\nPhrase: „Das Fenster wurde ___ den Sturm zerbrochen.\nHint: Präposition\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1782998352278-mk98k5hm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt \"Setzen Sie die richtige Präposition ein\" doesn't specify which preposition rule is being tested, leaving the learner to guess whether the question targets \"durch\" (causal agent in passive), \"wegen\" (with genitive/dative debate), or another preposition entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782998905794-652ou4zg",
+      "timestamp": "2026-07-02T13:28:53.781Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The passive voice construction \"wurde...zerbrochen\" clearly signals that the agent preposition \"durch\" is needed, and the prompt precisely asks for a preposition with a reinforcing hint.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999737463-4i8bofst",
+      "timestamp": "2026-07-02T13:44:22.373Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was in the process of evaluating a German grammar question for clarity and ambiguity. The question asks learners to insert the correct preposition in the sentence \"Das Fenster wurde ___ den Sturm zerbrochen\" with the hint \"Präposition\".\n\n**Verdict I was about to provide:**\nVERDICT: CLEAR\nREASON: The passive construction \"wurde...zerbrochen\" clearly signals that an agent-marking preposition (\"durch\") is needed, making the task well-defined despite not knowing the specific rule title.\n\n**Remaining tasks:**\n- None beyond this single evaluation\n\n**Recommendations:**\nThe question is clear and can proceed as-is. The passive voice context provides sufficient information for a learner to identify that \"durch\" is the expected preposition (indicating the agent of the passive action).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783000586316-gae1ivly",
+      "timestamp": "2026-07-02T13:57:15.644Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Without knowing the rule title, a learner cannot determine whether this tests passive voice agents (\"durch\"), temporal prepositions (\"während\"), or other prepositional uses, as multiple prepositions could grammatically fit with different meanings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783001238560-68a2ipr7",
+      "timestamp": "2026-07-02T14:07:40.465Z"
+    }
+  ]
+}

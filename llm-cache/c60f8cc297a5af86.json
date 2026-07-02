@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c60f8cc297a5af86",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-04-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-04 - Der Täteragent: von (Person) vs. durch (Mittel/Ursache)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz drückt die Ursache/das Mittel korrekt aus?\nChoices:\nA. [CORRECT] Die Stadt wurde durch das Feuer zerstört.\nB. Die Stadt wurde von dem Feuer zerstört.\nC. Die Stadt wurde von das Feuer zerstört.\nD. Die Stadt wurde durch dem Feuer zerstört.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782653773965-k2en9yi5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"von\" (used for personal agents) and \"durch\" (used for means/cause), requiring the learner to recognize that \"das Feuer\" is an inanimate cause and therefore requires \"durch\" rather than \"von\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654376733-jmny0qux",
+      "timestamp": "2026-06-28T13:48:07.869Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was in the process of validating a German grammar question alignment. The question asks about \"von\" vs. \"durch\" in passive constructions with the example of \"das Feuer\" (fire) destroying a city.\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows to use \"durch\" (not \"von\") when expressing a means/cause (das Feuer) rather than a personal agent in a passive construction, which is exactly the stated rule.\n\nNo remaining tasks - the validation was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656861236-1qm33iej",
+      "timestamp": "2026-06-28T15:21:41.810Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to complete the validation task before reaching the step limit. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"von\" (personal agent) and \"durch\" (means/cause) by requiring the student to select \"durch das Feuer\" for the inanimate cause rather than incorrectly using \"von dem Feuer\", which is precisely what rule 11-04 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661827390-oq8ino3j",
+      "timestamp": "2026-06-28T15:51:26.966Z"
+    }
+  ]
+}

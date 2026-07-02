@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c1e5e455efe3782",
+  "predicateId": "german-language",
+  "questionId": "10-10-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Gemischte Übungen: reale und unrealische Sätze unterscheiden\n\nQUESTION CONTENT:\nPrompt: „Wenn sie das Buch gelesen hat, wäre sie besser vorbereitet gewesen.\" — Dieser Satz enthält einen Modusfehler. Schreiben Sie die korrekte Verbform.\nPhrase: „Wenn sie das Buch gelesen ___ , wäre sie besser vorbereitet gewesen.\nAnswer: hätte\nHint: haben\nExplanation: Der Hauptsatz „hätte sie bestanden\" steht im Konjunktiv II der Vergangenheit — die Bedingung ist irreal. Deshalb muss der Wenn-Satz auch im Konjunktiv II stehen: „hätte\", nicht „hat\".\nWrong answers:\n  - hat („hat\" ist der Indikativ. Da der Hauptsatz im Konjunktiv II steht, muss der Wenn-Satz konsequent im Konjunktiv II stehen: „hätte\".)\n  - hatte („hatte\" ist das Präteritum (Indikativ). Der Konjunktiv II lautet „hätte\".)\n  - hätten („hätten\" ist die Pluralform. Für „sie\" (Singular) lautet die Form „hätte\".)\n  - haben („haben\" ist der Infinitiv. Für „sie\" (3. Person Singular) im Konjunktiv II lautet die Form „hätte\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1782651889276-vy1qe15f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782652085971-g1mhth9d",
+      "timestamp": "2026-06-28T13:11:01.705Z"
+    },
+    {
+      "raw": "MAXIMUM STEPS REACHED - This agent has reached its step limit and tools are now disabled.\n\n## Summary of Work Done\nI was asked to validate German language content for a French Grammar Trainer question about mixed exercises distinguishing real and unreal sentences (Gemischte Übungen: reale und unrealische Sätze unterscheiden).\n\n## Analysis Completed\nI reviewed the question content and found that all fields are appropriately in German:\n- Prompt: German instruction about correcting a modal error\n- Phrase: German sentence with blank\n- Answer: \"hätte\" (German)\n- Hint: \"haben\" (German infinitive)\n- Explanation: German explanation about Konjunktiv II\n- All 4 wrong answers with explanations: All in German\n\n## Verdict\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\n## Remaining Tasks\nNone - this validation task was completed before the step limit was reached.\n\n## Recommendations\nNo further action needed for this question - it passes the German language validation check.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782652262229-lyp1zbkf",
+      "timestamp": "2026-06-28T13:11:41.702Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782652301704-3mx9f123",
+      "timestamp": "2026-06-28T13:14:45.733Z"
+    }
+  ]
+}

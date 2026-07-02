@@ -1,0 +1,33 @@
+{
+  "cacheKey": "191cd1bf6c2b8719",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz fragt: Ist die Tür zu?\n\nChoices:\nA. [CORRECT] Ist die Tür geschlossen?\nB. [WRONG] Wird die Tür geschlossen?\nC. [WRONG] Hat die Tür geschlossen?\nD. [WRONG] Sind die Tür geschlossen?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782998352305-a9l5igux"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B asks about an ongoing process rather than a state, C incorrectly uses \"hat\" instead of \"ist\" with the state verb \"geschlossen sein\", and D has a subject-verb agreement error using plural \"Sind\" with singular \"die Tür\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999059518-tx1nz1r0",
+      "timestamp": "2026-07-02T13:31:27.266Z"
+    },
+    {
+      "raw": "TRUE||B asks about an ongoing process rather than a state, C uses the wrong auxiliary verb (hat instead of ist for the state verb geschlossen sein), and D has a subject-verb agreement error (plural sind with singular die Tür).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999877561-imgolmlf",
+      "timestamp": "2026-07-02T13:44:57.761Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThe task was to verify that wrong answers B, C, D in a German grammar MCQ are incorrect. The question asks which sentence means \"Ist die Tür zu?\" (Is the door closed?).\n\n- B \"Wird die Tür geschlossen?\" uses present passive (is the door being closed?), not a state question\n- C \"Hat die Tür geschlossen?\" is grammatically incorrect—Perfekt of \"geschlossen sein\" would be \"ist geschlossen gewesen\"\n- D \"Sind die Tür geschlossen?\" has wrong subject-verb agreement (plural verb with singular subject)\n\nAll three wrong answers are indeed incorrect.\n\nTRUE||All wrong answers contain clear grammar errors: B uses passive voice instead of state, C has incorrect Perfekt construction, and D has subject-verb agreement error.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783000598890-blh1zh7z",
+      "timestamp": "2026-07-02T13:57:12.779Z"
+    }
+  ]
+}

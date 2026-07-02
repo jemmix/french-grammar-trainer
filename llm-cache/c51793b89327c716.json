@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c51793b89327c716",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-04-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz bedeutet dasselbe wie: „Die Mechanikerin repariert das Auto.\"?\n\nChoices:\nA. [CORRECT] Das Auto wird von der Mechanikerin repariert.\nB. [WRONG] Das Auto wird durch die Mechanikerin repariert.\nC. [WRONG] Das Auto wird durch der Mechanikerin repariert.\nD. [WRONG] Das Auto wird von die Mechanikerin repariert.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782998352278-xq0ax2q8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify whether wrong answers B, C, and D in a German grammar multiple choice question are indeed incorrect.\n\nThe question asks for the passive voice equivalent of \"Die Mechanikerin repariert das Auto.\"\n\nMy analysis:\n- **B** uses \"durch\" instead of \"von\" — \"durch\" is for instruments/impersonal forces, not human agents\n- **C** uses both wrong preposition (\"durch\") and wrong case (\"der\" instead of dative \"der\"... actually \"durch\" takes accusative, so it should be \"durch die\" if durch were correct, making this doubly wrong)\n- **D** uses \"von\" correctly but wrong case: after \"von\" in passive you need dative \"der Mechanikerin\", not accusative \"die Mechanikerin\"\n\nAll three wrong answers are genuinely incorrect.\n\nTRUE||All wrong answers contain clear grammar errors: B misuses \"durch\" for a human agent, C compounds that error with wrong case, and D uses wrong case after \"von\" (accusative instead of dative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782998738671-1qfldzu8",
+      "timestamp": "2026-07-02T13:27:50.129Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"durch\" instead of \"von\" for a human agent, C compounds this with the wrong case (\"durch der\" instead of \"durch die\"), and D uses the wrong case after \"von\" (\"von die\" instead of \"von der\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999683691-rcevlmec",
+      "timestamp": "2026-07-02T13:41:46.702Z"
+    },
+    {
+      "raw": "TRUE||B is incorrect because \"durch\" is used for means/instruments, not personal agents (which require \"von\"); C is incorrect because \"durch\" takes accusative, not dative \"der\"; D is incorrect because \"von\" takes dative, not accusative \"die\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783000383151-780k3jwr",
+      "timestamp": "2026-07-02T13:55:33.749Z"
+    }
+  ]
+}

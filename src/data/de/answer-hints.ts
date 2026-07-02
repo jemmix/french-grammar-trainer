@@ -87,7 +87,7 @@ export const answerHints: Record<string, string> = {
   "rote": "rot",
   "sammle": "sammeln",
   "schöne": "schön",
-  "sind": "sein",
+  "sind": "fahren",
   "sprechende": "sprechen",
   "Stühle": "Pluralform von Stuhl",
   "tanzt": "tanzen",

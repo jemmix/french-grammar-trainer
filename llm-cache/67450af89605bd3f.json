@@ -1,0 +1,33 @@
+{
+  "cacheKey": "67450af89605bd3f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-04-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-04 - Der Täteragent: von (Person) vs. durch (Mittel/Ursache)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz drückt die Ursache korrekt aus?\nChoices:\nA. [CORRECT] Das Schiff wurde durch die Strömung abgetrieben.\nB. Das Schiff wurde von der Strömung abgetrieben.\nC. Das Schiff wurde von die Strömung abgetrieben.\nD. Das Schiff wurde durch der Strömung abgetrieben.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782653773965-ik3iooww"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"von\" (used for personal agents) and \"durch\" (used for means/causes like \"die Strömung\"), which is exactly the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654449168-v04b55th",
+      "timestamp": "2026-06-28T13:48:29.621Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The core distinction between choices A and B is precisely the von (person) vs. durch (means/cause) rule, and the prompt explicitly asks about expressing \"Ursache\" (cause), making this rule central to answering correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782657010502-7c5djel9",
+      "timestamp": "2026-06-28T14:30:46.476Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"von\" (for personal agents) and \"durch\" (for means/causes) by asking students to choose the correct preposition for \"die Strömung\" (a natural cause, not a person), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661685161-jlxd74bb",
+      "timestamp": "2026-06-28T15:49:00.296Z"
+    }
+  ]
+}

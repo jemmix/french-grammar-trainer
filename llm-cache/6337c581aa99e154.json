@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6337c581aa99e154",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-04-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz bedeutet dasselbe wie: „Die Arbeiter bauen das Haus.\"?\n\nChoices:\nA. [CORRECT] Das Haus wird von den Arbeitern gebaut.\nB. [WRONG] Das Haus wird durch die Arbeiter gebaut.\nC. [WRONG] Das Haus wird durch den Arbeitern gebaut.\nD. [WRONG] Das Haus wird von der Arbeitern gebaut.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782998352278-hoskmqzg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar multiple choice question are indeed incorrect translations of \"Die Arbeiter bauen das Haus.\"\n\nAnalysis completed:\n- B (\"durch die Arbeiter\") is incorrect because \"durch\" is used for instruments/means, not personal agents—the correct preposition for human agents in passive voice is \"von\"\n- C (\"durch den Arbeitern\") is incorrect because it uses dative case after \"durch,\" which requires accusative (\"durch die Arbeiter\")\n- D (\"von der Arbeitern\") is incorrect because it uses \"der\" instead of the correct dative plural article \"den\" (\"von den Arbeitern\")\n\nTRUE||All wrong answers contain clear grammar errors: B misuses \"durch\" for a personal agent, C uses wrong case (dative instead of accusative) after \"durch,\" and D uses wrong article (\"der\" instead of \"den\") for dative plural.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782998677644-u6c0rzc4",
+      "timestamp": "2026-07-02T13:25:30.373Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"durch\" which changes meaning from agent to instrument/means, C has wrong case (dative \"den\" after \"durch\" which requires accusative), D has wrong article \"der\" instead of dative plural \"den\" after \"von\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999634068-570zq9na",
+      "timestamp": "2026-07-02T13:41:16.842Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses \"durch\" instead of \"von\" for a personal agent in passive voice, C has a case error (dative \"den Arbeitern\" after \"durch\" which requires accusative), and D has a case error (genitive \"der Arbeitern\" after \"von\" which requires dative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783000330066-ky2on4xi",
+      "timestamp": "2026-07-02T13:54:04.490Z"
+    }
+  ]
+}

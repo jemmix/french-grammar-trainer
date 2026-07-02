@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8d03305f957915d5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz beschreibt einen Zustand?\n\nChoices:\nA. [CORRECT] Die Rechnung ist bezahlt.\nB. [WRONG] Die Rechnung wird bezahlt.\nC. [WRONG] Die Rechnung hat bezahlt.\nD. [WRONG] Die Rechnung bezahlt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773975-nev7fxri"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B describes a process (Vorgangspassiv) not a state; C is grammatically incorrect since \"Die Rechnung\" cannot be the subject performing \"bezahlen\"; D is grammatically incorrect as \"Die Rechnung\" cannot meaningfully perform the action of paying.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655197509-7us2vt2v",
+      "timestamp": "2026-06-28T14:00:23.148Z"
+    },
+    {
+      "raw": "TRUE||B describes an ongoing action (werden + Partizip II = Vorgangspassiv), not a state; C is ungrammatical since \"hat bezahlt\" cannot be used with an inanimate subject like \"die Rechnung\"; D is an incomplete sentence lacking a finite verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660712125-ypjl5c3w",
+      "timestamp": "2026-06-28T15:32:35.372Z"
+    },
+    {
+      "raw": "TRUE||B describes a process (Vorgangspassiv) not a state; C and D are grammatically incorrect because \"die Rechnung\" cannot be the subject performing the action of \"bezahlen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662294943-e9ec6ye0",
+      "timestamp": "2026-06-28T15:58:56.268Z"
+    }
+  ]
+}

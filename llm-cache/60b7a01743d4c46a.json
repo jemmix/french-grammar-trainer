@@ -1,0 +1,33 @@
+{
+  "cacheKey": "60b7a01743d4c46a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht korrekt im Passiv mit Modalverb?\n\nChoices:\nA. [CORRECT] Das muss gemacht werden.\nB. [WRONG] Das muss gemacht worden.\nC. [WRONG] Das muss machen werden.\nD. [WRONG] Das muss gemacht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773970-60n1yrb0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses the past participle \"worden\" instead of the infinitive \"werden\" required for present passive with modal verb, C incorrectly uses the infinitive \"machen\" instead of the past participle \"gemacht\", and D is incomplete as it lacks the passive auxiliary \"werden\" entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654615162-923kw158",
+      "timestamp": "2026-06-28T13:51:04.045Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the passive with modal verb structure: B incorrectly uses \"worden\" (past participle) instead of the required infinitive \"werden\", C incorrectly uses the infinitive \"machen\" instead of the required past participle \"gemacht\", and D is missing the passive auxiliary \"werden\" entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660171879-49vx9pd4",
+      "timestamp": "2026-06-28T15:24:06.879Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B wrongly uses \"worden\" (Perfekt form) instead of the infinitive \"werden\" required with a modal verb, C uses the infinitive \"machen\" instead of the past participle \"gemacht\" needed for passive, and D is incomplete as it lacks the required infinitive \"werden.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661955010-4pzuqyye",
+      "timestamp": "2026-06-28T15:53:12.599Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aa9af5d1f513e4a9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-01-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Vorgangspassiv im Präsens?\n\nChoices:\nA. [CORRECT] Die Rechnung wird bezahlt.\nB. [WRONG] Die Rechnung wird bezahlen.\nC. [WRONG] Die Rechnung werden bezahlt.\nD. [WRONG] Die Rechnung wird bezahle.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773960-grut8k1l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782653840635-sx1ey7xt",
+      "timestamp": "2026-06-28T13:37:42.504Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses an infinitive instead of the past participle, C uses the wrong conjugation of \"werden\" (plural instead of singular), and D uses a first-person singular present form instead of the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655740720-7lxlduii",
+      "timestamp": "2026-06-28T14:09:35.941Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the infinitive \"bezahlen\" instead of the Partizip II \"bezahlt\"; C has subject-verb agreement error with plural \"werden\" for singular \"Die Rechnung\"; D uses the non-existent form \"bezahle\" instead of the Partizip II.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656385717-oxve42dn",
+      "timestamp": "2026-06-28T14:21:00.756Z"
+    }
+  ]
+}

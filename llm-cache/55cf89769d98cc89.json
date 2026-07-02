@@ -1,0 +1,33 @@
+{
+  "cacheKey": "55cf89769d98cc89",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-08-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz beschreibt einen Vorgang in der Vergangenheit?\n\nChoices:\nA. [CORRECT] Das Haus wurde gebaut.\nB. [WRONG] Das Haus war gebaut.\nC. [WRONG] Das Haus hat gebaut.\nD. [WRONG] Das Haus wurden gebaut.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773975-ms1c0tj3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B uses Zustandspassiv describing a state rather than a Vorgang/process, C incorrectly uses active voice with an inanimate subject that cannot perform the action, and D contains a subject-verb agreement error (wurden instead of wurde for singular Das Haus).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655209900-3ipmz2p2",
+      "timestamp": "2026-06-28T14:00:47.086Z"
+    },
+    {
+      "raw": "TRUE||B is Zustandspassiv describing a state rather than a process, C incorrectly uses active voice with an inanimate subject, and D contains a subject-verb agreement error (wurden instead of wurde for singular Das Haus).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660734933-er44ruk5",
+      "timestamp": "2026-06-28T15:33:02.097Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B describes a state rather than a process (Vorgang), C has an impossible subject-verb relationship (a house cannot build), and D has incorrect subject-verb agreement (singular subject with plural verb form).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662335946-y4vj79yg",
+      "timestamp": "2026-06-28T15:59:40.551Z"
+    }
+  ]
+}

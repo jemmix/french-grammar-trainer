@@ -1,0 +1,33 @@
+{
+  "cacheKey": "511ba6218be27018",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-09-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Passivsatz bedeutet dasselbe wie: „Man spricht in der Schweiz auch Deutsch.\"?\n\nChoices:\nA. [CORRECT] In der Schweiz wird auch Deutsch gesprochen.\nB. [WRONG] In der Schweiz wird auch Deutsch sprechen.\nC. [WRONG] In der Schweiz werden auch Deutsch gesprochen.\nD. [WRONG] In der Schweiz spricht man kein Deutsch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773976-uhse1twq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B incorrectly uses the infinitive \"sprechen\" instead of the past participle for passive voice, C has a subject-verb agreement error with \"werden\" instead of \"wird\" for the singular subject \"Deutsch\", and D changes the meaning entirely by using \"kein\" instead of \"auch\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655403567-r2w5lly0",
+      "timestamp": "2026-06-28T14:04:43.102Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses the active infinitive \"sprechen\" instead of the past participle \"gesprochen\" required for passive; C incorrectly uses plural \"werden\" instead of singular \"wird\" to agree with neuter \"Deutsch\"; D completely changes the meaning with \"kein Deutsch\" (no German) instead of \"auch Deutsch\" (also German).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660938506-2pkp4cgp",
+      "timestamp": "2026-06-28T15:36:31.599Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks which passive sentence means the same as \"Man spricht in der Schweiz auch Deutsch.\"\n\n**My analysis (not yet submitted in the required format):**\n- B: \"In der Schweiz wird auch Deutsch sprechen.\" — Incorrect because it uses \"werden + sprechen\" (future active) instead of \"werden + gesprochen\" (present passive)\n- C: \"In der Schweiz werden auch Deutsch gesprochen.\" — Incorrect because \"werden\" is plural but \"Deutsch\" is singular, requiring \"wird\"\n- D: \"In der Schweiz spricht man kein Deutsch.\" — Incorrect because it changes the meaning to the negative (\"no German\" instead of \"also German\")\n\n**Verdict that should have been returned:**\nTRUE||All wrong answers contain clear grammar or meaning errors: B uses future active instead of present passive, C has subject-verb agreement error (werden instead of wird), and D changes the meaning to the negative.\n\n**Remaining tasks:** None — the analysis is complete.\n\n**Recommendation:** The verdict is TRUE — all wrong answers are definitively incorrect within the grammatical constraints of the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662520664-q52xo1rz",
+      "timestamp": "2026-06-28T16:03:15.902Z"
+    }
+  ]
+}

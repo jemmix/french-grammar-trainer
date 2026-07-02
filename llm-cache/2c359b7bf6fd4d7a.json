@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2c359b7bf6fd4d7a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-07-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-07 - Das Zustandspassiv: sein + Partizip II (Die Tür ist geschlossen.)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Verb „sein\" in der richtigen Form ein (Plural).\nPhrase: „Die Fenster ___ geschlossen.\nCorrect Answer: sind\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782998352305-23i3oon0"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI analyzed the alignment between the stated rule (11-07 - Das Zustandspassiv: sein + Partizip II) and the given question about conjugating \"sein\" in the sentence \"Die Fenster ___ geschlossen.\"\n\nVerdict analysis:\nVERDICT: MISALIGNED\nREASON: The question only tests basic subject-verb agreement for \"sein\" (plural \"Die Fenster\" → \"sind\") since the participle \"geschlossen\" is already provided, meaning the student can answer correctly without any understanding of the Zustandspassiv construction itself.\n\nRemaining tasks:\n- None - this was a single validation task\n\nRecommendations for what should be done next:\nTo properly test the Zustandspassiv rule, the question should require the student to either: (1) produce both the correct form of \"sein\" AND the past participle, or (2) choose between different passive constructions (Vorgangspassiv vs. Zustandspassiv), or (3) identify whether a situation calls for Zustandspassiv rather than another construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999329925-97lflhgu",
+      "timestamp": "2026-07-02T13:35:51.278Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests basic \"sein\" conjugation (knowing that \"sind\" is the plural form), not the Zustandspassiv concept itself — the passive construction is already set up with \"geschlossen\" provided, so a student could answer correctly without understanding when or why to use sein + Partizip II as a state passive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782999981754-3op0j2js",
+      "timestamp": "2026-07-02T13:46:53.832Z"
+    }
+  ]
+}

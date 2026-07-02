@@ -1,0 +1,33 @@
+{
+  "cacheKey": "049a421d95cae8f8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz drückt die Person als Täter korrekt aus?\n\nChoices:\nA. [CORRECT] Der Brief wird von der Frau geschrieben.\nB. [WRONG] Der Brief wird durch die Frau geschrieben.\nC. [WRONG] Der Brief wird durch der Frau geschrieben.\nD. [WRONG] Der Brief wird von die Frau geschrieben.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773965-hsjv6az6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"durch\" (for impersonal means) instead of \"von\" (for personal agents), C compounds this with wrong case (\"der\" instead of \"die\" after \"durch\"), and D uses wrong case (\"die\" instead of \"der\") after \"von\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654361351-u38wmvsy",
+      "timestamp": "2026-06-28T13:46:35.579Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was analyzing a German grammar verification task for a multiple choice question about passive voice construction and the correct preposition (\"von\" vs \"durch\") for expressing the agent (Täter).\n\nList of any remaining tasks that were not completed:\n- I did not output the final verdict in the required format before the step limit was reached.\n\nRecommendations for what should be done next:\nThe answer should be: TRUE||B incorrectly uses \"durch\" for a person as agent instead of \"von\"; C has a case error (\"durch\" requires accusative \"die Frau\", not dative \"der Frau\"); D has a case error (\"von\" requires dative \"der Frau\", not accusative \"die Frau\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656851799-1gki4me4",
+      "timestamp": "2026-06-28T14:29:24.746Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ about expressing the agent (Täter) in passive voice are indeed incorrect.\n\nAnalysis completed:\n- B: \"durch die Frau\" is grammatically well-formed but uses \"durch\" (for instruments/means) instead of \"von\" (for personal agents), making it incorrect for the stated purpose.\n- C: \"durch der Frau\" has a case error — \"durch\" requires accusative, not dative.\n- D: \"von die Frau\" has a case error — \"von\" requires dative, not accusative.\n\nTRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661589407-7onz7prg",
+      "timestamp": "2026-06-28T15:47:32.378Z"
+    }
+  ]
+}

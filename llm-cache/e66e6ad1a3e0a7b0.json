@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e66e6ad1a3e0a7b0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-07-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht im Zustandspassiv?\n\nChoices:\nA. [CORRECT] Die Fenster sind geöffnet.\nB. [WRONG] Die Fenster werden geöffnet.\nC. [WRONG] Die Fenster haben geöffnet.\nD. [WRONG] Die Fenster sind öffnen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773971-lkbwgtgp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: B uses Vorgangspassiv (werden + Partizip) not Zustandspassiv, C incorrectly uses haben + Partizip which is not a passive form, and D is ungrammatical (infinitive \"öffnen\" instead of past participle \"geöffnet\" after sein).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654890119-cry6kjh5",
+      "timestamp": "2026-06-28T13:55:23.517Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question about Zustandspassiv are indeed incorrect.\n\nAnalysis completed:\n- B: \"Die Fenster werden geöffnet.\" - This is Vorgangspassiv (process passive with \"werden\"), not Zustandspassiv. Incorrect.\n- C: \"Die Fenster haben geöffnet.\" - \"Haben\" + past participle doesn't form a valid passive construction here. Incorrect.\n- D: \"Die Fenster sind öffnen.\" - Uses infinitive instead of past participle \"geöffnet\". Grammatically incorrect.\n\nAll three wrong answers are genuinely incorrect within the grammatical constraints of the question.\n\nTRUE||All wrong answers are grammatically incorrect for Zustandspassiv: B uses Vorgangspassiv (werden), C incorrectly uses haben, and D uses the infinitive instead of the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660363006-112ljftm",
+      "timestamp": "2026-06-28T15:28:59.392Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses Vorgangspassiv (werden + Partizip II) instead of Zustandspassiv, C incorrectly pairs \"haben\" with a past participle for a passive construction, and D uses the infinitive \"öffnen\" instead of the required past participle \"geöffnet\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662163640-s6gtwpqf",
+      "timestamp": "2026-06-28T15:56:38.720Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9cae422d76b2815",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-09 - man als Alternative zum Passiv (Man spricht Deutsch hier. = Deutsch wird hier gesprochen.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz mit „man\" bedeutet dasselbe wie: „Briefe werden heute selten geschrieben.\"?\nChoices:\nA. [CORRECT] Heute schreibt man selten Briefe.\nB. Heute wird man selten Briefe geschrieben.\nC. Heute schreiben man selten Briefe.\nD. Heute schreibt man oft Briefe.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782653773976-fk3b7ecc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires converting a passive sentence (\"Briefe werden heute selten geschrieben\") to its \"man\" equivalent, which is precisely the grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782655396737-4a0f3k9q",
+      "timestamp": "2026-06-28T14:04:19.410Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the ability to replace a passive construction (\"Briefe werden... geschrieben\") with an equivalent active sentence using \"man\" (\"man schreibt... Briefe\"), which is exactly the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782660925299-z6s0vnu0",
+      "timestamp": "2026-06-28T15:37:09.159Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires transforming a passive sentence into its equivalent using \"man\" as the subject, which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782662555543-dpzwomc0",
+      "timestamp": "2026-06-28T16:04:16.573Z"
+    }
+  ]
+}

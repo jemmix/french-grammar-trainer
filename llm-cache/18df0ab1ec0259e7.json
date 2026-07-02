@@ -1,0 +1,33 @@
+{
+  "cacheKey": "18df0ab1ec0259e7",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "11-03-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Das Vorgangspassiv im Perfekt: ist...worden (nicht: geworden)\nPROMPT: Setzen Sie die korrekte Partizipform von „werden\" im Vorgangspassiv Perfekt ein.\nPHRASE: „Das Auto ist repariert ___.\nCORRECT ANSWER: worden\n\nWRONG ANSWERS to evaluate:\n1. geworden\n2. werden\n3. wurde\n4. gewordet\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782656103900-mc3gwk5b"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating whether the wrong answers for this German Vorgangspassiv question are plausible learner mistakes.\n\nSummary of analysis completed:\n- **geworden**: Extremely plausible - this is THE exact confusion the rule addresses (worden vs geworden)\n- **werden**: Plausible - learners often confuse infinitive with past participle forms\n- **wurde**: Plausible - natural confusion between Vorgangspassiv Perfekt (ist...worden) and Präteritum (wurde...)\n- **gewordet**: Plausible - represents over-regularization of an irregular verb (applying ge- + stem + -t pattern)\n\n**Verdict: PLAUSIBLE**\n**Reason: All four wrong answers represent systematic, common learner errors: the target confusion (geworden), infinitive/participle confusion (werden), tense confusion in passive constructions (wurde), and over-regularization of irregular verbs (gewordet).**\n\nNo remaining tasks - the evaluation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782663379603-dmy8xu0d",
+      "timestamp": "2026-06-28T16:17:43.292Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent classic errors learners make with the Vorgangspassiv: \"geworden\" is the exact confusion this rule targets, \"werden\" shows failure to form the participle, \"wurde\" mixes up Perfekt and Präteritum passiv, and \"gewordet\" is a common over-application of weak participle endings to an irregular verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782991411789-ul8kdmwc",
+      "timestamp": "2026-07-02T11:24:09.932Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"geworden\" is the classic confusion between active and passive perfect (the exact mistake this rule targets), \"werden\" uses the infinitive instead of the past participle, \"wurde\" confuses Präteritum with Perfekt passive, and \"gewordet\" is a plausible over-regularization error where a learner incorrectly applies weak verb patterns to form the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782993425688-64j4ka1m",
+      "timestamp": "2026-07-02T11:58:56.475Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7a401dfbed1a7e2",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "11-07-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: „Die Fenster werden geschlossen.\" — Hier geht es um einen fertigen Zustand, nicht um eine Handlung. Setzen Sie das richtige Hilfsverb ein.\n\nPHRASE: „Die Fenster ___ geschlossen.\n\nHINT: sein\n\nEXPECTED ANSWER: sind\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1783004977400-lda8enll"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to insert the correct auxiliary verb, the hint provides \"sein\" as the verb to conjugate, and the phrase clearly shows where the conjugated form belongs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783005271366-edb85asd",
+      "timestamp": "2026-07-02T15:14:58.497Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to insert an auxiliary verb for a Zustandspassiv construction, and the hint \"sein\" tells the learner exactly which verb to conjugate for the plural subject \"Die Fenster.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783005965881-3sds0zjr",
+      "timestamp": "2026-07-02T15:26:34.674Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly asks to insert the correct auxiliary verb for a finished state (Zustandspassiv), and the hint \"sein\" combined with the plural subject \"Die Fenster\" makes it clear the learner should conjugate \"sein\" in the 3rd person plural present tense form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1783006146842-jdsj58r0",
+      "timestamp": "2026-07-02T15:29:40.385Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7d23fbb6efaf092",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "11-04-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz drückt das Mittel korrekt aus?\n\nChoices:\nA. [CORRECT] Die Tür wurde durch den Schlüssel geöffnet.\nB. [WRONG] Die Tür wurde von dem Schlüssel geöffnet.\nC. [WRONG] Die Tür wurde von den Schlüssel geöffnet.\nD. [WRONG] Die Tür wurde durch dem Schlüssel geöffnet.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782653773965-qw8w58u1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"von\" instead of \"durch\" for means, C compounds this with wrong case (\"den\" instead of dative \"dem\"), and D uses wrong case after \"durch\" (\"dem\" dative instead of \"den\" accusative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782654400175-b2ohap2e",
+      "timestamp": "2026-06-28T13:47:16.948Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses \"von\" instead of \"durch\" for expressing means/instrument, C has both the wrong preposition \"von\" and incorrect dative case \"den\" instead of \"dem\" for the masculine noun, and D uses the correct preposition \"durch\" but incorrectly pairs it with dative \"dem\" instead of the required accusative \"den\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782656931189-hphj34vz",
+      "timestamp": "2026-06-28T14:29:20.195Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar question about expressing means (\"Mittel\") are incorrect. The question asks which sentence correctly uses the preposition for means/instrument.\n\nAnalysis completed:\n- B: \"von dem Schlüssel\" is incorrect because \"von\" indicates an agent (typically animate), not an instrument/means\n- C: \"von den Schlüssel\" is doubly incorrect - wrong preposition (von for means) and wrong case (den is accusative, but von takes dative)\n- D: \"durch dem Schlüssel\" is incorrect because \"durch\" takes accusative, not dative (\"dem\")\n\nVerdict: TRUE||All wrong answers contain clear grammar errors - B misuses \"von\" for an inanimate instrument, C has both wrong preposition and wrong case, and D uses dative \"dem\" instead of accusative \"den\" with \"durch\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782661585009-stxe9wfb",
+      "timestamp": "2026-06-28T15:47:43.481Z"
+    }
+  ]
+}
