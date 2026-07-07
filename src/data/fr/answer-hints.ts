@@ -1198,6 +1198,7 @@ export const answerHints: Record<string, string> = {
   "se sera perdu": "se perdre",
   "se sera réveillée": "se réveiller",
   "se soient battus": "se battre",
+  "se soient reposées": "se reposer",
   "se soit levé": "se lever",
   "se soit mise": "se mettre",
   "se soit trompée": "se tromper",
