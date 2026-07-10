@@ -166,6 +166,7 @@ export const answerHints: Record<string, string> = {
   "ait éliminé": "éliminer",
   "ait fini": "finir",
   "ait obtenu": "obtenir",
+  "ait pris": "prendre",
   "ait proposée": "proposer",
   "ait remédié": "remédier",
   "ait reçu": "recevoir",
