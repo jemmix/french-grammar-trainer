@@ -81,6 +81,19 @@ Rule 01-18 ("Le présent de narration") INPUT questions were the hardest to vali
 
 Q021-Q023 and Q025 use the standard format "Complétez le récit au présent de narration." which passes with 90%+ agreement for those sentences.
 
+### 08-11 LLM validation — question-rule-alignment unsatisfiable for comparison rules
+
+Rule 08-11 ("subjonctif passé vs présent: simultanéité vs antériorité") fails LLM validation on ~17/25 questions. The `question-rule-alignment` predicate is fundamentally unsatisfiable for tense-comparison questions:
+
+- **Without tense specification**: "Both subjonctif présent and passé are valid" / "Tests mood recognition, not tense choice"
+- **With tense specification** ("au subjonctif présent"): "Gives away the answer, doesn't test the distinction"
+- **With parenthetical hints** ("(action accomplie)"): "Non-standard terminology confuses learners"
+- **With time markers** ("hier", "maintenant"): "Too obvious, trivializes the choice"
+
+The dooming cascade (2 failures → all other predicates skipped) turns ~5 `question-rule-alignment` failures into 100+ total failures. Structural validation passes; all grammatical content is correct. May need to restructure as two separate rules (one for présent triggers, one for passé triggers) or accept partial LLM validation for comparison rules.
+
+This same pattern will likely affect 08-12 (passé vs PC indicatif) and 08-17 (passé vs infinitif passé).
+
 ## Content scale
 
 - **Topic-sharded generation** — add a `topic` parameter to the generate-questions skill (e.g. work, travel, leisure, buying groceries, healthcare, education) so each generation batch stays within API response limits (25–50 questions) while covering the same grammar rule through varied real-world contexts. A rule like "présent des verbes en -er" could have one file per topic, all merged into the section. Lets the corpus grow incrementally without any single generation call getting too large.
