@@ -92,7 +92,15 @@ Rule 08-11 ("subjonctif passé vs présent: simultanéité vs antériorité") fa
 
 The dooming cascade (2 failures → all other predicates skipped) turns ~5 `question-rule-alignment` failures into 100+ total failures. Structural validation passes; all grammatical content is correct. May need to restructure as two separate rules (one for présent triggers, one for passé triggers) or accept partial LLM validation for comparison rules.
 
-This same pattern will likely affect 08-12 (passé vs PC indicatif) and 08-17 (passé vs infinitif passé).
+This same pattern will likely affect 08-12 (passé vs PC indicatif), 08-15 (concordance des temps), and 08-17 (passé vs infinitif passé).
+
+### 08-15 LLM validation — same comparison-rule issue
+
+Rule 08-15 ("concordance des temps avec le subjonctif passé") has the same unsatisfiable `question-rule-alignment` issue. Tried both approaches:
+- **"Complétez au subjonctif passé :"** → LLM: "gives away the tense, tests formation not concordance" (184/310 pass)
+- **"Complétez au subjonctif :"** → LLM: "both présent and passé are valid, ambiguous" (167/310 pass)
+
+Content is grammatically correct, structurally validated. Committed as WIP. Rule 08-05 ("action accomplie/antérieure") covers essentially the same content and passed 310/310 with the same prompt format — the LLM treats the word "concordance" in the rule title as requiring tense selection.
 
 ## Content scale
 
