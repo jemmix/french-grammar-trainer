@@ -49,7 +49,19 @@ function checkMcq(ctx: { question: MultipleChoiceQuestion } & QuestionContext): 
 
   if (beforeBlank.length > 0) {
     const lastChar = beforeBlank[beforeBlank.length - 1]!;
-    const isSentenceBoundary = /[.!?„"'«"]/.test(lastChar);
+    let isSentenceBoundary = /[.!?„"«]/.test(lastChar);
+
+    // A straight apostrophe before the blank is almost always elision
+    // (J', N', l', m', d', qu', ...), not a closing quote. Only treat it
+    // as a sentence boundary when it is NOT directly preceded by a letter.
+    if (lastChar === "'") {
+      const prev = beforeBlank[beforeBlank.length - 2];
+      isSentenceBoundary = !prev || !/[A-Za-zÀ-ÿ]/.test(prev);
+    }
+
+    // A closing guillemet/right single or double curly quote always counts.
+    if (/[»’”]/.test(lastChar)) isSentenceBoundary = true;
+
     if (!isSentenceBoundary) return { status: "pass" };
   }
 

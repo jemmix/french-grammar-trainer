@@ -54,11 +54,6 @@ function validateRuleProportions(
 ): { ruleId: string; total: number; inputPct: number; issue: string }[] {
   const issues: { ruleId: string; total: number; inputPct: number; issue: string }[] = [];
 
-  // Rules where INPUT format is fundamentally incompatible (comparison rules
-  // where no-ambiguous-prompts and question-rule-alignment create contradictory
-  // requirements — specifying tense fails alignment, not specifying fails clarity)
-  const noInputRules = new Set(["08-11", "08-12", "08-15", "08-17"]);
-
   for (const [ruleId, counts] of ruleCounts) {
     const total = counts.mcq + counts.input;
     const inputPct = total > 0 ? (counts.input / total) * 100 : 0;
@@ -67,7 +62,7 @@ function validateRuleProportions(
       issues.push({ ruleId, total, inputPct, issue: "no questions" });
     } else if (total % 5 !== 0) {
       issues.push({ ruleId, total, inputPct, issue: `total ${total} not divisible by 5` });
-    } else if (!noInputRules.has(ruleId) && inputPct !== 20) {
+    } else if (inputPct !== 20) {
       issues.push({
         ruleId,
         total,
