@@ -7,7 +7,6 @@ import { checkQuestionElision, type QuestionElisionIssue } from "./elision-check
 const QUESTIONS_DIR = join(import.meta.dirname, "../../questions/fr");
 
 const ALLOWED_FAILING_SECTIONS = new Set([
-  "08",
   "09",
   "10",
   "11",
