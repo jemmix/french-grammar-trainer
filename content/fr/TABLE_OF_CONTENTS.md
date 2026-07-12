@@ -200,7 +200,7 @@ Chaque section contient 20 règles de grammaire. Chaque règle dispose de ~500 q
 15. La concordance des temps avec le subjonctif passé
 16. Le subjonctif passé dans les expressions figées (Dieu ait son âme, vive la France !)
 17. Le subjonctif passé et l'infinitif passé : emplois (après avoir fait / que j'aie fait)
-18. Le subjonctif passé après **sans que** (sans qu'il ait rien dit)
+18. Le subjonctif après **sans que** : présent et passé (sans qu'il sache / sans qu'il ait rien dit)
 19. Le subjonctif passé après **pourvu que** (pourvu qu'il ait réussi !)
 20. Synthèse : choisir entre subjonctif présent et subjonctif passé
 
