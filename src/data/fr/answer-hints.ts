@@ -880,6 +880,7 @@ export const answerHints: Record<string, string> = {
   "n'as pas": "négation",
   "n'avons pas": "négation",
   "n'ait abandonné": "abandonner",
+  "n'ait pas abandonné": "abandonner",
   "n'aura pas fini": "finir",
   "n'aurais": "avoir",
   "n'aurait": "avoir",
