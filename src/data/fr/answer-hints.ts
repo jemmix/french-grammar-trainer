@@ -138,6 +138,7 @@ export const answerHints: Record<string, string> = {
   "aient comprise": "comprendre",
   "aient fini": "finir",
   "aient résolu": "résoudre",
+  "ait résolu": "résoudre",
   "aient signé": "signer",
   "aient découvert": "découvrir",
   "aient rendu": "rendre",
