@@ -155,6 +155,7 @@ export const answerHints: Record<string, string> = {
   "aies fini": "finir",
   "aies oublié": "oublier",
   "aies obtenu": "obtenir",
+  "aies participé": "participer",
   "aies obtenue": "obtenir",
   "aies perdue": "perdre",
   "aies quitté": "quitter",
