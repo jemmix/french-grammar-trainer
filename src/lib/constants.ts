@@ -27,14 +27,3 @@ export const PROGRESS = {
   // Sync
   FLUSH_INTERVAL_MS: 30_000,
 } as const;
-
-// Tier thresholds and colors — ordered high → low (same index order as t.tiers in lang bundles).
-// Labels and promo strings live in the lang bundle; getTier is in src/lib/tiers.ts.
-export const TIER_THRESHOLDS = [
-  { min: 0.95, color: "#facc15" },
-  { min: 0.80, color: "#34d399" },
-  { min: 0.60, color: "#fb923c" },
-  { min: 0.40, color: "#fbbf24" },
-  { min: 0.20, color: "#2dd4bf" },
-  { min: 0.00, color: "#38bdf8" },
-] as const;

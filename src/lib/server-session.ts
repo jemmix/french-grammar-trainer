@@ -1,7 +1,8 @@
 import { cookies } from "next/headers";
 import { env } from "~/env";
 import { getStore } from "./store";
-import { createEmptyPowers, decodeRecord } from "./user-record";
+import { createEmptyPowers } from "~/mastery/progress";
+import { decodeRecord } from "./user-record";
 import { lz4Decompress } from "./lz4";
 import { verifyCookie, shouldRenew } from "~/auth/session-cookie";
 import { isUserAllowed } from "~/auth/allow-list";

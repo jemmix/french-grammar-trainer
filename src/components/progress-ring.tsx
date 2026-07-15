@@ -1,4 +1,4 @@
-import { getTier } from "~/lib/tiers";
+import { getTier } from "~/mastery/tiers";
 
 interface Props {
   power: number;

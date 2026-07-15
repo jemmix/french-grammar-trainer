@@ -4,11 +4,8 @@ import { sectionMap } from "~/content/sections";
 import { t } from "~/lang";
 import { getSession } from "~/lib/server-session";
 import { getStore } from "~/lib/store";
-import {
-  decodeRecord,
-  getDisplayPower,
-  getRuleSlotIndex,
-} from "~/lib/user-record";
+import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";
+import { decodeRecord } from "~/lib/user-record";
 import { lz4Decompress } from "~/lib/lz4";
 import { pickSectionQuizQuestions } from "~/lib/question-picker";
 import { getExplanation } from "~/content/explanations";

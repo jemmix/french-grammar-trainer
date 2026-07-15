@@ -15,7 +15,7 @@ import {
   getRuleSlotIndex,
   getSectionDisplayPower,
   recordAnswerInPlace,
-} from "~/lib/user-record";
+} from "~/mastery/progress";
 import { PROGRESS } from "~/lib/constants";
 
 interface ProgressContextValue {

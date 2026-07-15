@@ -6,7 +6,7 @@ import { useProgress } from "~/contexts/progress-context";
 import { ProgressRing } from "~/components/progress-ring";
 import { GoogleSignInButton } from "~/components/google-sign-in-button";
 import { SigningOutOverlay } from "~/components/signing-out-overlay";
-import { getTier } from "~/lib/tiers";
+import { getTier } from "~/mastery/tiers";
 import { t } from "~/lang";
 import {
   BrandMark,

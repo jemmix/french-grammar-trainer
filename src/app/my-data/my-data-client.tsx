@@ -6,8 +6,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import type { SectionMeta } from "~/content/types";
 import type { SlotSection, RuleMetaEntry } from "~/content/slots";
-import { getTier } from "~/lib/tiers";
-import { getRuleSlotIndex } from "~/lib/user-record";
+import { getTier } from "~/mastery/tiers";
+import { getRuleSlotIndex } from "~/mastery/progress";
 import { t } from "~/lang";
 import { BrandMark, useTheme } from "~/themes";
 

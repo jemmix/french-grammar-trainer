@@ -1,12 +1,11 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getStore } from "~/lib/store";
 import { getSession } from "~/lib/server-session";
+import { createEmptyPowers, recordAnswerInPlace } from "~/mastery/progress";
 import {
-  createEmptyPowers,
   decodeHeader,
   decodeRecord,
   encodeRecord,
-  recordAnswerInPlace,
 } from "~/lib/user-record";
 import { lz4Compress, lz4Decompress } from "~/lib/lz4";
 

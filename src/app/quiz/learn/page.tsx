@@ -1,7 +1,8 @@
 import { getSession } from "~/lib/server-session";
 import { getStore } from "~/lib/store";
 import { sectionMap } from "~/content/sections";
-import { decodeRecord, getDisplayPower, getRuleSlotIndex } from "~/lib/user-record";
+import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";
+import { decodeRecord } from "~/lib/user-record";
 import { lz4Decompress } from "~/lib/lz4";
 import { pickLearnQuestions } from "~/lib/question-picker";
 import { getExplanation } from "~/content/explanations";
