@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import type { ThemeName } from "./types";
+import type { ThemeName } from "~/config/theme";
 
 const ThemeContext = createContext<ThemeName>("lemonde");
 

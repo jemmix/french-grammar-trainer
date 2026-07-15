@@ -7,7 +7,7 @@ import { getSession, getProgressPowers } from "~/lib/server-session";
 import { signCookie, COOKIE_MAX_AGE_S } from "~/lib/session-cookie";
 import { env } from "~/env";
 import { t } from "~/lang";
-import { resolveTheme } from "~/themes/types";
+import { resolveTheme } from "~/config/theme";
 import { ThemeProvider } from "~/themes";
 
 const geist = Geist({

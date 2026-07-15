@@ -3,7 +3,7 @@ import Link from "next/link";
 import { t } from "~/lang";
 import type { PrivacySectionPara } from "~/lang/types";
 import { BrandMark } from "~/themes";
-import { resolveTheme } from "~/themes/types";
+import { resolveTheme } from "~/config/theme";
 import { env } from "~/env";
 
 const theme = resolveTheme(env.NEXT_PUBLIC_THEME, env.NEXT_PUBLIC_LANG);

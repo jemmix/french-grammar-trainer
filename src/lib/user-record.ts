@@ -1,6 +1,6 @@
 // Pure functions — no I/O, no Next.js imports
 
-import { RULE_SLOTS, RULES_PER_SECTION, SECTIONS_COUNT } from "./lang-config";
+import { RULE_SLOTS, RULES_PER_SECTION, SECTIONS_COUNT } from "~/config/lang-config";
 
 export const HEADER_SIZE = 11;
 export { RULE_SLOTS };

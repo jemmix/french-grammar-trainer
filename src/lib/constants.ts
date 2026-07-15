@@ -1,4 +1,4 @@
-import { RULE_SLOTS, RULES_PER_SECTION } from "./lang-config";
+import { RULE_SLOTS, RULES_PER_SECTION } from "~/config/lang-config";
 
 export const PROGRESS = {
   // EWMA (15/16 decay — all integer math via bit shifts)

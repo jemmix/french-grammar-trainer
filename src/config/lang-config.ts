@@ -1,3 +1,5 @@
+import { env } from "./env";
+
 export type LangConfig = {
   lang: string;
   sections: number;
@@ -11,9 +13,7 @@ const CONFIGS: Record<string, LangConfig> = {
   de: { lang: "de", sections: 12, rulesPerSection: 10, ruleSlots: 120 },
 };
 
-const lang = process.env.NEXT_PUBLIC_LANG ?? "fr";
-
-export const LANG_CONFIG: LangConfig = CONFIGS[lang] ?? CONFIGS.fr!;
+export const LANG_CONFIG: LangConfig = CONFIGS[env.lang] ?? CONFIGS.fr!;
 
 export const RULE_SLOTS = LANG_CONFIG.ruleSlots;
 export const RULES_PER_SECTION = LANG_CONFIG.rulesPerSection;

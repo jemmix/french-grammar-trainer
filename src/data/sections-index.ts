@@ -1,4 +1,5 @@
 import type { Section, SectionMeta } from "./types";
+import { env } from "~/config/env";
 
 // Per-language barrel files export loaded sections and metadata.
 // Both are imported statically; webpack replaces process.env.NEXT_PUBLIC_LANG
@@ -7,7 +8,7 @@ import { loadedSections as frSections, meta as frMeta } from "./fr";
 import { loadedSections as enSections, meta as enMeta } from "./en";
 import { loadedSections as deSections, meta as deMeta } from "./de";
 
-const lang = process.env.NEXT_PUBLIC_LANG ?? "fr";
+const lang = env.lang;
 const _allSections: Record<string, Section[]> = { fr: frSections, en: enSections, de: deSections };
 const _allMeta: Record<string, Omit<SectionMeta, "questionCount">[]> = { fr: frMeta, en: enMeta, de: deMeta };
 const _loadedSections = _allSections[lang] ?? frSections;

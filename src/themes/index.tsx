@@ -1,6 +1,6 @@
 "use client";
 
-import type { ThemeName } from "./types";
+import type { ThemeName } from "~/config/theme";
 import {
   LemondeBrandMark,
   LemondeHomeHeader,
@@ -18,7 +18,6 @@ import {
 } from "./kitsch";
 
 export { ThemeProvider, useTheme } from "./context";
-export { resolveTheme, THEME_NAMES, type ThemeName } from "./types";
 
 const BRAND_MARKS: Record<ThemeName, typeof LemondeBrandMark> = {
   lemonde: LemondeBrandMark,
