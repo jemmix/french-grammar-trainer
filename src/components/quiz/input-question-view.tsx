@@ -4,7 +4,7 @@ import type { InputQuestion, Rule } from "~/content/types";
 import {
   evaluateInput,
   type InputResult,
-} from "~/lib/quiz-helpers";
+} from "~/quiz/grade";
 import { t } from "~/lang";
 
 export function InputQuestionView({

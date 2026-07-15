@@ -5,7 +5,8 @@ import { t } from "~/lang";
 import { getSession } from "~/lib/server-session";
 import { getStore, deserialize } from "~/storage/store";
 import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";
-import { pickSectionQuizQuestions } from "~/lib/question-picker";
+import { pickSectionQuizQuestions } from "~/quiz/select";
+import { selectSectionInterstitial } from "~/quiz/interstitial";
 import { getExplanation } from "~/content/explanations";
 import { QuizClient } from "./quiz-client";
 
@@ -53,31 +54,7 @@ async function getInitialQuestionsAndExplanation(sectionId: string) {
     targetCount: 20,
   });
 
-  // Find weakest rule for interstitial explanation
-  let explanation = null;
-  const rulesWithQs = section.rules.filter((r) =>
-    section.questions.some((q) => q.ruleId === r.id),
-  );
-
-  if (rulesWithQs.length > 0) {
-    // Find the rule with highest weight (weakest)
-    let weakestRule = rulesWithQs[0]!;
-    let weakestWeight = -Infinity;
-
-    for (const rule of rulesWithQs) {
-      const power = getRulePower(rule.id);
-      const weight = Math.pow(1 - power, 2) + 0.05; // matching ruleWeight logic
-      if (weight > weakestWeight) {
-        weakestWeight = weight;
-        weakestRule = rule;
-      }
-    }
-
-    const power = getRulePower(weakestRule.id);
-    if (power < 0.2) {
-      explanation = getExplanation(section, weakestRule.id) ?? null;
-    }
-  }
+  const explanation = selectSectionInterstitial(section, getRulePower);
 
   return { questions, explanation };
 }

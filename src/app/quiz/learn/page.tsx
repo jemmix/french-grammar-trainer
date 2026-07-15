@@ -2,8 +2,8 @@ import { getSession } from "~/lib/server-session";
 import { getStore, deserialize } from "~/storage/store";
 import { sectionMap } from "~/content/sections";
 import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";
-import { pickLearnQuestions } from "~/lib/question-picker";
-import { getExplanation } from "~/content/explanations";
+import { pickLearnQuestions } from "~/quiz/select";
+import { selectLearnInterstitial } from "~/quiz/interstitial";
 import type { RuleExplanation } from "~/content/types";
 import { LearnClient } from "./learn-client";
 
@@ -39,19 +39,11 @@ export default async function LearnPage() {
     getSectionPower,
   });
 
-  let initialExplanation: RuleExplanation | null = null;
-  if (result.focusRuleId) {
-    const power = getRulePower(result.focusRuleId);
-    if (power < 0.2) {
-      for (const section of allSections) {
-        const explanation = getExplanation(section, result.focusRuleId);
-        if (explanation) {
-          initialExplanation = explanation;
-          break;
-        }
-      }
-    }
-  }
+  const initialExplanation = selectLearnInterstitial(
+    result.focusRuleId,
+    getRulePower,
+    allSections,
+  );
 
   const ruleMeta = new Map(
     allSections.flatMap((section) =>

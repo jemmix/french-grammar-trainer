@@ -1,6 +1,4 @@
-import type { JSX } from "react";
 import type { InputQuestion } from "~/content/types";
-import { t } from "~/lang";
 
 export const QUESTIONS_PER_QUIZ = 20;
 
@@ -18,30 +16,6 @@ export interface InputResult {
   matchedAnswer?: string;
   explanation?: string;
   wrongExplanation?: string;
-}
-
-/** Replaces runs of 2+ underscores with a styled inline blank element. */
-export function renderWithBlanks(text: string): (string | JSX.Element)[] {
-  return text.split(/(_{2,})/).map((part, i) =>
-    /^_{2,}$/.test(part) ? (
-      <span
-        key={i}
-        className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-primary/[.07] border-b-2 border-primary/40"
-        aria-label={t.blankAriaLabel}
-      />
-    ) : part
-  );
-}
-
-export function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = shuffled[i]!;
-    shuffled[i] = shuffled[j]!;
-    shuffled[j] = temp;
-  }
-  return shuffled;
 }
 
 // Levenshtein distance — only need to check if distance is exactly 1

@@ -45,11 +45,10 @@ export function pickLearnQuestions(params: {
 }): LearnPickResult {
   const { sections, getRulePower, getSectionPower } = params;
 
-  // Only sections that have questions loaded
   const loadedSections = sections.filter((s) => s.questions.length > 0);
   if (loadedSections.length === 0) return { questions: [], focusRuleId: null };
 
-  const collected = new Set<string>(); // question IDs already picked
+  const collected = new Set<string>();
   const result: Question[] = [];
 
   const addQuestions = (candidates: Question[], limit: number): void => {
@@ -65,7 +64,6 @@ export function pickLearnQuestions(params: {
     }
   };
 
-  // 1. Weighted-pick focus section
   const sectionWeights = loadedSections.map((s) => {
     const power = getSectionPower(s.id);
     return ruleWeight(power, power > 0);
@@ -73,19 +71,16 @@ export function pickLearnQuestions(params: {
   const focusSectionIdx = weightedRandomIndex(sectionWeights);
   const focusSection = loadedSections[focusSectionIdx]!;
 
-  // Helper: rules in a section that have at least one question
   const rulesWithQuestions = (section: Section) =>
     section.rules.filter((r) => section.questions.some((q) => q.ruleId === r.id));
 
   const focusSectionRules = rulesWithQuestions(focusSection);
 
   if (focusSectionRules.length === 0) {
-    // Degenerate fallback
     addQuestions(loadedSections.flatMap((s) => s.questions), PROGRESS.LEARN_TOTAL);
     return { questions: shuffleArray(result), focusRuleId: null };
   }
 
-  // 2. Weighted-pick focus rule
   const focusRuleWeights = focusSectionRules.map((r) => {
     const power = getRulePower(r.id);
     return ruleWeight(power, power > 0);
@@ -93,16 +88,13 @@ export function pickLearnQuestions(params: {
   const focusRuleIdx = weightedRandomIndex(focusRuleWeights);
   const focusRule = focusSectionRules[focusRuleIdx]!;
 
-  // 3. Collect up to LEARN_FOCUS questions from the focus rule
   const focusRuleQs = focusSection.questions.filter((q) => q.ruleId === focusRule.id);
   addQuestions(focusRuleQs, PROGRESS.LEARN_FOCUS);
 
-  // Supplement from other weak rules in the section if not enough
   if (result.length < PROGRESS.LEARN_FOCUS) {
     const otherRules = focusSectionRules
       .filter((r) => r.id !== focusRule.id)
       .sort((a, b) => {
-        // Higher weight = weaker rule = prioritize
         const wa = ruleWeight(getRulePower(a.id), getRulePower(a.id) > 0);
         const wb = ruleWeight(getRulePower(b.id), getRulePower(b.id) > 0);
         return wb - wa;
@@ -114,7 +106,6 @@ export function pickLearnQuestions(params: {
     }
   }
 
-  // 4. Collect 1 encouragement from strongest attempted rule in focusSection
   const strongRulesInFocus = focusSectionRules
     .filter((r) => getRulePower(r.id) >= PROGRESS.ENCOURAGE_THRESHOLD)
     .sort((a, b) => getRulePower(b.id) - getRulePower(a.id));
@@ -126,7 +117,6 @@ export function pickLearnQuestions(params: {
       PROGRESS.LEARN_FOCUS_ENCOURAGE,
     );
   } else {
-    // Fallback: any other rule in section
     const fallbackRule = focusSectionRules.find((r) => r.id !== focusRule.id);
     if (fallbackRule) {
       addQuestions(
@@ -136,7 +126,6 @@ export function pickLearnQuestions(params: {
     }
   }
 
-  // 5 & 6. Adjacent rules: ±1, ±2 from focusRule in section.rules array
   const focusRulePos = focusSection.rules.findIndex((r) => r.id === focusRule.id);
   const adjacentOffsets = [-2, -1, 1, 2];
   const adjacentRules = adjacentOffsets
@@ -153,7 +142,6 @@ export function pickLearnQuestions(params: {
     );
   }
 
-  // Adjacent encouragement: another strong rule in focusSection
   const adjacentStrong = focusSectionRules.filter(
     (r) => r.id !== focusRule.id && getRulePower(r.id) >= PROGRESS.ENCOURAGE_THRESHOLD,
   );
@@ -165,7 +153,6 @@ export function pickLearnQuestions(params: {
     );
   }
 
-  // 7 & 8. Leftfield: pick 2-3 non-focus sections (weighted), then questions from weak rules
   const otherSections = loadedSections.filter((s) => s.id !== focusSection.id);
   const leftfieldTarget = result.length + PROGRESS.LEARN_LEFTFIELD;
 
@@ -205,7 +192,6 @@ export function pickLearnQuestions(params: {
       );
     }
 
-    // Leftfield encouragement: strong rule from a non-focus section
     const allOtherStrong = otherSections.flatMap((s) =>
       rulesWithQuestions(s)
         .filter((r) => getRulePower(r.id) >= PROGRESS.ENCOURAGE_THRESHOLD)
@@ -220,13 +206,11 @@ export function pickLearnQuestions(params: {
     }
   }
 
-  // 9. Fill any remaining slots from all available questions
   if (result.length < PROGRESS.LEARN_TOTAL) {
     const allQuestions = loadedSections.flatMap((s) => s.questions);
     addQuestions(allQuestions, PROGRESS.LEARN_TOTAL - result.length);
   }
 
-  // Final shuffle
   return {
     questions: shuffleArray(result.slice(0, PROGRESS.LEARN_TOTAL)),
     focusRuleId: focusRule.id,
@@ -253,7 +237,6 @@ export function pickSectionQuizQuestions(params: {
 
   if (section.questions.length === 0) return [];
 
-  // Group questions by rule
   const questionsByRule = new Map<string, Question[]>();
   for (const q of section.questions) {
     if (!questionsByRule.has(q.ruleId)) {
@@ -262,32 +245,25 @@ export function pickSectionQuizQuestions(params: {
     questionsByRule.get(q.ruleId)!.push(q);
   }
 
-  // Get rules that have questions, sorted in section order
   const rulesWithQuestions = section.rules.filter((r) => questionsByRule.has(r.id));
 
   if (rulesWithQuestions.length === 0) return [];
 
-  // Compute weights
   const weights = rulesWithQuestions.map((r) => {
     const power = getRulePower(r.id);
     return ruleWeight(power, power > 0);
   });
 
-  // Pick questions
   const collected = new Set<string>();
   const result: Question[] = [];
 
   for (let i = 0; i < targetCount && result.length < targetCount; i++) {
-    // Pick a rule via weighted random
     const ruleIdx = weightedRandomIndex(weights);
     const rule = rulesWithQuestions[ruleIdx]!;
     const qs = questionsByRule.get(rule.id)!;
 
-    // Find an unused question from this rule
     const available = qs.filter((q) => !collected.has(q.id));
     if (available.length === 0) {
-      // No more questions from this rule; try a different approach
-      // Pick any unused question from the section
       const allUnused = section.questions.filter((q) => !collected.has(q.id));
       if (allUnused.length === 0) break;
       const q = allUnused[Math.floor(Math.random() * allUnused.length)]!;
@@ -300,6 +276,5 @@ export function pickSectionQuizQuestions(params: {
     }
   }
 
-  // Final shuffle
   return shuffleArray(result);
 }

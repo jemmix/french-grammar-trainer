@@ -11,7 +11,7 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 - [x] 4. `content/` — model + parse + sections + extract `find`/`slots`
 - [x] 5. `mastery/` — UserProgress model + math
 - [x] 6. `storage/` — serialize/deserialize + engines (needs 5)
-- [ ] 7. `quiz/` — select + grade + extract interstitial + split blanks (needs 4,5)
+- [x] 7. `quiz/` — select + grade + extract interstitial + split blanks (needs 4,5)
 - [ ] 8. `validation/` — verify purity
 - [ ] 9. lint hard-error rule + cleanup
 
@@ -28,7 +28,7 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 | 4 | _pending_ | ✅ | content: data→content/ flat move; parse-txt, explanations extracted; find.ts (findQuestion) + slots.ts (buildSlotData + SlotSection/RuleMetaEntry types) extracted from pages; all importers repointed |
 | 5 | _pending_ | ✅ | mastery: progress.ts (getRuleSlotIndex, recordAnswerInPlace, createEmptyPowers, getDisplayPower, getSectionDisplayPower, getGlobalDisplayPower) + tiers.ts (getTier + TIER_THRESHOLDS inlined); user-record.ts slimmed to serialization-only; all importers repointed |
 | 6 | _pending_ | ✅ | storage: store.ts (UserStore + getStore + binary codec + lz4 inline + serialize/deserialize); engines/{s3,sqlite}.ts; deleted lib/{store,user-record,lz4,s3-store,sqlite-store}.ts; full SQLite round-trip verified (204→POST 200→GET 200) |
-| 7 | _pending_ | ☐ | quiz domain |
+| 7 | _pending_ | ✅ | quiz: select.ts (pickSection/pickLearn + weights), grade.ts (evaluateInput + levenshtein + InputResult), interstitial.ts (selectSection/selectLearnInterstitial extracted from pages); blanks.tsx (renderWithBlanks → webapp); deleted lib/{question-picker,quiz-helpers} |
 | 8 | _pending_ | ☐ | validation domain |
 | 9 | _pending_ | ☐ | lint rule + cleanup |
 

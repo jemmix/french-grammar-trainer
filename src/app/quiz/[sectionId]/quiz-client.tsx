@@ -9,9 +9,9 @@ import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
 import { RuleExplanationInterstitial } from "~/components/quiz/rule-explanation-interstitial";
 import { ExplanationPanel } from "~/components/quiz/explanation-panel";
-import { QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
+import { QUESTIONS_PER_QUIZ } from "~/quiz/grade";
 import { getExplanation } from "~/content/explanations";
-import { ruleWeight, pickSectionQuizQuestions } from "~/lib/question-picker";
+import { ruleWeight, pickSectionQuizQuestions } from "~/quiz/select";
 import { t } from "~/lang";
 
 // ── Quiz runner (self-contained, no interstitial logic) ──────────────────────
