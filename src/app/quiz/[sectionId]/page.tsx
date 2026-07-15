@@ -3,10 +3,8 @@ import { notFound } from "next/navigation";
 import { sectionMap } from "~/content/sections";
 import { t } from "~/lang";
 import { getSession } from "~/lib/server-session";
-import { getStore } from "~/lib/store";
+import { getStore, deserialize } from "~/storage/store";
 import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";
-import { decodeRecord } from "~/lib/user-record";
-import { lz4Decompress } from "~/lib/lz4";
 import { pickSectionQuizQuestions } from "~/lib/question-picker";
 import { getExplanation } from "~/content/explanations";
 import { QuizClient } from "./quiz-client";
@@ -36,8 +34,7 @@ async function getInitialQuestionsAndExplanation(sectionId: string) {
     const blob = await store.get(session.userId);
     if (blob) {
       try {
-        const decompressed = await lz4Decompress(blob);
-        const powers = decodeRecord(decompressed);
+        const { powers } = await deserialize(blob);
         getRulePower = (ruleId: string) => {
           const idx = getRuleSlotIndex(ruleId);
           if (idx < 0) return 0;

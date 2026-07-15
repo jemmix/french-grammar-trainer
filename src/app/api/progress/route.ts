@@ -1,13 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { getStore } from "~/lib/store";
+import { getStore, serialize, deserialize } from "~/storage/store";
 import { getSession } from "~/lib/server-session";
 import { createEmptyPowers, recordAnswerInPlace } from "~/mastery/progress";
-import {
-  decodeHeader,
-  decodeRecord,
-  encodeRecord,
-} from "~/lib/user-record";
-import { lz4Compress, lz4Decompress } from "~/lib/lz4";
 
 interface AnswerItem {
   ruleId: string;
@@ -33,9 +27,7 @@ export async function GET(_req: NextRequest) {
   if (!raw) {
     return new NextResponse(null, { status: 204 });
   }
-  const data = await lz4Decompress(raw);
-  const header = decodeHeader(data);
-  const powers = decodeRecord(data);
+  const { header, powers } = await deserialize(raw);
   return NextResponse.json({ ...header, powers: Array.from(powers) });
 }
 
@@ -50,13 +42,13 @@ export async function POST(req: NextRequest) {
   }
   const store = await getStore();
   const existing = await store.get(userId);
-  const powers = existing ? decodeRecord(await lz4Decompress(existing)) : createEmptyPowers();
+  const powers = existing ? (await deserialize(existing)).powers : createEmptyPowers();
   for (const item of body.answers) {
     if (typeof item.ruleId === "string" && typeof item.correct === "boolean") {
       recordAnswerInPlace(powers, item.ruleId, item.correct);
     }
   }
-  await store.put(userId, await lz4Compress(encodeRecord(powers)));
+  await store.put(userId, await serialize(powers));
   return NextResponse.json({ ok: true });
 }
 

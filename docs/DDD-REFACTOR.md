@@ -10,7 +10,7 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 - [x] 3. `auth/` — identity crypto
 - [x] 4. `content/` — model + parse + sections + extract `find`/`slots`
 - [x] 5. `mastery/` — UserProgress model + math
-- [ ] 6. `storage/` — serialize/deserialize + engines (needs 5)
+- [x] 6. `storage/` — serialize/deserialize + engines (needs 5)
 - [ ] 7. `quiz/` — select + grade + extract interstitial + split blanks (needs 4,5)
 - [ ] 8. `validation/` — verify purity
 - [ ] 9. lint hard-error rule + cleanup
@@ -27,7 +27,7 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 | 3 | _pending_ | ✅ | auth: mangle/session-cookie/allow-list moved; ALLOW_LIST_DEV_MODE via config/env; generator script + .gitignore repointed |
 | 4 | _pending_ | ✅ | content: data→content/ flat move; parse-txt, explanations extracted; find.ts (findQuestion) + slots.ts (buildSlotData + SlotSection/RuleMetaEntry types) extracted from pages; all importers repointed |
 | 5 | _pending_ | ✅ | mastery: progress.ts (getRuleSlotIndex, recordAnswerInPlace, createEmptyPowers, getDisplayPower, getSectionDisplayPower, getGlobalDisplayPower) + tiers.ts (getTier + TIER_THRESHOLDS inlined); user-record.ts slimmed to serialization-only; all importers repointed |
-| 6 | _pending_ | ☐ | storage domain |
+| 6 | _pending_ | ✅ | storage: store.ts (UserStore + getStore + binary codec + lz4 inline + serialize/deserialize); engines/{s3,sqlite}.ts; deleted lib/{store,user-record,lz4,s3-store,sqlite-store}.ts; full SQLite round-trip verified (204→POST 200→GET 200) |
 | 7 | _pending_ | ☐ | quiz domain |
 | 8 | _pending_ | ☐ | validation domain |
 | 9 | _pending_ | ☐ | lint rule + cleanup |
