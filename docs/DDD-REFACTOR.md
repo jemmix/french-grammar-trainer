@@ -12,8 +12,8 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 - [x] 5. `mastery/` — UserProgress model + math
 - [x] 6. `storage/` — serialize/deserialize + engines (needs 5)
 - [x] 7. `quiz/` — select + grade + extract interstitial + split blanks (needs 4,5)
-- [ ] 8. `validation/` — verify purity
-- [ ] 9. lint hard-error rule + cleanup
+- [x] 8. `validation/` — verify purity
+- [x] 9. lint hard-error rule + cleanup
 
 ## Gates (every step before commit)
 `npm run typecheck` && `npm test` && `npm run dev` smoke (home loads, answer one quiz Q)
@@ -29,8 +29,8 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 | 5 | _pending_ | ✅ | mastery: progress.ts (getRuleSlotIndex, recordAnswerInPlace, createEmptyPowers, getDisplayPower, getSectionDisplayPower, getGlobalDisplayPower) + tiers.ts (getTier + TIER_THRESHOLDS inlined); user-record.ts slimmed to serialization-only; all importers repointed |
 | 6 | _pending_ | ✅ | storage: store.ts (UserStore + getStore + binary codec + lz4 inline + serialize/deserialize); engines/{s3,sqlite}.ts; deleted lib/{store,user-record,lz4,s3-store,sqlite-store}.ts; full SQLite round-trip verified (204→POST 200→GET 200) |
 | 7 | _pending_ | ✅ | quiz: select.ts (pickSection/pickLearn + weights), grade.ts (evaluateInput + levenshtein + InputResult), interstitial.ts (selectSection/selectLearnInterstitial extracted from pages); blanks.tsx (renderWithBlanks → webapp); deleted lib/{question-picker,quiz-helpers} |
-| 8 | _pending_ | ☐ | validation domain |
-| 9 | _pending_ | ☐ | lint rule + cleanup |
+| 8 | _pending_ | ✅ | validation: already pure — imports only ~/content/types, ~/lang/elision, internal, node builtins; no webapp/framework deps |
+| 9 | _pending_ | ✅ | cleanup: deleted lib/constants.ts (quiz config inlined to quiz/select.ts; FLUSH_INTERVAL_MS inlined to progress-context); lib/ = auth-config + server-session only; purity verified (no domain imports webapp); no ESLint in project — architectural boundary enforced by directory structure |
 
 ## Locked decisions
 - Naming: `UserProgress` (whole user data), `ProgressHeader` (metadata envelope), `mastery/progress.ts`.

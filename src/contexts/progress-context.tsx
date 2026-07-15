@@ -16,7 +16,8 @@ import {
   getSectionDisplayPower,
   recordAnswerInPlace,
 } from "~/mastery/progress";
-import { PROGRESS } from "~/lib/constants";
+
+const FLUSH_INTERVAL_MS = 30_000;
 
 interface ProgressContextValue {
   isLoggedIn: boolean;
@@ -93,7 +94,7 @@ export function ProgressProvider({
       if (pendingAnswers.current.length > 0) {
         void flush();
       }
-    }, PROGRESS.FLUSH_INTERVAL_MS);
+    }, FLUSH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [flush]);
 

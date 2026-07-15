@@ -1,9 +1,22 @@
 import type { Question, Section } from "~/content/types";
-import { PROGRESS } from "~/lib/constants";
+
+const QUIZ_CONFIG = {
+  WEIGHT_FLOOR: 0.05,           // Minimum selection weight
+  WEIGHT_UNATTEMPTED: 0.50,     // Weight for never-attempted rules
+  WEIGHT_EXPONENT: 2,           // (1 - power)^N exponent
+  LEARN_TOTAL: 20,
+  LEARN_FOCUS: 9,
+  LEARN_FOCUS_ENCOURAGE: 1,
+  LEARN_ADJACENT: 4,
+  LEARN_ADJACENT_ENCOURAGE: 1,
+  LEARN_LEFTFIELD: 4,
+  LEARN_LEFTFIELD_ENCOURAGE: 1,
+  ENCOURAGE_THRESHOLD: 0.6,     // Min display power for "encouragement" source
+} as const;
 
 export function ruleWeight(power: number, attempted: boolean): number {
-  if (!attempted) return PROGRESS.WEIGHT_UNATTEMPTED;
-  return Math.pow(1 - power, PROGRESS.WEIGHT_EXPONENT) + PROGRESS.WEIGHT_FLOOR;
+  if (!attempted) return QUIZ_CONFIG.WEIGHT_UNATTEMPTED;
+  return Math.pow(1 - power, QUIZ_CONFIG.WEIGHT_EXPONENT) + QUIZ_CONFIG.WEIGHT_FLOOR;
 }
 
 export function weightedRandomIndex(weights: number[]): number {
@@ -77,7 +90,7 @@ export function pickLearnQuestions(params: {
   const focusSectionRules = rulesWithQuestions(focusSection);
 
   if (focusSectionRules.length === 0) {
-    addQuestions(loadedSections.flatMap((s) => s.questions), PROGRESS.LEARN_TOTAL);
+    addQuestions(loadedSections.flatMap((s) => s.questions), QUIZ_CONFIG.LEARN_TOTAL);
     return { questions: shuffleArray(result), focusRuleId: null };
   }
 
@@ -89,9 +102,9 @@ export function pickLearnQuestions(params: {
   const focusRule = focusSectionRules[focusRuleIdx]!;
 
   const focusRuleQs = focusSection.questions.filter((q) => q.ruleId === focusRule.id);
-  addQuestions(focusRuleQs, PROGRESS.LEARN_FOCUS);
+  addQuestions(focusRuleQs, QUIZ_CONFIG.LEARN_FOCUS);
 
-  if (result.length < PROGRESS.LEARN_FOCUS) {
+  if (result.length < QUIZ_CONFIG.LEARN_FOCUS) {
     const otherRules = focusSectionRules
       .filter((r) => r.id !== focusRule.id)
       .sort((a, b) => {
@@ -100,28 +113,28 @@ export function pickLearnQuestions(params: {
         return wb - wa;
       });
     for (const rule of otherRules) {
-      if (result.length >= PROGRESS.LEARN_FOCUS) break;
+      if (result.length >= QUIZ_CONFIG.LEARN_FOCUS) break;
       const qs = focusSection.questions.filter((q) => q.ruleId === rule.id);
-      addQuestions(qs, PROGRESS.LEARN_FOCUS - result.length);
+      addQuestions(qs, QUIZ_CONFIG.LEARN_FOCUS - result.length);
     }
   }
 
   const strongRulesInFocus = focusSectionRules
-    .filter((r) => getRulePower(r.id) >= PROGRESS.ENCOURAGE_THRESHOLD)
+    .filter((r) => getRulePower(r.id) >= QUIZ_CONFIG.ENCOURAGE_THRESHOLD)
     .sort((a, b) => getRulePower(b.id) - getRulePower(a.id));
 
   if (strongRulesInFocus.length > 0) {
     const strongest = strongRulesInFocus[0]!;
     addQuestions(
       focusSection.questions.filter((q) => q.ruleId === strongest.id),
-      PROGRESS.LEARN_FOCUS_ENCOURAGE,
+      QUIZ_CONFIG.LEARN_FOCUS_ENCOURAGE,
     );
   } else {
     const fallbackRule = focusSectionRules.find((r) => r.id !== focusRule.id);
     if (fallbackRule) {
       addQuestions(
         focusSection.questions.filter((q) => q.ruleId === fallbackRule.id),
-        PROGRESS.LEARN_FOCUS_ENCOURAGE,
+        QUIZ_CONFIG.LEARN_FOCUS_ENCOURAGE,
       );
     }
   }
@@ -133,7 +146,7 @@ export function pickLearnQuestions(params: {
     .filter((r): r is NonNullable<typeof r> => r !== undefined)
     .filter((r) => focusSection.questions.some((q) => q.ruleId === r.id));
 
-  const adjacentTarget = result.length + PROGRESS.LEARN_ADJACENT;
+  const adjacentTarget = result.length + QUIZ_CONFIG.LEARN_ADJACENT;
   for (const rule of shuffleArray(adjacentRules)) {
     if (result.length >= adjacentTarget) break;
     addQuestions(
@@ -143,18 +156,18 @@ export function pickLearnQuestions(params: {
   }
 
   const adjacentStrong = focusSectionRules.filter(
-    (r) => r.id !== focusRule.id && getRulePower(r.id) >= PROGRESS.ENCOURAGE_THRESHOLD,
+    (r) => r.id !== focusRule.id && getRulePower(r.id) >= QUIZ_CONFIG.ENCOURAGE_THRESHOLD,
   );
   if (adjacentStrong.length > 0) {
     const pick = adjacentStrong[Math.floor(Math.random() * adjacentStrong.length)]!;
     addQuestions(
       focusSection.questions.filter((q) => q.ruleId === pick.id),
-      PROGRESS.LEARN_ADJACENT_ENCOURAGE,
+      QUIZ_CONFIG.LEARN_ADJACENT_ENCOURAGE,
     );
   }
 
   const otherSections = loadedSections.filter((s) => s.id !== focusSection.id);
-  const leftfieldTarget = result.length + PROGRESS.LEARN_LEFTFIELD;
+  const leftfieldTarget = result.length + QUIZ_CONFIG.LEARN_LEFTFIELD;
 
   if (otherSections.length > 0) {
     const otherWeights = otherSections.map((s) => {
@@ -171,7 +184,7 @@ export function pickLearnQuestions(params: {
       pickedSectionIdxs.add(weightedRandomIndex(tempWeights));
     }
 
-    const questionsPerLFSection = Math.ceil(PROGRESS.LEARN_LEFTFIELD / numLeftfieldSections);
+    const questionsPerLFSection = Math.ceil(QUIZ_CONFIG.LEARN_LEFTFIELD / numLeftfieldSections);
 
     for (const sIdx of pickedSectionIdxs) {
       if (result.length >= leftfieldTarget) break;
@@ -194,25 +207,25 @@ export function pickLearnQuestions(params: {
 
     const allOtherStrong = otherSections.flatMap((s) =>
       rulesWithQuestions(s)
-        .filter((r) => getRulePower(r.id) >= PROGRESS.ENCOURAGE_THRESHOLD)
+        .filter((r) => getRulePower(r.id) >= QUIZ_CONFIG.ENCOURAGE_THRESHOLD)
         .map((r) => ({ section: s, rule: r })),
     );
     if (allOtherStrong.length > 0) {
       const pick = allOtherStrong[Math.floor(Math.random() * allOtherStrong.length)]!;
       addQuestions(
         pick.section.questions.filter((q) => q.ruleId === pick.rule.id),
-        PROGRESS.LEARN_LEFTFIELD_ENCOURAGE,
+        QUIZ_CONFIG.LEARN_LEFTFIELD_ENCOURAGE,
       );
     }
   }
 
-  if (result.length < PROGRESS.LEARN_TOTAL) {
+  if (result.length < QUIZ_CONFIG.LEARN_TOTAL) {
     const allQuestions = loadedSections.flatMap((s) => s.questions);
-    addQuestions(allQuestions, PROGRESS.LEARN_TOTAL - result.length);
+    addQuestions(allQuestions, QUIZ_CONFIG.LEARN_TOTAL - result.length);
   }
 
   return {
-    questions: shuffleArray(result.slice(0, PROGRESS.LEARN_TOTAL)),
+    questions: shuffleArray(result.slice(0, QUIZ_CONFIG.LEARN_TOTAL)),
     focusRuleId: focusRule.id,
   };
 }
