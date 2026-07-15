@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Question } from "~/content/types";
 import { t } from "~/lang";
-import { BrandMark, useTheme } from "~/themes";
+import { BrandMark, useTheme } from "~/webapp/themes";
 
 export function ScoreSummary({
   score,

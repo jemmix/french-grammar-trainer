@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getSession } from "~/lib/server-session";
+import { getSession } from "~/webapp/lib/server-session";
 
 type SessionResponse =
   | { isLoggedIn: true; userId: string }

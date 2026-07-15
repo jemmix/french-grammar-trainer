@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useProgress } from "~/contexts/progress-context";
+import { useProgress } from "~/webapp/contexts/progress-context";
 import type { Question, RuleExplanation } from "~/content/types";
-import { McqQuestionView } from "~/components/quiz/mcq-question-view";
-import { InputQuestionView } from "~/components/quiz/input-question-view";
-import { ScoreSummary } from "~/components/quiz/score-summary";
-import { RuleExplanationInterstitial } from "~/components/quiz/rule-explanation-interstitial";
-import { ExplanationPanel } from "~/components/quiz/explanation-panel";
+import { McqQuestionView } from "~/webapp/components/quiz/mcq-question-view";
+import { InputQuestionView } from "~/webapp/components/quiz/input-question-view";
+import { ScoreSummary } from "~/webapp/components/quiz/score-summary";
+import { RuleExplanationInterstitial } from "~/webapp/components/quiz/rule-explanation-interstitial";
+import { ExplanationPanel } from "~/webapp/components/quiz/explanation-panel";
 import { t } from "~/lang";
 
 interface RuleMeta {

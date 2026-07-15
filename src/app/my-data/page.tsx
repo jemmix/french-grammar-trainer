@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getSession } from "~/lib/server-session";
+import { getSession } from "~/webapp/lib/server-session";
 import { sectionsIndex } from "~/content/sections";
 import { buildSlotData } from "~/content/slots";
 import { MyDataClient } from "./my-data-client";

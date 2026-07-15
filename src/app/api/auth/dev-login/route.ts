@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { mangleUserId } from "~/auth/mangle";
 import { isUserAllowed } from "~/auth/allow-list";
 import { signCookie, COOKIE_MAX_AGE_S } from "~/auth/session-cookie";
-import { env } from "~/env";
+import { env } from "~/webapp/env";
 
 export async function POST(req: NextRequest) {
   if (process.env.NODE_ENV !== "development") {

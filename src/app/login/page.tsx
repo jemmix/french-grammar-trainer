@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useCallback, useEffect, useState } from "react";
-import { useProgress } from "~/contexts/progress-context";
-import { GoogleSignInButton } from "~/components/google-sign-in-button";
+import { useProgress } from "~/webapp/contexts/progress-context";
+import { GoogleSignInButton } from "~/webapp/components/google-sign-in-button";
 import { t } from "~/lang";
-import { BrandMark, useTheme } from "~/themes";
+import { BrandMark, useTheme } from "~/webapp/themes";
 
 const PRIVACY_COOKIE = "privacy-acknowledged";
 const COOKIE_MAX_AGE = 315360000; // 10 years

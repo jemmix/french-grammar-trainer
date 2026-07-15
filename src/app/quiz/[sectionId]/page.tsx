@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sectionMap } from "~/content/sections";
 import { t } from "~/lang";
-import { getSession } from "~/lib/server-session";
+import { getSession } from "~/webapp/lib/server-session";
 import { getStore, deserialize } from "~/storage/store";
 import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";
 import { pickSectionQuizQuestions } from "~/quiz/select";

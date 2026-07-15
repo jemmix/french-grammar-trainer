@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Geist } from "next/font/google";
-import "~/styles/globals.css";
-import { ProgressProvider } from "~/contexts/progress-context";
-import { getSession, getProgressPowers } from "~/lib/server-session";
+import "~/webapp/styles/globals.css";
+import { ProgressProvider } from "~/webapp/contexts/progress-context";
+import { getSession, getProgressPowers } from "~/webapp/lib/server-session";
 import { signCookie, COOKIE_MAX_AGE_S } from "~/auth/session-cookie";
-import { env } from "~/env";
+import { env } from "~/webapp/env";
 import { t } from "~/lang";
 import { resolveTheme } from "~/config/theme";
-import { ThemeProvider } from "~/themes";
+import { ThemeProvider } from "~/webapp/themes";
 
 const geist = Geist({
   subsets: ["latin"],

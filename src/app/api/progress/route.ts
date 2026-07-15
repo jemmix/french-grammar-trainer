@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getStore, serialize, deserialize } from "~/storage/store";
-import { getSession } from "~/lib/server-session";
+import { getSession } from "~/webapp/lib/server-session";
 import { createEmptyPowers, recordAnswerInPlace } from "~/mastery/progress";
 
 interface AnswerItem {
