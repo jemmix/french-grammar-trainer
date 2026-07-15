@@ -1,6 +1,6 @@
 import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
-import type { Section, InputQuestion } from "../src/data/types";
+import type { Section, InputQuestion } from "../src/content/types";
 
 function extractAnswerHints(sections: Section[]): Map<string, string> {
   const answerHints = new Map<string, string>();
@@ -75,7 +75,7 @@ async function main() {
     process.exit(1);
   }
 
-  const { loadedSections } = await import(`../src/data/${lang}/index.ts`);
+  const { loadedSections } = await import(`../src/content/${lang}/index.ts`);
 
   const answerHints = extractAnswerHints(loadedSections);
   console.log(`Extracted ${answerHints.size} unique answers for ${lang}`);

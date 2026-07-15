@@ -1,11 +1,11 @@
 import { getSession } from "~/lib/server-session";
 import { getStore } from "~/lib/store";
-import { sectionMap } from "~/data/sections-index";
+import { sectionMap } from "~/content/sections";
 import { decodeRecord, getDisplayPower, getRuleSlotIndex } from "~/lib/user-record";
 import { lz4Decompress } from "~/lib/lz4";
 import { pickLearnQuestions } from "~/lib/question-picker";
-import { getExplanation } from "~/lib/explanation-helpers";
-import type { RuleExplanation } from "~/data/types";
+import { getExplanation } from "~/content/explanations";
+import type { RuleExplanation } from "~/content/types";
 import { LearnClient } from "./learn-client";
 
 export default async function LearnPage() {

@@ -1,5 +1,5 @@
 import type { StructuralPredicate, QuestionContext, PredicateResult } from "../types";
-import type { InputQuestion, MultipleChoiceQuestion } from "../../data/types";
+import type { InputQuestion, MultipleChoiceQuestion } from "~/content/types";
 
 export const sentenceInitialCapPredicate: StructuralPredicate = {
   id: "sentence-initial-capitalization",

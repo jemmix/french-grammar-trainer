@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Choice, MultipleChoiceQuestion, Rule } from "~/data/types";
+import type { Choice, MultipleChoiceQuestion, Rule } from "~/content/types";
 import { renderWithBlanks } from "~/lib/quiz-helpers";
 import { t } from "~/lang";
 

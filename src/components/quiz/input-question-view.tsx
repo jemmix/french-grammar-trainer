@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { InputQuestion, Rule } from "~/data/types";
+import type { InputQuestion, Rule } from "~/content/types";
 import {
   evaluateInput,
   type InputResult,

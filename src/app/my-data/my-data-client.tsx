@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
-import type { SectionMeta } from "~/data/types";
+import type { SectionMeta } from "~/content/types";
 import { getTier } from "~/lib/tiers";
 import { getRuleSlotIndex } from "~/lib/user-record";
 import { t } from "~/lang";

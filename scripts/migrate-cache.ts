@@ -48,7 +48,7 @@ interface SigMatch {
 async function buildSignatureIndex(): Promise<Map<string, SigMatch>> {
   const sig = new Map<string, SigMatch>();
   for (const lang of LANGS) {
-    const mod = await import("../src/data/" + lang + "/index.ts");
+    const mod = await import("../src/content/" + lang + "/index.ts");
     for (const section of mod.loadedSections) {
       const rules = new Map<string, any>();
       for (const rule of section.rules || []) rules.set(rule.id, rule);

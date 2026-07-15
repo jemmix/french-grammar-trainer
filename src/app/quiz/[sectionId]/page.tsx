@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { sectionMap } from "~/data/sections-index";
+import { sectionMap } from "~/content/sections";
 import { t } from "~/lang";
 import { getSession } from "~/lib/server-session";
 import { getStore } from "~/lib/store";
@@ -11,7 +11,7 @@ import {
 } from "~/lib/user-record";
 import { lz4Decompress } from "~/lib/lz4";
 import { pickSectionQuizQuestions } from "~/lib/question-picker";
-import { getExplanation } from "~/lib/explanation-helpers";
+import { getExplanation } from "~/content/explanations";
 import { QuizClient } from "./quiz-client";
 
 export async function generateMetadata({

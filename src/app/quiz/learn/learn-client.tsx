@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
-import type { Question, RuleExplanation } from "~/data/types";
+import type { Question, RuleExplanation } from "~/content/types";
 import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";

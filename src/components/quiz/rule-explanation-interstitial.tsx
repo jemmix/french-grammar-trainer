@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import type { RuleExplanation } from "~/data/types";
+import type { RuleExplanation } from "~/content/types";
 import { t } from "~/lang";
 import { RenderMiniMarkdown } from "./explanation-panel";
 

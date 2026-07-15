@@ -1,5 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
-import type { InputQuestion } from "../../data/types";
+import type { InputQuestion } from "~/content/types";
 import { LANG_NAMES } from "../constants";
 
 export const inputPromptWellFormedPredicate: LLMPredicate = {

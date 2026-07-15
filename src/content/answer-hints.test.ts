@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import type { Section, InputQuestion } from "../../src/data/types";
+import type { Section, InputQuestion } from "./types";
 
 const HINT_EXCEPTIONS = new Set<string>([
   "—",
@@ -13,18 +13,18 @@ const HINT_EXCEPTIONS = new Set<string>([
 ]);
 
 async function loadSections(lang: string): Promise<Section[]> {
-  const { loadedSections } = await import(`../../src/data/${lang}/index.ts`);
+  const { loadedSections } = await import(`./${lang}/index.ts`);
   return loadedSections;
 }
 
 async function loadAnswerHints(lang: string): Promise<Record<string, string>> {
-  const { answerHints } = await import(`../../src/data/${lang}/answer-hints.ts`);
+  const { answerHints } = await import(`./${lang}/answer-hints.ts`);
   return answerHints;
 }
 
 async function loadHintAliases(lang: string): Promise<Record<string, Set<string>>> {
   try {
-    const mod = await import(`../../src/data/${lang}/answer-hints.ts`);
+    const mod = await import(`./${lang}/answer-hints.ts`);
     return mod.hintAliases ?? {};
   } catch {
     return {};

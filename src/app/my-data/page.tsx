@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getSession } from "~/lib/server-session";
-import { sectionsIndex, sectionMap } from "~/data/sections-index";
+import { sectionsIndex, sectionMap } from "~/content/sections";
 import { MyDataClient, type SlotSection } from "./my-data-client";
 
 export default async function MyDataPage() {

@@ -11,7 +11,7 @@ import type {
   Question,
   Rule,
   Section,
-} from "~/data/types";
+} from "~/content/types";
 import { t } from "~/lang";
 
 // ---------------------------------------------------------------------------

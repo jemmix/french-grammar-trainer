@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
-import type { Question, RuleExplanation, Section } from "~/data/types";
+import type { Question, RuleExplanation, Section } from "~/content/types";
 import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
 import { RuleExplanationInterstitial } from "~/components/quiz/rule-explanation-interstitial";
 import { ExplanationPanel } from "~/components/quiz/explanation-panel";
 import { QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
-import { getExplanation } from "~/lib/explanation-helpers";
+import { getExplanation } from "~/content/explanations";
 import { ruleWeight, pickSectionQuizQuestions } from "~/lib/question-picker";
 import { t } from "~/lang";
 

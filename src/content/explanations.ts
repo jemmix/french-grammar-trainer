@@ -1,4 +1,4 @@
-import type { RuleExplanation, Section } from "~/data/types";
+import type { RuleExplanation, Section } from "~/content/types";
 
 export function getExplanation(
   section: Section,

@@ -1,5 +1,5 @@
 import type { StructuralPredicate, QuestionContext, PredicateResult } from "../types";
-import type { InputQuestion } from "../../data/types";
+import type { InputQuestion } from "~/content/types";
 
 function extractWords(text: string): string[] {
   const normalized = text

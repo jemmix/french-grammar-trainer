@@ -1,5 +1,5 @@
 import { useEffect, type JSX } from "react";
-import type { RuleExplanation } from "~/data/types";
+import type { RuleExplanation } from "~/content/types";
 import { t } from "~/lang";
 
 /** Renders a light markdown subset: **bold**, `code`, and ~~strikethrough~~ inline. */

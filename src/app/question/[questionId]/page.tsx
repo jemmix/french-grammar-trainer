@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import type { Question, Rule, Section } from "~/data/types";
-import { sectionMap } from "~/data/sections-index";
+import type { Question, Rule, Section } from "~/content/types";
+import { sectionMap } from "~/content/sections";
 import { t } from "~/lang";
 import { QuestionReviewClient } from "./question-review-client";
 

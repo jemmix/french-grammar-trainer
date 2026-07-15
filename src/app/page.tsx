@@ -1,4 +1,4 @@
-import { sectionsIndex } from "~/data/sections-index";
+import { sectionsIndex } from "~/content/sections";
 import { HomeClient } from "./home-client";
 
 export default function Home() {

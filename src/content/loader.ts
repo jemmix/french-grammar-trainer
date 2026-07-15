@@ -16,7 +16,7 @@ import {
   type ParsedFile,
   type ParsedMcqQuestion,
   type ParsedInputQuestion,
-} from "../lib/parse-txt";
+} from "./parse-txt";
 
 const QUESTIONS_ROOT = join(process.cwd(), "questions");
 

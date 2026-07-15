@@ -1,4 +1,4 @@
-import type { Question, Rule, Section } from "../data/types";
+import type { Question, Rule, Section } from "~/content/types";
 
 export interface QuestionContext {
   question: Question;

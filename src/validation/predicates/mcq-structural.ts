@@ -1,5 +1,5 @@
 import type { StructuralPredicate, QuestionContext, PredicateResult } from "../types";
-import type { MultipleChoiceQuestion } from "../../data/types";
+import type { MultipleChoiceQuestion } from "~/content/types";
 
 const DETERMINER_FAMILIES: Record<string, string[]> = {
   "défini": ["le", "la", "l'", "les"],

@@ -216,7 +216,7 @@ async function validateSection(section: Section, label: string) {
 }
 
 async function validateLang(lang: string): Promise<number> {
-  const { loadedSections } = (await import(`../src/data/${lang}/index.ts`)) as {
+  const { loadedSections } = (await import(`../src/content/${lang}/index.ts`)) as {
     loadedSections: Section[];
   };
 

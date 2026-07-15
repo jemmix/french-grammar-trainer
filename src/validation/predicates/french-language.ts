@@ -1,5 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
-import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
+import type { MultipleChoiceQuestion, InputQuestion } from "~/content/types";
 
 export const frenchLanguagePredicate: LLMPredicate = {
   id: "french-language",

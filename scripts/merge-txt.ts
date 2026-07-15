@@ -15,7 +15,7 @@ import {
   parseTxtFile,
   type ParsedQuestion,
   type ParsedInputQuestion,
-} from "../src/lib/parse-txt";
+} from "../src/content/parse-txt";
 
 // ============================================================
 // Serializer — ParsedQuestion → txt block

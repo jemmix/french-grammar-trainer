@@ -10,8 +10,8 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import { performance } from "perf_hooks";
-import { loadSectionsFromDsl } from "../src/data/loader";
-import type { Section } from "../src/data/types";
+import { loadSectionsFromDsl } from "../src/content/loader";
+import type { Section } from "../src/content/types";
 
 const langs = ["de", "fr", "en"] as const;
 const iters = 25;
@@ -32,7 +32,7 @@ function stats(xs: number[]) {
 // Pre-fetch meta per lang (mirrors what app does once at boot).
 const metas: Record<string, { id: string; title: string; description: string }[]> = {};
 for (const lang of langs) {
-  const mod = await import(`../src/data/${lang}/index.ts`);
+  const mod = await import(`../src/content/${lang}/index.ts`);
   metas[lang] = mod.meta;
 }
 console.log(`Benchmark: loadSectionsFromDsl() — ${iters} iters, ${warmup} warmup\n`);

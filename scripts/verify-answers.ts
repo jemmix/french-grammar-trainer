@@ -24,7 +24,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { execFile } from "child_process";
 import { basename } from "path";
-import { parseTxtFile, type ParsedMcqQuestion } from "../src/lib/parse-txt";
+import { parseTxtFile, type ParsedMcqQuestion } from "../src/content/parse-txt";
 
 // ---------------------------------------------------------------------------
 // CLI parsing

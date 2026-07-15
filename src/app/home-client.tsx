@@ -14,7 +14,7 @@ import {
   ThemedSectionCard,
   useTheme,
 } from "~/themes";
-import type { SectionMeta } from "~/data/types";
+import type { SectionMeta } from "~/content/types";
 
 function SectionCardContent({
   sectionNum,

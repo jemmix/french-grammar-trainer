@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import type { InputQuestion } from "~/data/types";
+import type { InputQuestion } from "~/content/types";
 import { t } from "~/lang";
 
 export const QUESTIONS_PER_QUIZ = 20;

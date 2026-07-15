@@ -1,4 +1,4 @@
-import type { Question, Section } from "~/data/types";
+import type { Question, Section } from "~/content/types";
 import { PROGRESS } from "~/lib/constants";
 
 export function ruleWeight(power: number, attempted: boolean): number {
