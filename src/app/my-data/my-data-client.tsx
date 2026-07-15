@@ -5,29 +5,11 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import type { SectionMeta } from "~/content/types";
+import type { SlotSection, RuleMetaEntry } from "~/content/slots";
 import { getTier } from "~/lib/tiers";
 import { getRuleSlotIndex } from "~/lib/user-record";
 import { t } from "~/lang";
 import { BrandMark, useTheme } from "~/themes";
-
-export interface SlotSection {
-  sectionNum: number;
-  title: string | null;
-  slots: {
-    ruleId: string;
-    ruleTitle: string | null;
-    slotIdx: number;
-    sectionNum: number;
-    ruleNum: number;
-    sectionTitle: string | null;
-  }[];
-}
-
-interface RuleMetaEntry {
-  title: string;
-  sectionId: string;
-  sectionTitle: string;
-}
 
 interface BlobData {
   version: number;

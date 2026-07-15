@@ -1,26 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import type { Question, Rule, Section } from "~/content/types";
-import { sectionMap } from "~/content/sections";
+import { findQuestion } from "~/content/find";
 import { t } from "~/lang";
 import { QuestionReviewClient } from "./question-review-client";
-
-interface QuestionContext {
-  question: Question;
-  section: Section;
-  rule: Rule;
-}
-
-function findQuestion(questionId: string): QuestionContext | null {
-  for (const section of Object.values(sectionMap)) {
-    const question = section.questions.find((q) => q.id === questionId);
-    if (question) {
-      const rule = section.rules.find((r) => r.id === question.ruleId);
-      if (rule) return { question, section, rule };
-    }
-  }
-  return null;
-}
 
 export async function generateMetadata({
   params,
