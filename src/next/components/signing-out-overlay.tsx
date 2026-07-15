@@ -1,7 +1,7 @@
 "use client";
 
 import { t } from "~/lang";
-import { BrandMark, useTheme } from "~/webapp/themes";
+import { BrandMark, useTheme } from "~/next/themes";
 
 /**
  * Full-screen overlay shown immediately when sign-out is triggered.

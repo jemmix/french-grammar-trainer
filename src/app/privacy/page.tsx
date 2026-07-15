@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { t } from "~/lang";
 import type { PrivacySectionPara } from "~/lang/types";
-import { BrandMark } from "~/webapp/themes";
+import { BrandMark } from "~/next/themes";
 import { resolveTheme } from "~/config/theme";
-import { env } from "~/webapp/env";
+import { env } from "~/next/env";
 
 const theme = resolveTheme(env.NEXT_PUBLIC_THEME, env.NEXT_PUBLIC_LANG);
 

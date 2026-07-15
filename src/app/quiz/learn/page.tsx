@@ -1,4 +1,4 @@
-import { getSession } from "~/webapp/lib/server-session";
+import { getSession } from "~/next/lib/server-session";
 import { getStore, deserialize } from "~/storage/store";
 import { sectionMap } from "~/content/sections";
 import { getDisplayPower, getRuleSlotIndex } from "~/mastery/progress";

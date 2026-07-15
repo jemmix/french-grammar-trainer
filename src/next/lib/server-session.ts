@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { env } from "~/webapp/env";
+import { env } from "~/next/env";
 import { getStore, deserialize } from "~/storage/store";
 import { createEmptyPowers } from "~/mastery/progress";
 import { verifyCookie, shouldRenew } from "~/auth/session-cookie";

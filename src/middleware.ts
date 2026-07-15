@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────────────────────────────
+// Next.js REQUIRES middleware.ts at project root or ./src/ — the location
+// is hardcoded and cannot be configured. On framework migration, delete
+// this file along with src/app/.
+// ─────────────────────────────────────────────────────────────────────
+
 import { NextResponse, type NextRequest } from "next/server";
 
 /**

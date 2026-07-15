@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useProgress } from "~/webapp/contexts/progress-context";
+import { useProgress } from "~/next/contexts/progress-context";
 import type { SectionMeta } from "~/content/types";
 import type { SlotSection, RuleMetaEntry } from "~/content/slots";
 import { getTier } from "~/mastery/tiers";
 import { getRuleSlotIndex } from "~/mastery/progress";
 import { t } from "~/lang";
-import { BrandMark, useTheme } from "~/webapp/themes";
+import { BrandMark, useTheme } from "~/next/themes";
 
 interface BlobData {
   version: number;

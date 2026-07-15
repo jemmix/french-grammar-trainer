@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useProgress } from "~/webapp/contexts/progress-context";
-import { ProgressRing } from "~/webapp/components/progress-ring";
-import { GoogleSignInButton } from "~/webapp/components/google-sign-in-button";
-import { SigningOutOverlay } from "~/webapp/components/signing-out-overlay";
+import { useProgress } from "~/next/contexts/progress-context";
+import { ProgressRing } from "~/next/components/progress-ring";
+import { GoogleSignInButton } from "~/next/components/google-sign-in-button";
+import { SigningOutOverlay } from "~/next/components/signing-out-overlay";
 import { getTier } from "~/mastery/tiers";
 import { t } from "~/lang";
 import {
@@ -13,7 +13,7 @@ import {
   ThemedHomeHeader,
   ThemedSectionCard,
   useTheme,
-} from "~/webapp/themes";
+} from "~/next/themes";
 import type { SectionMeta } from "~/content/types";
 
 function SectionCardContent({

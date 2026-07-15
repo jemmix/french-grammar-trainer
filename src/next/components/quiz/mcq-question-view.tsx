@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Choice, MultipleChoiceQuestion, Rule } from "~/content/types";
-import { renderWithBlanks } from "~/webapp/components/quiz/blanks";
+import { renderWithBlanks } from "~/next/components/quiz/blanks";
 import { t } from "~/lang";
 
 export function McqQuestionView({

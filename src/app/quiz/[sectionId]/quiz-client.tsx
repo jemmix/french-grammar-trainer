@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useProgress } from "~/webapp/contexts/progress-context";
+import { useProgress } from "~/next/contexts/progress-context";
 import type { Question, RuleExplanation, Section } from "~/content/types";
-import { McqQuestionView } from "~/webapp/components/quiz/mcq-question-view";
-import { InputQuestionView } from "~/webapp/components/quiz/input-question-view";
-import { ScoreSummary } from "~/webapp/components/quiz/score-summary";
-import { RuleExplanationInterstitial } from "~/webapp/components/quiz/rule-explanation-interstitial";
-import { ExplanationPanel } from "~/webapp/components/quiz/explanation-panel";
+import { McqQuestionView } from "~/next/components/quiz/mcq-question-view";
+import { InputQuestionView } from "~/next/components/quiz/input-question-view";
+import { ScoreSummary } from "~/next/components/quiz/score-summary";
+import { RuleExplanationInterstitial } from "~/next/components/quiz/rule-explanation-interstitial";
+import { ExplanationPanel } from "~/next/components/quiz/explanation-panel";
 import { QUESTIONS_PER_QUIZ } from "~/quiz/grade";
 import { getExplanation } from "~/content/explanations";
 import { ruleWeight, pickSectionQuizQuestions } from "~/quiz/select";
