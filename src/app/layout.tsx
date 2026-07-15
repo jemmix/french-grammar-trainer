@@ -4,7 +4,7 @@ import { Geist } from "next/font/google";
 import "~/styles/globals.css";
 import { ProgressProvider } from "~/contexts/progress-context";
 import { getSession, getProgressPowers } from "~/lib/server-session";
-import { signCookie, COOKIE_MAX_AGE_S } from "~/lib/session-cookie";
+import { signCookie, COOKIE_MAX_AGE_S } from "~/auth/session-cookie";
 import { env } from "~/env";
 import { t } from "~/lang";
 import { resolveTheme } from "~/config/theme";

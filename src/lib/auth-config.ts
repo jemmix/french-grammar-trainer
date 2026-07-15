@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import { mangleUserId } from "./auth";
-import { isUserAllowed } from "./allow-list";
+import { mangleUserId } from "~/auth/mangle";
+import { isUserAllowed } from "~/auth/allow-list";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,

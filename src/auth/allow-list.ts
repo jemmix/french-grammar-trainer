@@ -1,4 +1,5 @@
-import { mangleUserId } from "./auth";
+import { mangleUserId } from "./mangle";
+import { env } from "~/config/env";
 
 let devAllowedId: string | undefined;
 let allowSet: Set<string> | undefined;
@@ -28,7 +29,7 @@ async function loadAllowSet(): Promise<Set<string>> {
  * - Otherwise: checks against the build-time allow-list from the GitHub Gist
  */
 export async function isUserAllowed(mangledUserId: string): Promise<boolean> {
-  if (process.env.ALLOW_LIST_DEV_MODE === "1") {
+  if (env.allowListDevMode) {
     if (devAllowedId === undefined) {
       devAllowedId = await mangleUserId("0");
     }

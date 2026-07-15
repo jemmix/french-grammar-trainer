@@ -1,6 +1,6 @@
 /**
  * Prebuild script: fetches the allow-list from a GitHub Gist URL and writes
- * it to src/lib/allow-list-data.ts (gitignored).
+ * it to src/auth/allow-list-data.ts (gitignored).
  *
  * If ALLOW_LIST_GIST_URL is not set, writes an empty set.
  */
@@ -10,7 +10,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUTPUT = join(__dirname, "..", "src", "lib", "allow-list-data.ts");
+const OUTPUT = join(__dirname, "..", "src", "auth", "allow-list-data.ts");
 
 const url = process.env.ALLOW_LIST_GIST_URL;
 let ids = [];

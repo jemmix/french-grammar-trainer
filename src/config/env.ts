@@ -8,4 +8,6 @@ export const env = {
   lang: process.env.NEXT_PUBLIC_LANG ?? "fr",
   /** Argon2 salt for user-id mangling. Server-only (no NEXT_PUBLIC_ prefix). */
   hmacKey: process.env.HMAC_KEY,
+  /** When true, allow-list admits only the dev user (mangleUserId("0")). */
+  allowListDevMode: process.env.ALLOW_LIST_DEV_MODE === "1",
 } as const;

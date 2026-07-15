@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { mangleUserId } from "~/lib/auth";
-import { isUserAllowed } from "~/lib/allow-list";
-import { signCookie, COOKIE_MAX_AGE_S } from "~/lib/session-cookie";
+import { mangleUserId } from "~/auth/mangle";
+import { isUserAllowed } from "~/auth/allow-list";
+import { signCookie, COOKIE_MAX_AGE_S } from "~/auth/session-cookie";
 import { env } from "~/env";
 
 export async function POST(req: NextRequest) {
