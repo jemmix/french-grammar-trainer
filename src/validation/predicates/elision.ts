@@ -1,5 +1,5 @@
 import type { StructuralPredicate, QuestionContext, PredicateResult } from "../types";
-import { checkQuestionElision } from "../../lib/elision-check";
+import { checkQuestionElision } from "~/lang/elision";
 
 export const elisionPredicate: StructuralPredicate = {
   id: "elision-correct",

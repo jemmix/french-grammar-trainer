@@ -6,7 +6,7 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 ## Steps (dependency order)
 - [x] 0. scaffold tracker
 - [x] 1. `config/` — env seam + lang-config + theme resolver
-- [ ] 2. `lang/` — i18n
+- [x] 2. `lang/` — i18n
 - [ ] 3. `auth/` — identity crypto
 - [ ] 4. `content/` — model + parse + sections + extract `find`/`slots`
 - [ ] 5. `mastery/` — UserProgress model + math
@@ -23,7 +23,7 @@ Resume: do the first ☐ step. Every prior step is a green commit.
 |------|--------|--------|-------|
 | 0 | _pending_ | ☐ | tracker scaffold |
 | 1 | _pending_ | ✅ | config: env.ts (lone process.env reader), lang-config.ts, theme.ts (resolveTheme extracted from themes) |
-| 2 | _pending_ | ☐ | lang domain |
+| 2 | _pending_ | ✅ | lang: moved elision-check → lang/elision.ts (index already on config/env) |
 | 3 | _pending_ | ☐ | auth domain |
 | 4 | _pending_ | ☐ | content domain |
 | 5 | _pending_ | ☐ | mastery domain |
