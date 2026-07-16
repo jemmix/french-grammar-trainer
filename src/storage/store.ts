@@ -1,4 +1,5 @@
 import { RULE_SLOTS } from "~/config/lang-config";
+import { env } from "~/config/env";
 
 // ─── UserStore interface ───────────────────────────────────────────
 
@@ -11,13 +12,13 @@ export interface UserStore {
 let cached: UserStore | null = null;
 
 /**
- * Returns S3 store when S3_ENDPOINT is configured, otherwise SQLite (dev).
+ * Returns the storage backend selected by STORAGE_ENGINE (s3 or sqlite).
  * Lazy-loaded and cached to avoid re-importing on every call.
  */
 export async function getStore(): Promise<UserStore> {
   if (cached) return cached;
 
-  if (process.env.S3_ENDPOINT) {
+  if (env.storageEngine === "s3") {
     const { s3Store } = await import("./engines/s3");
     cached = s3Store;
   } else {

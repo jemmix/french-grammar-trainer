@@ -72,6 +72,7 @@ export default async function RootLayout({
           initialPowers={initialPowers}
           initialUserId={session.isLoggedIn ? session.userId : null}
           initialIsLoggedIn={session.isLoggedIn}
+          authEngine={env.AUTH_ENGINE}
         >
           {children}
         </ProgressProvider>

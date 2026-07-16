@@ -25,11 +25,11 @@ async function loadAllowSet(): Promise<Set<string>> {
 /**
  * Check whether a mangled userId is on the allowlist.
  *
- * - ALLOW_LIST_DEV_MODE=1: allows only mangleUserId("0") (computed & cached once)
- * - Otherwise: checks against the build-time allow-list from the GitHub Gist
+ * - AUTH_ENGINE=dev: allows only mangleUserId("0") (computed & cached once)
+ * - AUTH_ENGINE=google: checks against the build-time allow-list from the GitHub Gist
  */
 export async function isUserAllowed(mangledUserId: string): Promise<boolean> {
-  if (env.allowListDevMode) {
+  if (env.authEngine === "dev") {
     if (devAllowedId === undefined) {
       devAllowedId = await mangleUserId("0");
     }

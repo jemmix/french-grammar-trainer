@@ -49,6 +49,7 @@ interface ProgressProviderProps {
   initialPowers?: number[];
   initialUserId?: string | null;
   initialIsLoggedIn?: boolean;
+  authEngine: "dev" | "google";
 }
 
 export function ProgressProvider({
@@ -56,6 +57,7 @@ export function ProgressProvider({
   initialPowers,
   initialUserId,
   initialIsLoggedIn,
+  authEngine,
 }: ProgressProviderProps) {
   const [powers, setPowers] = useState<Uint16Array>(() => {
     if (initialPowers) return new Uint16Array(initialPowers);
@@ -200,7 +202,7 @@ export function ProgressProvider({
   }, []);
 
   const logout = useCallback(async (): Promise<void> => {
-    if (process.env.NEXT_PUBLIC_AUTH_MODE === "dev") {
+    if (authEngine === "dev") {
       await fetch("/api/auth/dev-logout", { method: "POST" });
     } else {
       const { signOut } = await import("next-auth/react");
