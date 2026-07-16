@@ -32,6 +32,16 @@
   6. Consider on-demand billing mode (pay-per-request) for cost efficiency at current scale
   7. Keep SQLite store as-is for local dev
 
+## Architecture
+
+- **Reduce client-side redirects** — several flows redirect from the client (e.g. login page, my-data page redirect to `/` when unauthenticated). Each client-side redirect is a full round-trip: server renders → client hydrates → client redirects → server re-renders. Move auth/redirect logic to middleware or server components where possible to eliminate the extra round-trip.
+
+- **Reduce non-TypeScript files** — `src/next/env.js` is the only `.js` file in `src/`. Harder to reason about (no type safety, TS assertion syntax rejected). Convert to `.ts` once t3-oss/env-nextjs supports it or replace with a custom typed env validator.
+
+- **Storage read-modify-set orchestration** — the current `api/progress/route.ts` POST handler does: `store.get()` → `deserialize()` → `recordAnswerInPlace()` → `serialize()` → `store.put()`. This is a classic read-modify-write race: concurrent requests can clobber each other's updates. Refactor `UserStore` interface to expose a `modify(userId, callback)` method that orchestrates the read-modify-set internally, accepting the modification logic as a callback. Enables engines to implement optimistic locking (compare-and-set with retries) natively.
+
+- **Cloudflare D1 storage engine** — add a D1-backed `UserStore` implementation for edge deployment. D1 is Cloudflare's serverless SQLite with global read replicas. Requires `STORAGE_ENGINE=d1` + D1 binding/credentials env vars.
+
 ## Build / tooling
 
 - **Prevent heavy data imports in client bundles** — after moving question data to server components, need automated checks to prevent future regressions where someone accidentally imports `~/data/*` in a client component. Options:
