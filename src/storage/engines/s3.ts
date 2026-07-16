@@ -25,6 +25,8 @@ function key(userId: string): string {
   return `users/${userId}`;
 }
 
+const MAX_CAS_RETRIES = 5;
+
 export const s3Store = {
   async get(userId: string): Promise<Uint8Array | null> {
     try {
@@ -54,5 +56,52 @@ export const s3Store = {
     await getClient().send(
       new DeleteObjectCommand({ Bucket: bucket(), Key: key(userId) }),
     );
+  },
+
+  async modify(
+    userId: string,
+    fn: (current: Uint8Array | null) => Promise<Uint8Array>,
+  ): Promise<Uint8Array> {
+    for (let attempt = 0; attempt < MAX_CAS_RETRIES; attempt++) {
+      // Read current state + ETag for optimistic locking
+      let etag: string | undefined;
+      let current: Uint8Array | null = null;
+
+      try {
+        const res = await getClient().send(
+          new GetObjectCommand({ Bucket: bucket(), Key: key(userId) }),
+        );
+        etag = res.ETag;
+        if (res.Body) {
+          current = new Uint8Array(await res.Body.transformToByteArray());
+        }
+      } catch (err: unknown) {
+        if ((err as { name?: string }).name !== "NoSuchKey") throw err;
+        // Object doesn't exist yet — current stays null
+      }
+
+      const newData = await fn(current);
+
+      try {
+        await getClient().send(
+          new PutObjectCommand({
+            Bucket: bucket(),
+            Key: key(userId),
+            Body: newData,
+            ContentType: "application/octet-stream",
+            ...(etag ? { IfMatch: etag } : { IfNoneMatch: "*" }),
+          }),
+        );
+        return newData;
+      } catch (err: unknown) {
+        const name = (err as { name?: string }).name;
+        if (name === "PreconditionFailed" || name === "ConditionalRequestConflict") {
+          continue; // ETag mismatch — retry
+        }
+        throw err;
+      }
+    }
+
+    throw new Error(`CAS retry limit (${MAX_CAS_RETRIES}) exceeded for user ${userId}`);
   },
 };

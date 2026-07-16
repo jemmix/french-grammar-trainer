@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { getStore, serialize, deserialize } from "~/storage/store";
+import { getStore, deserialize, modifyUserPowers } from "~/storage/store";
 import { getSession } from "~/next/lib/server-session";
-import { createEmptyPowers, recordAnswerInPlace } from "~/mastery/progress";
+import { recordAnswerInPlace } from "~/mastery/progress";
 
 interface AnswerItem {
   ruleId: string;
@@ -40,15 +40,13 @@ export async function POST(req: NextRequest) {
   if (!Array.isArray(body?.answers)) {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
-  const store = await getStore();
-  const existing = await store.get(userId);
-  const powers = existing ? (await deserialize(existing)).powers : createEmptyPowers();
-  for (const item of body.answers) {
-    if (typeof item.ruleId === "string" && typeof item.correct === "boolean") {
-      recordAnswerInPlace(powers, item.ruleId, item.correct);
+  await modifyUserPowers(userId, (powers) => {
+    for (const item of body.answers) {
+      if (typeof item.ruleId === "string" && typeof item.correct === "boolean") {
+        recordAnswerInPlace(powers, item.ruleId, item.correct);
+      }
     }
-  }
-  await store.put(userId, await serialize(powers));
+  });
   return NextResponse.json({ ok: true });
 }
 

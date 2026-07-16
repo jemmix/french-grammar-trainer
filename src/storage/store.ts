@@ -1,5 +1,6 @@
 import { RULE_SLOTS } from "~/config/lang-config";
 import { env } from "~/config/env";
+import { createEmptyPowers } from "~/mastery/progress";
 
 // ─── UserStore interface ───────────────────────────────────────────
 
@@ -7,6 +8,15 @@ export interface UserStore {
   get(userId: string): Promise<Uint8Array | null>;
   put(userId: string, data: Uint8Array): Promise<void>;
   delete(userId: string): Promise<void>;
+  /**
+   * Read-modify-set with optimistic locking. The callback receives the
+   * current data (or null if none exists) and returns the new data.
+   * Retries on concurrent modification.
+   */
+  modify(
+    userId: string,
+    fn: (current: Uint8Array | null) => Promise<Uint8Array>,
+  ): Promise<Uint8Array>;
 }
 
 let cached: UserStore | null = null;
@@ -27,6 +37,7 @@ export async function getStore(): Promise<UserStore> {
       get: async (userId) => sqliteStore.get(userId),
       put: async (userId, data) => sqliteStore.put(userId, data),
       delete: async (userId) => sqliteStore.delete(userId),
+      modify: (userId, fn) => sqliteStore.modify(userId, fn),
     };
   }
   return cached;
@@ -118,4 +129,25 @@ export async function deserialize(data: Uint8Array): Promise<{
 }> {
   const blob = (await getLz4()).decompress(data);
   return { header: decodeHeader(blob), powers: decodeRecord(blob) };
+}
+
+// ─── High-level power modification ─────────────────────────────────
+
+/**
+ * Orchestrates a read-modify-set on the user's power array with optimistic
+ * locking. The callback mutates `powers` in-place. The store engine handles
+ * serialization, compression, CAS retries, and persistence.
+ */
+export async function modifyUserPowers(
+  userId: string,
+  modify: (powers: Uint16Array) => void,
+): Promise<void> {
+  const store = await getStore();
+  await store.modify(userId, async (current) => {
+    const powers = current
+      ? decodeRecord((await getLz4()).decompress(current))
+      : createEmptyPowers();
+    modify(powers);
+    return (await getLz4()).compress(encodeRecord(powers));
+  });
 }
