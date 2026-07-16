@@ -62,6 +62,9 @@ export const s3Store = {
     userId: string,
     fn: (current: Uint8Array | null) => Promise<Uint8Array>,
   ): Promise<Uint8Array> {
+    // R2 and S3 both support conditional writes via If-Match/If-None-Match
+    // on PutObject (confirmed: R2 docs show ✅ for all conditional headers).
+    // ETag from GET guarantees no concurrent modification slipped in.
     for (let attempt = 0; attempt < MAX_CAS_RETRIES; attempt++) {
       // Read current state + ETag for optimistic locking
       let etag: string | undefined;
