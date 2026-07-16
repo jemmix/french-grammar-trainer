@@ -38,9 +38,9 @@
 
 - **Reduce non-TypeScript files** — `src/next/env.js` is the only `.js` file in `src/`. Harder to reason about (no type safety, TS assertion syntax rejected). Convert to `.ts` once t3-oss/env-nextjs supports it or replace with a custom typed env validator.
 
-- **Storage read-modify-set orchestration** — the current `api/progress/route.ts` POST handler does: `store.get()` → `deserialize()` → `recordAnswerInPlace()` → `serialize()` → `store.put()`. This is a classic read-modify-write race: concurrent requests can clobber each other's updates. Refactor `UserStore` interface to expose a `modify(userId, callback)` method that orchestrates the read-modify-set internally, accepting the modification logic as a callback. Enables engines to implement optimistic locking (compare-and-set with retries) natively.
+- **Storage read-modify-set orchestration** — **DONE**: `UserStore.modify()` added with engine-specific CAS (SQLite: version-column, S3: ETag conditional writes, D1: version-column via REST API). `modifyUserPowers()` helper wraps serialize/deserialize. API route simplified.
 
-- **Cloudflare D1 storage engine** — add a D1-backed `UserStore` implementation for edge deployment. D1 is Cloudflare's serverless SQLite with global read replicas. Requires `STORAGE_ENGINE=d1` + D1 binding/credentials env vars.
+- **Cloudflare D1 storage engine** — **DONE**: `STORAGE_ENGINE=d1` via D1 REST API. Base64-encoded binary data, version-column CAS with retries, conditional env validation.
 
 ## Build / tooling
 
