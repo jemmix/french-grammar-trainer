@@ -8,7 +8,7 @@ export const env = createEnv({
     HMAC_KEY: z.string().min(16),
 
     // Engine selection (required — no silent defaults)
-    STORAGE_ENGINE: z.enum(["s3", "sqlite"]),
+    STORAGE_ENGINE: z.enum(["s3", "sqlite", "d1"]),
     AUTH_ENGINE: z.enum(["dev", "google"]),
 
     // Google OAuth (required when AUTH_ENGINE=google)
@@ -22,6 +22,11 @@ export const env = createEnv({
     S3_ACCESS_KEY_ID: z.string().optional(),
     S3_SECRET_ACCESS_KEY: z.string().optional(),
     S3_BUCKET_NAME: z.string().optional(),
+
+    // Cloudflare D1 (required when STORAGE_ENGINE=d1)
+    D1_ACCOUNT_ID: z.string().optional(),
+    D1_DATABASE_ID: z.string().optional(),
+    D1_API_TOKEN: z.string().optional(),
   },
 
   client: {
@@ -45,6 +50,9 @@ export const env = createEnv({
     S3_ACCESS_KEY_ID: process.env.S3_ACCESS_KEY_ID,
     S3_SECRET_ACCESS_KEY: process.env.S3_SECRET_ACCESS_KEY,
     S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
+    D1_ACCOUNT_ID: process.env.D1_ACCOUNT_ID,
+    D1_DATABASE_ID: process.env.D1_DATABASE_ID,
+    D1_API_TOKEN: process.env.D1_API_TOKEN,
   },
 
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
@@ -64,6 +72,19 @@ if (!process.env.SKIP_ENV_VALIDATION) {
     for (const [varName, value] of Object.entries(required)) {
       if (!value) {
         throw new Error(`STORAGE_ENGINE=s3 requires ${varName} to be set.`);
+      }
+    }
+  }
+
+  if (env.STORAGE_ENGINE === "d1") {
+    const required = {
+      D1_ACCOUNT_ID: env.D1_ACCOUNT_ID,
+      D1_DATABASE_ID: env.D1_DATABASE_ID,
+      D1_API_TOKEN: env.D1_API_TOKEN,
+    };
+    for (const [varName, value] of Object.entries(required)) {
+      if (!value) {
+        throw new Error(`STORAGE_ENGINE=d1 requires ${varName} to be set.`);
       }
     }
   }

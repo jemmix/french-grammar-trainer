@@ -12,8 +12,8 @@ export const env = {
   lang: process.env.NEXT_PUBLIC_LANG ?? "fr",
   /** Argon2 salt for user-id mangling. Server-only (no NEXT_PUBLIC_ prefix). */
   hmacKey: process.env.HMAC_KEY,
-  /** Storage backend: "s3" or "sqlite". Validated as required by t3 env. */
-  storageEngine: (process.env.STORAGE_ENGINE ?? "sqlite") as "s3" | "sqlite",
+  /** Storage backend: "s3", "d1", or "sqlite". */
+  storageEngine: (process.env.STORAGE_ENGINE ?? "sqlite") as "s3" | "d1" | "sqlite",
   /** Auth backend: "dev" (fake HMAC login) or "google" (Google OAuth). */
   authEngine: (process.env.AUTH_ENGINE ?? "dev") as "dev" | "google",
 } as const;

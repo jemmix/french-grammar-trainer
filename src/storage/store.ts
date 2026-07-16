@@ -31,6 +31,9 @@ export async function getStore(): Promise<UserStore> {
   if (env.storageEngine === "s3") {
     const { s3Store } = await import("./engines/s3");
     cached = s3Store;
+  } else if (env.storageEngine === "d1") {
+    const { d1Store } = await import("./engines/d1");
+    cached = d1Store;
   } else {
     const { sqliteStore } = await import("./engines/sqlite");
     cached = {
