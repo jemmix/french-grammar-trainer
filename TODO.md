@@ -11,7 +11,6 @@
 
 - **Nonsensical questions** — some generated questions are internally incoherent: e.g. an input question with PROMPT "Conjuguez le verbe au présent" but neither the PROMPT nor the PHRASE names which verb to conjugate, leaving the blank completely undefined. These pass all structural checks. Fix: adjust `scripts/verify-answers.ts` to also verify user-input questions using a different prompt that checks for self-consistency (e.g. the verb to conjugate must be identifiable from the prompt or phrase).
 
-- **Elision linter in blind-verify** — add mechanical string checks to `scripts/blind-verify.ts` (or a standalone `scripts/lint-elision.ts`) that flag questions where the subject+blank combo mismatches the answer's initial sound: e.g. `Je ___` + vowel-starting answer (should be `J'___`), `J'___` + consonant-starting answer (should be `Je ___`), `m'___` + consonant-starting answer (should be `me ___`), and inline verb hints like `(prendre) ___` in a PHRASE field. Pure string matching, no LLM needed. — **DONE**: linter now exists at `scripts/lint-elision.ts` with 55 unit tests.
 
 - **Fix elision errors in content** — the elision linter found 284 issues across 240 rule files (4.7% of 6,075 questions). Most common: `j'___` + consonant answer (should be `je ___`), `n'___` + consonant answer (should be `ne ___`). Worst affected: 11-15 (56%), 07-12 (44%), 06-14 (40%). Run `npx tsx scripts/lint-elision.ts questions/fr/*.txt` to see full list. Fix requires editing source `.txt` files and recompiling TS sections.
 
@@ -23,24 +22,11 @@
 
 - **LLM cache re-population for FR and EN** — after the 2026-07 cache reorganization (flat → two-tier hot/cold with re-keying), coverage is uneven: DE is 100% cached (8,880 hits, 0 misses), but FR is only 52% (23,409 hits / 21,546 misses) and EN is worse (2,516 hits / 4,364 misses). The gaps are entries that were either orphaned (question content drifted) or pre-reformat (system prompts changed 2026-05-21) and couldn't be re-keyed. To close: run `npx tsx scripts/validate.ts --lang <lang> --llm --update-cache --concurrency 10` per language, then `npx tsx scripts/promote-cache.ts` before committing. This is a large LLM spend — batch by section (`--section XX`) to make it tractable and reviewable.
 
-- **S3 → DynamoDB migration** — user progress is currently stored as LZ4-compressed binary blobs in S3 (via `src/lib/s3-store.ts`). Each read/write takes hundreds of ms due to S3 latency. Migrate to Amazon DynamoDB for single-digit-ms P99 latency. Key points:
-  1. Replace `s3-store.ts` with `dynamo-store.ts` implementing the same `UserStore` interface
-  2. Store the 1131-byte user record as a DynamoDB attribute (well within 400KB item limit)
-  3. Key schema: `userId` as partition key, no sort key needed
-  4. Add `@aws-sdk/client-dynamodb` dependency, remove `@aws-sdk/client-s3`
-  5. Update `src/env.js` with DynamoDB env vars (`DYNAMO_TABLE_NAME`, etc.)
-  6. Consider on-demand billing mode (pay-per-request) for cost efficiency at current scale
-  7. Keep SQLite store as-is for local dev
-
 ## Architecture
 
 - **Reduce client-side redirects** — several flows redirect from the client (e.g. login page, my-data page redirect to `/` when unauthenticated). Each client-side redirect is a full round-trip: server renders → client hydrates → client redirects → server re-renders. Move auth/redirect logic to middleware or server components where possible to eliminate the extra round-trip.
 
 - **Reduce non-TypeScript files** — `src/next/env.js` is the only `.js` file in `src/`. Harder to reason about (no type safety, TS assertion syntax rejected). Convert to `.ts` once t3-oss/env-nextjs supports it or replace with a custom typed env validator.
-
-- **Storage read-modify-set orchestration** — **DONE**: `UserStore.modify()` added with engine-specific CAS (SQLite: version-column, S3: ETag conditional writes, D1: version-column via REST API). `modifyUserPowers()` helper wraps serialize/deserialize. API route simplified.
-
-- **Cloudflare D1 storage engine** — **DONE**: `STORAGE_ENGINE=d1` via D1 REST API. Base64-encoded binary data, version-column CAS with retries, conditional env validation.
 
 ## Build / tooling
 
@@ -74,8 +60,6 @@
   4. **Recommended**: combine (1) + (3) — ESLint for immediate dev feedback, bundle check as CI safety net
 
 - **Per-language hint exceptions** — `src/data/answer-hints.test.ts` has a single `HINT_EXCEPTIONS` set applied to all languages. Should be split into per-language sets since English and French have different common verb answers that don't need dictionary hints (e.g. English: `write`, `walk`, `run`; French: different verbs). Per-language hint *aliases* are already supported via `hintAliases` exports in each language's `answer-hints.ts`.
-
-- **Optimize LLM validation runner** — **DONE**: early termination on failCount >= 2, cache summary one-liner, per-attempt breakdown for no-majority cases, failures grouped by rule/question in report.
 
 - **DSL with LSP for question validation** — transition `questions/*.txt` to a format with LSP support to catch structural/type inconsistencies in-editor. Options:
   - **YAML + JSON Schema** (recommended): mature ecosystem, `yaml-language-server` built into VS Code/Neovim, schema validation + autocomplete. Low effort, high ROI.
@@ -127,7 +111,6 @@ Fill-in-the-blank questions with nous/vous subjects for pronominal verbs are str
 ## Weird questions
 
 - 10-11-005 [fr]: Suisse and Suisse aucun article the same thing?
-- ~~02-02-011 [en]: indicate if it's about present/past events more clearly, everywhere~~ — fixed: added past-tense context clues to 13 ambiguous questions in 02-01 and 02-02
 
 ### 02-14 INPUT questions — misleading prompts
 
