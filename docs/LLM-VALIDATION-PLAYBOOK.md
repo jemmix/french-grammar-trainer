@@ -2,6 +2,23 @@
 
 Practical patterns and gotchas discovered while validating French grammar questions through the LLM validator (`npx tsx scripts/validate.ts --llm`). This is a living document — update it as new patterns emerge.
 
+## Core Principles
+
+1. **Push until the entire rule passes cleanly.** "No clear majority" is a real failure, not a warning. A rule is not done until every predicate passes on every question. Don't stop at "I improved things a lot" — keep iterating until the score is `310/310` (or whatever the per-rule total is) with zero failures.
+
+2. **When a rule feels like a catch-22 or systemic impossibility, slow down.** "Unsatisfiable rules" are essentially never actually unsatisfiable — they're a signal that you're missing something. Effectiveness beats efficiency here:
+   - **Brainstorm before editing.** Write out multiple competing hypotheses for why the LLM keeps failing (rule title, prompt wording, time-marker semantics, trigger-choice, question structure, the LLM's confusion with adjacent constructions).
+   - **Review previous material.** Look at rules that already pass — what patterns do they use? Section 08's INPUT prompts and "hier"-marker strategies were discovered by studying what worked, not by theory.
+   - **Test hypotheses one at a time.** If you change 5 things in one shot, you won't know which one fixed (or broke) it. Make a single targeted edit, re-validate the one question, observe, iterate.
+   - **Title matters more than you'd think.** "vs" in a rule title makes the LLM reject INPUT that doesn't present both options as choices. Broaden to "emplois" or "(présent et passé)".
+   - **Some LLM "rules" aren't real grammar rules — they're LLM quirks.** E.g., "pourvu que" + "hier" is consistently rejected as a temporal contradiction even though it's grammatically fine. Work around it (use futur-leaning wishes) rather than fighting it.
+
+3. **No section is "grandfathered" once you touch it.** When you start work on a section, **remove it from `ALLOWED_FAILING_SECTIONS`** in `scripts/lib/elision-lint-all.test.ts` and fix every elision issue. Elision bugs are real bugs; the exception list is only for sections that haven't been re-validated yet.
+
+4. **Never clear the cache.** The cache is content-addressable — cache keys are derived from question content, so editing a question auto-invalidates the old entry and writes a fresh one on the next run. Clearing the cache throws away perfectly good `cold/` entries, forcing re-runs of API calls you already paid for. Redundant `hot/` entries are cleaned up automatically by `promote-cache.ts` (hot wins on conflict, dedupes by nonce, then clears `hot/`). There are no upsides to manual cache clearing.
+
+5. **Be proactive.** When a rule is done (validated, promoted, committed, pushed), start the next one without asking. The end goal is "section N fully done" — every rule, 310/310, cache promoted, pushed. Don't pause between rules.
+
 ## Core Commands
 
 ```bash
@@ -166,13 +183,15 @@ Avoid "nous/vous" subjects in MCQ questions — the reflexive pronoun is identic
 
 ## Commit Pattern
 
-After each rule passes 285/285:
+After each rule passes full validation (e.g. `310/310`):
 
 ```bash
 npx tsx scripts/promote-cache.ts --lang fr && \
 git add questions/fr/XX-YY.txt src/data/fr/answer-hints.ts llm-cache/ && \
-git commit -m "Rewrite XX-YY (rule title) — 285/285 validated" && \
+git commit -m "Rewrite XX-YY (rule title) — 310/310 validated" && \
 git push
 ```
 
 Always include `llm-cache/` — it's content-addressable and must be committed with each rule. Run `promote-cache` first so the committed cache lives in `cold/` (compact gzipped JSONL), not `hot/` (loose JSON files).
+
+If the rule's section was previously in `ALLOWED_FAILING_SECTIONS`, also stage the test file change (`scripts/lib/elision-lint-all.test.ts`) in the same commit and mention it in the message.
