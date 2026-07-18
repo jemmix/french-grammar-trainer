@@ -1570,6 +1570,7 @@ export const answerHints: Record<string, string> = {
   "Repose-toi": "se reposer",
   "Fais": "faire",
   "Reposez-vous": "se reposer",
+  "Excusez": "excuser",
   "Ne les mangez pas": "manger",
   "Ne l'appelle pas": "appeler",
   "Donne-le-moi": "donner",
