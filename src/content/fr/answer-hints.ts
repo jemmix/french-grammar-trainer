@@ -546,6 +546,8 @@ export const answerHints: Record<string, string> = {
   "connus": "connaître",
   "Conserver": "conserver",
   "continuons": "continuer",
+  "Continue": "continuer",
+  "Observez": "observer",
   "construirais": "construire",
   "corrigées": "corriger",
   "courent": "courir",
