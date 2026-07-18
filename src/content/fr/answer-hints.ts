@@ -1735,4 +1735,14 @@ export const answerHints: Record<string, string> = {
   "viendrais": "venir",
 };
 
+// 09-19 INPUT questions use descriptive hints (not just the infinitive)
+// since the answer literally is the infinitive form.
+export const hintAliases: Record<string, Set<string>> = {
+  "Laver": new Set(["laver", "forme infinitive du verbe conjugué"]),
+  "Agiter": new Set(["agiter", "forme infinitive du verbe conjugué"]),
+  "Conserver": new Set(["conserver", "forme infinitive du verbe conjugué"]),
+  "Ne pas exposer": new Set(["exposer", "ne pas + infinitif du verbe conjugué"]),
+  "Ne pas laisser": new Set(["laisser", "ne pas + infinitif du verbe conjugué"]),
+};
+
 export type AnswerHintKey = keyof typeof answerHints;
