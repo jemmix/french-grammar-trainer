@@ -1154,6 +1154,7 @@ export const answerHints: Record<string, string> = {
   "réfléchissaient": "réfléchir",
   "répondez": "répondre",
   "réponds": "répondre",
+  "Réponds": "répondre",
   "répondes": "répondre",
   "répondre": "répondre",
   "répondras": "répondre",
