@@ -1573,6 +1573,8 @@ export const answerHints: Record<string, string> = {
   "Excusez": "excuser",
   "Ne parlez pas": "parler",
   "Ne mange pas": "manger",
+  "Apporte-la-moi": "apporter",
+  "Donne-m'en": "donner",
   "Ne les mangez pas": "manger",
   "Ne l'appelle pas": "appeler",
   "Donne-le-moi": "donner",
@@ -1596,7 +1598,6 @@ export const answerHints: Record<string, string> = {
   "Laver": "laver",
   "Ne pas exposer": "exposer",
   "Ne pas laisser": "laisser",
-  "Donne-m'en": "donner",
   "polonais": "nom",
   "souvenons": "se souvenir",
   "pratique": "pratiquer",
@@ -1743,6 +1744,12 @@ export const hintAliases: Record<string, Set<string>> = {
   "Conserver": new Set(["conserver", "forme infinitive du verbe conjugué"]),
   "Ne pas exposer": new Set(["exposer", "ne pas + infinitif du verbe conjugué"]),
   "Ne pas laisser": new Set(["laisser", "ne pas + infinitif du verbe conjugué"]),
+  // 09-20 INPUT questions use compound hints showing verb + pronouns.
+  "Donne-le-moi": new Set(["donner", "donner + le + moi"]),
+  "Apporte-la-moi": new Set(["apporter", "apporter + la + moi"]),
+  "Vas-y": new Set(["aller", "aller + y"]),
+  "Donne-m'en": new Set(["donner", "donner + moi + en"]),
+  "la": new Set(["...", "pronom COD pour « cette photo »"]),
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
