@@ -1565,6 +1565,8 @@ export const answerHints: Record<string, string> = {
   "Ne vous levez pas": "se lever",
   "Ne nous dépêchons pas": "se dépêcher",
   "Ne nous reposons pas": "se reposer",
+  "Ne touche pas": "toucher",
+  "Bois": "boire",
   "Ne les mangez pas": "manger",
   "Ne l'appelle pas": "appeler",
   "Donne-le-moi": "donner",
