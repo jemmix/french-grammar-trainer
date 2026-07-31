@@ -32,7 +32,7 @@ npx tsx scripts/validate.ts --lang fr --rule XX-YY --question XX-YY-XXX --llm --
 npx tsx scripts/validate.ts --lang fr --rule XX-YY
 ```
 
-Always use `--timeout 3600000` (1 hour) for full rule validation. API timeouts happen — just retry the same command; the cache persists.
+Always use a generous shell-level timeout when running full-rule validation (e.g. run the command in a separate terminal with no idle timeout). API timeouts happen — just retry the same command; the cache persists.
 
 ## Workflow
 
