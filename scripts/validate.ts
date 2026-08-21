@@ -15,7 +15,10 @@
  *   --prune-cache          Remove orphaned cache entries
  *   --concurrency <n>      Max concurrent LLM calls (default: 10)
  *   --ratelimit <seconds>  Min gap between LLM call starts (default: 1, 0=disabled)
- *   --model <model>        LLM model to use (default: glm-5)
+ *   --model <model>        LLM model to use. Bare id ("glm-5") is prefixed with
+ *                          zai-coding-plan/; a full id ("openrouter/stealth/ox-alpha")
+ *                          is passed to opencode as-is (default: glm-5)
+ *   --variant <variant>    Model variant passed to opencode (e.g. low, high, max)
  *   --json                 Output as JSON
  */
 
@@ -73,6 +76,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
       opts.rateLimit = parseFloat(args[++i]!);
     } else if (arg === "--model" && args[i + 1]) {
       opts.model = args[++i];
+    } else if (arg === "--variant" && args[i + 1]) {
+      opts.variant = args[++i];
     } else if (arg && arg.startsWith("--")) {
       console.error("Unknown option:", arg);
       process.exit(1);
@@ -152,7 +157,10 @@ async function main() {
   if (opts.sections) console.log("  Sections: " + opts.sections.join(", "));
   if (opts.rules) console.log("  Rules: " + opts.rules.join(", "));
   if (opts.questions) console.log("  Questions: " + opts.questions.join(", "));
-  if (opts.llm) console.log("  LLM: enabled (" + (opts.dryRun ? "dry-run" : opts.updateCache ? "update-cache" : "read-only") + ")");
+  if (opts.llm) {
+    console.log("  LLM: enabled (" + (opts.dryRun ? "dry-run" : opts.updateCache ? "update-cache" : "read-only") + ")");
+    console.log("  Model: " + (opts.model || "glm-5 (default)") + (opts.variant ? " (variant: " + opts.variant + ")" : ""));
+  }
   console.log("");
   
   const report = await runValidation(opts);

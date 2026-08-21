@@ -61,17 +61,27 @@ export interface LLMHarness {
   run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse>;
 }
 
-export function createOpencodeHarness(modelId: string): LLMHarness {
+export function createOpencodeHarness(modelId: string, variant?: string): LLMHarness {
+  // Bare model ids ("glm-5") are prefixed with the default provider;
+  // full ids ("openrouter/stealth/ox-alpha") are passed through as-is.
+  const fullModelId = modelId.includes("/") ? modelId : "zai-coding-plan/" + modelId;
+
   return {
     name: "opencode",
 
     async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
       const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
 
+      const args = ["run", "--agent", "validation-judge", "--model", fullModelId];
+      if (variant) {
+        args.push("--variant", variant);
+      }
+      args.push(fullPrompt);
+
       return new Promise<LLMResponse>((resolve, reject) => {
         const child = execFile(
           "opencode",
-          ["run", "--agent", "validation-judge", "--model", "zai-coding-plan/" + modelId, fullPrompt],
+          args,
           { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
           (err, stdout, stderr) => {
             if (err) {
@@ -98,7 +108,7 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
             }
             resolve({
               raw,
-              model: modelId,
+              model: fullModelId,
               harness: "opencode",
               nonce,
               timestamp: new Date().toISOString(),

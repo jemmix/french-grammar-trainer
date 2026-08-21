@@ -489,7 +489,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const lang = opts.lang || "fr";
   setCacheContext(lang);
   const model = opts.model || "glm-5-turbo";
-  const harness = createOpencodeHarness(model);
+  const harness = createOpencodeHarness(model, opts.variant);
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();
   const concurrency = opts.concurrency || DEFAULT_CONCURRENCY;
