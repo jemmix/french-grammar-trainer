@@ -2,6 +2,12 @@
 
 ## Content generation
 
+- **Sections 21-28 not yet generated** — sections 13-20 were generated (2026-08-22, ~160 rule files via subagents, structural validation clean), but 21 (hypothèses), 22 (discours indirect), 23 (voix passive), 24 (connecteurs), 25 (expression du temps), 26 (gérondif), 27 (gallicismes), 28 (accord du participe avancé) still have no `questions/fr/*.txt` files even though their section meta is registered in `src/content/fr/index.ts`. Regenerate with the subagent workflow (general-purpose agents writing to `gen/`, then split/fix/merge).
+
+- **LLM semantic validation for sections 13-20** — new content has only passed structural validation (`npx tsx scripts/validate.ts --lang fr`), not the LLM-based semantic checks. Run `npx tsx scripts/validate.ts --lang fr --llm --update-cache` batched by section when budget allows, then promote cache. Watch for "No clear majority" failures on the comparison-type rules (cf. 08-11/08-15 history in this file).
+
+- **Elision restructure review** — 81 mixed-vowel/consonant questions across sections 10-19 were mechanically restructured (blank moved to clause start, elision-prone word absorbed into answers, e.g. « J'___ veux » → « ___ veux » with answers "J'en/Je le/Je lui/J'y"). Hints were then normalized to dictionary categories. Pedagogical spot-review recommended — the rewritten answers are longer than typical. The elision exception list (`ALLOWED_FAILING_SECTIONS`) has been removed; `scripts/lib/elision-lint-all.test.ts` is now strict for all sections.
+
 - **Rule explanations for all sections** — the `Section.explanations` field is currently optional and code special-cases missing explanations (`section.explanations?.find(...)`, `explanation?.title ?? fallback`). This should be required:
   1. **Audit existing sections**: identify which sections lack `RuleExplanation[]` entries for their rules
   2. **Write missing explanations**: create pedagogical explanations (title, body, examples) for every rule in every section
@@ -12,7 +18,7 @@
 - **Nonsensical questions** — some generated questions are internally incoherent: e.g. an input question with PROMPT "Conjuguez le verbe au présent" but neither the PROMPT nor the PHRASE names which verb to conjugate, leaving the blank completely undefined. These pass all structural checks. Fix: adjust `scripts/verify-answers.ts` to also verify user-input questions using a different prompt that checks for self-consistency (e.g. the verb to conjugate must be identifiable from the prompt or phrase).
 
 
-- **Fix elision errors in content** — the elision linter found 284 issues across 240 rule files (4.7% of 6,075 questions). Most common: `j'___` + consonant answer (should be `je ___`), `n'___` + consonant answer (should be `ne ___`). Worst affected: 11-15 (56%), 07-12 (44%), 06-14 (40%). Run `npx tsx scripts/lint-elision.ts questions/fr/*.txt` to see full list. Fix requires editing source `.txt` files and recompiling TS sections.
+- ~~**Fix elision errors in content**~~ DONE 2026-08-22: all elision issues fixed (restructure + elision), `ALLOWED_FAILING_SECTIONS` removed, elision lint strict and green.
 
 - **Grammar-check generated answers** — no validation that answers are grammatically plausible French (e.g. a generated wrong answer like "je arrive" would pass validation). Could run answers through a grammar API, a local spaCy/Lefff model, or a cheap LLM call to flag obviously broken forms before committing content.
 
