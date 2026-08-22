@@ -28,7 +28,11 @@ function serializeQuestion(q: ParsedQuestion): string {
   lines.push(`TYPE: ${q.type.toUpperCase()}`);
   lines.push(`PROMPT: ${q.prompt}`);
   if (q.type === "input") {
-    lines.push(`PHRASE: ${(q as ParsedInputQuestion).phrase}`);
+    const input = q as ParsedInputQuestion;
+    lines.push(`PHRASE: ${input.phrase}`);
+    if (input.hint) {
+      lines.push(`HINT: ${input.hint}`);
+    }
   }
   lines.push(`RIGHT ANSWER: ${q.right.text}`);
   lines.push(`EXPLANATION: ${q.right.explanation}`);

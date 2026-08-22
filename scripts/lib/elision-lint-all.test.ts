@@ -6,12 +6,6 @@ import { checkQuestionElision, type QuestionElisionIssue } from "./elision-check
 
 const QUESTIONS_DIR = join(import.meta.dirname, "../../questions/fr");
 
-const ALLOWED_FAILING_SECTIONS = new Set([
-  "10",
-  "11",
-  "12",
-]);
-
 function getSectionId(ruleId: string): string {
   return ruleId.split("-")[0]!;
 }
@@ -58,40 +52,15 @@ describe("elision lint across all question files", () => {
     results.push(result);
   }
 
-  it("sections not in the allowed-failing list should have no elision issues", () => {
-    const strictIssues = results
-      .filter((r) => !ALLOWED_FAILING_SECTIONS.has(r.sectionId))
-      .flatMap((r) => r.issues);
+  it("all question files should have no elision issues", () => {
+    const strictIssues = results.flatMap((r) => r.issues);
 
     if (strictIssues.length > 0) {
       const messages = strictIssues.map(
         (i) => `  ${i.questionId}: [${i.kind}] ${i.message}`
       );
       expect.fail(
-        `Found ${strictIssues.length} elision issue(s) in strict sections:\n${messages.join("\n")}`
-      );
-    }
-  });
-
-  it("report all elision issues in allowed-failing sections (logged but not failing)", () => {
-    const allowedFailing = results.filter(
-      (r) => r.issues.length > 0 && ALLOWED_FAILING_SECTIONS.has(r.sectionId)
-    );
-
-    for (const result of allowedFailing) {
-      console.log(`\n[ALLOWED FAILURE] ${result.ruleId}:`);
-      for (const issue of result.issues) {
-        console.log(`  ${issue.questionId}: [${issue.kind}] ${issue.message}`);
-      }
-    }
-
-    const totalAllowedIssues = allowedFailing.reduce(
-      (sum, r) => sum + r.issues.length,
-      0
-    );
-    if (totalAllowedIssues > 0) {
-      console.log(
-        `\n[INFO] ${totalAllowedIssues} elision issue(s) in allowed sections - these do not fail the test`
+        `Found ${strictIssues.length} elision issue(s):\n${messages.join("\n")}`
       );
     }
   });
