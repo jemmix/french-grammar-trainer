@@ -2,7 +2,7 @@
 
 ## Content generation
 
-- **Sections 25-28 not yet generated** — sections 13-24 are done (2026-08-22/25, structural validation clean throughout), but 25 (expression du temps), 26 (gérondif), 27 (gallicismes), 28 (accord du participe avancé) still have no `questions/fr/*.txt` files even though their section meta is registered in `src/content/fr/index.ts`. Regenerate with the subagent workflow (general-purpose agents writing to `gen/`, then split/fix/merge).
+- **All 28 sections generated** — sections 25-28 (expression du temps, gérondif, gallicismes, accord du participe avancé) were completed 2026-08-27, closing out the full B1 course (560 rule files, ~14k questions). Structural validation clean throughout.
 
 - **LLM semantic validation for sections 13-20** — new content has only passed structural validation (`npx tsx scripts/validate.ts --lang fr`), not the LLM-based semantic checks. Run `npx tsx scripts/validate.ts --lang fr --llm --update-cache` batched by section when budget allows, then promote cache. Watch for "No clear majority" failures on the comparison-type rules (cf. 08-11/08-15 history in this file).
 
