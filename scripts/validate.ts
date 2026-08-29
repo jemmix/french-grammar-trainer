@@ -17,8 +17,8 @@
  *   --ratelimit <seconds>  Min gap between LLM call starts (default: 1, 0=disabled)
  *   --model <model>        LLM model to use. Bare id ("glm-5") is prefixed with
  *                          zai-coding-plan/; a full id ("openrouter/stealth/ox-alpha")
- *                          is passed to opencode as-is (default: glm-5)
- *   --variant <variant>    Model variant passed to opencode (e.g. low, high, max)
+ *                          is passed to opencode as-is (default: glm-5.3-flash)
+ *   --variant <variant>    Model variant passed to opencode (e.g. low, high, max; default: low)
  *   --json                 Output as JSON
  */
 
@@ -35,6 +35,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
     updateCache: false,
     pruneCache: false,
     rateLimit: DEFAULT_RATELIMIT,
+    model: "glm-5.3-flash",
+    variant: "low",
   };
   
   for (let i = 0; i < args.length; i++) {
@@ -75,7 +77,12 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
     } else if (arg === "--ratelimit" && args[i + 1]) {
       opts.rateLimit = parseFloat(args[++i]!);
     } else if (arg === "--model" && args[i + 1]) {
-      opts.model = args[++i];
+      const model = args[++i]!;
+      if (model === "glm-5-turbo" || model === "zai-coding-plan/glm-5-turbo") {
+        console.error("Error: glm-5-turbo is retired for validation. Use the default glm-5.3-flash (variant low) instead.");
+        process.exit(1);
+      }
+      opts.model = model;
     } else if (arg === "--variant" && args[i + 1]) {
       opts.variant = args[++i];
     } else if (arg && arg.startsWith("--")) {
@@ -159,7 +166,7 @@ async function main() {
   if (opts.questions) console.log("  Questions: " + opts.questions.join(", "));
   if (opts.llm) {
     console.log("  LLM: enabled (" + (opts.dryRun ? "dry-run" : opts.updateCache ? "update-cache" : "read-only") + ")");
-    console.log("  Model: " + (opts.model || "glm-5 (default)") + (opts.variant ? " (variant: " + opts.variant + ")" : ""));
+    console.log("  Model: " + opts.model + (opts.variant ? " (variant: " + opts.variant + ")" : ""));
   }
   console.log("");
   

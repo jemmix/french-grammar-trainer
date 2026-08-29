@@ -488,7 +488,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
 
   const lang = opts.lang || "fr";
   setCacheContext(lang);
-  const model = opts.model || "glm-5-turbo";
+  const model = opts.model || "glm-5.3-flash";
   const harness = createOpencodeHarness(model, opts.variant);
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();

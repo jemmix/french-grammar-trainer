@@ -23,10 +23,10 @@ Practical patterns and gotchas discovered while validating French grammar questi
 
 ```bash
 # Full LLM validation (1 rule, generous timeout)
-npx tsx scripts/validate.ts --lang fr --rule XX-YY --llm --update-cache --model glm-5-turbo --variant low
+npx tsx scripts/validate.ts --lang fr --rule XX-YY --llm --update-cache --model glm-5.3-flash --variant low
 
 # Single question validation (faster, for testing fixes)
-npx tsx scripts/validate.ts --lang fr --rule XX-YY --question XX-YY-XXX --llm --update-cache --model glm-5-turbo --variant low
+npx tsx scripts/validate.ts --lang fr --rule XX-YY --question XX-YY-XXX --llm --update-cache --model glm-5.3-flash --variant low
 
 # Structural-only validation (fast, no LLM)
 npx tsx scripts/validate.ts --lang fr --rule XX-YY
