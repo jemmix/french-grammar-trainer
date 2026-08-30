@@ -75,6 +75,7 @@ export interface ValidationOptions {
   concurrency?: number;
   model?: string;
   variant?: string;
+  /** Call the zai API directly (default) instead of via the opencode CLI */
   directHarness?: boolean;
   rateLimit: number;
 }

@@ -133,10 +133,11 @@ export const opencodeHarness: LLMHarness = createOpencodeHarness("glm-5");
  * parallelizes fine (8 concurrent calls complete in ~3s).
  *
  * Reads the API key from opencode's auth store (~/.local/share/opencode/
- * auth.json). Ignores the variant parameter (the API applies its own
- * default reasoning budget).
+ * auth.json). Mirrors what opencode sends for zai-coding-plan over
+ * @ai-sdk/openai-compatible: the variant becomes `reasoning_effort` and the
+ * body always carries `thinking: { type: "enabled", clear_thinking: false }`.
  */
-export function createZaiDirectHarness(modelId: string): LLMHarness {
+export function createZaiDirectHarness(modelId: string, variant?: string): LLMHarness {
   const endpoint = "https://api.z.ai/api/coding/paas/v4/chat/completions";
   const systemPrompt = [
     "You are a validation judge. Follow the instructions in the user prompt exactly.",
@@ -168,6 +169,8 @@ export function createZaiDirectHarness(modelId: string): LLMHarness {
             { role: "user", content: fullPrompt },
           ],
           max_tokens: 4096,
+          ...(variant ? { reasoning_effort: variant } : {}),
+          thinking: { type: "enabled", clear_thinking: false },
         }),
         signal: AbortSignal.timeout(120_000),
       });

@@ -490,7 +490,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   setCacheContext(lang);
   const model = opts.model || "glm-5.3-flash";
   const harness = opts.directHarness
-    ? createZaiDirectHarness(model)
+    ? createZaiDirectHarness(model, opts.variant)
     : createOpencodeHarness(model, opts.variant);
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();

@@ -18,9 +18,10 @@
  *   --model <model>        LLM model to use. Bare id ("glm-5") is prefixed with
  *                          zai-coding-plan/; a full id ("openrouter/stealth/ox-alpha")
  *                          is passed to opencode as-is (default: glm-5.3-flash)
- *   --variant <variant>    Model variant passed to opencode (e.g. low, high, max; default: low)
- *   --direct-harness       Call the zai API directly instead of via the opencode CLI
- *                          (much faster; uses the zai-coding-plan key from opencode's auth store)
+ *   --variant <variant>    Model variant (e.g. low, high, max; default: low).
+ *                          Sent as reasoning_effort by the direct harness
+ *   --no-direct-harness    Call the zai API via the opencode CLI instead of
+ *                          directly (default: direct; much faster)
  *   --json                 Output as JSON
  */
 
@@ -39,6 +40,7 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
     rateLimit: DEFAULT_RATELIMIT,
     model: "glm-5.3-flash",
     variant: "low",
+    directHarness: true,
   };
   
   for (let i = 0; i < args.length; i++) {
@@ -89,6 +91,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
       opts.variant = args[++i];
     } else if (arg === "--direct-harness") {
       opts.directHarness = true;
+    } else if (arg === "--no-direct-harness") {
+      opts.directHarness = false;
     } else if (arg && arg.startsWith("--")) {
       console.error("Unknown option:", arg);
       process.exit(1);
