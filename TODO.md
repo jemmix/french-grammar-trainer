@@ -2,6 +2,8 @@
 
 ## Content generation
 
+- **LLM validation progress** — sections 01-02 fully validated (6200 checks each, 310/310 per rule) with `glm-5.3-flash` variant `low` (now the validate.ts default, which abends on `glm-5-turbo`). Remaining: sections 03-04 (cached failures only), and a dry-run scan of sections 10-28 for cache misses. Notable fixes: PQP/futur-antérieur distractors replaced with conditionnel/person errors (unsafe list), "depuis"/time-marker tensions resolved with habitual anchors, hint-field enrichment to answer `no-ambiguous` jargon objections without disturbing `question-rule-alignment` cache keys (hint is excluded from alignment's prompt), teach-then-apply prompts for dual-auxiliary motion verbs (02-04).
+
 - **All 28 sections generated** — sections 25-28 (expression du temps, gérondif, gallicismes, accord du participe avancé) were completed 2026-08-27, closing out the full B1 course (560 rule files, ~14k questions). Structural validation clean throughout.
 
 - **LLM semantic validation for sections 13-20** — new content has only passed structural validation (`npx tsx scripts/validate.ts --lang fr`), not the LLM-based semantic checks. Run `npx tsx scripts/validate.ts --lang fr --llm --update-cache` batched by section when budget allows, then promote cache. Watch for "No clear majority" failures on the comparison-type rules (cf. 08-11/08-15 history in this file).
