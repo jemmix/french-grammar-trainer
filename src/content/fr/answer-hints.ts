@@ -25,6 +25,8 @@ export const answerHints: Record<string, string> = {
   "a mis": "mettre",
   "à mon ami": "préposition",
   "a monté": "monter",
+  "a passé": "passer",
+  "a préféré": "préférer",
   "à nos élèves": "préposition",
   "a reçu": "recevoir",
   "a sonné": "sonner",
