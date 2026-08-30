@@ -406,6 +406,8 @@ export const answerHints: Record<string, string> = {
   "avait été accroché": "accrocher",
   "avait-on fermé": "fermer",
   "avait été": "être",
+  "avait été signé": "être",
+  "avait accroché": "accrocher",
   "avait examiné": "examiner",
   "avait": "avoir",
   "avait-il compris": "comprendre",
