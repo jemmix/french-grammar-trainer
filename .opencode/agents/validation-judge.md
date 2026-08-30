@@ -1,7 +1,7 @@
 ---
 description: Validation judge for grammar question quality checks
 mode: primary
-steps: 1
+steps: 4
 permission:
   "*": "deny"
 ---

@@ -19,6 +19,8 @@
  *                          zai-coding-plan/; a full id ("openrouter/stealth/ox-alpha")
  *                          is passed to opencode as-is (default: glm-5.3-flash)
  *   --variant <variant>    Model variant passed to opencode (e.g. low, high, max; default: low)
+ *   --direct-harness       Call the zai API directly instead of via the opencode CLI
+ *                          (much faster; uses the zai-coding-plan key from opencode's auth store)
  *   --json                 Output as JSON
  */
 
@@ -85,6 +87,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
       opts.model = model;
     } else if (arg === "--variant" && args[i + 1]) {
       opts.variant = args[++i];
+    } else if (arg === "--direct-harness") {
+      opts.directHarness = true;
     } else if (arg && arg.startsWith("--")) {
       console.error("Unknown option:", arg);
       process.exit(1);

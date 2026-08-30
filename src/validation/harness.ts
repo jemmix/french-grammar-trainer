@@ -1,4 +1,7 @@
 import { execFile } from "child_process";
+import { readFileSync } from "fs";
+import { homedir } from "os";
+import { join } from "path";
 import type { ExecFileException } from "child_process";
 import type { LLMRequestSpec, LLMResponse } from "./types";
 
@@ -122,3 +125,83 @@ export function createOpencodeHarness(modelId: string, variant?: string): LLMHar
 }
 
 export const opencodeHarness: LLMHarness = createOpencodeHarness("glm-5");
+
+/**
+ * Direct zai coding-plan API harness. Bypasses the opencode CLI, whose
+ * per-call process spawn + session bookkeeping serializes throughput to
+ * ~15 calls/min regardless of client concurrency. The zai API itself
+ * parallelizes fine (8 concurrent calls complete in ~3s).
+ *
+ * Reads the API key from opencode's auth store (~/.local/share/opencode/
+ * auth.json). Ignores the variant parameter (the API applies its own
+ * default reasoning budget).
+ */
+export function createZaiDirectHarness(modelId: string): LLMHarness {
+  const endpoint = "https://api.z.ai/api/coding/paas/v4/chat/completions";
+  const systemPrompt = [
+    "You are a validation judge. Follow the instructions in the user prompt exactly.",
+    "Respond in the exact format requested. Do not use any tools — respond with text only.",
+  ].join(" ");
+
+  return {
+    name: "zai-direct",
+
+    async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
+      const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
+      const key = loadZaiKey();
+      if (!key) {
+        throw new Error(
+          "zai-direct harness: no zai-coding-plan key in ~/.local/share/opencode/auth.json"
+        );
+      }
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + key,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: modelId,
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: fullPrompt },
+          ],
+          max_tokens: 4096,
+        }),
+        signal: AbortSignal.timeout(120_000),
+      });
+
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error("zai-direct failed: HTTP " + res.status + "; " + body.slice(0, 300));
+      }
+      const data = (await res.json()) as {
+        choices?: { message?: { content?: string } }[];
+      };
+      const raw = data.choices?.[0]?.message?.content?.trim() ?? "";
+      if (!raw) {
+        throw new Error("zai-direct failed: empty response");
+      }
+      return {
+        raw,
+        model: modelId,
+        harness: "zai-direct",
+        nonce,
+        timestamp: new Date().toISOString(),
+      };
+    },
+  };
+}
+
+function loadZaiKey(): string | null {
+  try {
+    const authPath = join(homedir(), ".local", "share", "opencode", "auth.json");
+    const auth = JSON.parse(readFileSync(authPath, "utf-8")) as {
+      "zai-coding-plan"?: { key?: string };
+    };
+    return auth["zai-coding-plan"]?.key ?? null;
+  } catch {
+    return null;
+  }
+}

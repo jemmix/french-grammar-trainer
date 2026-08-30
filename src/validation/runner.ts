@@ -19,7 +19,7 @@ import {
   pruneCache,
   setCacheContext,
 } from "./cache";
-import { createOpencodeHarness, InvalidResponseError, isRetryableError } from "./harness";
+import { createOpencodeHarness, createZaiDirectHarness, InvalidResponseError, isRetryableError } from "./harness";
 
 const INITIAL_RUNS = 3;
 const ADDITIONAL_RUNS = 7;
@@ -489,7 +489,9 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const lang = opts.lang || "fr";
   setCacheContext(lang);
   const model = opts.model || "glm-5.3-flash";
-  const harness = createOpencodeHarness(model, opts.variant);
+  const harness = opts.directHarness
+    ? createZaiDirectHarness(model)
+    : createOpencodeHarness(model, opts.variant);
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();
   const concurrency = opts.concurrency || DEFAULT_CONCURRENCY;

@@ -75,6 +75,7 @@ export interface ValidationOptions {
   concurrency?: number;
   model?: string;
   variant?: string;
+  directHarness?: boolean;
   rateLimit: number;
 }
 
