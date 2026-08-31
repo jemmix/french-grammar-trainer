@@ -2660,6 +2660,8 @@ export const answerHints: Record<string, string> = {
   "Nous allons": "aller",
   "obéissants": "obéir",
   "ont annoncé": "annoncer",
+  "ont reçu": "recevoir",
+  "a soutenu": "soutenir",
   "ont fini": "finir",
   "ouvertes": "s'ouvrir",
   "par s'excuser": "s'excuser",
@@ -2769,6 +2771,10 @@ export const hintAliases: Record<string, Set<string>> = {
   "avons l'intention": new Set(["expression", "expression avec « intention »"]),
   // 25-03 INPUT question uses "locution conjonctive" as hint for "depuis que".
   "depuis que": new Set(["conjonction", "locution conjonctive"]),
+  // 25-04 INPUT question uses "expression temporelle" as hint for "il y a".
+  "il y a": new Set(["expression", "expression temporelle"]),
+  // 25-04 INPUT question uses "conjonction" as hint for "que".
+  "que": new Set(["pronom relatif", "conjonction"]),
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
