@@ -20,6 +20,10 @@ export const answerHints: Record<string, string> = {
   "à laquelle": "pronom relatif",
   "à leurs parents": "préposition",
   "a lu": "lire",
+  "lis": "lire",
+  "me détends": "se détendre",
+  "a quittée": "quitter",
+  "prépares": "préparer",
   "à ma meilleure amie": "préposition",
   "a marché": "marcher",
   "a mis": "mettre",
@@ -2677,6 +2681,9 @@ export const answerHints: Record<string, string> = {
   "Pendant": "préposition",
   "pendant que": "locution conjonctive",
   "roulait": "rouler",
+  "fume": "fumer",
+  "travaillais": "travailler",
+  "a joué": "jouer",
   "Pendant que": "locution conjonctive",
   "Pendant que je faisais": "faire",
   "Pendant que les enfants s'endormaient": "s'endormir",
@@ -2752,6 +2759,7 @@ export const answerHints: Record<string, string> = {
 // 09-19 INPUT questions use descriptive hints (not just the infinitive)
 // since the answer literally is the infinitive form.
 export const hintAliases: Record<string, Set<string>> = {
+  "est": new Set(["être", "être (présent)"]),
   "acheter": new Set(["acheter", "forme infinitive du verbe conjugué"]),
   "Laver": new Set(["laver", "forme infinitive du verbe conjugué"]),
   "Agiter": new Set(["agiter", "forme infinitive du verbe conjugué"]),
