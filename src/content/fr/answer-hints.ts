@@ -2764,6 +2764,7 @@ export const answerHints: Record<string, string> = {
 // 09-19 INPUT questions use descriptive hints (not just the infinitive)
 // since the answer literally is the infinitive form.
 export const hintAliases: Record<string, Set<string>> = {
+  "Chaque fois que": new Set(["locution conjonctive", "locution conjonctive de trois mots", "locution conjonctive de trois mots commençant par « chaque »"]),
   "est": new Set(["être", "être (présent)"]),
   "où": new Set(["pronom relatif", "conjonction"]),
   "a applaudi": new Set(["applaudir", "applaudir (passé composé)"]),
