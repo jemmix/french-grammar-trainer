@@ -2566,6 +2566,7 @@ export const answerHints: Record<string, string> = {
   "de te les": "pronom réfléchi + COD",
   "défilant": "défiler",
   "depuis": "préposition",
+  "depuis que": "conjonction",
   "Depuis": "préposition",
   "Depuis que": "locution conjonctive",
   "dès": "préposition",
@@ -2766,6 +2767,8 @@ export const hintAliases: Record<string, Set<string>> = {
   "ai l'impression": new Set(["expression", "expression avec « impression »"]),
   "auras l'occasion": new Set(["avoir", "expression avec « occasion »", "expression avec « avoir » et « occasion »", "expression figée « avoir l'occasion » (futur)"]),
   "avons l'intention": new Set(["expression", "expression avec « intention »"]),
+  // 25-03 INPUT question uses "locution conjonctive" as hint for "depuis que".
+  "depuis que": new Set(["conjonction", "locution conjonctive"]),
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
