@@ -741,6 +741,8 @@ export const answerHints: Record<string, string> = {
   "Fournissez": "fournir",
   "fourniront": "fournir",
   "fondu": "fondre",
+  "allemand": "nom",
+  "l'allemand": "nom",
   "français": "nom",
   "grandis": "grandir",
   "grandisse": "grandir",
