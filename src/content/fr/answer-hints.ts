@@ -2765,6 +2765,8 @@ export const answerHints: Record<string, string> = {
 // since the answer literally is the infinitive form.
 export const hintAliases: Record<string, Set<string>> = {
   "Chaque fois que": new Set(["locution conjonctive", "locution conjonctive de trois mots", "locution conjonctive de trois mots commençant par « chaque »"]),
+  "Pendant que": new Set(["locution conjonctive", "locution conjonctive de deux mots commençant par « pendant »"]),
+  "jusqu'à ce que": new Set(["locution conjonctive", "locution conjonctive de trois mots commençant par « jusqu »"]),
   "est": new Set(["être", "être (présent)"]),
   "où": new Set(["pronom relatif", "conjonction"]),
   "a applaudi": new Set(["applaudir", "applaudir (passé composé)"]),
@@ -2802,7 +2804,7 @@ export const hintAliases: Record<string, Set<string>> = {
   // 25-04 INPUT question uses "conjonction" as hint for "que".
   "que": new Set(["pronom relatif", "conjonction"]),
   // 25-08 INPUT questions use "préposition" as hint for "en".
-  "en": new Set(["pronom", "préposition"]),
+  "en": new Set(["pronom", "préposition", "préposition de deux lettres"]),
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
