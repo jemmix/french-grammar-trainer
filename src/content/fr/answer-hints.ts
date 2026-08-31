@@ -2730,6 +2730,12 @@ export const hintAliases: Record<string, Set<string>> = {
   "Vas-y": new Set(["aller", "aller + y"]),
   "Donne-m'en": new Set(["donner", "donner + moi + en"]),
   "la": new Set(["...", "pronom COD pour « cette photo »"]),
+  // 10-14 INPUT questions use "article défini" as hint for definite-article answers.
+  "le": new Set(["...", "article défini"]),
+  "les": new Set(["...", "article défini"]),
+  "La": new Set(["...", "article défini"]),
+  "Les": new Set(["...", "article défini"]),
+  "Le": new Set(["...", "article défini"]),
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
