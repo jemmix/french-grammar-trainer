@@ -2676,6 +2676,7 @@ export const answerHints: Record<string, string> = {
   "passé": "se passer",
   "Pendant": "préposition",
   "pendant que": "locution conjonctive",
+  "roulait": "rouler",
   "Pendant que": "locution conjonctive",
   "Pendant que je faisais": "faire",
   "Pendant que les enfants s'endormaient": "s'endormir",
