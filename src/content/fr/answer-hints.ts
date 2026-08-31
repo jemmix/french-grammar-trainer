@@ -2773,6 +2773,8 @@ export const hintAliases: Record<string, Set<string>> = {
   "depuis que": new Set(["conjonction", "locution conjonctive"]),
   // 25-04 INPUT question uses "expression temporelle" as hint for "il y a".
   "il y a": new Set(["expression", "expression temporelle"]),
+  // 25-05 INPUT question uses "locution" as hint for "Il y a".
+  "Il y a": new Set(["expression temporelle", "locution"]),
   // 25-04 INPUT question uses "conjonction" as hint for "que".
   "que": new Set(["pronom relatif", "conjonction"]),
 };
