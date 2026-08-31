@@ -1928,6 +1928,7 @@ export const answerHints: Record<string, string> = {
   "ont l'air": "expression",
   "ai l'impression": "expression",
   "avons l'intention": "expression",
+  "La réussite": "...",
   "il faut faire attention": "expression",
   "de ne pas en parler": "parler",
   "de nouveau": "adjectif",
