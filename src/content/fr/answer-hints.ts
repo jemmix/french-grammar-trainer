@@ -2777,6 +2777,8 @@ export const hintAliases: Record<string, Set<string>> = {
   "Il y a": new Set(["expression temporelle", "locution"]),
   // 25-04 INPUT question uses "conjonction" as hint for "que".
   "que": new Set(["pronom relatif", "conjonction"]),
+  // 25-08 INPUT questions use "préposition" as hint for "en".
+  "en": new Set(["pronom", "préposition"]),
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
