@@ -2587,6 +2587,11 @@ export const answerHints: Record<string, string> = {
   "dévorant": "dévorer",
   "différant": "différer",
   "dormaient": "dormir",
+  "sommes rencontrés": "se rencontrer",
+  "suis retourné": "se retourner",
+  "s'est retourné": "se retourner",
+  "a acheté": "acheter",
+  "est montée": "monter",
   "duré": "durer",
   "éblouissantes": "éblouir",
   "écoulés": "s'écouler",
@@ -2760,6 +2765,8 @@ export const answerHints: Record<string, string> = {
 // since the answer literally is the infinitive form.
 export const hintAliases: Record<string, Set<string>> = {
   "est": new Set(["être", "être (présent)"]),
+  "où": new Set(["pronom relatif", "conjonction"]),
+  "a applaudi": new Set(["applaudir", "applaudir (passé composé)"]),
   "acheter": new Set(["acheter", "forme infinitive du verbe conjugué"]),
   "Laver": new Set(["laver", "forme infinitive du verbe conjugué"]),
   "Agiter": new Set(["agiter", "forme infinitive du verbe conjugué"]),
