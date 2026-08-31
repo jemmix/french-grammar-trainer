@@ -2752,11 +2752,12 @@ export const hintAliases: Record<string, Set<string>> = {
   "Apporte-la-moi": new Set(["apporter", "apporter + la + moi"]),
   "Vas-y": new Set(["aller", "aller + y"]),
   "Donne-m'en": new Set(["donner", "donner + moi + en"]),
-  "la": new Set(["...", "pronom COD pour « cette photo »"]),
+  "la": new Set(["...", "pronom COD pour « cette photo »", "article défini", "article défini (préférence)", "article"]),
+  "des": new Set(["article", "article indéfini pluriel"]),
   // 10-14 INPUT questions use "article défini" as hint for definite-article answers.
   "le": new Set(["...", "article défini"]),
   "les": new Set(["...", "article défini"]),
-  "La": new Set(["...", "article défini"]),
+  "La": new Set(["...", "article défini", "article"]),
   "Les": new Set(["...", "article défini"]),
   "Le": new Set(["...", "article défini"]),
   // 10-18 INPUT questions use disambiguating hints naming the expression's key noun.
