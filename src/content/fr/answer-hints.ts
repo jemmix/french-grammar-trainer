@@ -2577,6 +2577,18 @@ export const answerHints: Record<string, string> = {
   "sautant": "sauter",
   "allons manger": "manger",
   "allons arriver": "arriver",
+  "ne viens pas de": "venir",
+  "ne venez pas de": "venir",
+  "ne viennent pas de": "venir",
+  "ne viens pas": "venir",
+  "ne viens de pas": "venir",
+  "ne venez de pas": "venir",
+  "ne vas pas de": "aller",
+  "ne venons pas de": "venir",
+  "ne viennent pas d'": "venir",
+  "ne vont pas d'": "aller",
+  "ne viens pas d'": "venir",
+  "ne venons de pas": "venir",
   "venais d'": "venir",
   "venez de": "venir",
   "vient de": "venir",
@@ -2852,7 +2864,11 @@ export const hintAliases: Record<string, Set<string>> = {
   // 25-05 INPUT question uses "locution" as hint for "Il y a".
   "Il y a": new Set(["expression temporelle", "locution"]),
   // 25-04 INPUT question uses "conjonction" as hint for "que".
-  "que": new Set(["pronom relatif", "conjonction"]),
+  // 27-11 uses "négation restrictive" for "que" (ne...que).
+  "que": new Set(["pronom relatif", "conjonction", "négation restrictive"]),
+  // 27-11 passé récent INPUT uses "venir" as hint for "de"/"d'".
+  "de": new Set(["article", "venir"]),
+  "d'": new Set(["article", "venir", "passé récent"]),
   // 25-08 INPUT questions use "préposition" as hint for "en".
   "en": new Set(["pronom", "préposition", "préposition de deux lettres"]),
 };
