@@ -1428,6 +1428,8 @@ export const answerHints: Record<string, string> = {
   "Vas": "aller",
   "Vas-y": "aller",
   "vais": "aller",
+  "vas": "aller",
+  "va prendre": "prendre",
   "vaut": "valoir",
   "Veuillez": "vouloir",
   "venais": "venir",
