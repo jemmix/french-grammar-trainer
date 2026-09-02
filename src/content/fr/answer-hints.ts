@@ -2577,6 +2577,7 @@ export const answerHints: Record<string, string> = {
   "sautant": "sauter",
   "allons manger": "manger",
   "allons arriver": "arriver",
+  "venais d'": "venir",
   "venez de": "venir",
   "vient de": "venir",
   "fredonnant": "fredonner",
