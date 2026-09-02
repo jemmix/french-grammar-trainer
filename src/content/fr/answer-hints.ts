@@ -2614,6 +2614,8 @@ export const answerHints: Record<string, string> = {
   "en mangeant": "manger",
   "en marchant": "marcher",
   "En nous levant": "se lever",
+  "En te levant": "se lever",
+  "En te dépêchant": "se dépêcher",
   "en promenant": "promener",
   "En révisant": "réviser",
   "En sachant": "savoir",
@@ -2621,6 +2623,9 @@ export const answerHints: Record<string, string> = {
   "en arrivant": "arriver",
   "en étant": "être",
   "En vous levant": "se lever",
+  "En ouvrant": "ouvrir",
+  "en ouvrant": "ouvrir",
+  "En finissant": "finir",
   "en soupirant": "soupirer",
   "en souriant": "sourire",
   "En téléphonant": "téléphoner",
@@ -2774,6 +2779,7 @@ export const answerHints: Record<string, string> = {
 // since the answer literally is the infinitive form.
 export const hintAliases: Record<string, Set<string>> = {
   "Chaque fois que": new Set(["locution conjonctive", "locution conjonctive de trois mots", "locution conjonctive de trois mots commençant par « chaque »"]),
+  "En te dépêchant": new Set(["se dépêcher", "le gérondif de « se dépêcher »"]),
   "Pendant que": new Set(["locution conjonctive", "locution conjonctive de deux mots commençant par « pendant »"]),
   "jusqu'à ce que": new Set(["locution conjonctive", "locution conjonctive de trois mots commençant par « jusqu »"]),
   "est": new Set(["être", "être (présent)"]),
