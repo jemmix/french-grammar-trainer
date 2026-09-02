@@ -2573,6 +2573,7 @@ export const answerHints: Record<string, string> = {
   "chantant": "chanter",
   "regardant": "regarder",
   "sautant": "sauter",
+  "allons manger": "manger",
   "fredonnant": "fredonner",
   "coûté": "coûter",
   "coûtés": "coûter",
