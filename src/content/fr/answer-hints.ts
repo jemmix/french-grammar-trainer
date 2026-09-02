@@ -2620,6 +2620,7 @@ export const answerHints: Record<string, string> = {
   "en sachant": "savoir",
   "en arrivant": "arriver",
   "en étant": "être",
+  "En vous levant": "se lever",
   "en soupirant": "soupirer",
   "en souriant": "sourire",
   "En téléphonant": "téléphoner",
