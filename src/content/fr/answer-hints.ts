@@ -2360,7 +2360,10 @@ export const answerHints: Record<string, string> = {
   "comprennes": "comprendre",
   "connaissions": "connaître",
   "conséquence": "nom",
-  "construite": "construire",
+  
+  "mangées": "manger",
+  "oubliées": "oublier",
+"construite": "construire",
   "coupées": "couper",
   "d'éteindre": "éteindre",
   "de chuchoter": "chuchoter",
