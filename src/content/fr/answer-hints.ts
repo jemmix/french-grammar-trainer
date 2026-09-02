@@ -2627,6 +2627,8 @@ export const answerHints: Record<string, string> = {
   "en ouvrant": "ouvrir",
   "En finissant": "finir",
   "La nuit tombant sur la ville": "tomber",
+  "augmentant": "augmenter",
+  "sortant": "sortir",
   "fatigants": "fatiguer",
   "provoquant": "provoquer",
   "provocantes": "provoquer",
