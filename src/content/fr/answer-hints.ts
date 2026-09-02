@@ -2880,7 +2880,7 @@ export const hintAliases: Record<string, Set<string>> = {
   "Apporte-la-moi": new Set(["apporter", "apporter + la + moi"]),
   "Vas-y": new Set(["aller", "aller + y"]),
   "Donne-m'en": new Set(["donner", "donner + moi + en"]),
-  "la": new Set(["...", "pronom COD pour « cette photo »", "article défini", "article défini (préférence)", "article"]),
+  "la": new Set(["...", "pronom COD pour « cette photo »", "article défini", "article défini (préférence)", "article", "pronom COD"]),
   "des": new Set(["article", "article indéfini pluriel"]),
   // 10-14 INPUT questions use "article défini" as hint for definite-article answers.
   "le": new Set(["...", "article défini"]),
@@ -2909,6 +2909,10 @@ export const hintAliases: Record<string, Set<string>> = {
   "d'": new Set(["article", "venir", "passé récent"]),
   // 27-12 uses COD-pronoun hints for "de l'"/"de la" and pronoun hints for "le lui"/"te les".
   "de lui": new Set(["pronom COI", "de + pronom COI"]),
+  "vous la": new Set(["pronom", "pronoms"]),
+  "leur": new Set(["pronom", "pronom COI"]),
+  "d'y": new Set(["pronom"]),
+  "de leur": new Set(["pronom", "de + pronom COI"]),
   "de l'": new Set(["article", "pronom COD"]),
   "de la": new Set(["préposition", "pronom COD"]),
   "le lui": new Set(["pronom", "pronom COD + COI"]),
