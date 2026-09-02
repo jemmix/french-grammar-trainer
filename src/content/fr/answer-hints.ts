@@ -2626,6 +2626,9 @@ export const answerHints: Record<string, string> = {
   "En ouvrant": "ouvrir",
   "en ouvrant": "ouvrir",
   "En finissant": "finir",
+  "fatigants": "fatiguer",
+  "provoquant": "provoquer",
+  "provocantes": "provoquer",
   "en soupirant": "soupirer",
   "en souriant": "sourire",
   "En téléphonant": "téléphoner",
@@ -2778,6 +2781,11 @@ export const answerHints: Record<string, string> = {
 // 09-19 INPUT questions use descriptive hints (not just the infinitive)
 // since the answer literally is the infinitive form.
 export const hintAliases: Record<string, Set<string>> = {
+  "fatigants": new Set(["fatiguer", "l'adjectif verbal de « fatiguer »"]),
+  "fatiguant": new Set(["fatiguer", "le participe présent de « fatiguer »"]),
+  "différant": new Set(["différer", "le participe présent de « différer »"]),
+  "provoquant": new Set(["provoquer", "le participe présent de « provoquer »"]),
+  "provocantes": new Set(["provoquer", "l'adjectif verbal de « provoquer »"]),
   "Chaque fois que": new Set(["locution conjonctive", "locution conjonctive de trois mots", "locution conjonctive de trois mots commençant par « chaque »"]),
   "En te dépêchant": new Set(["se dépêcher", "le gérondif de « se dépêcher »"]),
   "Pendant que": new Set(["locution conjonctive", "locution conjonctive de deux mots commençant par « pendant »"]),
