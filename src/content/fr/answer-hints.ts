@@ -59,6 +59,7 @@ export const answerHints: Record<string, string> = {
   "réserveront": "réserver",
   "s'est levé": "se lever",
   "achetée": "acheter",
+  "achetés": "acheter",
   "achètes": "acheter",
   "acquerras": "acquérir",
   "agissez": "agir",
