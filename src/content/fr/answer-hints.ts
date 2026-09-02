@@ -2599,8 +2599,12 @@ export const answerHints: Record<string, string> = {
   "cuisinons": "cuisiner",
   "Dans": "préposition",
   "de le": "pronom COD",
+  "te les": "pronoms COI + COD",
   "de le lui": "pronom COD + COI",
+
+  "de me les": "pronoms COI + COD",
   "de les": "pronom COD",
+  "de lui": "pronom COI",
   "de s'": "pronom réfléchi",
   "de te les": "pronom réfléchi + COD",
   "défilant": "défiler",
@@ -2869,6 +2873,11 @@ export const hintAliases: Record<string, Set<string>> = {
   // 27-11 passé récent INPUT uses "venir" as hint for "de"/"d'".
   "de": new Set(["article", "venir"]),
   "d'": new Set(["article", "venir", "passé récent"]),
+  // 27-12 uses COD-pronoun hints for "de l'"/"de la" and pronoun hints for "le lui"/"te les".
+  "de lui": new Set(["pronom COI", "de + pronom COI"]),
+  "de l'": new Set(["article", "pronom COD"]),
+  "de la": new Set(["préposition", "pronom COD"]),
+  "le lui": new Set(["pronom", "pronom COD + COI"]),
   // 25-08 INPUT questions use "préposition" as hint for "en".
   "en": new Set(["pronom", "préposition", "préposition de deux lettres"]),
 };
