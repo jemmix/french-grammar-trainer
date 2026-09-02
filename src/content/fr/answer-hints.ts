@@ -2606,6 +2606,9 @@ export const answerHints: Record<string, string> = {
   "de les": "pronom COD",
   "de lui": "pronom COI",
   "de s'": "pronom réfléchi",
+  "est en train de": "être",
+  "sommes en train de": "être",
+  "êtes en train d'": "être",
   "de te les": "pronom réfléchi + COD",
   "défilant": "défiler",
   "depuis": "préposition",
@@ -2871,7 +2874,8 @@ export const hintAliases: Record<string, Set<string>> = {
   // 27-11 uses "négation restrictive" for "que" (ne...que).
   "que": new Set(["pronom relatif", "conjonction", "négation restrictive"]),
   // 27-11 passé récent INPUT uses "venir" as hint for "de"/"d'".
-  "de": new Set(["article", "venir"]),
+  // 27-13 présent continu INPUT uses "préposition" as hint for "de".
+  "de": new Set(["article", "venir", "préposition"]),
   "d'": new Set(["article", "venir", "passé récent"]),
   // 27-12 uses COD-pronoun hints for "de l'"/"de la" and pronoun hints for "le lui"/"te les".
   "de lui": new Set(["pronom COI", "de + pronom COI"]),
