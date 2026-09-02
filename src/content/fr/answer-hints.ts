@@ -2626,6 +2626,7 @@ export const answerHints: Record<string, string> = {
   "En ouvrant": "ouvrir",
   "en ouvrant": "ouvrir",
   "En finissant": "finir",
+  "La nuit tombant sur la ville": "tomber",
   "fatigants": "fatiguer",
   "provoquant": "provoquer",
   "provocantes": "provoquer",
@@ -2786,6 +2787,9 @@ export const hintAliases: Record<string, Set<string>> = {
   "différant": new Set(["différer", "le participe présent de « différer »"]),
   "provoquant": new Set(["provoquer", "le participe présent de « provoquer »"]),
   "provocantes": new Set(["provoquer", "l'adjectif verbal de « provoquer »"]),
+  "Le soleil se levant à peine": new Set(["se lever"]),
+  "La nuit tombant sur la ville": new Set(["tomber", "le participe présent de « tomber »"]),
+
   "Chaque fois que": new Set(["locution conjonctive", "locution conjonctive de trois mots", "locution conjonctive de trois mots commençant par « chaque »"]),
   "En te dépêchant": new Set(["se dépêcher", "le gérondif de « se dépêcher »"]),
   "Pendant que": new Set(["locution conjonctive", "locution conjonctive de deux mots commençant par « pendant »"]),
