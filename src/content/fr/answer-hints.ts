@@ -2362,6 +2362,7 @@ export const answerHints: Record<string, string> = {
   "conséquence": "nom",
   
   "mangées": "manger",
+  "reçu": "recevoir",
   "oubliées": "oublier",
 "construite": "construire",
   "coupées": "couper",
