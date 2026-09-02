@@ -2917,6 +2917,7 @@ export const hintAliases: Record<string, Set<string>> = {
   "leur": new Set(["pronom", "pronom COI"]),
   "d'y": new Set(["pronom"]),
   "de leur": new Set(["pronom", "de + pronom COI"]),
+  "l'": new Set(["...", "pronom"]),
   "est en train de": new Set(["être", "être + en train de"]),
   "est en train de faire": new Set(["être + en train de + faire", "en train de"]),
   "sont en train de finir": new Set(["être + en train de + finir", "en train de"]),
