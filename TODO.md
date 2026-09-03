@@ -137,6 +137,20 @@ Q021-Q023 and Q025 use the standard format "Complétez le récit au présent de 
 
 ### 08-11 LLM validation — question-rule-alignment unsatisfiable for comparison rules
 
+## Section 28 judge lessons (accord du participe passé) — 2026-09
+
+Judges pools are school-calibrated per section: within one section, the same question shape can be defended in rule A and failed in rule B. Verified passing molds for the whole contested agreement cluster:
+
+- **Perception/factitive + infinitive (28-13/28-14)**: `faire` causative with COD-that-doesn't-act is the only both-schools-agree shape. Scenario parentheticals ("une couturière a confectionné les costumes") pass; jargon parentheticals ("faire causatif : le COD ne fait pas l'action") fail no-ambiguous-prompts. Same-judge pool later defends invariable for voir/entendre+inf regardless of pinning — don't fight, convert to faire.
+- **laisser + infinitif (28-16)**: fully contested (optional agreement vs 1990 invariable). Neutral zone = masculine-singular antéposed COD + postposed-COD constructions, where both schools produce `laissé`. Wrong "fait" must be purged (judges defend `il s'est fait surprendre` as grammatical). Scenario parentheticals help; "usage moderne recommandé" meta-language fails. With masc-sing, alignment judges complain "identical under both schools, doesn't test the rule" — counter with WHY-question format (why no visible mark) or postposed-COD INPUT with scenario parenthetical.
+- **Measure-invariable verbs coûter/valoir/peser/vivre/durer/régner (28-17/28-18)**: judges defend general agreement AND measure-invariability opportunistically. Passing shapes: (a) masculine-singular antéposed measure COD (no visible mark), (b) postposed COD (no agreement possible, both schools), (c) WHY-questions about the invariability, (d) 28-18's figurative-transitive `ça`-subject fill (mirrors the rule's own example). `lui`-subjects trigger "COI → invariable" defense. INPUT answers are attacked as "basic participle, not the rule" — use postposed-COD phrases instead.
+- **Impersonal verbs (28-19)**: qui-subject pronominal/être shapes fail alignment ("not impersonal"); only frames with apparent-subject `il` + postposed complement pass (`il est tombé de la neige`, `il y a eu`, `il a fallu`, `il s'est posé des questions`). « participe passé » in the prompt triggers hint-not-trivial when the answer IS "passé".
+- **Synthèse (28-20)**: alignment judges reject "basic" single-rule questions — need dual-trap shapes (agreement + subject-verb number, COD-antéposé + COI mix) or which-correct with two fault types per wrong.
+- **General**: wrong answers that are grammatical under ANY school get defended (fait surprendre, entendu chanter, laissés for plural). Replace with indefensible faults: wrong genre/number agreement, passé simple/imparfait forms, infinitive. Duplicate-choice validator catches R that crept into W during R-flips — always re-check W lists after flipping R.
+- **Patch-script pitfall (cost 3 reruns)**: python heredoc with asserts — if any assert fails, NOTHING is written; a later batch can abort mid-way after `full()` calls but before `sw()` calls, leaving the file half-transformed (writes only happen at the end). Order operations: do ALL transformations, write, THEN assert. Verify with grep after every batch.
+- Dict keys added this session: pesés, pesées, valu, écrites (+ regardés in 28-13).
+
+
 Rule 08-11 ("subjonctif passé vs présent: simultanéité vs antériorité") fails LLM validation on ~17/25 questions. The `question-rule-alignment` predicate is fundamentally unsatisfiable for tense-comparison questions:
 
 - **Without tense specification**: "Both subjonctif présent and passé are valid" / "Tests mood recognition, not tense choice"
