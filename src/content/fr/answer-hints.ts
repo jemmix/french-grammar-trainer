@@ -1369,6 +1369,7 @@ export const answerHints: Record<string, string> = {
   "suivrions": "suivre",
   "suivraient": "suivre",
   "suivaient": "suivre",
+  "affaires": "nom",
   "sur lequel": "pronom relatif",
   "surmonterons": "surmonter",
   "symphonie": "nom",
@@ -2901,7 +2902,7 @@ export const hintAliases: Record<string, Set<string>> = {
   "des": new Set(["article", "article indéfini pluriel"]),
   // 10-14 INPUT questions use "article défini" as hint for definite-article answers.
   "le": new Set(["...", "article défini"]),
-  "les": new Set(["...", "article défini"]),
+  "les": new Set(["...", "article défini", "pronom COD"]),
   "La": new Set(["...", "article défini", "article"]),
   "Les": new Set(["...", "article défini"]),
   "Le": new Set(["...", "article défini"]),
