@@ -1518,6 +1518,7 @@ export const answerHints: Record<string, string> = {
   "écoutiez": "écouter",
   "écris": "écrire",
   "écrit": "écrire",
+  "écrites": "écrire",
   "écris-leur": "écrire",
   "écrivent": "s'écrire",
   "épelle": "épeler",
