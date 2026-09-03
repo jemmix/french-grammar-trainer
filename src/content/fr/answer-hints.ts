@@ -1148,6 +1148,7 @@ export const answerHints: Record<string, string> = {
   "regardent": "regarder",
   "regardons": "regarder",
   "regardé": "regarder",
+  "regardés": "regarder",
   "rejette": "rejeter",
   "rejettent": "rejeter",
   "rejettes": "rejeter",
